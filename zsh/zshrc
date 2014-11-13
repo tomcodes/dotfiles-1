@@ -24,6 +24,7 @@ alias zshr="source ~/.zshrc"
 alias raspi="ssh pi@brvt.no-ip.org"
 alias ...="../../"
 alias Lab="~/Lab/"
+alias lab="~/Lab/"
 
 # Launch ls after cd command
 function chpwd() {

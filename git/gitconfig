@@ -1,0 +1,26 @@
+[user]
+	email = loric.brevet@gmail.com
+	name = Loric Brevet
+[push]
+	default = simple
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	mt = mergetool
+	dt = difftool
+[core]
+	editor = vim
+[color]
+	ui = true
+[merge]
+	tool = meld
+[mergetool]
+	cmd = meld "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	trustExitCode = false
+	keepBackup = false
+[diff]
+	external = ~/.config/prefs/git/my-git-meld

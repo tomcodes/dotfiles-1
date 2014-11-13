@@ -1,0 +1,277 @@
+# I3 Configuration
+
+# Special keys names
+# shift		Shift_L, Shift_R
+# lock		Caps_Lock
+# control	Control_L, Control_R
+# mod1		Alt_L, Meta_L
+# mod2		Num_Lock
+# mod3      
+# mod4		Super_L, Super_R, Super_L, Hyper_L
+# mod5		ISO_Level3_Shift, Mode_switch
+
+# Find key information: xev
+# Find program information: xprop
+
+# Variable modifier
+set $mod mod1
+
+# Variables fonts
+set $font Droid Sans 8
+set $font-mono Droid Sans Mono 8
+set $font-dmenu "Droid Sans-8"
+
+# customize workspace names
+set $ws1 1: main
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9: chat
+set $ws10 10: music
+
+# Font for windows tiles
+font pango:$font-mono
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# autostart programs
+# Start the composite manager
+exec --no-startup-id compton -CGb
+# Remove screensaver
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s off
+# Change mouse speed
+exec --no-startup-id xset m 5 1
+# Hide the mouse after 15 seconds
+exec --no-startup-id unclutter -idle 15
+# Custom programs
+exec --no-startup-id xfce4-panel
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xflux -l 59.3293
+exec --no-startup-id numlockx
+exec --no-startup-id guake
+exec --no-startup-id parcellite
+
+# Rules for windows
+for_window [class="Guake"] floating enable
+for_window [class="Spotify"] floating enable
+
+# Rules to start windows in workspaces
+assign [class="Spotify"] $ws10
+assign [class="Skype"] $ws9
+
+# start a terminal
+bindsym $mod+Return exec terminator
+
+# start programs
+bindsym $mod+p exec --no-startup-id pcmanfm
+bindsym $mod+i exec --no-startup-id google-chrome-stable
+bindsym $mod+F12 exec --no-startup-id subl3 $HOME/.config/i3/config
+bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Test "Screenshot saved" -t 2000
+bindsym $mod+u exec --no-startup-id google-chrome-stable --profile-directory=Default --app-id=mojepfklcankkmikonjlnidiooanmpbb
+
+# Focus programs
+bindsym $mod+control+i [class="Google-chrome-stable"] focus
+
+# Tags
+bindsym $mod+semicolon exec i3-input -F "mark %s" -P "New tag: "
+bindsym $mod+colon exec i3-input -F "[con_mark=\"%s\"] focus" -P "Search tag: "
+bindsym $mod+exclam exec i3-input -F "unmark %s" -P "Remove tag: "
+
+# Scratchpad
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+dollar move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+dollar scratchpad show
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu
+bindsym control+space exec --no-startup-id dmenu_run -h 18 -fn $font-dmenu -z -sb $main-color
+
+# start whisker menu
+bindsym control+$mod+space exec --no-startup-id xfce4-popup-whiskermenu
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle between stacking/tabbed/split:
+bindsym $mod+x layout toggle
+
+# toggle tiling / floating
+bindsym $mod+space floating toggle
+
+# focus the parent/child container
+bindsym $mod+a focus parent
+bindsym $mod+z focus child
+
+# Default layout new workspace "default|stacking|tabbed"
+workspace_layout default
+
+# Allow alt-tab style when hit twice a desktop number
+#workspace_auto_back_and_forth yes
+
+# Rename workspace
+bindsym $mod+equal exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+
+# switch to workspace3
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# switching between workspace
+bindsym $mod+n workspace next
+bindsym $mod+b workspace prev
+
+# Switch back and forth
+bindsym $mod+Tab workspace back_and_forth
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# move focused container to next/previous workspace
+bindsym $mod+Shift+n move container to workspace next
+bindsym $mod+Shift+b move container to workspace prev
+
+# Variables colors
+set $main-color "#d64937"
+set $bg-color "#2d2d2d"
+set $inactive-color "#333333"
+set $urgent-color "#383a3b"
+set $urgent-ws-color "#900000"
+
+set $text-color "#dedede"
+set $text-urgent-color "#ee0000"
+set $text-inactive-color "#888888"
+set $text-urgent-ws-color "#ffffff"
+
+# colors (border, background, text, indicator)
+client.focused $main-color $main-color $text-color
+client.unfocused $inactive-color $inactive-color $text-color
+client.focused_inactive $inactive-color $inactive-color $text-color
+client.urgent $urgent-color $urgent-color $text-urgent-color
+
+# Start i3bar to display a workspace bar
+bar {
+    status_command conky -c $HOME/.config/i3/conkyrc
+	mode dock
+	position top
+	font pango:$font
+	tray_output none
+	# Show only name and not number
+	strip_workspace_numbers yes
+	workspace_buttons yes
+	# Show the mode (resize for instance)
+	binding_mode_indicator yes
+	
+colors {
+        background $bg-color
+        statusline $text-color
+        separator $bg-color
+
+		# (border, background, text)
+        focused_workspace  $main-color $main-color $text-color
+        active_workspace   $bg-color $bg-color $text-color
+        inactive_workspace $bg-color $bg-color $text-inactive-color
+        urgent_workspace   $inactive-color $urgent-ws-color $text-urgent-ws-color
+    }
+}
+
+# border / titlebar
+
+set $border pixel 2
+
+new_window $border
+for_window [class="^.*"] border $border
+hide_edge_borders none
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym Mod1+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+
+        bindsym h           resize grow width 5 px or 5 ppt
+        bindsym j           resize grow height 5 px or 5 ppt
+        bindsym k           resize shrink height 5 px or 5 ppt
+        bindsym l           resize shrink width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Toggle resize mode
+bindsym $mod+r mode "resize"
+
+# Sound shortcuts
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# Lock screen
+bindsym $mod+F6 exec --no-startup-id i3lock -c 000000 -e -i /usr/share/backgrounds/elegantdarkbackground.png -t
+
+# Turn screen off
+bindsym $mod+F5 exec --no-startup-id xset dpms force off
+
+# Power off
+bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'poweroff'"

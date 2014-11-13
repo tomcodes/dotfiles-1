@@ -1,0 +1,19 @@
+{
+	"afn_use_keybinding": true,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"detect_indentation": true,
+	"dictionary": "Packages/Language - French - Français/fr_FR.dic",
+	"font_face": "Droid Sans Mono",
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"phoenix_color_blue": true,
+	"phoenix_dirty_bottom_bar": true,
+	"phoenix_dirty_bottom_bar_blue": true,
+	"phoenix_solid_current_tab": true,
+	"tab_size": 4,
+	"theme": "Phoenix Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
+}

@@ -1,0 +1,139 @@
+[
+	/* Advanced New File */
+	{ "keys": ["ctrl+alt+n"], "command": "advanced_new_file"},
+	{ "keys": ["shift+ctrl+alt+n"], "command": "advanced_new_file", "args": {"is_python": true}},
+
+	/* Reecriture des raccourcis pour les commentaires */
+	{ "keys": ["ctrl+:"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+shift+:"], "command": "toggle_comment", "args": { "block": true } },
+
+	/* Reecriture du raccourcis pour aligner */
+	{ "keys": ["ctrl+alt+a"], "command": "alignment" },
+
+	/* Reecriture du raccourcis pour afficher la console */
+	{ "keys": ["ctrl+è"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+
+	/* Open Markdown In Browser */
+	{ "keys": ["ctrl+alt+m"], "command": "markdown_preview" },
+
+	/* Open New File Replacement */
+	{ "keys": ["ctrl+shift+o"], "command": "prompt_open_file" },
+	
+	/* Emmet Plugin */
+	{
+		"keys": ["tab"],
+		"command": "insert",
+		"args": {"characters": "\t"},
+		"context": [{
+			"key": "setting.anf_panel"
+		}]
+	},
+
+	/* Auto File Name Plugin */
+	{ "keys": ["ctrl+alt+space"], "command": "afn_show_filenames",
+	   "context":
+	 [
+	     { "key": "afn_use_keybinding", "operator": "equal", "operand": true }
+	 ]
+	},
+
+	/* Auto complete (Working magically with Auto File Name) */
+	{ "keys": ["ctrl+space"], "command": "auto_complete" },
+
+	/* REECRITURE DES RACCOURCIS FOLD */
+	{ "keys": ["ctrl+shift+("], "command": "fold" },
+	{ "keys": ["ctrl+shift+)"], "command": "unfold" },
+	{ "keys": ["ctrl+k", "ctrl+keypad1"], "command": "fold_by_level", "args": {"level": 1} },
+	{ "keys": ["ctrl+k", "ctrl+keypad2"], "command": "fold_by_level", "args": {"level": 2} },
+	{ "keys": ["ctrl+k", "ctrl+keypad3"], "command": "fold_by_level", "args": {"level": 3} },
+	{ "keys": ["ctrl+k", "ctrl+keypad4"], "command": "fold_by_level", "args": {"level": 4} },
+	{ "keys": ["ctrl+k", "ctrl+keypad5"], "command": "fold_by_level", "args": {"level": 5} },
+	{ "keys": ["ctrl+k", "ctrl+keypad6"], "command": "fold_by_level", "args": {"level": 6} },
+	{ "keys": ["ctrl+k", "ctrl+keypad7"], "command": "fold_by_level", "args": {"level": 7} },
+	{ "keys": ["ctrl+k", "ctrl+keypad8"], "command": "fold_by_level", "args": {"level": 8} },
+	{ "keys": ["ctrl+k", "ctrl+keypad9"], "command": "fold_by_level", "args": {"level": 9} },
+	{ "keys": ["ctrl+k", "ctrl+keypad0"], "command": "unfold_all" },
+
+	/* REECRITURE DES RACCOURCIS POUR SPLIT LE LAYOUT */
+	/* single */
+	{
+		"keys": ["alt+shift+keypad1"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1]]
+		}
+	},
+	/* 2 columns */
+	{
+		"keys": ["alt+shift+keypad2"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.5, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+		}
+	},
+	/* 3 columns */
+	{
+		"keys": ["alt+shift+keypad3"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.33, 0.66, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1]]
+		}
+	},
+	/* 4 columns */
+	{
+		"keys": ["alt+shift+keypad4"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.25, 0.5, 0.75, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1], [2, 0, 3, 1], [3, 0, 4, 1]]
+		}
+	},
+	/* 2 rows */
+	{
+		"keys": ["alt+shift+keypad8"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 1.0],
+			"rows": [0.0, 0.5, 1.0],
+			"cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+		}
+	},
+	/* 3 rows */
+	{
+		"keys": ["alt+shift+keypad9"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 1.0],
+			"rows": [0.0, 0.33, 0.66, 1.0],
+			"cells": [[0, 0, 1, 1], [0, 1, 1, 2], [0, 2, 1, 3]]
+		}
+	},
+	/* grid */
+	{
+		"keys": ["alt+shift+keypad5"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.5, 1.0],
+			"rows": [0.0, 0.5, 1.0],
+			"cells":
+			[
+				[0, 0, 1, 1], [1, 0, 2, 1],
+				[0, 1, 1, 2], [1, 1, 2, 2]
+			]
+		}
+	}
+]

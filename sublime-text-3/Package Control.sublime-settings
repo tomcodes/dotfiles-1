@@ -1,0 +1,31 @@
+{
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"AutoFileName",
+		"Bison",
+		"BracketHighlighter",
+		"ColorPicker",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"Grunt",
+		"iOpener",
+		"Language - French - Français",
+		"LaTeXTools",
+		"LiveReload",
+		"Markdown Preview",
+		"Open Folder",
+		"SCSS",
+		"Terminal",
+		"Theme - Nil",
+		"Theme - Phoenix",
+		"Theme - Spacegray",
+		"View In Browser"
+	],
+	"repositories":
+	[
+		"https://raw.github.com/Grafikart/ST3-LiveReload/master/package.json"
+	]
+}

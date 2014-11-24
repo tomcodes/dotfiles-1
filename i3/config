@@ -59,7 +59,7 @@ exec --no-startup-id parcellite
 
 # Rules for windows
 for_window [class="Guake"] floating enable
-for_window [class="Spotify"] floating enable
+#for_window [class="Spotify"] floating enable
 
 # Rules to start windows in workspaces
 assign [class="Spotify"] $ws10
@@ -231,6 +231,11 @@ set $border pixel 2
 new_window $border
 for_window [class="^.*"] border $border
 hide_edge_borders none
+
+# Specific rule for chrome
+for_window [class="Google-chrome-stable"] floating enable;
+for_window [class="Google-chrome-stable"] move scratchpad; [class="Google-chrome-stable"] scratchpad show; move absolute position -2px 17px
+for_window [class="Google-chrome-stable"] border pixel 0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

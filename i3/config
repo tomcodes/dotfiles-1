@@ -278,7 +278,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym $mod+F6 exec --no-startup-id i3lock -c 000000 -e -i /usr/share/backgrounds/elegantdarkbackground.png -t
 
 # Turn screen off
-bindsym $mod+F5 exec --no-startup-id xset dpms force off
+bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
 
 # Power off
 bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'poweroff'"

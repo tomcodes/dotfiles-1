@@ -23,5 +23,7 @@ rm -rf ~/.vimrc
 rm -rf ~/.vim/
 ln -s ~/.config/prefs/vim/vimrc ~/.vimrc
 ln -s ~/.config/prefs/vim/vim/ ~/.vim
-
+cd ~/.config/prefs/
+git submodule init
+git submodule update
 

@@ -13,6 +13,7 @@ ln -s ~/.config/prefs/sublime-text-3 ~/.config/sublime-text-3/Packages/User
 # git
 rm -rf ~/.gitconfig
 ln -s ~/.config/prefs/git/gitconfig ~/.gitconfig
+chmod +x ~/.config/prefs/git/my-git-meld
 
 # zsh
 rm -rf ~/.zshrc

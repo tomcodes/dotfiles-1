@@ -247,11 +247,6 @@ bindsym Mod1+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-
         bindsym h           resize grow width 5 px or 5 ppt
         bindsym j           resize grow height 5 px or 5 ppt
         bindsym k           resize shrink height 5 px or 5 ppt
@@ -264,6 +259,12 @@ mode "resize" {
 
 # Toggle resize mode
 bindsym $mod+r mode "resize"
+
+# Direct resize
+bindsym Mod1+control+h resize grow width 5 px or 5 ppt
+bindsym Mod1+control+j resize grow height 5 px or 5 ppt
+bindsym Mod1+control+k resize shrink height 5 px or 5 ppt
+bindsym Mod1+control+l resize shrink width 5 px or 5 ppt
 
 # Sound shortcuts
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute

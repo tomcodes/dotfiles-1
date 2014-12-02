@@ -50,7 +50,7 @@ exec --no-startup-id xset m 5 1
 # Hide the mouse after 15 seconds
 exec --no-startup-id unclutter -idle 15
 # Custom programs
-exec --no-startup-id xfce4-panel
+#exec --no-startup-id xfce4-panel
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 59.3293
 exec --no-startup-id numlockx
@@ -208,7 +208,7 @@ bar {
 	font pango:$font
 	tray_output none
 	# Show only name and not number
-	strip_workspace_numbers yes
+	#strip_workspace_numbers yes
 	workspace_buttons yes
 	# Show the mode (resize for instance)
 	binding_mode_indicator yes

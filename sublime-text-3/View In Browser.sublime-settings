@@ -1,3 +1,8 @@
 {
-	"selectedBrowser": "chrome"
+    "browser": "chrome",
+    "posix": {
+        "linux": {
+            "chrome": "google-chrome-stable"
+        }
+    }
 }

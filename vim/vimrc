@@ -58,3 +58,8 @@ set antialias
 
 " Changement de la touche leader
 let mapleader = ","
+
+" Regles python
+set tabstop=4
+set shiftwidth=4
+set expandtab

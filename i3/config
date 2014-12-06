@@ -27,8 +27,8 @@ set $ws2 2
 set $ws3 3
 set $ws4 4
 set $ws5 5
-set $ws6 6: dev
-set $ws7 7: browse
+set $ws6 6 
+set $ws7 7: dev
 set $ws8 8: graphic
 set $ws9 9: chat
 set $ws10 10: music
@@ -65,14 +65,13 @@ for_window [instance="crx_mojepfklcankkmikonjlnidiooanmpbb" class="Google-chrome
 assign [class="Spotify"] $ws10
 assign [class="Skype"] $ws9
 assign [class="Gimp"] $ws8
-assign [class="Pcmanfm"] $ws7
-assign [class="Subl3"] $ws6
+assign [class="Subl3"] $ws7
 
 # start a terminal
 bindsym $mod+Return exec terminator
 
 # start programs
-bindsym $mod+p exec --no-startup-id pcmanfm; workspace $ws7
+bindsym $mod+p exec --no-startup-id pcmanfm
 bindsym $mod+i exec --no-startup-id google-chrome-stable
 bindsym $mod+F12 exec --no-startup-id subl3 $HOME/.config/i3/config
 bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Test "Screenshot saved" -t 2000

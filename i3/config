@@ -227,7 +227,7 @@ colors {
 
 # border / titlebar
 
-set $border pixel 1
+set $border pixel 2
 
 new_window $border
 for_window [class="^.*"] border $border

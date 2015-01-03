@@ -39,16 +39,24 @@ font pango:$font-mono
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# autostart programs
+# AUTOSTART
+
 # Start the composite manager
 exec --no-startup-id compton -CGb
+
 # Remove screensaver
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
+
 # Change mouse speed
 exec --no-startup-id xset m 5 1
+
 # Hide the mouse after 15 seconds
 exec --no-startup-id unclutter -idle 15
+
+# Launch Wifi applet
+exec --no-startup-id nm-applet
+
 # Custom programs
 #exec --no-startup-id xfce4-panel
 exec --no-startup-id nitrogen --restore

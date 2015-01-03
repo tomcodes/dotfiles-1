@@ -205,7 +205,7 @@ bar {
 	mode dock
 	position top
 	font pango:$font
-	tray_output none
+	#tray_output none
 	# Show only name and not number
 	#strip_workspace_numbers yes
 	workspace_buttons yes

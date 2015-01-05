@@ -104,7 +104,7 @@ bindsym $mod+dollar scratchpad show
 bindsym $mod+q kill
 
 # start dmenu
-bindsym control+space exec --no-startup-id dmenu_run -h 18 -p "search:" -fn $font-dmenu -z -sb $main-color
+bindsym mod4+space exec --no-startup-id dmenu_run -h 18 -p "search:" -fn $font-dmenu -z -sb $main-color
 
 # start whisker menu
 bindsym control+$mod+space exec --no-startup-id xfce4-popup-whiskermenu

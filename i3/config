@@ -75,15 +75,19 @@ assign [class="Skype"] $ws9
 assign [class="Gimp"] $ws8
 assign [class="Subl3"] $ws7
 
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec terminator
 
-# start programs
+# Start programs
 bindsym $mod+p exec --no-startup-id pcmanfm
 bindsym $mod+i exec --no-startup-id google-chrome-stable
 bindsym $mod+F12 exec --no-startup-id subl3 $HOME/.config/i3/config
 bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Info "Screenshot saved" -t 300
 bindsym $mod+u exec --no-startup-id google-chrome-stable --profile-directory=Default --app-id=mojepfklcankkmikonjlnidiooanmpbb
+
+# Keyboard layout
+bindsym $mod+F7 exec --no-startup-id setxkbmap fr; exec notify-send --icon=gtk-info Info "Layout FR" -t 300
+bindsym $mod+F8 exec --no-startup-id setxkbmap fr -variant bepo; exec notify-send --icon=gtk-info Info "Layout FR-BEPO" -t 300
 
 # Focus programs
 bindsym $mod+control+i [instance="Google-chrome-stable" class="Google-chrome-stable"] focus

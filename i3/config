@@ -57,6 +57,9 @@ exec --no-startup-id unclutter -idle 15
 # Launch Wifi applet
 exec --no-startup-id nm-applet
 
+# Launch Sound applet
+exec --no-startup-id pnmixer
+
 # Custom programs
 #exec --no-startup-id xfce4-panel
 exec --no-startup-id nitrogen --restore

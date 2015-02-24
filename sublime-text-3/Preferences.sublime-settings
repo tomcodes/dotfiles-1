@@ -1,9 +1,9 @@
 {
 	"afn_use_keybinding": true,
-	"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+	"color_scheme": "Packages/Predawn/predawn.tmTheme",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - French - Français/fr_FR.dic",
-	"flatland_square_tabs": true,
+	"findreplace_small": true,
 	"font_face": "Droid Sans Mono",
 	"font_size": 11,
 	"ignored_packages":
@@ -11,6 +11,7 @@
 		"Vintage"
 	],
 	"tab_size": 4,
-	"theme": "Flatland Dark.sublime-theme",
+	"tabs_small": true,
+	"theme": "predawn.sublime-theme",
 	"translate_tabs_to_spaces": true
 }

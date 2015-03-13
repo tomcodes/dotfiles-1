@@ -12,7 +12,6 @@
 # * i3status
 # * nm-applet
 # * compton
-# * unclutter
 # * xfce4-panel
 # * xfce4-popup-whiskermenu
 # * nitrogen
@@ -139,9 +138,6 @@ exec --no-startup-id xset s off
 
 # Change mouse speed
 exec --no-startup-id xset m 5 1
-
-# Hide the mouse after 15 seconds
-exec --no-startup-id unclutter -idle 15
 
 # Launch Wifi applet
 exec --no-startup-id nm-applet

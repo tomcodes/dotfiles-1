@@ -6,11 +6,11 @@
 	"findreplace_small": true,
 	"flatland_square_tabs": true,
 	"font_face": "Droid Sans Mono",
-	"font_size": 11,
+	"font_size": 12,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Markdown"
+		"Markdown",
+		"Vintage"
 	],
 	"tab_size": 4,
 	"theme": "Flatland Dark.sublime-theme",

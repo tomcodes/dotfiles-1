@@ -8,7 +8,7 @@ ZSH_THEME="bira"
 COMPLETION_WAITING_DOTS="true"
  
 # enable oh my zsh plugins
-plugins=(autojump archlinux debian)
+plugins=(autojump debian)
  
 source $ZSH/oh-my-zsh.sh
  

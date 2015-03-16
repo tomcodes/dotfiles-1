@@ -23,4 +23,4 @@
 	trustExitCode = false
 	keepBackup = false
 [diff]
-	external = ~/.config/prefs/git/my-git-meld
+	external = ~/.config/dotfiles/git/my-git-meld

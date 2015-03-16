@@ -35,10 +35,8 @@ chmod +x $DOTPATH/git/my-git-meld
 
 # zsh
 echo "  > Configure zsh..."
-rm -rf ~/.oh-my-zsh
 rm -rf ~/.zshrc
 ln -s $DOTPATH/zsh/zshrc ~/.zshrc
-ln -s $DOTPATH/oh-my-zsh/ ~/.oh-my-zsh
 
 # vim
 echo "  > Configure Vim..."

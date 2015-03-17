@@ -35,8 +35,10 @@ chmod +x $DOTPATH/git/my-git-meld
 
 # zsh
 echo "  > Configure zsh..."
+rm -rf ~/.oh-my-zsh
+wget -q https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh &> /dev/null
 rm -rf ~/.zshrc
-rm -rf ~/.oh-my-zsh/themes/mine.zsh-theme
+rm -rf ~/.zshrc.pre-oh-my-zsh
 ln -s $DOTPATH/zsh/zshrc ~/.zshrc
 ln -s $DOTPATH/zsh/mine.zsh-theme ~/.oh-my-zsh/themes/mine.zsh-theme
 

@@ -11,9 +11,6 @@
 # * i3-wm
 # * i3status
 # * nm-applet
-# * compton
-# * xfce4-panel
-# * xfce4-popup-whiskermenu
 # * nitrogen
 # * xflux
 # * clipit
@@ -129,9 +126,6 @@ assign [class="Subl3"] $ws7
 # AUTOSTART
 #-----------------------------------
 
-# Start the composite manager
-exec --no-startup-id compton -CGb
-
 # Remove screensaver
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
@@ -143,7 +137,6 @@ exec --no-startup-id xset m 5 1
 exec --no-startup-id nm-applet
 
 # Custom programs
-#exec --no-startup-id xfce4-panel
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
 exec --no-startup-id numlockx
@@ -183,9 +176,6 @@ bindsym $mod+q kill
 
 # start dmenu
 bindsym $mod+space exec --no-startup-id dmenu_run -b -p "search:" -sb $main-color
-
-# start whisker menu
-bindsym control+$mod+space exec --no-startup-id xfce4-popup-whiskermenu
 
 # change focus
 bindsym $mod+h focus left

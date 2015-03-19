@@ -120,7 +120,7 @@ bindsym $mod+Shift+b move container to workspace prev
 assign [class="Spotify"] $ws10
 assign [class="Skype"] $ws9
 assign [class="Gimp"] $ws8
-assign [class="Subl3"] $ws7
+assign [class="Sublime_text"] $ws7
 
 #
 # AUTOSTART
@@ -150,7 +150,7 @@ exec --no-startup-id clipit
 bindsym $mod+Return exec $terminal
 
 # Start programs
-bindsym $mod+e --no-startup-id $filemanager
+bindsym $mod+p --no-startup-id $filemanager
 bindsym $mod+i exec --no-startup-id $browser
 bindsym $mod+F12 exec --no-startup-id subl3 $HOME/.config/i3/config
 bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Info "Screenshot saved" -t 300

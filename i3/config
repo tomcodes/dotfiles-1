@@ -52,7 +52,7 @@ set $font Droid Sans 8
 set $font-mono Droid Sans Mono 8
 
 # Variables softwares
-set $terminal terminator
+set $terminal pantheon-terminal
 set $browser google-chrome-stable
 set $filemanager pantheon-files
 

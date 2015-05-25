@@ -8,7 +8,7 @@ ZSH_THEME="mine"
 COMPLETION_WAITING_DOTS="true"
  
 # enable oh my zsh plugins
-plugins=(autojump debian tmux)
+plugins=(autojump debian)
  
 source $ZSH/oh-my-zsh.sh
  

@@ -24,11 +24,12 @@ alias raspi="ssh pi@brvt.no-ip.org"
 alias ...="../../"
 alias Lab="~/Lab/"
 alias lab="~/Lab/"
+alias dock="sudo docker"
 
 # Launch ls after cd command
 function chpwd() {
     emulate -L zsh
-    ls
+    ll
 }
 
 # Always work in a tmux session if tmux is installed

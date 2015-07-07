@@ -61,3 +61,34 @@ let mapleader = ","
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" BÉPO CONFIG
+
+" {W} -> [É]
+" ——————————
+noremap é w
+noremap É W
+ 
+" [HJKL] -> {CTSR}
+" ————————————————
+" {cr} = « gauche / droite »
+noremap c h
+noremap r l
+" {ts} = « haut / bas »
+noremap t j
+noremap s k
+ 
+" {HJKL} <- [CTSR]
+" ————————————————
+" {J} = « Jusqu'à »
+noremap j t
+noremap J T
+" {L} = « Remplace »
+noremap l r
+noremap L R
+" {H} = « Change »
+noremap h c
+noremap H C
+" {K} = « Substitue »
+noremap k s
+noremap K S

@@ -25,6 +25,7 @@ alias ...="../../"
 alias Lab="~/Lab/"
 alias lab="~/Lab/"
 alias dock="sudo docker"
+alias ssh="sshrc"
 
 # Launch ls after cd command
 function chpwd() {

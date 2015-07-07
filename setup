@@ -54,6 +54,15 @@ echo "  > Configure Tmux..."
 rm -rf ~/.tmux.conf
 ln -s $DOTPATH/tmux/tmux.conf ~/.tmux.conf
 
+# sshrc
+echo "  > Configure SSHRC..."
+rm -rf ~/.sshrc
+rm -rf ~/.sshrc.d
+mkdir ~/.sshrc.d
+ln -s $DOTPATH/sshrc/sshrc ~/.sshrc
+ln -s $DOTPATH/vim/vimrc ~/.sshrc.d/.vimrc
+ln -s $DOTPATH/vim/vim/ ~/.sshrc.d/.vim
+
 # bin files
 echo "  > Configure user bin softs..."
 rm -rf ~/.bin

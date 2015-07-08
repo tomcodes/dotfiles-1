@@ -20,7 +20,7 @@ git pull &> /dev/null
 # i3
 echo "  > Configure i3..."
 rm -rf ~/.config/i3
-ln -s $DOTPATH/i3 ~/.config/i3
+#ln -s $DOTPATH/i3 ~/.config/i3
 
 # sublime-text-3
 echo "  > Configure sublime text..."
@@ -47,12 +47,12 @@ echo "  > Configure Vim..."
 rm -rf ~/.vimrc
 rm -rf ~/.vim
 ln -s $DOTPATH/vim/vimrc ~/.vimrc
-ln -s $DOTPATH/vim/vim/ ~/.vim
+#ln -s $DOTPATH/vim/vim/ ~/.vim
 
 # tmux
 echo "  > Configure Tmux..."
 rm -rf ~/.tmux.conf
-ln -s $DOTPATH/tmux/tmux.conf ~/.tmux.conf
+#ln -s $DOTPATH/tmux/tmux.conf ~/.tmux.conf
 
 # sshrc
 echo "  > Configure SSHRC..."
@@ -61,7 +61,7 @@ rm -rf ~/.sshrc.d
 mkdir ~/.sshrc.d
 ln -s $DOTPATH/sshrc/sshrc ~/.sshrc
 ln -s $DOTPATH/vim/vimrc ~/.sshrc.d/.vimrc
-ln -s $DOTPATH/vim/vim/ ~/.sshrc.d/.vim
+#ln -s $DOTPATH/vim/vim/ ~/.sshrc.d/.vim
 
 # bin files
 echo "  > Configure user bin softs..."

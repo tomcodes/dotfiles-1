@@ -62,6 +62,7 @@ mkdir ~/.sshrc.d
 ln -s $DOTPATH/sshrc/sshrc ~/.sshrc
 ln -s $DOTPATH/vim/vimrc ~/.sshrc.d/.vimrc
 #ln -s $DOTPATH/vim/vim/ ~/.sshrc.d/.vim
+ln -s $DOTPATH/git/gitconfig ~/.sshrc.d/.gitconfig
 
 # bin files
 echo "  > Configure user bin softs..."

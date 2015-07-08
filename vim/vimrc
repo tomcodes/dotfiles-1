@@ -51,8 +51,7 @@ set antialias
 "imap <right> <nop>
 
 " Remplacer echap. Les ; sont rarement utilises l’un a la suite de l’autre
-:imap ;; <Esc>
-:map ;; <Esc>
+:imap ts <Esc>
 
 " Changement de la touche leader
 let mapleader = ","

@@ -12,6 +12,7 @@
 	ci = commit
 	mt = mergetool
 	dt = difftool
+    di = diff
 [core]
 	editor = vim
 [color]

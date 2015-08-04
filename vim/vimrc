@@ -3,7 +3,11 @@
 set nocompatible
 
 " Activation de pathogen
-execute pathogen#infect()
+runtime! autoload/pathogen.vim
+if exists("*pathogen#infect")
+    call pathogen#infect()
+endif
+"execute pathogen#infect()
 
 " -- Affichage
 set title               " Met a jour le titre de votre fenetre ou de votre terminal
@@ -97,3 +101,12 @@ noremap H C
 " {K} = « Substitue »
 noremap k s
 noremap K S
+
+" Vim Tmux Navigator Config
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-c> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-t> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-s> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-r> :TmuxNavigateRight<cr>

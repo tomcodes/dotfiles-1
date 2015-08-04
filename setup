@@ -47,12 +47,12 @@ echo "  > Configure Vim..."
 rm -rf ~/.vimrc
 rm -rf ~/.vim
 ln -s $DOTPATH/vim/vimrc ~/.vimrc
-#ln -s $DOTPATH/vim/vim/ ~/.vim
+ln -s $DOTPATH/vim/vim/ ~/.vim
 
 # tmux
 echo "  > Configure Tmux..."
 rm -rf ~/.tmux.conf
-#ln -s $DOTPATH/tmux/tmux.conf ~/.tmux.conf
+ln -s $DOTPATH/tmux/tmux.conf ~/.tmux.conf
 
 # sshrc
 echo "  > Configure SSHRC..."

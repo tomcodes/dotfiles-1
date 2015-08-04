@@ -3,7 +3,7 @@
 set nocompatible
 
 " Activation de pathogen
-"execute pathogen#infect()
+execute pathogen#infect()
 
 " -- Affichage
 set title               " Met a jour le titre de votre fenetre ou de votre terminal

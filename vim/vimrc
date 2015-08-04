@@ -101,12 +101,3 @@ noremap H C
 " {K} = « Substitue »
 noremap k s
 noremap K S
-
-" Vim Tmux Navigator Config
-
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> <c-c> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-t> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-s> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-r> :TmuxNavigateRight<cr>

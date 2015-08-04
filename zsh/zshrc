@@ -42,4 +42,4 @@ if which tmux 2>&1 >/dev/null; then
 fi
 
 # Powerline
-. ~/.config/powerline/powerline/bindings/zsh/powerline.zsh
+#. ~/.config/powerline/powerline/bindings/zsh/powerline.zsh

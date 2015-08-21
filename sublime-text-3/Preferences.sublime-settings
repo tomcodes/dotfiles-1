@@ -1,5 +1,7 @@
 {
 	"afn_use_keybinding": true,
+	"bold_folder_labels": true,
+	"caret_style": "phase",
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - French - Français/fr_FR.dic",
@@ -9,15 +11,13 @@
 	"ignored_packages":
 	[
 	],
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"material_theme_small_statusbar": true,
+	"material_theme_small_tab": true,
+	"overlay_scroll_bars": "enabled",
 	"remember_open_files": false,
 	"tab_size": 4,
 	"theme": "Material-Theme.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"material_theme_small_tab": true,
-	"material_theme_small_statusbar": true,
-	"overlay_scroll_bars": "enabled",
-	"line_padding_top": 3,
-	"line_padding_bottom": 3,
-	"caret_style": "phase",
-	"bold_folder_labels": true
+	"translate_tabs_to_spaces": true
 }

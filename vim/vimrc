@@ -76,37 +76,41 @@ set expandtab
 
 " BÉPO CONFIG
 
-" {W} -> [É]
-" ——————————
+" Move next word
 noremap é w
+" Move next WORD
 noremap É W
  
-" [HJKL] -> {CTSR}
-" ————————————————
-" {cr} = « gauche / droite »
+" Move carret left
 noremap c h
+" Move carret right
 noremap r l
-" {ts} = « haut / bas »
+" Move carret down
 noremap t j
+" Move carret up
 noremap s k
-" {CR} = « haut / bas de l'écran »
+" Move carret at the top of the screen
 noremap C H
+" Move carret at the bottom of the screen
 noremap R L
-" {TS} = « joindre / aide »
+" Join lines
 noremap T J
+" Run a program to lookup the keyword under the cursor
 noremap S K
 
-" {HJKL} <- [CTSR]
-" ————————————————
-" {J} = « Jusqu'à »
+" Move to character before following typed character (unTill)
 noremap j t
+" Move to character before following typed character (unTill) backward
 noremap J T
-" {L} = « Remplace »
+" Replace character under cursor
 noremap l r
+" Enter Replace mode
 noremap L R
-" {H} = « Change »
+" Change text according to next motion command
 noremap h c
+Change until end of the line
 noremap H C
-" {K} = « Substitue »
+" Subtitute text according to next command
 noremap k s
+" Subtitute the whole line
 noremap K S

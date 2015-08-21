@@ -1,5 +1,5 @@
 [
-    /* Normal alt tab behavior */
+    /* Normal left to right alt-tab behavior */
     { "keys": ["ctrl+tab"], "command": "next_view" },
     { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
 
@@ -16,7 +16,45 @@
 	/* Open New File Replacement */
 	{ "keys": ["ctrl+shift+o"], "command": "prompt_open_file" },
 
-    /* Vintage bépo */
+    /* Normal layout */
+    {
+        "keys": ["alt+shift++"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1]]
+        }
+    },
+    /* Split layout in two columns */
+    {
+        "keys": ["alt+shift+b"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+        }
+    },
+    /* Split layout in two rows */
+    {
+        "keys": ["alt+shift+-"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+        }
+    },
+
+    /*********************/
+    /*    VINTAGE BÉPO   */
+    /*********************/
+
+    /* Exit insert mode */
     { "keys": [",", ","], "command": "exit_insert_mode",
         "context":
         [
@@ -24,6 +62,7 @@
             { "key": "setting.is_widget", "operand": false }
         ]
     },
+    /* Exit visual mode */
     { "keys": [",", ","], "command": "exit_visual_mode",
         "context":
         [
@@ -32,65 +71,68 @@
             { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": false }
         ]
     },
+    /* Move next WORD */
     { "keys": ["É"], "command": "set_motion", "args": {
         "motion": "move",
         "motion_args": {"by": "stops", "word_begin": true, "empty_line": true, "separators": "", "forward": true, "extend": true },
         "clip_to_line": true },
         "context": [{"key": "setting.command_mode"}]
     },
-
+    /* Move next word */
     { "keys": ["é"], "command": "set_motion", "args": {
         "motion": "move",
         "motion_args": {"by": "stops", "word_begin": true, "punct_begin": true, "empty_line": true, "forward": true, "extend": true },
         "clip_to_line": true },
         "context": [{"key": "setting.command_mode"}]
     },
-    /* hjkl -> ctsr */
+    /* Move carret left */
     { "keys": ["c"], "command": "set_motion", "args": {
         "motion": "vi_move_by_characters_in_line",
         "motion_args": {"forward": false, "extend": true }},
         "context": [{"key": "setting.command_mode"}]
     },
+    /* Move carret right */
     { "keys": ["r"], "command": "set_motion", "args": {
         "motion": "vi_move_by_characters_in_line",
         "motion_args": {"forward": true, "extend": true, "visual": false }},
         "context": [{"key": "setting.command_mode"}]
     },
+    /* Move carret up */
     { "keys": ["s"], "command": "set_motion", "args": {
         "motion": "move",
         "motion_args": {"by": "lines", "forward": false, "extend": true }},
         "context": [{"key": "setting.command_mode"}]
     },
+    /* Move carret down */
     { "keys": ["t"], "command": "set_motion", "args": {
         "motion": "move",
         "motion_args": {"by": "lines", "forward": true, "extend": true }},
         "context": [{"key": "setting.command_mode"}]
     },
-    /* HJKL -> CTSR */
+    /* Join lines */
     { "keys": ["T"], "command": "join_lines", "context": [{"key": "setting.command_mode"}] },
+    /* Move carret at the top of the screen */ 
     { "keys": ["C"], "command": "set_motion", "args": {
         "motion": "move_caret_to_screen_top",
         "motion_args": {"repeat": 1},
         "linewise": true },
         "context": [{"key": "setting.command_mode"}]
     },
+    /* Move carret at the bottom of the screen */
     { "keys": ["R"], "command": "set_motion", "args": {
         "motion": "move_caret_to_screen_bottom",
         "motion_args": {"repeat": 1},
         "linewise": true },
         "context": [{"key": "setting.command_mode"}]
     },
-    /* ctsr -> hjkl */
-    { "keys": ["h"], "command": "set_motion", "args": {
-        "motion": "vi_span_count_lines",
-        "linewise": true,
-        "motion_args": {"repeat": 1}},
-        "context":
-        [
-            {"key": "setting.command_mode"},
-            {"key": "vi_action", "operand": "enter_insert_mode"}
-        ]
+    /* Change text according to next motion command */
+    { "keys": ["h"], "command": "set_action", "args": {
+        "action": "enter_insert_mode",
+        "description": "Change",
+        "action_args": {"insert_command": "vi_delete"}},
+        "context": [{"key": "setting.command_mode"}]
     },
+    /* Move to character before following typed character (unTill) */
     { "keys": ["j", "<character>"], "command": "set_motion", "args": {
         "motion": "vi_move_to_character",
         "motion_args": {"extend": true, "before": true },
@@ -98,6 +140,7 @@
         "clip_to_line": true },
         "context": [{"key": "setting.command_mode"}]
     },
+    /* Subtitute text according to next command */
     { "keys": ["k"], "command": "set_action_motion", "args": {
         "action": "enter_insert_mode",
         "action_args": {"insert_command": "vi_delete"},
@@ -105,11 +148,11 @@
         "motion_args": {"forward": true, "extend": true, "visual": false }},
         "context": [{"key": "setting.command_mode"}]
     },
-    { "keys": ["l", "enter"], "command": "replace_character",
-        "args": {"character": "\n"},
+    /* Replace character under cursor */
+    { "keys": ["l", "<character>"], "command": "replace_character",
         "context": [{"key": "setting.command_mode"}]
     },
-    /* CTSR -> HJKL */
+    /* Change until end of the line */
     { "keys": ["H"], "command": "set_action_motion", "args": {
         "action": "enter_insert_mode",
         "action_args": {"insert_command": "vi_delete"},
@@ -118,6 +161,7 @@
         "motion_inclusive": true },
         "context": [{"key": "setting.command_mode"}]
     },
+    /* Move to character before following typed character (unTill) backward */
     { "keys": ["J", "<character>"], "command": "set_motion", "args": {
         "motion": "vi_move_to_character",
         "motion_args": {"extend": true, "forward": false, "before": true },
@@ -125,6 +169,7 @@
         "clip_to_line": true },
         "context": [{"key": "setting.command_mode"}]
     },
+    /* Subtitute the whole line */
     { "keys": ["K"], "command": "set_action_motion", "args": {
         "action": "enter_insert_mode",
         "action_args": {"insert_command": "vi_delete"},

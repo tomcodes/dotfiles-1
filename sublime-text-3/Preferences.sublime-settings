@@ -3,8 +3,6 @@
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - French - Français/fr_FR.dic",
-	"findreplace_small": true,
-	"flatland_square_tabs": true,
 	"font_face": "Droid Sans Mono",
 	"font_size": 12,
 	"hot_exit": false,

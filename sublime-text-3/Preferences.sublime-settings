@@ -1,19 +1,18 @@
 {
 	"afn_use_keybinding": true,
-	"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - French - Français/fr_FR.dic",
 	"findreplace_small": true,
 	"flatland_square_tabs": true,
 	"font_face": "Droid Sans Mono",
 	"font_size": 12,
+	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Vintage"
 	],
+	"remember_open_files": false,
 	"tab_size": 4,
-	"theme": "Flatland Dark.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"hot_exit": false,
-  	"remember_open_files": false
+	"theme": "Material-Theme.sublime-theme",
+	"translate_tabs_to_spaces": true
 }

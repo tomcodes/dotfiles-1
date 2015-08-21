@@ -1,14 +1,136 @@
 [
+    /* Normal alt tab behavior */
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+
+    /* Multiple cursor expand */
+    { "keys": ["ctrl+alt+s"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["ctrl+alt+t"], "command": "select_lines", "args": {"forward": true} },
+
+    /* Reopen closed tab */
+    { "keys": ["ctrl+shift+t"], "command": "open_recent_file", "args": {"index": 0}},
+
 	/* Advanced New File */
 	{ "keys": ["ctrl+alt+n"], "command": "advanced_new_file"},
 
-	/* Reecriture des raccourcis pour les commentaires */
-	{ "keys": ["ctrl+:"], "command": "toggle_comment", "args": { "block": false } },
-	{ "keys": ["ctrl+shift+:"], "command": "toggle_comment", "args": { "block": true } },
-
-	/* Reecriture du raccourcis pour afficher la console */
-	{ "keys": ["ctrl+è"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
-
 	/* Open New File Replacement */
 	{ "keys": ["ctrl+shift+o"], "command": "prompt_open_file" },
+
+    /* Vintage bépo */
+    { "keys": [",", ","], "command": "exit_insert_mode",
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": false },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
+    { "keys": [",", ","], "command": "exit_visual_mode",
+        "context":
+        [
+            { "key": "setting.command_mode"},
+            { "key": "num_selections", "operand": 1},
+            { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": false }
+        ]
+    },
+    { "keys": ["É"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": true, "empty_line": true, "separators": "", "forward": true, "extend": true },
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+
+    { "keys": ["é"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": true, "punct_begin": true, "empty_line": true, "forward": true, "extend": true },
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* hjkl -> ctsr */
+    { "keys": ["c"], "command": "set_motion", "args": {
+        "motion": "vi_move_by_characters_in_line",
+        "motion_args": {"forward": false, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["r"], "command": "set_motion", "args": {
+        "motion": "vi_move_by_characters_in_line",
+        "motion_args": {"forward": true, "extend": true, "visual": false }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["s"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "lines", "forward": false, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["t"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "lines", "forward": true, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* HJKL -> CTSR */
+    { "keys": ["T"], "command": "join_lines", "context": [{"key": "setting.command_mode"}] },
+    { "keys": ["C"], "command": "set_motion", "args": {
+        "motion": "move_caret_to_screen_top",
+        "motion_args": {"repeat": 1},
+        "linewise": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["R"], "command": "set_motion", "args": {
+        "motion": "move_caret_to_screen_bottom",
+        "motion_args": {"repeat": 1},
+        "linewise": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* ctsr -> hjkl */
+    { "keys": ["h"], "command": "set_motion", "args": {
+        "motion": "vi_span_count_lines",
+        "linewise": true,
+        "motion_args": {"repeat": 1}},
+        "context":
+        [
+            {"key": "setting.command_mode"},
+            {"key": "vi_action", "operand": "enter_insert_mode"}
+        ]
+    },
+    { "keys": ["j", "<character>"], "command": "set_motion", "args": {
+        "motion": "vi_move_to_character",
+        "motion_args": {"extend": true, "before": true },
+        "inclusive": true,
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["k"], "command": "set_action_motion", "args": {
+        "action": "enter_insert_mode",
+        "action_args": {"insert_command": "vi_delete"},
+        "motion": "vi_move_by_characters_in_line",
+        "motion_args": {"forward": true, "extend": true, "visual": false }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["l", "enter"], "command": "replace_character",
+        "args": {"character": "\n"},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* CTSR -> HJKL */
+    { "keys": ["H"], "command": "set_action_motion", "args": {
+        "action": "enter_insert_mode",
+        "action_args": {"insert_command": "vi_delete"},
+        "motion": "vi_move_to_hard_eol",
+        "motion_args": {"repeat": 1, "extend": true},
+        "motion_inclusive": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["J", "<character>"], "command": "set_motion", "args": {
+        "motion": "vi_move_to_character",
+        "motion_args": {"extend": true, "forward": false, "before": true },
+        "inclusive": true,
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["K"], "command": "set_action_motion", "args": {
+        "action": "enter_insert_mode",
+        "action_args": {"insert_command": "vi_delete"},
+        "motion": "vi_span_count_lines",
+        "motion_linewise": true,
+        "motion_args": {"repeat": 1}},
+        "context": [{"key": "setting.command_mode"}]
+    },
 ]

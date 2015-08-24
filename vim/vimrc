@@ -108,7 +108,7 @@ noremap l r
 noremap L R
 " Change text according to next motion command
 noremap h c
-Change until end of the line
+" Change until end of the line
 noremap H C
 " Subtitute text according to next command
 noremap k s

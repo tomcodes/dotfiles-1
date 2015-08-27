@@ -27,6 +27,7 @@ alias lab="~/Lab/"
 alias dock="sudo docker"
 alias dockc="sudo docker-compose"
 alias ssh="sshrc"
+alias venv="source venv/bin/activate"
 
 # Launch ls after cd command
 function chpwd() {

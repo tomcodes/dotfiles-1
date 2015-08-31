@@ -5,7 +5,7 @@
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - French - Français/fr_FR.dic",
-	"font_face": "Droid Sans Mono",
+	"font_face": "Roboto Mono",
 	"font_size": 12,
 	"hot_exit": false,
 	"ignored_packages":

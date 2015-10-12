@@ -3,6 +3,9 @@
     { "keys": ["ctrl+tab"], "command": "next_view" },
     { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
 
+    /* Go to symbol in project */
+    { "keys": ["ctrl+shift+r"], "command": "goto_symbol_in_project" },
+
     /* Multiple cursor expand */
     { "keys": ["ctrl+alt+s"], "command": "select_lines", "args": {"forward": false} },
     { "keys": ["ctrl+alt+t"], "command": "select_lines", "args": {"forward": true} },

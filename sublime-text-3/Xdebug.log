@@ -1,0 +1,5 @@
+[10/20/2015 12:01:09PM] INFO - ==== Loading 'Xdebug Client.sublime-package' package ====
+[10/20/2015 12:01:09PM] INFO - Failed to open /home/smile/.config/sublime-text-3/Packages/User/Xdebug.breakpoints.
+[10/20/2015 12:01:09PM] INFO - Failed to parse /home/smile/.config/sublime-text-3/Packages/User/Xdebug.breakpoints.
+[10/20/2015 12:01:09PM] INFO - Failed to open /home/smile/.config/sublime-text-3/Packages/User/Xdebug.expressions.
+[10/20/2015 12:01:09PM] INFO - Failed to parse /home/smile/.config/sublime-text-3/Packages/User/Xdebug.expressions.

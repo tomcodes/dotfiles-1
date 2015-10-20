@@ -7,6 +7,7 @@
 	"dictionary": "Packages/Language - French - Français/fr_FR.dic",
 	"font_face": "Roboto Mono",
 	"font_size": 13,
+	"highlight_line": true,
 	"hot_exit": false,
 	"ignored_packages":
 	[
@@ -20,6 +21,5 @@
 	"tab_size": 4,
 	"theme": "Material-Theme-Darker.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"vintage_use_clipboard": true,
-	"highlight_line": true
+	"vintage_use_clipboard": true
 }

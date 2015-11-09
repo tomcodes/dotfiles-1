@@ -3,6 +3,7 @@
 	"bold_folder_labels": true,
 	"caret_style": "phase",
 	"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+	"material_theme_contrast_mode": true,
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - French - Français/fr_FR.dic",
 	"font_face": "Roboto Mono",

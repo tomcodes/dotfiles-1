@@ -26,6 +26,8 @@ alias Lab="~/Lab/"
 alias lab="~/Lab/"
 alias dock="docker"
 alias dockc="docker-compose"
+alias ans="ansible"
+alias ansp="ansible-playbook"
 alias ssh="sshrc"
 alias venv="source venv/bin/activate"
 

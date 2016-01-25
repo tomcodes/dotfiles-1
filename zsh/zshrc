@@ -30,6 +30,7 @@ alias ans="ansible"
 alias ansp="ansible-playbook"
 alias ssh="sshrc"
 alias venv="source venv/bin/activate"
+alias extip="wget http://ipinfo.io/ip -qO -"
 
 alias py="python"
 alias ipy="ipython"

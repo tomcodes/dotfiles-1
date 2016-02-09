@@ -8,7 +8,7 @@ ZSH_THEME="theunraveler"
 COMPLETION_WAITING_DOTS="true"
  
 # enable oh my zsh plugins
-plugins=(autojump debian)
+plugins=(autojump debian tmux svn python pip git git-extras docker docker-compose)
  
 source $ZSH/oh-my-zsh.sh
  

@@ -27,6 +27,7 @@ alias lab="~/Lab/"
 alias dk="docker"
 alias dkc="docker-compose"
 alias dkm="docker-machine"
+alias dkr="unset DOCKER_TLS_VERIFY && unset DOCKER_CERT_PATH && unset DOCKER_HOST"
 alias ans="ansible"
 alias ansp="ansible-playbook"
 alias ssh="sshrc"
@@ -38,6 +39,8 @@ alias ipy="ipython"
 alias py3="python3"
 alias ipy3="ipython3"
 alias dj="python manage.py"
+
+alias cstrike="wine ~/Counter\ Strike/hl.exe -game cstrike -noforcemparms -noforcemaccel"
 
 # Launch ls after cd command
 function chpwd() {

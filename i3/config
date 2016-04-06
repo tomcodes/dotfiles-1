@@ -95,7 +95,7 @@ bindsym $mod+0 workspace $ws10
 
 # switching between workspace
 bindsym $mod+n workspace next
-bindsym $mod+b workspace prev
+bindsym $mod+p workspace prev
 
 # Switch back and forth
 bindsym $mod+Tab workspace back_and_forth
@@ -114,7 +114,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move focused container to next/previous workspace
 bindsym $mod+Shift+n move container to workspace next
-bindsym $mod+Shift+b move container to workspace prev
+bindsym $mod+Shift+p move container to workspace prev
 
 # Rules to start windows in workspaces
 assign [class="Spotify"] $ws10
@@ -150,7 +150,7 @@ exec --no-startup-id clipit
 bindsym $mod+Return exec $terminal
 
 # Start programs
-bindsym $mod+p --no-startup-id $filemanager
+bindsym $mod+u --no-startup-id $filemanager
 bindsym $mod+i exec --no-startup-id $browser
 bindsym $mod+F12 exec --no-startup-id subl3 $HOME/.config/i3/config
 bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Info "Screenshot saved" -t 300
@@ -178,19 +178,19 @@ bindsym $mod+q kill
 bindsym $mod+space exec --no-startup-id dmenu_run -b -p "search:" -sb $main-color
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+c focus left
+bindsym $mod+t focus down
+bindsym $mod+s focus up
+bindsym $mod+r focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+c move left
+bindsym $mod+Shift+t move down
+bindsym $mod+Shift+s move up
+bindsym $mod+Shift+r move right
 
 # split in horizontal orientation
-bindsym $mod+c split h
+bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -199,7 +199,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+k layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -316,10 +316,10 @@ floating_modifier $mod
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        bindsym h           resize grow width 5 px or 5 ppt
-        bindsym j           resize grow height 5 px or 5 ppt
-        bindsym k           resize shrink height 5 px or 5 ppt
-        bindsym l           resize shrink width 5 px or 5 ppt
+        bindsym c           resize grow width 5 px or 5 ppt
+        bindsym t           resize grow height 5 px or 5 ppt
+        bindsym s           resize shrink height 5 px or 5 ppt
+        bindsym r           resize shrink width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -327,13 +327,13 @@ mode "resize" {
 }
 
 # Toggle resize mode
-bindsym $mod+r mode "resize"
+bindsym $mod+l mode "resize"
 
 # Direct resize
-bindsym Mod1+control+h resize grow width 5 px or 5 ppt
-bindsym Mod1+control+j resize grow height 5 px or 5 ppt
-bindsym Mod1+control+k resize shrink height 5 px or 5 ppt
-bindsym Mod1+control+l resize shrink width 5 px or 5 ppt
+bindsym Mod1+control+c resize grow width 5 px or 5 ppt
+bindsym Mod1+control+t resize grow height 5 px or 5 ppt
+bindsym Mod1+control+s resize shrink height 5 px or 5 ppt
+bindsym Mod1+control+r resize shrink width 5 px or 5 ppt
 
 # Sound shortcuts
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute

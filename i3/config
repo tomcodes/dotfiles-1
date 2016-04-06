@@ -214,13 +214,13 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+control+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+control+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
+bindsym $mod+control+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
 
 # Lock screen
 bindsym $mod+F6 exec --no-startup-id i3lock -c 000000 -t

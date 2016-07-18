@@ -64,7 +64,7 @@ set antialias
 "imap <right> <nop>
 
 " Remplacer echap. Les ; sont rarement utilises l’un a la suite de l’autre
-:imap <special> ,, <Esc>
+:imap <special> è <Esc>
 
 " Changement de la touche leader
 let mapleader = ","
@@ -76,41 +76,84 @@ set expandtab
 
 " BÉPO CONFIG
 
-" Move next word
+" {W} -> [É]
+" ——————————
+" On remappe W sur É :
 noremap é w
-" Move next WORD
 noremap É W
+" Corollaire: on remplace les text objects aw, aW, iw et iW
+" pour effacer/remplacer un mot quand on n’est pas au début (daé / laé).
+onoremap aé aw
+onoremap aÉ aW
+onoremap ié iw
+onoremap iÉ iW
+" Pour faciliter les manipulations de fenêtres, on utilise {W} comme un Ctrl+W :
+noremap w <C-w>
+noremap W <C-w><C-w>
  
-" Move carret left
+" [HJKL] -> {CTSR}
+" ————————————————
+" {cr} = « gauche / droite »
 noremap c h
-" Move carret right
 noremap r l
-" Move carret down
+" {ts} = « haut / bas »
 noremap t j
-" Move carret up
 noremap s k
-" Move carret at the top of the screen
+" {CR} = « haut / bas de l'écran »
 noremap C H
-" Move carret at the bottom of the screen
 noremap R L
-" Join lines
+" {TS} = « joindre / aide »
 noremap T J
-" Run a program to lookup the keyword under the cursor
 noremap S K
-
-" Move to character before following typed character (unTill)
+" Corollaire : repli suivant / précédent
+noremap zs zj
+noremap zt zk
+ 
+" {HJKL} <- [CTSR]
+" ————————————————
+" {J} = « Jusqu'à »            (j = suivant, J = précédant)
 noremap j t
-" Move to character before following typed character (unTill) backward
 noremap J T
-" Replace character under cursor
-noremap l r
-" Enter Replace mode
-noremap L R
-" Change text according to next motion command
-noremap h c
-" Change until end of the line
-noremap H C
-" Subtitute text according to next command
+" {L} = « Change »             (l = attend un mvt, L = jusqu'à la fin de ligne)
+noremap l c
+noremap L C
+" {H} = « Remplace »           (h = un caractère slt, H = reste en « Remplace »)
+noremap h r
+noremap H R
+" {K} = « Substitue »          (k = caractère, K = ligne)
 noremap k s
-" Subtitute the whole line
 noremap K S
+" Corollaire : correction orthographique
+noremap ]k ]s
+noremap [k [s
+ 
+" Désambiguation de {g}
+" —————————————————————
+" ligne écran précédente / suivante (à l'intérieur d'une phrase)
+noremap gs gk
+noremap gt gj
+" onglet précédant / suivant
+noremap gb gT
+noremap gé gt
+" optionnel : {gB} / {gÉ} pour aller au premier / dernier onglet
+noremap gB :exe "silent! tabfirst"<CR>
+noremap gÉ :exe "silent! tablast"<CR>
+" optionnel : {g"} pour aller au début de la ligne écran
+noremap g" g0
+ 
+" <> en direct
+" ————————————
+noremap « <
+noremap » >
+ 
+" Remaper la gestion des fenêtres
+" ———————————————————————————————
+noremap wt <C-w>j
+noremap ws <C-w>k
+noremap wc <C-w>h
+noremap wr <C-w>l
+noremap wd <C-w>c
+noremap wo <C-w>s
+noremap wp <C-w>o
+noremap w<SPACE> :split<CR>
+noremap w<CR> :vsplit<CR>

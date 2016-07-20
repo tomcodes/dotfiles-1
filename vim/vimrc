@@ -1,4 +1,6 @@
 " VIM Configuration 
+" ———————————————————————————————
+
 " Annule la compatibilite avec l’ancetre Vi : totalement indispensable
 set nocompatible
 
@@ -8,10 +10,14 @@ set rtp+=~/.config/powerline/powerline/bindings/vim/
 " Always show statusline
 set laststatus=2
 
+" Explorer show as tree
+let g:netrw_liststyle=3
+
 " Use 256 colours
 set t_Co=256
 
 " Activation de pathogen
+" ———————————————————————————————
 runtime! autoload/pathogen.vim
 if exists("*pathogen#infect")
     call pathogen#infect()
@@ -79,6 +85,7 @@ set expandtab
 command W w !sudo tee % > /dev/null
 
 " BÉPO CONFIG
+" ———————————————————————————————
 
 " {W} -> [É]
 " ——————————
@@ -163,6 +170,7 @@ noremap w<SPACE> :split<CR>
 noremap w<CR> :vsplit<CR>
 
 " Remap Ex file explorer
+" ———————————————————————————————
 if has("autocmd")
 augroup netrw_dvorak_fix
     autocmd!

@@ -74,6 +74,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Save with sudo
+command W w !sudo tee % > /dev/null
+
 " BÉPO CONFIG
 
 " {W} -> [É]

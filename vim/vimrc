@@ -28,7 +28,7 @@ if exists("*vundle#begin")
     Plugin 'VundleVim/Vundle.vim'
 
     " Vundle plugins
-    Plugin 'scroolosse/nerdTree'
+    Plugin 'scrooloose/nerdtree'
 
     call vundle#end()
 
@@ -194,3 +194,13 @@ function! Fix_netrw_maps_for_dvorak()
     noremap <buffer> k s
 endfunction
 endif
+
+" Remap NERDTree
+" ———————————————————————————————
+let NERDTreeMapOpenInTab='h'
+let NERDTreeMapOpenInTabSilent='H'
+let NERDTreeMapOpenVSplit='<C-v>'
+let NERDTreeMapJumpFirstChild='S'
+let NERDTreeMapJumpLastChild='T'
+let NERDTreeMapJumpNextSibling='<C-T>'
+let NERDTreeMapJumpPrevSibling='<C-S>'

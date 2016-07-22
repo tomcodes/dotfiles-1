@@ -64,7 +64,7 @@ echo "  > Configure Vim..."
 rm -rf ~/.vimrc
 rm -rf ~/.vim
 ln -s $DOTPATH/vim/vimrc ~/.vimrc
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle &> /dev/null
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim &> /dev/null
 
 # tmux
 echo "  > Configure Tmux..."

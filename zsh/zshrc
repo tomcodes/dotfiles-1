@@ -57,5 +57,6 @@ function chpwd() {
 
 # Powerline
 #. ~/.config/powerline/powerline/bindings/zsh/powerline.zsh
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+
+# Add autocompletion for ssh with sshrc
+compdef sshrc=ssh

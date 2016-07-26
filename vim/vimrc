@@ -29,6 +29,7 @@ if exists("*vundle#begin")
 
     " Vundle plugins
     Plugin 'scrooloose/nerdtree'
+    Plugin 'kien/ctrlp.vim'
 
     call vundle#end()
 

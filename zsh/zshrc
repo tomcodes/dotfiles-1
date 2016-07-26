@@ -42,6 +42,9 @@ alias dj="python manage.py"
 
 alias cstrike="wine ~/Counter\ Strike/hl.exe -game cstrike -noforcemparms -noforcemaccel"
 
+# Prevent scroll lock
+stty -ixon -ixoff
+
 # Launch ls after cd command
 function chpwd() {
     emulate -L zsh

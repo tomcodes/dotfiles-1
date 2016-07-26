@@ -83,8 +83,8 @@ set antialias
 "imap <right> <nop>
 
 " Remplacer echap
-imap <special> è <Esc>
-vmap <special> è <Esc>
+imap <special> èè <Esc>
+vmap <special> èè <Esc>
 
 " Changement de la touche leader
 let mapleader = ","
@@ -206,3 +206,12 @@ let g:NERDTreeMapJumpLastChild = 'J'
 let g:NERDTreeMapOpenVSplit = 'k'
 let g:NERDTreeMapRefresh = 'l'
 let g:NERDTreeMapRefreshRoot = 'L'
+
+" Remap CtrlP
+" ———————————————————————————————
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-t>', '<down>'],
+    \ 'PrtSelectMove("k")':   ['<c-s>', '<up>'],
+    \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-k>'],
+    \ 'AcceptSelection("t")': ['<c-j>'],
+    \ }

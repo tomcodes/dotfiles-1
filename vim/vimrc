@@ -215,3 +215,4 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-k>'],
     \ 'AcceptSelection("t")': ['<c-j>'],
     \ }
+noremap <C-b> :CtrlPBuffer<CR>

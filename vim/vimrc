@@ -89,10 +89,13 @@ vmap <special> èè <Esc>
 " Changement de la touche leader
 let mapleader = ","
 
-" Regles python
-set tabstop=4
-set shiftwidth=4
+" Default tabs count parameters
+set tabstop=2
+set shiftwidth=2
 set expandtab
+
+" Tabs for python
+autocmd Filetype python setlocal ts=4 sw=4 expandtab
 
 " Save with sudo
 command W w !sudo tee % > /dev/null

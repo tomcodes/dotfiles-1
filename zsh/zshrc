@@ -63,3 +63,13 @@ function chpwd() {
 
 # Add autocompletion for ssh with sshrc
 compdef sshrc=ssh
+
+# Start docker ungit
+function ungit () {
+if [[ -z $1 ]]; then
+    echo "No path supplied"
+else
+    docker rm -f ungit &> /dev/null
+    docker run --name ungit -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent -v $HOME/.ssh/known_hosts:/home/developer/.ssh/known_hosts -v $HOME/.gitconfig:/home/developer/.gitconfig -p 8448:8448 -d -v $1:/repo mybuilds/ungit
+fi
+}

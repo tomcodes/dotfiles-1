@@ -21,7 +21,8 @@ export PATH=$PATH:~/.gem/ruby/2.1.0/bin/
 # Alias
 alias zshr="source ~/.zshrc"
 alias raspi="ssh pi@brvt.no-ip.org"
-alias ...="../../"
+alias ..="cd .."
+alias ...="cd ../.."
 alias Lab="~/Lab/"
 alias lab="~/Lab/"
 alias dk="docker"
@@ -43,6 +44,10 @@ alias dj="python manage.py"
 
 alias cstrike="wine ~/Counter\ Strike/hl.exe -game cstrike -noforcemparms -noforcemaccel"
 
+alias df="df -H"
+alias du="du -ch"
+alias top="htop"
+
 # Prevent scroll lock
 stty -ixon -ixoff
 
@@ -51,6 +56,15 @@ function chpwd() {
     emulate -L zsh
     ll
 }
+
+# Search for files
+function search() { find . -iname "*$@*"; }
+
+# Search for string
+function string() { grep -Rin "$@" *; }
+
+# mkdir and cd using a single command
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 # Always work in a tmux session if tmux is installed
 #if which tmux 2>&1 >/dev/null; then

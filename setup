@@ -48,7 +48,6 @@ ln -s $DOTPATH/sublime-text-3 ~/.config/sublime-text-3/Packages/User
 echo "  > Configure Git..."
 rm -rf ~/.gitconfig
 ln -s $DOTPATH/git/gitconfig ~/.gitconfig
-chmod +x $DOTPATH/git/my-git-meld
 
 # zsh
 echo "  > Configure zsh..."

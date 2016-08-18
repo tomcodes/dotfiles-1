@@ -12,16 +12,14 @@
 	ci = commit
 	mt = mergetool
 	dt = difftool
-    di = diff
+  di = diff
+  dm = difftool -t meld
+  mm = mergetool -t meld
 [core]
 	editor = vim
 [color]
 	ui = true
 [merge]
-	tool = meld
-[mergetool]
-	cmd = meld "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-	trustExitCode = false
-	keepBackup = false
+	tool = vimdiff
 [diff]
-	external = ~/.config/dotfiles/git/my-git-meld
+  tool = vimdiff

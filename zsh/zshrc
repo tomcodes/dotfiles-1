@@ -74,7 +74,7 @@ function ggrep() {
     else
         DIR=$2
     fi
-    grep -Rin "$1" $DIR;
+    grep -RIin "$1" $DIR 2>/dev/null;
 }
 
 # mkdir and cd using a single command

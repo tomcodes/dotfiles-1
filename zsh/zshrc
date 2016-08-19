@@ -58,7 +58,7 @@ function chpwd() {
 }
 
 # Search for files
-function ffind() { find . -iname "*$@*"; }
+function ffind() { find . -iname "*$@*" 2>/dev/null; }
 
 # Search for string
 function ggrep() { grep -Rin "$@" *; }

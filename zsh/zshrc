@@ -58,10 +58,24 @@ function chpwd() {
 }
 
 # Search for files
-function ffind() { find . -iname "*$@*" 2>/dev/null; }
+function ffind() {
+    if [[ -z $2 ]]; then
+        DIR=.
+    else
+        DIR=$2
+    fi
+    find $DIR -iname "*$1*" 2>/dev/null;
+}
 
 # Search for string
-function ggrep() { grep -Rin "$@" *; }
+function ggrep() {
+    if [[ -z $2 ]]; then
+        DIR=.
+    else
+        DIR=$2
+    fi
+    grep -Rin "$1" $DIR;
+}
 
 # mkdir and cd using a single command
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }

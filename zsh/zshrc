@@ -58,10 +58,10 @@ function chpwd() {
 }
 
 # Search for files
-function search() { find . -iname "*$@*"; }
+function ffind() { find . -iname "*$@*"; }
 
 # Search for string
-function string() { grep -Rin "$@" *; }
+function ggrep() { grep -Rin "$@" *; }
 
 # mkdir and cd using a single command
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }

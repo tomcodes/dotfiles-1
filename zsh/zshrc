@@ -47,6 +47,7 @@ alias cstrike="wine ~/Counter\ Strike/hl.exe -game cstrike -noforcemparms -nofor
 alias df="df -H"
 alias du="du -ch"
 alias top="htop"
+alias copy="xclip -selection clipboard"
 
 # Prevent scroll lock
 stty -ixon -ixoff

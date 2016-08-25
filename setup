@@ -49,14 +49,19 @@ echo "  > Configure Git..."
 rm -rf ~/.gitconfig
 ln -s $DOTPATH/git/gitconfig ~/.gitconfig
 
+# bash
+echo "  > Configure bash..."
+rm -rf ~/.bashrc
+ln -s $DOTPATH/shell/bashrc ~/.bashrc
+
 # zsh
 echo "  > Configure zsh..."
 rm -rf ~/.oh-my-zsh
 wget -q https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh &> /dev/null
 rm -rf ~/.zshrc
 rm -rf ~/.zshrc.pre-oh-my-zsh
-ln -s $DOTPATH/zsh/zshrc ~/.zshrc
-ln -s $DOTPATH/zsh/mine.zsh-theme ~/.oh-my-zsh/themes/mine.zsh-theme
+ln -s $DOTPATH/shell/zshrc ~/.zshrc
+ln -s $DOTPATH/shell/mine.zsh-theme ~/.oh-my-zsh/themes/mine.zsh-theme
 
 # vim
 echo "  > Configure Vim..."
@@ -77,8 +82,10 @@ rm -rf ~/.sshrc.d
 mkdir ~/.sshrc.d
 ln -s $DOTPATH/sshrc/sshrc ~/.sshrc
 ln -s $DOTPATH/vim/vimrc ~/.sshrc.d/.vimrc
-#ln -s ~/.vim ~/.sshrc.d/.vim
 ln -s $DOTPATH/git/gitconfig ~/.sshrc.d/.gitconfig
+ln -s $DOTPATH/shell/zshrc ~/.sshrc.d/.zshrc
+ln -s $DOTPATH/shell/bashrc ~/.sshrc.d/.bashrc
+#ln -s ~/.vim ~/.sshrc.d/.vim
 
 # bin files
 echo "  > Configure user bin softs..."

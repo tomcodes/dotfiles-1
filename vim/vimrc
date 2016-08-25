@@ -23,8 +23,8 @@ set wildmode=full
 " Add current directory to path variable
 set path=$PWD/**
 
-" Set zsh as default shell
-set shell=/bin/zsh\ -i
+" Set interactive mode for shell
+set shellcmdflag+=i
 
 " Activation de Vundle
 " ———————————————————————————————

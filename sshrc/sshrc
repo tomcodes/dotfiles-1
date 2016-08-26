@@ -1,2 +1,18 @@
+# Get current shell
+MYSHELL=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`
+
+# Source zshrc or bashrc according to shell
+if command -v /bin/zsh >/dev/null ; then 
+    if [ $MYSHELL "!=" "zsh" ] ; then
+        export SSHHOME;
+        ZDOTDIR=$SSHHOME/.sshrc.d zsh;
+    fi
+else 
+    source $SSHHOME/.sshrc.d/.bashrc;
+fi
+
+# Vim
 export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC"
+
+# Git
 alias git="HOME=$SSHHOME/.sshrc.d/ git"

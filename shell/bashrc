@@ -1,10 +1,14 @@
 # Path
 export PATH=$PATH:~/.bin/
- 
+
+# Check if use sshrc
+if [ -z "$SSHHOME" ]; then
+    alias ssh="sshrc"
+fi
+
 # Common alias
 alias ll="ls -lh"
 alias zshr="source ~/.zshrc"
-alias ssh="sshrc"
 alias ..="cd .."
 alias ...="cd ../.."
 alias Lab="~/Lab/"

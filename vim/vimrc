@@ -219,6 +219,7 @@ let g:NERDTreeMapJumpLastChild = 'J'
 let g:NERDTreeMapOpenVSplit = 'k'
 let g:NERDTreeMapRefresh = 'l'
 let g:NERDTreeMapRefreshRoot = 'L'
+let g:NERDTreeMapHelp='<f1>'
 
 " Remap CtrlP
 " ———————————————————————————————

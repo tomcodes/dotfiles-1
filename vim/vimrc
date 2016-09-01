@@ -19,9 +19,6 @@ set t_Co=256
 " Add current directory to path variable
 set path=$PWD/**
 
-" Set interactive mode for shell
-set shellcmdflag+=i
-
 " Activation de Vundle
 " ———————————————————————————————
 filetype off

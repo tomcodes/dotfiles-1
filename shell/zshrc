@@ -8,7 +8,7 @@ fi
 ZSH=$MYHOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="theunraveler"
+ZSH_THEME="fishy"
 
 # Red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"

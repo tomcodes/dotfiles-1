@@ -16,10 +16,6 @@ let g:netrw_liststyle=3
 " Use 256 colours
 set t_Co=256
 
-" Zsh autocomplete style
-set wildmenu
-set wildmode=full
-
 " Add current directory to path variable
 set path=$PWD/**
 

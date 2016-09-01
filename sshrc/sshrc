@@ -4,9 +4,10 @@ MYSHELL=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`
 # Source zshrc or bashrc according to shell
 if command -v /bin/zsh >/dev/null ; then 
     if [ $MYSHELL "!=" "zsh" ] ; then
-        export ZSH="$SSHHOME/.sshrc.d/.oh-my-zsh"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &> /dev/null
+        export ZSH="$SSHHOME/.sshrc.d/.oh-my-zsh";
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &> /dev/null;
         export SSHHOME;
+        export ZSH_NOT_DEFAULT=true;
         ZDOTDIR=$SSHHOME/.sshrc.d zsh;
     fi
 else 

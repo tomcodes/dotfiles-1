@@ -1,6 +1,6 @@
 # Set home environment variable
 MYHOME=$HOME
-if [ -n "$SSHHOME" ]; then
+if [[ -n "$SSHHOME" && -n "$ZSH_NOT_DEFAULT" ]]; then
     MYHOME=$SSHHOME/.sshrc.d
 fi
 

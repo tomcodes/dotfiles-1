@@ -19,6 +19,9 @@ set t_Co=256
 " Add current directory to path variable
 set path=$PWD/**
 
+" Customize grep
+set grepprg=grep\ -RIin\ $*\ 2>/dev/null
+
 " Activation de Vundle
 " ———————————————————————————————
 filetype off

@@ -11,10 +11,6 @@ else
 fi
 
 # Vim
-# Check git installed and clone Vundle
-if hash git >/dev/null 2>&1; then
-    git clone https://github.com/VundleVim/Vundle.vim.git $SSHHOME/.sshrc.d/.vim/bundle/Vundle.vim &> /dev/null;
-fi
 export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC";
 
 # Git

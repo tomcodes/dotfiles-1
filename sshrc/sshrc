@@ -1,21 +1,22 @@
 # Get current shell
-MYSHELL=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`
+MYSHELL=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`;
 
 # Source zshrc or bashrc according to shell
 if command -v /bin/zsh >/dev/null ; then 
-    if [ $MYSHELL "!=" "zsh" ] ; then
-        export ZSH="$SSHHOME/.sshrc.d/.oh-my-zsh";
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &> /dev/null;
-        export SSHHOME;
-        export ZSH_NOT_DEFAULT=true;
-        ZDOTDIR=$SSHHOME/.sshrc.d zsh;
+    if [ $MYSHELL "==" "zsh" ] ; then
+        source $SSHHOME/.sshrc.d/.zshrc;
     fi
 else 
     source $SSHHOME/.sshrc.d/.bashrc;
 fi
 
 # Vim
-export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC"
+# Check git installed and clone Vundle
+if hash git >/dev/null 2>&1; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $SSHHOME/.sshrc.d/.vim/bundle/Vundle.vim &> /dev/null;
+fi
+export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC";
 
 # Git
-alias git="HOME=$SSHHOME/.sshrc.d/ git"
+alias git="HOME=$SSHHOME/.sshrc.d/ git";
+

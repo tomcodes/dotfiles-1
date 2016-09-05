@@ -1,11 +1,11 @@
 # Set home environment variable
 MYHOME=$HOME
-if [[ -n "$SSHHOME" && -n "$ZSH_NOT_DEFAULT" ]]; then
+if [[ -n "$SSHHOME" ]]; then
     MYHOME=$SSHHOME/.sshrc.d
 fi
 
 # Path to your oh-my-zsh configuration.
-ZSH=$MYHOME/.oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="fishy"

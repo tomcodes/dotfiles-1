@@ -2,10 +2,8 @@
 MYSHELL=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`;
 
 # Source zshrc or bashrc according to shell
-if command -v /bin/zsh >/dev/null ; then 
-    if [ $MYSHELL "==" "zsh" ] ; then
-        source $SSHHOME/.sshrc.d/.zshrc;
-    fi
+if command -v /bin/zsh >/dev/null && [ $MYSHELL "==" "zsh" ] ; then
+    source $SSHHOME/.sshrc.d/.zshrc;
 else 
     source $SSHHOME/.sshrc.d/.bashrc;
 fi

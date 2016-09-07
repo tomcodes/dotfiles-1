@@ -39,7 +39,7 @@ alias ipy3="ipython3"
 alias dj="python manage.py"
 
 # Prevent scroll lock
-stty -ixon -ixoff
+[[ $- == *i* ]] && stty -ixon -ixoff
 
 # Launch ls after cd command
 function cd {

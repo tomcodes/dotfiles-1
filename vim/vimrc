@@ -22,6 +22,10 @@ set path=$PWD/**
 " Customize grep
 set grepprg=grep\ -RIin\ $*\ 2>/dev/null
 
+" Move swp and backup files location
+set backupdir=~/tmp,~/
+set directory=~/tmp,/var/tmp,/tmp
+
 " Activation de Vundle
 " ———————————————————————————————
 filetype off

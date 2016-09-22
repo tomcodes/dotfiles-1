@@ -54,6 +54,11 @@ echo "  > Configure bash..."
 rm -rf ~/.bashrc
 ln -s $DOTPATH/shell/bashrc ~/.bashrc
 
+# more and less
+echo "  > Configure less..."
+rm -rf ~/.lesskey
+ln -s $DOTPATH/shell/lesskey ~/.lesskey
+
 # zsh
 echo "  > Configure zsh..."
 rm -rf ~/.oh-my-zsh

@@ -41,6 +41,7 @@ if exists("*vundle#begin")
     Plugin 'scrooloose/nerdtree'
     Plugin 'kien/ctrlp.vim'
     Plugin 'tpope/vim-unimpaired'
+    Plugin 'majutsushi/tagbar'
 
     call vundle#end()
 
@@ -82,16 +83,6 @@ filetype indent on
 " Police
 set guifont=Droid\ Sans\ Mono\ 10
 set antialias
-
-" Desactiver les touches directionnelles
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-"imap <up> <nop>
-"imap <down> <nop>
-"imap <left> <nop>
-"imap <right> <nop>
 
 " Remplacer echap
 imap <special> èè <Esc>
@@ -224,7 +215,8 @@ let g:NERDTreeMapOpenVSplit = 'k'
 let g:NERDTreeMapRefresh = 'l'
 let g:NERDTreeMapRefreshRoot = 'L'
 let g:NERDTreeMapHelp='<f1>'
-nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeCWD<CR>
 nnoremap <F4> :NERDTreeFind<CR>
 
 " Remap CtrlP
@@ -237,3 +229,4 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<c-j>'],
     \ }
 noremap <C-b> :CtrlPBuffer<CR>
+noremap <C-j> :CtrlPTag<CR>

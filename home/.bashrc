@@ -68,13 +68,6 @@ function ggrep() {
 # Mkdir and cd using a single command
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
-# Always work in a tmux session if tmux is installed
-#if which tmux 2>&1 >/dev/null; then
-#    if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-#        tmux attach -t hack || tmux new -s hack; exit
-#    fi
-#fi
-
 # Start docker ungit
 function ungit () {
     docker rm -f ungit &> /dev/null

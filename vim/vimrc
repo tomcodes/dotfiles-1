@@ -224,6 +224,8 @@ let g:NERDTreeMapOpenVSplit = 'k'
 let g:NERDTreeMapRefresh = 'l'
 let g:NERDTreeMapRefreshRoot = 'L'
 let g:NERDTreeMapHelp='<f1>'
+nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F4> :NERDTreeFind<CR>
 
 " Remap CtrlP
 " ———————————————————————————————

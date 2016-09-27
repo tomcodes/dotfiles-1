@@ -40,6 +40,7 @@ if exists("*vundle#begin")
     " Vundle plugins
     Plugin 'scrooloose/nerdtree'
     Plugin 'kien/ctrlp.vim'
+    Plugin 'tpope/vim-unimpaired'
 
     call vundle#end()
 
@@ -109,6 +110,9 @@ autocmd Filetype python setlocal ts=4 sw=4 expandtab
 
 " Save with sudo
 command W w !sudo tee % > /dev/null
+
+" Regenerate ctags
+nnoremap <f5> :!ctags -R<CR>
 
 " BÉPO CONFIG
 " ———————————————————————————————

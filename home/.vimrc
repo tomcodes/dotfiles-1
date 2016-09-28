@@ -4,11 +4,9 @@
 " Annule la compatibilite avec l’ancetre Vi : totalement indispensable
 set nocompatible
 
-" Use powerline
-set rtp+=~/.config/powerline/powerline/bindings/vim/
-
 " Always show statusline
 set laststatus=2
+set noshowmode
 
 " Explorer show as tree
 let g:netrw_liststyle=3

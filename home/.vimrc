@@ -36,7 +36,7 @@ if exists("*vundle#begin")
 
     " Vundle plugins
     Plugin 'scrooloose/nerdtree'
-    Plugin 'kien/ctrlp.vim'
+    Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'majutsushi/tagbar'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'itchyny/lightline.vim'
@@ -228,7 +228,8 @@ nnoremap <F4> :NERDTreeFind<CR>
 
 " Remap CtrlP
 " ———————————————————————————————
-let g:ctrlp_max_files=0
+let g:ctrlp_max_files = 0
+let g:ctrlp_match_window = 'results:100'
 let g:ctrlp_prompt_mappings = {
     \ 'PrtSelectMove("j")':   ['<c-t>', '<down>'],
     \ 'PrtSelectMove("k")':   ['<c-s>', '<up>'],

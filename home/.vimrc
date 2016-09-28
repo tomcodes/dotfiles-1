@@ -245,3 +245,7 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
 
+" Tagbar
+" ———————————————————————————————
+nnoremap <F8> :TagbarToggle<CR>
+let g:tagbar_map_togglesort = "k"

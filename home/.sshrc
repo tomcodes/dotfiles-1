@@ -1,16 +1,15 @@
+# Define temporary home
+export HOME=$SSHHOME/.sshrc.d
+
 # Get current shell
-MYSHELL=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`;
+MY_SHELL=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`;
 
 # Source zshrc or bashrc according to shell
-if command -v /bin/zsh >/dev/null && [ $MYSHELL "==" "zsh" ] ; then
-    source $SSHHOME/.sshrc.d/.zshrc;
+if command -v /bin/zsh >/dev/null && [ $MY_SHELL "==" "zsh" ] ; then
+    source $HOME/.zshrc;
 else 
-    source $SSHHOME/.sshrc.d/.bashrc;
+    source $HOME/.bashrc;
 fi
 
-# Vim
-export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC";
-
-# Git
-alias git="HOME=$SSHHOME/.sshrc.d/ git";
-
+# Initialize lesskey
+lesskey

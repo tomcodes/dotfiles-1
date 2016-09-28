@@ -1,9 +1,3 @@
-# Set home environment variable
-MYHOME=$HOME
-if [[ -n "$SSHHOME" ]]; then
-    MYHOME=$SSHHOME/.sshrc.d
-fi
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -22,10 +16,7 @@ if [ -f $ZSH/oh-my-zsh.sh ]; then
 fi
 
 # Source bashrc file
-source $MYHOME/.bashrc
-
-# Powerline
-#. ~/.config/powerline/powerline/bindings/zsh/powerline.zsh
+source $HOME/.bashrc
 
 # Add autocompletion for ssh with sshrc
 compdef sshrc=ssh

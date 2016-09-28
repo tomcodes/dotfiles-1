@@ -13,3 +13,8 @@ fi
 
 # Initialize lesskey
 lesskey
+
+# Check git installed and clone Vundle
+if hash git >/dev/null 2>&1; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim &> /dev/null;
+fi

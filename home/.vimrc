@@ -37,7 +37,6 @@ if exists("*vundle#begin")
     " Vundle plugins
     Plugin 'scrooloose/nerdtree'
     Plugin 'kien/ctrlp.vim'
-    Plugin 'tpope/vim-unimpaired'
     Plugin 'majutsushi/tagbar'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'itchyny/lightline.vim'

@@ -13,9 +13,6 @@ set laststatus=2
 " Explorer show as tree
 let g:netrw_liststyle=3
 
-" Use 256 colours
-set t_Co=256
-
 " Add current directory to path variable
 set path=$PWD/**
 
@@ -42,6 +39,10 @@ if exists("*vundle#begin")
     Plugin 'kien/ctrlp.vim'
     Plugin 'tpope/vim-unimpaired'
     Plugin 'majutsushi/tagbar'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'itchyny/lightline.vim'
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'mattn/emmet-vim'
 
     call vundle#end()
 
@@ -72,9 +73,6 @@ set backspace=indent,eol,start
 " Cache les fichiers lors de l’ouverture d’autres fichiers
 set hidden
 
-" Active la coloration syntaxique
-syntax enable
-
 " Active les comportements specifiques aux types de fichiers comme la syntaxe et l’indentation
 filetype on
 filetype plugin on
@@ -83,6 +81,16 @@ filetype indent on
 " Police
 set guifont=Droid\ Sans\ Mono\ 10
 set antialias
+
+" Active la coloration syntaxique
+syntax enable
+
+" Solarized plugin
+" ———————————————————————————————
+silent! colorscheme solarized
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
 
 " Remplacer echap
 imap <special> èè <Esc>
@@ -230,3 +238,10 @@ let g:ctrlp_prompt_mappings = {
     \ }
 noremap <C-b> :CtrlPBuffer<CR>
 noremap <C-j> :CtrlPTag<CR>
+
+" Lighline
+" ———————————————————————————————
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+

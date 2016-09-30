@@ -256,7 +256,7 @@ let g:ctrlp_prompt_mappings = {
 noremap <Leader>o :CtrlP<CR>
 noremap <Leader>b :CtrlPBuffer<CR>
 noremap <Leader>t :CtrlPTag<CR>
-noremap <Leader>q :CtrlPQuickfix<CR>
+noremap <Leader>c :CtrlPQuickfix<CR>
 
 " Lighline
 " ———————————————————————————————

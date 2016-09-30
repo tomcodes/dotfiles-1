@@ -11,7 +11,7 @@ URxvt*font: xft:Droid Sans Mono:size=12:antialias=true:hinting=true,xft:Droid Sa
 URxvt.geometry: 130x35
 
 ! terminal padding
-URxvt.internalBorder: 25
+URxvt.internalBorder: 20
 
 ! make otf / ttf fonts look pretty.  does not matter if you are using a bitmap font.
 Xft.autohint: 0

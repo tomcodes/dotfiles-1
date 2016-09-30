@@ -87,7 +87,7 @@ syntax enable
 silent! colorscheme solarized
 set t_Co=256
 let g:solarized_termcolors=256
-set background=dark
+set background=light
 
 " Remplacer echap
 imap <special> èè <Esc>

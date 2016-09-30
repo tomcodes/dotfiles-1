@@ -7,6 +7,9 @@ URxvt.iso14755_52: false
 ! font
 URxvt*font: xft:Droid Sans Mono:size=12:antialias=true:hinting=true,xft:Droid Sans Mono:size=12:antialias=true:hinting=true
 
+! Size
+URxvt.geometry: 130x35
+
 ! terminal padding
 URxvt.internalBorder: 25
 

@@ -8,7 +8,7 @@ ZSH_THEME="fishy"
 COMPLETION_WAITING_DOTS="true"
  
 # Enable oh my zsh plugins
-plugins=(autojump debian tmux svn python pip git git-extras docker docker-compose)
+plugins=(autojump python pip git git-extras docker docker-compose)
 
 # Enable oh my zsh
 if [ -f $ZSH/oh-my-zsh.sh ]; then

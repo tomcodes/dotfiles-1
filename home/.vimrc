@@ -58,6 +58,7 @@ set scrolloff=3         " Affiche un minimum de 3 lignes autour du curseur (pour
 
 " -- Recherche
 set ignorecase          " Ignore la casse lors d’une recherche
+set infercase           " Autocompletion qui ignore aussi la casse
 set smartcase           " Si une recherche contient une majuscule, re-active la sensibilite a la casse
 set incsearch           " Surligne les resultats de recherche pendant la saisie
 set hlsearch            " Surligne les resultats de recherche

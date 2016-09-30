@@ -1,6 +1,9 @@
 " VIM Configuration 
 " ———————————————————————————————
 
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
 " Annule la compatibilite avec l’ancetre Vi : totalement indispensable
 set nocompatible
 
@@ -36,7 +39,6 @@ if exists("*vundle#begin")
     Plugin 'scrooloose/nerdtree'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'majutsushi/tagbar'
-    Plugin 'altercation/vim-colors-solarized'
     Plugin 'itchyny/lightline.vim'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'mattn/emmet-vim'
@@ -79,15 +81,13 @@ filetype indent on
 set guifont=Droid\ Sans\ Mono\ 10
 set antialias
 
-" Active la coloration syntaxique
-syntax enable
+" Main color scheme
+set background=dark
 
-" Solarized plugin
-" ———————————————————————————————
-silent! colorscheme solarized
+" Colorscheme
+syntax on
 set t_Co=256
-let g:solarized_termcolors=256
-set background=light
+silent! colorscheme delek
 
 " Remplacer echap
 imap <special> èè <Esc>

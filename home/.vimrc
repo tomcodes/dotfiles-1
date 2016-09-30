@@ -94,7 +94,26 @@ imap <special> èè <Esc>
 vmap <special> èè <Esc>
 
 " Changement de la touche leader
-let mapleader = ","
+let mapleader = "\<Space>"
+
+" Save and quit shortcuts
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+
+" Copy paste shortcuts
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Stop that stupid window from popping up
+map q: :q
+
+" Remap jump to/from tags
+nnoremap <C-t> <C-]>
+nnoremap g<C-t> <C-t>
 
 " Default tabs count parameters
 set tabstop=2
@@ -234,8 +253,10 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-k>'],
     \ 'AcceptSelection("t")': ['<c-j>'],
     \ }
-noremap <C-b> :CtrlPBuffer<CR>
-noremap <C-j> :CtrlPTag<CR>
+noremap <Leader>o :CtrlP<CR>
+noremap <Leader>b :CtrlPBuffer<CR>
+noremap <Leader>t :CtrlPTag<CR>
+noremap <Leader>q :CtrlPQuickfix<CR>
 
 " Lighline
 " ———————————————————————————————

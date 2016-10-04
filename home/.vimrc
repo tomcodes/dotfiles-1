@@ -90,9 +90,15 @@ syntax on
 set t_Co=256
 silent! colorscheme delek
 
-" Remplacer echap
-imap <special> èè <Esc>
-vmap <special> èè <Esc>
+" I need another Esc key
+inoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>
+inoremap <S-Tab> <Tab>
+vnoremap <S-Tab> <Tab>
+
+" Remap debut de ligne
+noremap è ^
+noremap È 0
 
 " Changement de la touche leader
 let mapleader = "\<Space>"
@@ -125,7 +131,7 @@ set expandtab
 autocmd Filetype python setlocal ts=4 sw=4 expandtab
 
 " Save with sudo
-command W w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
 
 " Regenerate ctags
 nnoremap <f5> :!ctags -R<CR>

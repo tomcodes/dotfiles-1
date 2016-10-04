@@ -15,8 +15,8 @@ URxvt.internalBorder: 20
 
 ! make otf / ttf fonts look pretty.  does not matter if you are using a bitmap font.
 Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintslight
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
@@ -35,7 +35,7 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: false
 URxvt*skipScroll: true
 URxvt*fading: 30
-URxvt*visualBell: true
+URxvt*visualBell: false
 URxvt*saveLines: 50000
 
 ! colors

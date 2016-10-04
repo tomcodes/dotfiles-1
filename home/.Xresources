@@ -8,7 +8,7 @@ URxvt.iso14755_52: false
 URxvt*font: xft:Droid Sans Mono:size=11:antialias=true:hinting=true,xft:Droid Sans Mono:size=11:antialias=true:hinting=true
 
 ! Size
-URxvt.geometry: 130x35
+URxvt.geometry: 160x40
 
 ! terminal padding
 URxvt.internalBorder: 20
@@ -27,6 +27,16 @@ URxvt.perl-ext-common: default,matcher,clipboard,vtwheel,resize-font
 URxvt.url-launcher: /usr/bin/google-chrome
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
+
+! tmux improvements
+URxvt*loginShell: true
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: false
+URxvt*skipScroll: true
+URxvt*fading: 30
+URxvt*visualBell: true
+URxvt*saveLines: 50000
 
 ! colors
 *.cursorColor: #C0C5CE

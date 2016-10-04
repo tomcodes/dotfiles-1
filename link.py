@@ -15,12 +15,15 @@ def rm(path):
         os.remove(path)
 
 def linkAllFiles(src_folder, dest_folder):
-    for file in os.listdir(src_folder):
-        path = os.path.abspath(os.path.join(src_folder, file))
-        link = os.path.join(dest_folder, file)
-        rm(link)
-        echo(file, depth=1)
-        os.symlink(path, link)
+    for root, _, files in os.walk(src_folder):
+        root = '/'.join(root.strip('/').split('/')[1:])
+        for file in files:
+            path = os.path.abspath(os.path.join(src_folder, root, file))
+            link = os.path.join(dest_folder, root, file)
+            rm(link)
+            os.makedirs(os.path.dirname(link), exist_ok=True)
+            echo(file, depth=1)
+            os.symlink(path, link)
 
 def linkFile(path, link):
     rm(link)

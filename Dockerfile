@@ -6,32 +6,53 @@ MAINTAINER Loric Brevet <loric.brevet@gmail.com>
 RUN apt-get update \
   && apt-get install -y \
   sudo \
+  curl \
+  wget \
+  netcat \
+  traceroute \
+  iputils-ping \
   zsh \
   vim \
   git \
   tmux \
   ranger \
   ssh \
-  sshrc \
   python3 \
   python3-pip \
+  ansible \
+  autojump \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
 # Install python packages
 RUN pip3 install \
   bpython \
-  ipython \
-  ansible
+  ipython
+
+# Install sshrc
+RUN wget https://raw.githubusercontent.com/Russell91/sshrc/master/sshrc \
+  && chmod +x sshrc \
+  && sudo mv sshrc /usr/local/bin
 
 # Create user
 ENV HOME /home/dev
 RUN useradd --create-home --home-dir $HOME dev \
   && chown -R dev:dev $HOME
+RUN echo "dev:dev" | chpasswd
+RUN usermod -aG sudo dev
 
 # Define current user
 WORKDIR /home/dev
 USER dev
+
+# Install oh my zsh
+RUN git clone https://github.com/robbyrussell/oh-my-zsh.git /home/dev/.oh-my-zsh
+
+# Set zsh as default
+ENV SHELL=/bin/zsh
+
+# Install vim Vundle
+RUN git clone https://github.com/VundleVim/Vundle.vim.git /home/dev/.vim/bundle/Vundle.vim
 
 # Run dotfiles
 RUN mkdir .config \

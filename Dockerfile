@@ -11,6 +11,7 @@ RUN apt-get update \
   netcat \
   traceroute \
   iputils-ping \
+  htop \
   zsh \
   vim \
   git \
@@ -25,6 +26,9 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Install python packages
+RUN pip install \
+  speedtest-cli
+
 RUN pip3 install \
   bpython \
   ipython

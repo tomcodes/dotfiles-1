@@ -38,5 +38,8 @@ linkAllFiles('home', HOME)
 echo('Linking config')
 linkAllFiles('config', os.path.join(HOME, '.config')) 
 
+echo('Linking fonts')
+linkAllFiles('fonts', os.path.join(HOME, '.fonts')) 
+
 echo('Linking sshrc.d')
 linkFile('home', os.path.join(HOME, '.sshrc.d'))

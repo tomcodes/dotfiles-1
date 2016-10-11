@@ -11,6 +11,8 @@
 # * i3-wm
 # * i3status
 # * nm-applet
+# * compton
+# * lxappearance
 # * nitrogen
 # * xflux
 # * clipit
@@ -49,10 +51,9 @@ set $mod mod4
 
 # Variables fonts
 set $font Droid Sans 8
-set $font-mono Droid Sans Mono 8
 
 # Variables softwares
-set $terminal pantheon-terminal
+set $terminal urxvt
 set $browser google-chrome-stable
 set $filemanager pantheon-files
 
@@ -207,7 +208,13 @@ bindsym $mod+e layout toggle split
 bindsym $mod+x layout toggle
 
 # toggle tiling / floating
+ bindsym $mod+Shift+space floating toggle
+
+ # change focus between tiling / floating windows
+ bindsym $mod+space focus mode_toggle
+# toggle tiling / floating
 bindsym mod1+space floating toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent/child container
 bindsym $mod+a focus parent
@@ -223,7 +230,7 @@ bindsym $mod+control+r restart
 bindsym $mod+control+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
 
 # Lock screen
-bindsym $mod+F6 exec --no-startup-id i3lock -c 000000 -t
+bindsym $mod+Shift+x exec i3lock --color 475263
 
 # Turn screen off
 bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
@@ -303,7 +310,7 @@ hide_edge_borders none
 #-----------------------------------
 
 # Font for windows tiles
-font pango:$font-mono
+font pango:$font
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -339,3 +346,5 @@ bindsym Mod1+control+r resize shrink width 5 px or 5 ppt
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
+
+gaps outer 15

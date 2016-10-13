@@ -17,6 +17,7 @@
 # * xflux
 # * clipit
 # * scrot
+# * arandr
 # * rofi
 # * amixer
 # * i3lock
@@ -49,7 +50,7 @@
 set $mod mod4
 
 # Variable font
-set $font Droid Sans 8
+set $font Droid Sans 9
 
 # Variables softwares
 set $terminal urxvt
@@ -141,7 +142,7 @@ exec --no-startup-id nm-applet
 # Custom programs
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
-exec --no-startup-id numlockx
+#exec --no-startup-id numlockx
 exec --no-startup-id clipit
 
 # Compton
@@ -172,11 +173,11 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar
 bar {
-	status_command i3status
+	status_command i3status -c $HOME/.config/i3/i3status.conf
 	mode dock
 	position bottom
 	font pango:$font
-	#tray_output none
+	#tray_output primary
 	# Show only name and not number
 	#strip_workspace_numbers yes
 	workspace_buttons yes
@@ -185,7 +186,7 @@ bar {
 
 	colors {
 		background $bg-color
-	    separator #757575
+	  separator #757575
 
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
@@ -332,4 +333,4 @@ bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
 bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'poweroff'"
 
 # Rofi
-bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "$font"
+bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -padding $(($(xwininfo -root | awk '/Height/ { print $2}')/2)) -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "$font"

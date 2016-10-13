@@ -11,6 +11,7 @@ RUN apt-get update \
   netcat \
   traceroute \
   iputils-ping \
+  openvpn \
   htop \
   zsh \
   vim \

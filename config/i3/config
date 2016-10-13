@@ -8,7 +8,7 @@
 # DEPENDENCIES
 #-----------------------------------
 
-# * i3-wm
+# * i3-gaps
 # * i3status
 # * nm-applet
 # * compton
@@ -17,8 +17,7 @@
 # * xflux
 # * clipit
 # * scrot
-# * dmenu
-# * conky
+# * rofi
 # * amixer
 # * i3lock
 
@@ -49,7 +48,7 @@
 # Variable modifier
 set $mod mod4
 
-# Variables fonts
+# Variable font
 set $font Droid Sans 8
 
 # Variables softwares
@@ -62,16 +61,16 @@ set $filemanager pantheon-files
 #-----------------------------------
 
 # customize workspace names
-set $ws1 1: main
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6 
-set $ws7 7: dev
-set $ws8 8: graphic
-set $ws9 9: chat
-set $ws10 10: music
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
@@ -83,16 +82,16 @@ workspace_layout default
 bindsym $mod+equal exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 # switch to workspace3
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 
 # switching between workspace
 bindsym $mod+n workspace next
@@ -102,30 +101,32 @@ bindsym $mod+p workspace prev
 bindsym $mod+Tab workspace back_and_forth
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # move focused container to next/previous workspace
 bindsym $mod+Shift+n move container to workspace next
 bindsym $mod+Shift+p move container to workspace prev
 
 # Rules to start windows in workspaces
-assign [class="Spotify"] $ws10
-assign [class="Skype"] $ws9
-assign [class="Gimp"] $ws8
-assign [class="Sublime_text"] $ws7
+assign [class="Spotify"] $workspace10
+assign [class="Skype"] $workspace9
+assign [class="Sublime_text"] $workspace7
 
 #
 # AUTOSTART
 #-----------------------------------
+
+# Set bépo keyboard
+exec --no-startup-id setxkbmap fr -variant bepo
 
 # Remove screensaver
 exec --no-startup-id xset -dpms
@@ -143,127 +144,27 @@ exec --no-startup-id xflux -l 46.251508
 exec --no-startup-id numlockx
 exec --no-startup-id clipit
 
-#
-# BINDINGS
-#-----------------------------------
+# Compton
+exec --no-startup-id compton -f
 
-# Start a terminal
-bindsym $mod+Return exec $terminal
-
-# Start programs
-bindsym $mod+u --no-startup-id $filemanager
-bindsym $mod+i exec --no-startup-id $browser
-bindsym $mod+F12 exec --no-startup-id subl3 $HOME/.config/i3/config
-bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Info "Screenshot saved" -t 300
-
-# Keyboard layout
-bindsym $mod+F7 exec --no-startup-id setxkbmap fr; exec notify-send --icon=gtk-info Info "Layout FR" -t 300
-bindsym $mod+F8 exec --no-startup-id setxkbmap fr -variant bepo; exec notify-send --icon=gtk-info Info "Layout FR-BEPO" -t 300
-
-# Tags
-bindsym $mod+semicolon exec i3-input -F "mark %s" -P "New tag: "
-bindsym $mod+colon exec i3-input -F "[con_mark=\"%s\"] focus" -P "Search tag: "
-bindsym $mod+exclam exec i3-input -F "unmark %s" -P "Remove tag: "
-
-# Scratchpad
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+dollar move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+dollar scratchpad show
-
-# kill focused window
-bindsym $mod+q kill
-
-# start dmenu
-bindsym $mod+space exec --no-startup-id dmenu_run -b -p "search:" -sb $main-color
-
-# change focus
-bindsym $mod+c focus left
-bindsym $mod+t focus down
-bindsym $mod+s focus up
-bindsym $mod+r focus right
-
-# move focused window
-bindsym $mod+Shift+c move left
-bindsym $mod+Shift+t move down
-bindsym $mod+Shift+s move up
-bindsym $mod+Shift+r move right
-
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+k layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# Toggle between stacking/tabbed/split:
-bindsym $mod+x layout toggle
-
-# toggle tiling / floating
- bindsym $mod+Shift+space floating toggle
-
- # change focus between tiling / floating windows
- bindsym $mod+space focus mode_toggle
-# toggle tiling / floating
-bindsym mod1+space floating toggle
-bindsym $mod+space focus mode_toggle
-
-# focus the parent/child container
-bindsym $mod+a focus parent
-bindsym $mod+z focus child
-
-# reload the configuration file
-bindsym $mod+control+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+control+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+control+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
-
-# Lock screen
-bindsym $mod+Shift+x exec i3lock --color 475263
-
-# Turn screen off
-bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
-
-# Power off
-bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'poweroff'"
 
 #
 # COLORS
 #-----------------------------------
 
-# Selected ws
-set $main-color "#DB4105"
-# i3bar bg          
-set $bg-color "#33332D"
-# Urgent ws        
-set $urgent-color "#DB4105"
-# Not selected ws   
-set $inactive-color "#5C5C5C"
-# Text in selected ws     
-set $text-color "#FFF8E3"
-# Text in urgent ws        
-set $text-urgent-color "#FFF8E3"
-# Text in not selected ws
-set $text-inactive-color "#FFF8E3"
-# Side of window
-set $indicator-color "#9FB4CC"      
+set $bg-color 	         #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
 
-# i3 general colors (border, background, text, indicator)
-client.focused $main-color $main-color $text-color $indicator-color
-client.unfocused $bg-color $bg-color $text-color $indicator-color
-client.focused_inactive $bg-color $bg-color $text-color $indicator-color
-client.urgent $bg-color $bg-color $text-color $indicator-color
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
 
 #
 # i3 BAR
@@ -271,9 +172,9 @@ client.urgent $bg-color $bg-color $text-color $indicator-color
 
 # Start i3bar to display a workspace bar
 bar {
-    status_command conky -c $HOME/.config/i3/conkyrc
+	status_command i3status
 	mode dock
-	position top
+	position bottom
 	font pango:$font
 	#tray_output none
 	# Show only name and not number
@@ -281,29 +182,23 @@ bar {
 	workspace_buttons yes
 	# Show the mode (resize for instance)
 	binding_mode_indicator yes
-	
-colors {
-        background $bg-color
-        statusline $text-color
-        separator $bg-color
 
-		# (border, background, text)
-        focused_workspace $main-color $main-color $text-color
-        active_workspace $main-color $main-color $text-color
-        inactive_workspace $inactive-color $inactive-color $text-inactive-color
-        urgent_workspace $urgent-color $urgent-color $text-urgent-color
-    }
+	colors {
+		background $bg-color
+	    separator #757575
+
+		#                  border             background         text
+		focused_workspace  $bg-color          $bg-color          $text-color
+		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+	}
 }
 
 #
 # BORDERS
 #-----------------------------------
 
-set $border pixel 2
-
-new_window $border
-for_window [class="^.*"] border $border
-hide_edge_borders none
+hide_edge_borders both
 
 #
 # OTHER
@@ -314,6 +209,10 @@ font pango:$font
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# Gaps
+gaps outer 15
+
 
 #
 # RESIZE
@@ -347,4 +246,90 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
-gaps outer 15
+#
+# BINDINGS
+#-----------------------------------
+
+# Start a terminal
+bindsym $mod+Return exec $terminal
+
+# Start programs
+bindsym $mod+u --no-startup-id $filemanager
+bindsym $mod+i exec --no-startup-id $browser
+bindsym $mod+F12 exec --no-startup-id subl3 $HOME/.config/i3/config
+bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Info "Screenshot saved" -t 300
+
+# Tags
+bindsym $mod+semicolon exec i3-input -F "mark %s" -P "New tag: "
+bindsym $mod+colon exec i3-input -F "[con_mark=\"%s\"] focus" -P "Search tag: "
+bindsym $mod+exclam exec i3-input -F "unmark %s" -P "Remove tag: "
+
+# Scratchpad
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+dollar move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+dollar scratchpad show
+
+# kill focused window
+bindsym $mod+q kill
+
+# change focus
+bindsym $mod+c focus left
+bindsym $mod+t focus down
+bindsym $mod+s focus up
+bindsym $mod+r focus right
+
+# move focused window
+bindsym $mod+Shift+c move left
+bindsym $mod+Shift+t move down
+bindsym $mod+Shift+s move up
+bindsym $mod+Shift+r move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+k layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle between stacking/tabbed/split:
+bindsym $mod+x layout toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+Tab focus mode_toggle
+
+# focus the parent/child container
+bindsym $mod+a focus parent
+bindsym $mod+z focus child
+
+# reload the configuration file
+bindsym $mod+control+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+control+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+control+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
+
+# Lock screen
+bindsym $mod+Shift+x exec i3lock --color 475263
+
+# Turn screen off
+bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
+
+# Power off
+bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'poweroff'"
+
+# Rofi
+bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "$font"

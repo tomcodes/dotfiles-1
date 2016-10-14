@@ -96,7 +96,9 @@ bindsym $mod+0 workspace $workspace10
 
 # switching between workspace
 bindsym $mod+n workspace next
+bindsym mod1+Tab workspace next
 bindsym $mod+p workspace prev
+bindsym mod1+Shift+Tab workspace prev
 
 # Switch back and forth
 bindsym $mod+Tab workspace back_and_forth
@@ -175,7 +177,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 bar {
 	status_command i3status -c $HOME/.config/i3/i3status.conf
 	mode dock
-	position bottom
+	position top
 	font pango:$font
 	#tray_output primary
 	# Show only name and not number
@@ -212,7 +214,7 @@ font pango:$font
 floating_modifier $mod
 
 # Gaps
-gaps outer 15
+gaps inner 15
 
 
 #
@@ -234,13 +236,7 @@ mode "resize" {
 }
 
 # Toggle resize mode
-bindsym $mod+l mode "resize"
-
-# Direct resize
-bindsym Mod1+control+c resize grow width 5 px or 5 ppt
-bindsym Mod1+control+t resize grow height 5 px or 5 ppt
-bindsym Mod1+control+s resize shrink height 5 px or 5 ppt
-bindsym Mod1+control+r resize shrink width 5 px or 5 ppt
+bindsym $mod+g mode "resize"
 
 # Sound shortcuts
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
@@ -324,7 +320,7 @@ bindsym $mod+control+r restart
 bindsym $mod+control+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
 
 # Lock screen
-bindsym $mod+Shift+x exec i3lock --color 475263
+bindsym $mod+l exec i3lock --color 475263
 
 # Turn screen off
 bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off

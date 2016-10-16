@@ -18,6 +18,7 @@ alias df="df -H"
 alias du="du -ch"
 alias top="htop"
 alias copy="xclip -selection clipboard"
+alias calc="bc"
 
 # Docker aliases
 alias dk="docker"

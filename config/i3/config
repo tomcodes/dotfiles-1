@@ -11,6 +11,7 @@
 # * i3-gaps
 # * i3status
 # * nm-applet
+# * gnome-sound-applet
 # * compton
 # * lxappearance
 # * nitrogen
@@ -62,22 +63,22 @@ set $filemanager pantheon-files
 #-----------------------------------
 
 # customize workspace names
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace1 "1 " # Home
+set $workspace2 "2 " # Mail
+set $workspace3 "3 " # Dev
+set $workspace4 "4 " # Chat
+set $workspace5 "5 " # Music
+set $workspace6 "6 " # Others
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
 
 # Allow alt-tab style when hit twice a desktop number
-#workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth yes
 
 # Rename workspace
 bindsym $mod+equal exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
@@ -120,9 +121,11 @@ bindsym $mod+Shift+n move container to workspace next
 bindsym $mod+Shift+p move container to workspace prev
 
 # Rules to start windows in workspaces
-assign [class="Spotify"] $workspace10
-assign [class="Skype"] $workspace9
-assign [class="Sublime_text"] $workspace7
+assign [class="Spotify"] $workspace5
+assign [class="Thunderbird"] $workspace2
+assign [class="Skype"] $workspace4
+assign [class="Pidgin"] $workspace4
+assign [class="Sublime_text"] $workspace3
 
 #
 # AUTOSTART
@@ -140,6 +143,9 @@ exec --no-startup-id xset m 5 1
 
 # Launch Wifi applet
 exec --no-startup-id nm-applet
+
+# Launch sound applet
+exec --no-startup-id gnome-sound-applet
 
 # Custom programs
 exec --no-startup-id nitrogen --restore
@@ -178,7 +184,7 @@ bar {
 	status_command i3status -c $HOME/.config/i3/i3status.conf
 	mode dock
 	position top
-	font pango:$font
+	font pango:$font, FontAwesome 9
 	#tray_output primary
 	# Show only name and not number
 	#strip_workspace_numbers yes
@@ -290,7 +296,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+Shift+space fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+k layout stacking
@@ -301,10 +307,10 @@ bindsym $mod+e layout toggle split
 bindsym $mod+x layout toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+Tab focus mode_toggle
+bindsym $mod+Shift+f focus mode_toggle
 
 # focus the parent/child container
 bindsym $mod+a focus parent
@@ -329,4 +335,4 @@ bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
 bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'poweroff'"
 
 # Rofi
-bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -padding $(($(xwininfo -root | awk '/Height/ { print $2}')/2)) -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "$font"
+bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "$font"

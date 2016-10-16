@@ -62,13 +62,19 @@ set $filemanager pantheon-files
 # WORKSPACES
 #-----------------------------------
 
-# customize workspace names
-set $workspace1 "1 " # Home
-set $workspace2 "2 " # Mail
-set $workspace3 "3 " # Dev
-set $workspace4 "4 " # Chat
-set $workspace5 "5 " # Music
-set $workspace6 "6 " # Others
+# Customize workspace names
+# Home
+set $workspace1 "1 "
+# Mail
+set $workspace2 "2 "
+# Dev
+set $workspace3 "3 "
+# Chat
+set $workspace4 "4 "
+# Music
+set $workspace5 "5 "
+# Others
+set $workspace6 "6 "
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"

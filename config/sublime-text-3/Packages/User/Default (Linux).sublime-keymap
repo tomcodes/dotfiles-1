@@ -1,0 +1,187 @@
+[
+    /* Normal left to right alt-tab behavior */
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+
+    /* Go to symbol in project */
+    { "keys": ["ctrl+shift+r"], "command": "goto_symbol_in_project" },
+
+    /* Multiple cursor expand */
+    { "keys": ["ctrl+alt+s"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["ctrl+alt+t"], "command": "select_lines", "args": {"forward": true} },
+
+    /* Reopen closed tab */
+    { "keys": ["ctrl+shift+t"], "command": "open_recent_file", "args": {"index": 0}},
+
+	/* Advanced New File */
+	{ "keys": ["ctrl+alt+n"], "command": "advanced_new_file"},
+
+	/* Open New File Replacement */
+	{ "keys": ["ctrl+shift+o"], "command": "prompt_open_file" },
+
+    /* Normal layout */
+    {
+        "keys": ["alt+shift++"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1]]
+        }
+    },
+    /* Split layout in two columns */
+    {
+        "keys": ["alt+shift+b"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 0.5, 1.0],
+            "rows": [0.0, 1.0],
+            "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+        }
+    },
+    /* Split layout in two rows */
+    {
+        "keys": ["alt+shift+-"],
+        "command": "set_layout",
+        "args":
+        {
+            "cols": [0.0, 1.0],
+            "rows": [0.0, 0.5, 1.0],
+            "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+        }
+    },
+
+    /*********************/
+    /*    VINTAGE BÉPO   */
+    /*********************/
+
+    /* Exit insert mode */
+    { "keys": ["è"], "command": "exit_insert_mode",
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": false },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
+    /* Exit visual mode */
+    { "keys": ["è"], "command": "exit_visual_mode",
+        "context":
+        [
+            { "key": "setting.command_mode"},
+            { "key": "num_selections", "operand": 1},
+            { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": false }
+        ]
+    },
+    /* Move next WORD */
+    { "keys": ["É"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": true, "empty_line": true, "separators": "", "forward": true, "extend": true },
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Move next word */
+    { "keys": ["é"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "stops", "word_begin": true, "punct_begin": true, "empty_line": true, "forward": true, "extend": true },
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Move carret left */
+    { "keys": ["c"], "command": "set_motion", "args": {
+        "motion": "vi_move_by_characters_in_line",
+        "motion_args": {"forward": false, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Move carret right */
+    { "keys": ["r"], "command": "set_motion", "args": {
+        "motion": "vi_move_by_characters_in_line",
+        "motion_args": {"forward": true, "extend": true, "visual": false }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Move carret up */
+    { "keys": ["s"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "lines", "forward": false, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Move carret down */
+    { "keys": ["t"], "command": "set_motion", "args": {
+        "motion": "move",
+        "motion_args": {"by": "lines", "forward": true, "extend": true }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Join lines */
+    { "keys": ["T"], "command": "join_lines", "context": [{"key": "setting.command_mode"}] },
+    /* Move carret at the top of the screen */ 
+    { "keys": ["C"], "command": "set_motion", "args": {
+        "motion": "move_caret_to_screen_top",
+        "motion_args": {"repeat": 1},
+        "linewise": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Move carret at the bottom of the screen */
+    { "keys": ["R"], "command": "set_motion", "args": {
+        "motion": "move_caret_to_screen_bottom",
+        "motion_args": {"repeat": 1},
+        "linewise": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Change text according to next motion command */
+    { "keys": ["h"], "command": "set_action", "args": {
+        "action": "enter_insert_mode",
+        "description": "Change",
+        "action_args": {"insert_command": "vi_delete"}},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Move to character before following typed character (unTill) */
+    { "keys": ["j", "<character>"], "command": "set_motion", "args": {
+        "motion": "vi_move_to_character",
+        "motion_args": {"extend": true, "before": true },
+        "inclusive": true,
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Subtitute text according to next command */
+    { "keys": ["k"], "command": "set_action_motion", "args": {
+        "action": "enter_insert_mode",
+        "action_args": {"insert_command": "vi_delete"},
+        "motion": "vi_move_by_characters_in_line",
+        "motion_args": {"forward": true, "extend": true, "visual": false }},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Replace character under cursor */
+    { "keys": ["l", "<character>"], "command": "replace_character",
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Change until end of the line */
+    { "keys": ["H"], "command": "set_action_motion", "args": {
+        "action": "enter_insert_mode",
+        "action_args": {"insert_command": "vi_delete"},
+        "motion": "vi_move_to_hard_eol",
+        "motion_args": {"repeat": 1, "extend": true},
+        "motion_inclusive": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Move to character before following typed character (unTill) backward */
+    { "keys": ["J", "<character>"], "command": "set_motion", "args": {
+        "motion": "vi_move_to_character",
+        "motion_args": {"extend": true, "forward": false, "before": true },
+        "inclusive": true,
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Subtitute the whole line */
+    { "keys": ["K"], "command": "set_action_motion", "args": {
+        "action": "enter_insert_mode",
+        "action_args": {"insert_command": "vi_delete"},
+        "motion": "vi_span_count_lines",
+        "motion_linewise": true,
+        "motion_args": {"repeat": 1}},
+        "context": [{"key": "setting.command_mode"}]
+    },
+    /* Scroll half page */
+    {"keys": ["ctrl+u"], "command": "scroll_lines", "args": {"amount": 20.0}, "context": [{ "key": "setting.command_mode" }]},
+    {"keys": ["ctrl+d"], "command": "scroll_lines", "args": {"amount": -20.0}, "context": [{"key": "setting.command_mode"}]}
+]

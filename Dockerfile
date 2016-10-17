@@ -62,7 +62,7 @@ RUN git clone https://github.com/VundleVim/Vundle.vim.git /home/dev/.vim/bundle/
 # Run dotfiles
 RUN mkdir .config \
   && git clone https://github.com/loric-/dotfiles.git .config/dotfiles
-RUN cd .config/dotfiles && python3 link.py
+RUN cd .config/dotfiles && python3 link.py --only-terminal
 
 RUN lesskey
 

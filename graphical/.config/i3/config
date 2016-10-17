@@ -20,6 +20,7 @@
 # * scrot
 # * arandr
 # * rofi
+# * dunst
 # * amixer
 # * i3lock
 
@@ -158,6 +159,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
 #exec --no-startup-id numlockx
 exec --no-startup-id clipit
+exec --no-startup-id dunst
 
 # Compton
 exec --no-startup-id compton -f

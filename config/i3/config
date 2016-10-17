@@ -129,7 +129,7 @@ bindsym $mod+Shift+p move container to workspace prev
 # Rules to start windows in workspaces
 assign [class="Spotify"] $workspace5
 assign [class="Thunderbird"] $workspace2
-assign [class="Skype"] $workspace4
+assign [class="skypeforlinux"] $workspace4
 assign [class="Pidgin"] $workspace4
 assign [class="Sublime_text"] $workspace3
 

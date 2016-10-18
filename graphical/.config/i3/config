@@ -132,6 +132,7 @@ assign [class="Spotify"] $workspace5
 assign [class="Thunderbird"] $workspace2
 assign [class="skypeforlinux"] $workspace4
 assign [class="Pidgin"] $workspace4
+assign [class="Slack"] $workspace4
 assign [class="Sublime_text"] $workspace3
 
 #

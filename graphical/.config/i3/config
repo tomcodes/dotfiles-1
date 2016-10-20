@@ -103,10 +103,10 @@ bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
 # switching between workspace
-bindsym $mod+n workspace next
-bindsym mod1+Tab workspace next
 bindsym $mod+p workspace prev
-bindsym mod1+Shift+Tab workspace prev
+bindsym $mod+n workspace next
+bindsym mod1+Shift+Tab workspace prev_on_output
+bindsym mod1+Tab workspace next_on_output
 
 # Switch back and forth
 bindsym $mod+Tab workspace back_and_forth

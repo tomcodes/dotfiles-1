@@ -285,6 +285,7 @@ bindsym $mod+dollar scratchpad show
 
 # kill focused window
 bindsym $mod+q kill
+bindsym --release button2 kill
 
 # change focus
 bindsym $mod+c focus left

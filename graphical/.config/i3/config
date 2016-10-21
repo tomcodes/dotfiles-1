@@ -134,6 +134,7 @@ assign [class="skypeforlinux"] $workspace4
 assign [class="Pidgin"] $workspace4
 assign [class="Slack"] $workspace4
 assign [class="Sublime_text"] $workspace3
+assign [class="phpstorm"] $workspace3
 
 #
 # AUTOSTART

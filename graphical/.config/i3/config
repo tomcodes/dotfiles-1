@@ -337,7 +337,7 @@ bindsym $mod+control+r restart
 bindsym $mod+control+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
 
 # Lock screen
-bindsym $mod+l exec i3lock --color 475263
+bindsym $mod+l exec $HOME/.config/i3/lock.sh
 
 # Turn screen off
 bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off

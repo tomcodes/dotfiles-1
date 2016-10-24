@@ -6,6 +6,7 @@ MAINTAINER Loric Brevet <loric.brevet@gmail.com>
 RUN apt-get update \
   && apt-get install -y \
   sudo \
+  man-db \
   curl \
   wget \
   netcat \
@@ -19,6 +20,8 @@ RUN apt-get update \
   tmux \
   ranger \
   ssh \
+  python \
+  python-pip \
   python3 \
   python3-pip \
   ansible \

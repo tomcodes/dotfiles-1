@@ -6,6 +6,9 @@ if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
     alias ssh="sshrc"
 fi
 
+# Terminal colors
+export TERM='xterm-256color'
+
 # Common alias
 alias ll="ls -lh"
 alias zshr="source ~/.zshrc"

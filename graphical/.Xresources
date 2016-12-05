@@ -5,21 +5,13 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 ! font
-URxvt*font: xft:Droid Sans Mono:size=11:antialias=true:hinting=true,xft:Droid Sans Mono:size=11:antialias=true:hinting=true
+URxvt*font: xft:inconsolata:size=11
 
 ! Size
-URxvt.geometry: 160x40
+URxvt.geometry: 80x40
 
 ! terminal padding
 URxvt.internalBorder: 20
-
-! make otf / ttf fonts look pretty.  does not matter if you are using a bitmap font.
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
 
 ! clickable links, clipboard support, mouse wheel support, and on the fly font resizing
 ! you will need to install the relevent perl extensions for these to work

@@ -28,6 +28,7 @@ alias dk="docker"
 alias dkc="docker-compose"
 alias dkm="docker-machine"
 alias dkr="unset DOCKER_TLS_VERIFY && unset DOCKER_CERT_PATH && unset DOCKER_HOST"
+alias dkl='docker run -it --rm -h dev -v $(pwd):/home/dev/lab lobre/dotfiles'
 
 # Ansible aliases
 alias ans="ansible"

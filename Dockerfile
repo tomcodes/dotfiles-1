@@ -50,7 +50,6 @@ RUN echo "dev:dev" | chpasswd
 RUN usermod -aG sudo dev
 
 # Define current user
-WORKDIR /home/dev
 USER dev
 
 # Install oh my zsh
@@ -63,11 +62,18 @@ ENV SHELL=/bin/zsh
 RUN git clone https://github.com/VundleVim/Vundle.vim.git /home/dev/.vim/bundle/Vundle.vim
 
 # Run dotfiles
-RUN mkdir .config \
-  && git clone https://github.com/loric-/dotfiles.git .config/dotfiles
-RUN cd .config/dotfiles && python3 link.py --only-terminal
+RUN mkdir /home/dev/.config \
+  && git clone https://github.com/loric-/dotfiles.git /home/dev/.config/dotfiles
+RUN cd /home/dev/.config/dotfiles && python3 link.py --only-terminal
+
+# Install vim Vundle plugins
+RUN vim -c 'PluginInstall' -c 'qa!' > /dev/null
 
 RUN lesskey
+
+# Working dir
+RUN mkdir /home/dev/lab
+WORKDIR /home/dev/lab
 
 # Start zsh by default
 ENTRYPOINT ["/bin/zsh"]

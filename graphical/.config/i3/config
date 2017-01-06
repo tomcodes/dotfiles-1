@@ -55,7 +55,7 @@ set $mod mod4
 set $font Droid Sans 9
 
 # Variables softwares
-set $terminal urxvt
+set $terminal XMODIFIERS="" urxvt
 set $browser google-chrome-stable
 set $filemanager pantheon-files
 

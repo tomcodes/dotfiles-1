@@ -42,6 +42,7 @@ if exists("*vundle#begin")
     Plugin 'itchyny/lightline.vim'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'mattn/emmet-vim'
+    Plugin 'tpope/vim-unimpaired'
 
     call vundle#end()
 
@@ -275,3 +276,13 @@ let g:lightline = {
 " ———————————————————————————————
 nnoremap <F8> :TagbarToggle<CR>
 let g:tagbar_map_togglesort = "k"
+
+
+" Unimpaired
+" ———————————————————————————————
+nmap « [
+nmap » ]
+omap « [
+omap » ]
+xmap « [
+xmap » ]

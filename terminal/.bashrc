@@ -11,7 +11,7 @@ export TERM='xterm-256color'
 
 # Common alias
 alias ll="ls -lh"
-alias zshr="source ~/.zshrc"
+alias lt="ls -lrth"
 alias ..="cd .."
 alias ...="cd ../.."
 alias lab="cd ~/Lab/"
@@ -28,6 +28,9 @@ alias dkc="docker-compose"
 alias dkm="docker-machine"
 alias dkr="unset DOCKER_TLS_VERIFY && unset DOCKER_CERT_PATH && unset DOCKER_HOST"
 alias dkl='docker run -it --rm -h dev -v $(pwd):/home/dev/lab lobre/dotfiles'
+
+function dkip () { docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $@ ;}
+function dke () { docker exec -i -t $@ bash ;}
 
 # Ansible aliases
 alias ans="ansible"
@@ -83,9 +86,6 @@ function ungit () {
     docker run --name ungit -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent -v $HOME/.ssh/known_hosts:/home/developer/.ssh/known_hosts -v $HOME/.gitconfig:/home/developer/.gitconfig -p 8448:8448 -d -v $REPO:/repo mybuilds/ungit
 }
 
-function dkip () { docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $@ ;}
-function dke () { docker exec -i -t $@ bash ;}
-
 # Vim server
 vims () { 
     if [[ -z $2 ]]; then
@@ -95,11 +95,12 @@ vims () {
     fi
 }
 
+# Browser query
 function goo(){ 
     local site=""
     if [[ -f "$(pwd)/$1" ]]; then
         site="$(pwd)/$1"
-    elif [[ "$1" =~ "^http|.*\.[a-z]{2,}$" ]]; then
+    elif [[ "$1" =~ "^http|.+\.[a-z]{2,}$" ]]; then
         site="$1"
     else
         search=""

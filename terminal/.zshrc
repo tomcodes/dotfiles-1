@@ -18,5 +18,9 @@ fi
 # Source bashrc file
 source $HOME/.bashrc
 
-# Add autocompletion for ssh with sshrc
+# Zsh specific aliases
+alias zshr="source ~/.zshrc"
+
+# Add some autocompletions
 compdef sshrc=ssh
+compdef vims=vim

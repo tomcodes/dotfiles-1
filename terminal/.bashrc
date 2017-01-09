@@ -94,3 +94,19 @@ vims () {
         vim --servername $1 --remote-silent ${@:2}
     fi
 }
+
+function goo(){ 
+    local site=""
+    if [[ -f "$(pwd)/$1" ]]; then
+        site="$(pwd)/$1"
+    elif [[ "$1" =~ "^http|.*\.[a-z]{2,}$" ]]; then
+        site="$1"
+    else
+        search=""
+        for term in $@; do
+            search="$search%20$term"
+        done
+        site="http://www.google.com/search?q=$search"
+    fi  
+    sensible-browser "$site" &> /dev/null; 
+}

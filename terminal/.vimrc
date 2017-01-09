@@ -18,7 +18,7 @@ let g:netrw_liststyle=3
 set path=$PWD/**
 
 " Customize grep
-set grepprg=grep\ -RIin\ $*\ 2>/dev/null
+set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
 
 " Move swp and backup files location
 set backupdir=~/tmp,~/

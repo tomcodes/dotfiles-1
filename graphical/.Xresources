@@ -35,7 +35,7 @@ URxvt*saveLines: 50000
 *.background: #1B2B34
 *.foreground: #C0C5CE
 
-*color0: #1B2B34
+*color0: #35454E
 *color1: #EC5f67
 *color2: #99C794
 *color3: #FAC863

@@ -88,4 +88,10 @@ function dkip () { docker inspect --format='{{range .NetworkSettings.Networks}}{
 function dke () { docker exec -i -t $@ bash ;}
 
 # Vim server
-vims () { vim --servername $1 --remote-silent ${@:2} }
+vims () { 
+    if [[ -z $2 ]]; then
+        vim --servername $1
+    else
+        vim --servername $1 --remote-silent ${@:2}
+    fi
+}

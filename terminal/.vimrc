@@ -43,6 +43,8 @@ if exists("*vundle#begin")
     Plugin 'airblade/vim-gitgutter'
     Plugin 'mattn/emmet-vim'
     Plugin 'tpope/vim-unimpaired'
+    Plugin 'xolox/vim-misc'
+    Plugin 'xolox/vim-session'
 
     call vundle#end()
 
@@ -121,7 +123,7 @@ map q: :q
 
 " Remap jump to/from tags
 nnoremap <C-t> <C-]>
-nnoremap g<C-t> <C-t>
+nnoremap g<C-t> g<C-]>
 
 " Default tabs count parameters
 set tabstop=2
@@ -286,3 +288,7 @@ omap « [
 omap » ]
 xmap « [
 xmap » ]
+
+" Vim session
+" ———————————————————————————————
+let g:session_autosave = 'no'

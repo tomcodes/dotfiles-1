@@ -86,3 +86,6 @@ function ungit () {
 
 function dkip () { docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $@ ;}
 function dke () { docker exec -i -t $@ bash ;}
+
+# Vim server
+vims () { vim --servername $1 --remote-silent ${@:2} }

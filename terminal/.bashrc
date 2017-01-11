@@ -87,7 +87,7 @@ function ungit () {
 }
 
 # Vim server
-vims () { 
+function vims () { 
     if [[ -z $2 ]]; then
         vim --servername $1
     else
@@ -110,4 +110,17 @@ function goo(){
         site="http://www.google.com/search?q=$search"
     fi  
     sensible-browser "$site" &> /dev/null; 
+}
+
+# Parents ls
+function lsp() {
+    if [[ -z $1 ]]; then
+        FILE=$(pwd)
+    else
+        FILE=$1
+    fi
+    until [ "$FILE" = "/" ]; do
+        ls -lda $FILE
+        FILE=`dirname $FILE`
+    done
 }

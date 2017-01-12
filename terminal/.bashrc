@@ -14,7 +14,6 @@ alias ll="ls -lh"
 alias lt="ls -lrth"
 alias ..="cd .."
 alias ...="cd ../.."
-alias lab="cd ~/Lab/"
 alias extip="wget http://ipinfo.io/ip -qO -"
 alias df="df -H"
 alias du="du -ch"
@@ -123,4 +122,13 @@ function lsp() {
         ls -lda $FILE
         FILE=`dirname $FILE`
     done
+}
+
+# Lab function
+function lab() {
+    if [[ -z $1 ]]; then
+        cd ~/Lab;
+    else
+        cd ~/Lab/$1;
+    fi
 }

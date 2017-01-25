@@ -17,9 +17,11 @@ alias ...="cd ../.."
 alias extip="wget http://ipinfo.io/ip -qO -"
 alias df="df -H"
 alias du="du -ch"
+alias dig="dig +short"
 alias top="htop"
 alias copy="xclip -selection clipboard"
 alias calc="bc"
+alias off="sudo poweroff"
 
 # Docker aliases
 alias dk="docker"

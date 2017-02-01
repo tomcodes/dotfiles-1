@@ -22,6 +22,7 @@ alias top="htop"
 alias copy="xclip -selection clipboard"
 alias calc="bc"
 alias off="sudo poweroff"
+alias lessf="less +F"
 
 # Docker aliases
 alias dk="docker"

@@ -34,7 +34,14 @@ alias dkr="unset DOCKER_TLS_VERIFY && unset DOCKER_CERT_PATH && unset DOCKER_HOS
 alias dkl='docker run -it --rm -h dev -v $(pwd):/home/dev/lab lobre/dotfiles'
 
 function dkip () { docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $@ ;}
-function dke () { docker exec -i -t $@ bash ;}
+function dke () { 
+    if [[ -z $2 ]]; then
+        CMD=bash
+    else
+        CMD=$2
+    fi
+    docker exec -i -t $1 $CMD ;
+}
 
 # Ansible aliases
 alias ans="ansible"

@@ -36,11 +36,10 @@ alias dkl='docker run -it --rm -h dev -v $(pwd):/home/dev/lab lobre/dotfiles'
 function dkip () { docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $@ ;}
 function dke () { 
     if [[ -z $2 ]]; then
-        CMD=bash
+        docker exec -i -t $1 bash
     else
-        CMD=$2
+        docker exec -i -t $1 ${@:2}
     fi
-    docker exec -i -t $1 $CMD ;
 }
 
 # Ansible aliases

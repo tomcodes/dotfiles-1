@@ -145,7 +145,7 @@ function lab() {
 }
 
 # Tcpdump clean
-function tcpdumpclean() {
+function tcpdumphttp() {
     if [[ -z $1 ]]; then
         PORT=80
     else

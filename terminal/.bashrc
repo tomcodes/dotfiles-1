@@ -25,6 +25,7 @@ alias copy="xclip -selection clipboard"
 alias calc="bc"
 alias off="sudo poweroff"
 alias lessf="less +F"
+alias vimend="vim '+normal G$'"
 
 # Docker aliases
 alias dk="docker"

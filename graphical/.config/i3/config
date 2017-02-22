@@ -181,7 +181,7 @@ set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
-set $indicator           #ffffff
+set $indicator           #FFFFFF
 
 # window colors
 #                       border              background         text                 indicator
@@ -236,10 +236,8 @@ font pango:$font
 floating_modifier $mod
 
 # Gaps
-gaps inner 15
+gaps inner 10
 
-
-#
 # RESIZE
 #-----------------------------------
 

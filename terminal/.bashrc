@@ -26,6 +26,7 @@ alias calc="bc"
 alias off="sudo poweroff"
 alias lessf="less +F"
 alias vimend="vim '+normal G$'"
+alias sshp="\ssh"
 
 # Docker aliases
 alias dk="docker"

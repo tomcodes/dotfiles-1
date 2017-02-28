@@ -1,20 +1,8 @@
-# Define temporary home
-export HOME=$SSHHOME/.sshrc.d
+# Initialize bashrc
+source $SSHHOME/.sshrc.d/.bashrc;
 
-# Get current shell
-MY_SHELL=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`;
-
-# Source zshrc or bashrc according to shell
-if command -v /bin/zsh >/dev/null && [ $MY_SHELL "==" "zsh" ] ; then
-    source $HOME/.zshrc;
-else 
-    source $HOME/.bashrc;
-fi
+# Initialize vim
+export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC"
 
 # Initialize lesskey
-lesskey
-
-# Check git installed and clone Vundle
-if hash git >/dev/null 2>&1; then
-    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim &> /dev/null;
-fi
+lesskey $SSHHOME/.sshrc.d/.lesskey

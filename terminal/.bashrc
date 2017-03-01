@@ -84,6 +84,11 @@ function ggrep() {
     grep -RIin "$1" $DIR 2>/dev/null;
 }
 
+# Regex
+function regex() {
+    awk 'match($0, /'"$1"'/) { print substr($0, RSTART, RLENGTH) }'
+}
+
 # Mkdir and cd using a single command
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 

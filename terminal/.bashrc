@@ -130,6 +130,11 @@ function goo(){
     sensible-browser "$site" &> /dev/null; 
 }
 
+# Smile redmine browser
+function redmine {
+    goo "https://redmine-projets.smile.fr/issues/$@"
+}
+
 # Parents ls
 function lsp() {
     if [[ -z $1 ]]; then

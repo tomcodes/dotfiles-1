@@ -142,7 +142,7 @@ function lsp() {
     else
         FILE=$1
     fi
-    until [ "$FILE" = "/" ]; do
+    until [ "$FILE" = "/" ] || [ "$FILE" = "." ]; do
         ls -lda $FILE
         FILE=`dirname $FILE`
     done

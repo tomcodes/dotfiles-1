@@ -64,22 +64,22 @@ set $filemanager pantheon-files
 #-----------------------------------
 
 # Customize workspace names
-# Home
-set $workspace1 "1 "
-# Mail
-set $workspace2 "2 "
-# Dev
-set $workspace3 "3 "
-# Chat
-set $workspace4 "4 "
-# Music
-set $workspace5 "5 "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
 # Others
-set $workspace6 "6 "
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10"
+set $workspace5 "5 "
+# Music
+set $workspace6 "6 "
+# Home
+set $workspace7 "7 "
+# Mail
+set $workspace8 "8 "
+# Dev
+set $workspace9 "9 "
+# Chat
+set $workspace10 "10 "
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
@@ -132,13 +132,13 @@ bindsym $mod+mod1+n move workspace to output right
 bindsym $mod+mod1+p move workspace to output left
 
 # Rules to start windows in workspaces
-assign [class="Spotify"] $workspace5
-assign [class="Thunderbird"] $workspace2
-assign [class="skypeforlinux"] $workspace4
-assign [class="Pidgin"] $workspace4
-assign [class="Slack"] $workspace4
-assign [class="Sublime_text"] $workspace3
-assign [class="phpstorm"] $workspace3
+assign [class="Spotify"] $workspace6
+assign [class="Thunderbird"] $workspace8
+assign [class="skypeforlinux"] $workspace10
+assign [class="Pidgin"] $workspace10
+assign [class="Slack"] $workspace10
+assign [class="Sublime_text"] $workspace9
+assign [class="phpstorm"] $workspace9
 
 #
 # AUTOSTART

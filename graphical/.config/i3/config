@@ -73,14 +73,14 @@ set $workspace4 "4"
 set $workspace5 "5 "
 # Music
 set $workspace6 "6 "
-# Chat
-set $workspace7 "7 "
-# Dev
-set $workspace8 "8 "
-# Mail
-set $workspace9 "9 "
 # Home
-set $workspace10 "10 "
+set $workspace7 "7 "
+# Mail
+set $workspace8 "8 "
+# Dev
+set $workspace9 "9 "
+# Chat
+set $workspace10 "10 "
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
@@ -134,12 +134,12 @@ bindsym $mod+mod1+p move workspace to output left
 
 # Rules to start windows in workspaces
 assign [class="Spotify"] $workspace6
-assign [class="Thunderbird"] $workspace9
-assign [class="skypeforlinux"] $workspace7
-assign [class="Pidgin"] $workspace7
-assign [class="Slack"] $workspace7
-assign [class="Sublime_text"] $workspace8
-assign [class="phpstorm"] $workspace8
+assign [class="Thunderbird"] $workspace8
+assign [class="skypeforlinux"] $workspace10
+assign [class="Pidgin"] $workspace10
+assign [class="Slack"] $workspace10
+assign [class="Sublime_text"] $workspace9
+assign [class="phpstorm"] $workspace9
 
 #
 # AUTOSTART

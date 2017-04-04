@@ -141,6 +141,9 @@ assign [class="Slack"] $workspace10
 assign [class="Sublime_text"] $workspace9
 assign [class="phpstorm"] $workspace9
 
+# Default workspace
+exec i3-msg workspace $workspace7
+
 #
 # AUTOSTART
 #-----------------------------------

@@ -65,22 +65,35 @@ set $screenshot shutter
 #-----------------------------------
 
 # Customize workspace names
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-# Others
-set $workspace5 "5 "
-# Music
-set $workspace6 "6 "
 # Home
-set $workspace7 "7 "
+set $workspace1 "1:7 "
 # Mail
-set $workspace8 "8 "
+set $workspace2 "2:8 "
 # Dev
-set $workspace9 "9 "
+set $workspace3 "3:9 "
 # Chat
-set $workspace10 "10 "
+set $workspace4 "4:0 "
+# Music
+set $workspace5 "5:6 "
+# Others
+set $workspace6 "6:5 "
+# Workspace 7
+set $workspace7 "7:4"
+# Workspace 8
+set $workspace8 "8:3"
+# Workspace 9
+set $workspace9 "9:2"
+# Workspace 10
+set $workspace10 "10:1"
+
+# Rules to start windows in workspaces
+assign [class="Spotify"] $workspace5
+assign [class="Thunderbird"] $workspace2
+assign [class="skypeforlinux"] $workspace4
+assign [class="Pidgin"] $workspace4
+assign [class="Slack"] $workspace4
+assign [class="Sublime_text"] $workspace3
+assign [class="phpstorm"] $workspace3
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
@@ -91,17 +104,17 @@ workspace_auto_back_and_forth yes
 # Rename workspace
 bindsym $mod+equal exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
-# switch to workspace3
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
+# switch to workspace
+bindsym $mod+7 workspace $workspace1
+bindsym $mod+8 workspace $workspace2
+bindsym $mod+9 workspace $workspace3
+bindsym $mod+0 workspace $workspace4
+bindsym $mod+6 workspace $workspace5
+bindsym $mod+5 workspace $workspace6
+bindsym $mod+4 workspace $workspace7
+bindsym $mod+3 workspace $workspace8
+bindsym $mod+2 workspace $workspace9
+bindsym $mod+1 workspace $workspace10
 
 # switching between workspace
 bindsym $mod+p workspace prev_on_output
@@ -113,16 +126,16 @@ bindsym mod1+Tab workspace next_on_output
 bindsym $mod+Tab workspace back_and_forth
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+7 move container to workspace $workspace1
+bindsym $mod+Shift+8 move container to workspace $workspace2
+bindsym $mod+Shift+9 move container to workspace $workspace3
+bindsym $mod+Shift+0 move container to workspace $workspace4
+bindsym $mod+Shift+6 move container to workspace $workspace5
+bindsym $mod+Shift+5 move container to workspace $workspace6
+bindsym $mod+Shift+4 move container to workspace $workspace7
+bindsym $mod+Shift+3 move container to workspace $workspace8
+bindsym $mod+Shift+2 move container to workspace $workspace9
+bindsym $mod+Shift+1 move container to workspace $workspace10
 
 # move focused container to next/previous workspace
 bindsym $mod+Shift+n move container to workspace next
@@ -131,18 +144,6 @@ bindsym $mod+Shift+p move container to workspace prev
 # move current workspace to next/previous output
 bindsym $mod+mod1+n move workspace to output right
 bindsym $mod+mod1+p move workspace to output left
-
-# Rules to start windows in workspaces
-assign [class="Spotify"] $workspace6
-assign [class="Thunderbird"] $workspace8
-assign [class="skypeforlinux"] $workspace10
-assign [class="Pidgin"] $workspace10
-assign [class="Slack"] $workspace10
-assign [class="Sublime_text"] $workspace9
-assign [class="phpstorm"] $workspace9
-
-# Default workspace
-exec i3-msg workspace $workspace7
 
 #
 # AUTOSTART
@@ -207,7 +208,7 @@ bar {
 	font pango:$font, FontAwesome 9
 	#tray_output primary
 	# Show only name and not number
-	#strip_workspace_numbers yes
+	strip_workspace_numbers yes
 	workspace_buttons yes
 	# Show the mode (resize for instance)
 	binding_mode_indicator yes

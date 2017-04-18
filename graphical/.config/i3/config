@@ -66,17 +66,17 @@ set $screenshot shutter
 
 # Customize workspace names
 # Home
-set $workspace1 "1:7 "
+set $workspace1 "1:"
 # Mail
-set $workspace2 "2:8 "
+set $workspace2 "2:"
 # Dev
-set $workspace3 "3:9 "
+set $workspace3 "3:"
 # Chat
-set $workspace4 "4:0 "
+set $workspace4 "4:"
 # Music
-set $workspace5 "5:6 "
+set $workspace5 "5:"
 # Others
-set $workspace6 "6:5 "
+set $workspace6 "6:"
 # Workspace 7
 set $workspace7 "7:4"
 # Workspace 8

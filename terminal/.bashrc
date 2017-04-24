@@ -28,6 +28,7 @@ alias lessf="less +F"
 alias vimend="vim '+normal G$'"
 alias sshp="\ssh"
 alias keyboard="setxkbmap"
+alias pingg="ping www.google.com"
 
 # Docker aliases
 alias dk="docker"

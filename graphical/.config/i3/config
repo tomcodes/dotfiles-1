@@ -119,11 +119,8 @@ bindsym $mod+1 workspace $workspace10
 # switching between workspace
 bindsym $mod+p workspace prev_on_output
 bindsym $mod+n workspace next_on_output
-bindsym mod1+Shift+Tab workspace prev_on_output
-bindsym mod1+Tab workspace next_on_output
-
-# Switch back and forth
-bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab workspace prev_on_output
+bindsym $mod+Tab workspace next_on_output
 
 # move focused container to workspace
 bindsym $mod+Shift+7 move container to workspace $workspace1
@@ -311,6 +308,10 @@ bindsym $mod+Shift+c move left
 bindsym $mod+Shift+t move down
 bindsym $mod+Shift+s move up
 bindsym $mod+Shift+r move right
+
+# focus between visible windows
+bindsym mod1+Tab focus right
+bindsym mod1+Shift+Tab focus left
 
 # split in horizontal orientation
 bindsym $mod+h split h

@@ -10,7 +10,6 @@
 
 # * i3-gaps
 # * i3status
-# * i3ipc
 # * nm-applet
 # * gnome-sound-applet
 # * compton
@@ -311,8 +310,8 @@ bindsym $mod+Shift+s move up
 bindsym $mod+Shift+r move right
 
 # focus between visible windows
-bindsym mod1+Tab exec --no-startup-id ~/.config/i3/focus_next_visible.py
-bindsym mod1+Shift+Tab exec --no-startup-id ~/.config/i3/focus_next_visible.py reverse
+bindsym mod1+Tab exec --no-startup-id ~/.config/i3/i3t.py n
+bindsym mod1+Shift+Tab exec --no-startup-id ~/.config/i3/i3t.py p
 
 # split in horizontal orientation
 bindsym $mod+h split h

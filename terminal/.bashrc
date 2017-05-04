@@ -11,8 +11,9 @@ export TERM='xterm-256color'
 
 # Common alias
 alias ll="ls -lh"
-alias lt="ll -rt"
-alias lg="ll | grep -i"
+alias llt="ll -rt"
+alias llg="ll | grep -i"
+alias llc="ll --color=always"
 alias ..="cd .."
 alias ...="cd ../.."
 alias extip="wget http://ipinfo.io/ip -qO -"

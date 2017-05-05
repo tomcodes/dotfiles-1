@@ -12,6 +12,7 @@ export TERM='xterm-256color'
 # Common alias
 alias ll="ls -lh"
 alias llt="ll -rt"
+alias lla="ll -a"
 alias llg="ll | grep -i"
 alias llc="ll --color=always"
 alias .="cd ."

@@ -33,6 +33,7 @@ alias vimend="vim '+normal G$'"
 alias sshp="\ssh"
 alias keyboard="setxkbmap"
 alias pingg="ping www.google.com"
+alias pingf="ping www.free.fr"
 
 # Docker aliases
 alias dk="docker"

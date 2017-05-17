@@ -139,6 +139,9 @@ command! W w !sudo tee % > /dev/null
 " Regenerate ctags
 nnoremap <f5> :!ctags -R<CR>
 
+" Remove highlight
+nnoremap <C-_> :noh<CR>
+
 " BÉPO CONFIG
 " ———————————————————————————————
 

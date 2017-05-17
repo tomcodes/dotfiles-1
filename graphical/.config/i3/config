@@ -67,16 +67,16 @@ set $screenshot shutter
 # Customize workspace names
 # Home
 set $workspace1 "1:"
-# Mail
-set $workspace2 "2:"
 # Dev
-set $workspace3 "3:"
+set $workspace2 "2:"
+# Mail
+set $workspace3 "3:"
 # Chat
 set $workspace4 "4:"
-# Music
-set $workspace5 "5:"
 # Others
-set $workspace6 "6:"
+set $workspace5 "5:"
+# Music
+set $workspace6 "6:"
 # Workspace 7
 set $workspace7 "7:4"
 # Workspace 8
@@ -87,13 +87,13 @@ set $workspace9 "9:2"
 set $workspace10 "10:1"
 
 # Rules to start windows in workspaces
-assign [class="Spotify"] $workspace5
-assign [class="Thunderbird"] $workspace2
+assign [class="Spotify"] $workspace6
+assign [class="Thunderbird"] $workspace3
 assign [class="skypeforlinux"] $workspace4
 assign [class="Pidgin"] $workspace4
 assign [class="Slack"] $workspace4
-assign [class="Sublime_text"] $workspace3
-assign [class="phpstorm"] $workspace3
+assign [class="Sublime_text"] $workspace2
+assign [class="phpstorm"] $workspace2
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default

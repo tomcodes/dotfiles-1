@@ -88,7 +88,7 @@ function ggrep() {
     else
         DIR=$2
     fi
-    grep -RIin "$1" $DIR 2>/dev/null;
+    grep -RIin --exclude=tags "$1" $DIR 2>/dev/null;
 }
 
 # Regex

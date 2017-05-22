@@ -156,6 +156,19 @@ function lsp() {
 
 # Lab function
 function lab() {
+    echo "Entering lab..."
+    echo "             "
+    echo "        o    "   
+    echo "       o     "
+    echo "     ___     "
+    echo "     | |     "
+    echo "     | |     "
+    echo "    .' '.    "
+    echo "   /  o  \   "
+    echo "  :____o__:  "
+    echo "  '._____.'  "
+    echo "             "
+
     if [[ -z $1 ]]; then
         cd ~/Lab;
     else

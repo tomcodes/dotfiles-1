@@ -72,7 +72,7 @@ function cd {
 }
 
 # Search for files
-function ffind() {
+function mfind() {
     if [[ -z $2 ]]; then
         DIR=.
     else
@@ -82,7 +82,7 @@ function ffind() {
 }
 
 # Search for string
-function ggrep() {
+function mgrep() {
     if [[ -z $2 ]]; then
         DIR=.
     else

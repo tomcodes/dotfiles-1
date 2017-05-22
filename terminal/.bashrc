@@ -142,7 +142,7 @@ function redmine {
 }
 
 # Parents ls
-function lsp() {
+function llp() {
     if [[ -z $1 ]]; then
         FILE=$(pwd)
     else

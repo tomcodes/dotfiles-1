@@ -13,7 +13,6 @@ export TERM='xterm-256color'
 alias ll="ls -lh"
 alias llt="ll -rt"
 alias lla="ll -a"
-alias llg="ll | grep -i"
 alias llc="ll --color=always"
 alias .="cd ."
 alias ..="cd .."
@@ -152,6 +151,18 @@ function llp() {
         ls -lda $FILE
         FILE=`dirname $FILE`
     done
+}
+
+# ls and grep
+function llg() {
+    if [[ -z $2 ]]; then
+        DIR=.
+        PATTERN=${@:1}
+    else
+        DIR=$2
+        PATTERN=$1
+    fi
+    ll $DIR | grep $PATTERN
 }
 
 # Lab function

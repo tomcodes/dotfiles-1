@@ -9,6 +9,9 @@ fi
 # Terminal colors
 export TERM='xterm-256color'
 
+# Gopath
+export GOPATH="$HOME/Lab/go"
+
 # Common alias
 alias ll="ls -lh"
 alias llt="ll -rt"

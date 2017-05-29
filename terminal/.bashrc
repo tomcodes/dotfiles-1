@@ -36,6 +36,7 @@ alias sshp="\ssh"
 alias keyboard="setxkbmap"
 alias pingg="ping www.google.com"
 alias pingf="ping www.free.fr"
+alias vpn="openvpn"
 
 # Docker aliases
 alias dk="docker"

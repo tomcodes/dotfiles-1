@@ -123,7 +123,7 @@ map q: :q
 
 " Remap jump to/from tags
 nnoremap <C-t> <C-]>
-nnoremap g<C-t> g<C-]>
+nnoremap g<C-t> <C-t>
 
 " Default tabs count parameters
 set tabstop=2

@@ -63,8 +63,7 @@ alias ansp="ansible-playbook"
 
 # Python aliases
 alias venv="source venv/bin/activate"
-alias python="ipython3"
-alias py="python"
+alias py="ipython3"
 alias dj="python manage.py"
 
 # Prevent scroll lock

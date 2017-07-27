@@ -53,6 +53,7 @@ set $mod mod4
 
 # Variable font
 set $font Droid Sans 9
+set $font-rofi Droid Sans 18
 
 # Variables softwares
 set $terminal XMODIFIERS="" urxvt
@@ -359,4 +360,4 @@ bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
 bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'sudo poweroff'"
 
 # Rofi
-bindsym $mod+space exec --no-startup-id rofi -show run -lines 3 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "$font"
+bindsym $mod+space exec --no-startup-id rofi -show run -lines 2 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "$font-rofi"

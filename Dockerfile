@@ -26,6 +26,7 @@ RUN apt-get update \
   python3-pip \
   ansible \
   autojump \
+  tree \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 

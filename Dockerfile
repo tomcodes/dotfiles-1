@@ -75,5 +75,8 @@ RUN lesskey
 RUN mkdir /home/dev/lab
 WORKDIR /home/dev/lab
 
+# Save home as volume
+VOLUME /home/dev
+
 # Start zsh by default
 ENTRYPOINT ["/bin/zsh"]

@@ -42,7 +42,6 @@ if exists("*vundle#begin")
     Plugin 'itchyny/lightline.vim'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'mattn/emmet-vim'
-    Plugin 'tpope/vim-unimpaired'
     Plugin 'xolox/vim-misc'
     Plugin 'xolox/vim-session'
 

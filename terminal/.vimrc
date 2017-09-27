@@ -42,7 +42,6 @@ if exists("*vundle#begin")
     Plugin 'itchyny/lightline.vim'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'mattn/emmet-vim'
-    Plugin 'tpope/vim-unimpaired'
     Plugin 'xolox/vim-misc'
     Plugin 'xolox/vim-session'
 
@@ -123,7 +122,7 @@ map q: :q
 
 " Remap jump to/from tags
 nnoremap <C-t> <C-]>
-nnoremap g<C-t> g<C-]>
+nnoremap g<C-t> <C-t>
 
 " Default tabs count parameters
 set tabstop=2

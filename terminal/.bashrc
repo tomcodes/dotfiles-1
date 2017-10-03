@@ -11,6 +11,7 @@ export TERM='xterm-256color'
 
 # Gopath
 export GOPATH="$HOME/Lab/go"
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Common alias
 alias ll="ls -lh"

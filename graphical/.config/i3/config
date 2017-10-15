@@ -174,10 +174,6 @@ exec --no-startup-id dropbox start
 # Compton
 exec --no-startup-id compton -f
 
-# Invert scrolling
-exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
-
-
 #
 # COLORS
 #-----------------------------------

@@ -93,10 +93,8 @@ set t_Co=256
 silent! colorscheme delek
 
 " I need another Esc key
-inoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>
-inoremap <S-Tab> <Tab>
-vnoremap <S-Tab> <Tab>
+inoremap <S-Tab> <Esc>
+vnoremap <S-Tab> <Esc>
 
 " Remap debut de ligne
 noremap è ^

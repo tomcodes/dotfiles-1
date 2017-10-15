@@ -27,6 +27,7 @@ RUN apt-get update \
   ansible \
   autojump \
   tree \
+  httpie \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 

@@ -28,6 +28,7 @@ RUN apt-get update \
   autojump \
   tree \
   httpie \
+  acpi \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 

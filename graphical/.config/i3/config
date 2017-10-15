@@ -23,6 +23,7 @@
 # * dunst
 # * amixer
 # * i3lock
+# * xclip
 
 #
 # SPECIAL KEY NAMES
@@ -53,7 +54,6 @@ set $mod mod4
 
 # Variable font
 set $font Droid Sans 9
-set $font-rofi Droid Sans 18
 
 # Variables softwares
 set $terminal XMODIFIERS="" urxvt
@@ -93,7 +93,7 @@ assign [class="Thunderbird"] $workspace3
 assign [class="skypeforlinux"] $workspace4
 assign [class="Pidgin"] $workspace4
 assign [class="Slack"] $workspace4
-assign [class="Sublime_text"] $workspace2
+assign [class="Code"] $workspace2
 assign [class="phpstorm"] $workspace2
 
 # Default layout new workspace "default|stacking|tabbed"
@@ -173,6 +173,9 @@ exec --no-startup-id dropbox start
 
 # Compton
 exec --no-startup-id compton -f
+
+# Invert scrolling
+exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
 
 
 #
@@ -360,4 +363,4 @@ bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
 bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'sudo poweroff'"
 
 # Rofi
-bindsym $mod+space exec --no-startup-id rofi -show run -lines 2 -eh 2 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "$font-rofi"
+bindsym $mod+space exec --no-startup-id rofi -show run

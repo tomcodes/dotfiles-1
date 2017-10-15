@@ -51,3 +51,12 @@ URxvt*saveLines: 50000
 *color13: #C594C5
 *color14: #5FB3B3
 *color15: #D8DEE9
+
+! rofi
+rofi.opacity:      85
+rofi.lines:        2
+rofi.font:         Droid Sans 18
+rofi.color-window: #2f343f,#2f343f
+rofi.color-normal: #2f343f,#f3f4f5,#2f343f,#2f343f,#9575cd
+rofi.bw:           0
+rofi.eh:           2

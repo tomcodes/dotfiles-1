@@ -16,7 +16,7 @@ then
     RX=$(echo $R | cut -d' ' -f 1)
     RY=$(echo $R | cut -d' ' -f 3)
  
-    SR=$(xrandr --query | grep ' connected' | cut -f3 -d' ')
+    SR=$(xrandr --query | grep ' connected' | cut -f4 -d' ')
     for RES in $SR
     do
         # monitor position/offset

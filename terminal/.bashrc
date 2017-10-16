@@ -146,7 +146,7 @@ function goo(){
 
 # Smile redmine browser
 function redmine {
-    goo "https://redmine-projets.smile.fr/issues/$@"
+    goo "http://redmine.cross-systems.ch/issues/$@"
 }
 
 # Parents ls

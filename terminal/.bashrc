@@ -6,6 +6,11 @@ if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
     alias ssh="sshrc"
 fi
 
+# Include temporary file exists
+if [ -f $HOME/.bashrc.tmp ]; then
+    . $HOME/.bashrc.tmp
+fi
+
 # Terminal colors
 export TERM='xterm-256color'
 

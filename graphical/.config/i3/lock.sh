@@ -16,10 +16,13 @@ then
     RX=$(echo $R | cut -d' ' -f 1)
     RY=$(echo $R | cut -d' ' -f 3)
  
-    SR=$(xrandr --query | grep ' connected' | cut -f4 -d' ')
+    SR=$(xrandr --query | grep ' connected')
+    IFS=$'\n'
     for RES in $SR
     do
         # monitor position/offset
+        RES=$(echo $RES | sed 's/ primary//g')
+        RES=$(echo $RES | cut -f3 -d' ')
         SRX=$(echo $RES | cut -d'x' -f 1)                   # x pos
         SRY=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 1)  # y pos
         SROX=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 2) # x offset

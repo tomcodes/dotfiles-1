@@ -6,6 +6,8 @@
     "editor.fontSize": 18,
     "editor.lineHeight": 28,
     "vim.disableAnnoyingNeovimMessage": true,
+    "vim.startInInsertMode": true,
+    "vim.useSystemClipboard": true,
     "vim.handleKeys": {
         "<C-f>": false
     },

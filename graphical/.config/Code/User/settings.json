@@ -1,0 +1,41 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Material Theme",
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "editor.fontFamily": "Inconsolata",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 28,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.handleKeys": {
+        "<C-f>": false
+    },
+    "vim.insertModeKeyBindings": [
+        { "before": ["t", "s"], "after": ["<Esc>"] }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": 
+    [
+        { "before": ["é"], "after": ["w"] },
+        { "before": ["é"], "after": ["w"] },
+
+        { "before": ["è"], "after": ["^"] },
+        { "before": ["È"], "after": ["0"] },
+
+        { "before": ["c"], "after": ["h"] },
+        { "before": ["r"], "after": ["l"] },
+        { "before": ["t"], "after": ["j"] },
+        { "before": ["s"], "after": ["k"] },
+        { "before": ["C"], "after": ["H"] },
+        { "before": ["R"], "after": ["L"] },
+        { "before": ["T"], "after": ["J"] },
+        { "before": ["S"], "after": ["K"] },
+
+        { "before": ["l"], "after": ["c"] },
+        { "before": ["h"], "after": ["r"] },
+        { "before": ["j"], "after": ["t"] },
+        { "before": ["k"], "after": ["s"] },
+        { "before": ["L"], "after": ["C"] },
+        { "before": ["H"], "after": ["R"] },
+        { "before": ["J"], "after": ["T"] },
+        { "before": ["K"], "after": ["S"] }
+    ]
+}

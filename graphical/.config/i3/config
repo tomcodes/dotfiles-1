@@ -140,8 +140,8 @@ bindsym $mod+Shift+n move container to workspace next
 bindsym $mod+Shift+p move container to workspace prev
 
 # move current workspace to next/previous output
-bindsym $mod+mod1+n move workspace to output right
-bindsym $mod+mod1+p move workspace to output left
+bindsym $mod+mod1+n move workspace to output up
+bindsym $mod+mod1+p move workspace to output down
 
 #
 # AUTOSTART

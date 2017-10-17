@@ -7,13 +7,15 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
-  'git' \
   'history' \
-  'history-substring-search' \
   'directory' \
   'spectrum' \
   'utility' \
+  'ssh' \
   'completion' \
+  'git' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt'
 
 #

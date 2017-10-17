@@ -11,7 +11,6 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
-  'ssh' \
   'completion' \
   'git' \
   'syntax-highlighting' \

@@ -24,6 +24,7 @@
 # * amixer
 # * i3lock
 # * xclip
+# * cerebro
 
 #
 # SPECIAL KEY NAMES
@@ -56,10 +57,15 @@ set $mod mod4
 set $font Droid Sans 9
 
 # Variables softwares
-set $terminal XMODIFIERS="" urxvt
-set $browser google-chrome-stable
+set $terminal urxvt
+set $browser google-chrome
 set $filemanager pantheon-files
+set $mail thunderbird
 set $screenshot shutter
+set $editor code
+set $ide pstorm
+set $music spotify
+set $skype skypeforlinux
 
 #
 # WORKSPACES
@@ -88,13 +94,11 @@ set $workspace9 "9:2"
 set $workspace10 "10:1"
 
 # Rules to start windows in workspaces
-assign [class="Spotify"] $workspace6
-assign [class="Thunderbird"] $workspace3
-assign [class="skypeforlinux"] $workspace4
-assign [class="Pidgin"] $workspace4
-assign [class="Slack"] $workspace4
-assign [class="Code"] $workspace2
-assign [class="phpstorm"] $workspace2
+assign [class=(?i)$music] $workspace6
+assign [class=(?i)$mail] $workspace3
+assign [class=(?i)$skype] $workspace4
+assign [class=(?i)$editor] $workspace2
+assign [class=(?i)$ide] $workspace2
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
@@ -140,8 +144,10 @@ bindsym $mod+Shift+n move container to workspace next
 bindsym $mod+Shift+p move container to workspace prev
 
 # move current workspace to next/previous output
-bindsym $mod+mod1+n move workspace to output up
-bindsym $mod+mod1+p move workspace to output down
+bindsym $mod+control+c move workspace to output left
+bindsym $mod+control+t move workspace to output down
+bindsym $mod+control+s move workspace to output up
+bindsym $mod+control+r move workspace to output right
 
 #
 # AUTOSTART
@@ -164,6 +170,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id gnome-sound-applet
 
 # Custom programs
+exec --no-startup-id cerebro
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
 #exec --no-startup-id numlockx
@@ -276,13 +283,23 @@ bindsym XF86MonBrightnessDown exec $HOME/.config/i3/brightness.sh -20
 # Start a terminal
 bindsym $mod+Return exec $terminal
 
-# Start programs
-bindsym $mod+u exec --no-startup-id $filemanager
-bindsym $mod+i exec --no-startup-id $browser
+# Run or raise input
+bindsym $mod+mod1+r exec i3-input -F "exec $HOME/.config/i3/runorraise.sh %s" -P "Run or raise: "
+
+# Run or raise programs
+bindsym $mod+mod1+Return exec $HOME/.config/i3/runorraise.sh $terminal
+bindsym $mod+mod1+f exec $HOME/.config/i3/runorraise.sh $filemanager
+bindsym $mod+mod1+c exec $HOME/.config/i3/runorraise.sh $browser
+bindsym $mod+mod1+m exec $HOME/.config/i3/runorraise.sh $music
+bindsym $mod+mod1+i exec $HOME/.config/i3/runorraise.sh $ide
+bindsym $mod+mod1+e exec $HOME/.config/i3/runorraise.sh $editor
+bindsym $mod+mod1+s exec $HOME/.config/i3/runorraise.sh $skype
+
+# Utilities
 bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Info "Screenshot saved" -t 300
 bindsym $mod+F10 exec --no-startup-id $screenshot
 bindsym $mod+F11 exec --no-startup-id arandr
-bindsym $mod+F12 exec --no-startup-id subl3 $HOME/.config/i3/config
+bindsym $mod+F12 exec --no-startup-id $editor $HOME/.config/i3/config
 
 # Tags
 bindsym $mod+semicolon exec i3-input -F "mark %s" -P "New tag: "
@@ -345,10 +362,7 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 # reload the configuration file
-bindsym $mod+control+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+control+r restart
+bindsym $mod+control+u reload
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+control+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
@@ -363,4 +377,4 @@ bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
 bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'sudo poweroff'"
 
 # Rofi
-bindsym $mod+space exec --no-startup-id rofi -show run
+#bindsym $mod+space exec --no-startup-id rofi -show run

@@ -56,7 +56,13 @@ RUN usermod -aG sudo dev
 USER dev
 
 # Install Prezto
-RUN git clone --recursive https://github.com/sorin-ionescu/prezto.git /home/dev/.zprezto
+RUN git clone --recursive https://github.com/sorin-ionescu/prezto.git /home/dev/.zprezto \
+  && ln -s /home/dev/.zprezto/runcoms/zlogin /home/dev/.zlogin \
+  && ln -s /home/dev/.zprezto/runcoms/zlogout /home/dev/.zlogout \
+  && ln -s /home/dev/.zprezto/runcoms/zpreztorc /home/dev/.zpreztorc \
+  && ln -s /home/dev/.zprezto/runcoms/zprofile /home/dev/.zprofile \
+  && ln -s /home/dev/.zprezto/runcoms/zshenv /home/dev/.zshenv \
+  && ln -s /home/dev/.zprezto/runcoms/zshrc /home/dev/.zshrc
 
 # Set zsh as default
 ENV SHELL=/bin/zsh

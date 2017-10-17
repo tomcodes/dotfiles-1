@@ -11,6 +11,9 @@ set nocompatible
 set laststatus=2
 set noshowmode
 
+" Set short timeout
+set timeoutlen=100
+
 " Explorer show as tree
 let g:netrw_liststyle=3
 

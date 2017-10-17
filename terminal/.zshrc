@@ -1,18 +1,9 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-ZSH_THEME="fishy"
-
 # Red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
  
-# Enable oh my zsh plugins
-plugins=(autojump python pip git git-extras docker docker-compose)
-
-# Enable oh my zsh
-if [ -f $ZSH/oh-my-zsh.sh ]; then
-    source $ZSH/oh-my-zsh.sh
+# Enable Prezto
+if [ -f $HOME/.zprezto/init.zsh ]; then
+    source $HOME/.zprezto/init.zsh
 fi
 
 # Source bashrc file

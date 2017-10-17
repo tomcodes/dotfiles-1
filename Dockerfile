@@ -55,8 +55,8 @@ RUN usermod -aG sudo dev
 # Define current user
 USER dev
 
-# Install oh my zsh
-RUN git clone https://github.com/robbyrussell/oh-my-zsh.git /home/dev/.oh-my-zsh
+# Install Prezto
+RUN git clone --recursive https://github.com/sorin-ionescu/prezto.git /home/dev/.zprezto
 
 # Set zsh as default
 ENV SHELL=/bin/zsh

@@ -9,7 +9,8 @@
     "vim.startInInsertMode": true,
     "vim.useSystemClipboard": true,
     "vim.handleKeys": {
-        "<C-f>": false
+        "<C-f>": false,
+        "<C-a>": false
     },
     "vim.insertModeKeyBindings": [
         { "before": ["t", "s"], "after": ["<Esc>"] }

@@ -149,9 +149,14 @@ function goo(){
     sensible-browser "$site" &> /dev/null; 
 }
 
-# Smile redmine browser
+# Redmine browser
 function redmine {
     goo "http://redmine.cross-systems.ch/issues/$@"
+}
+
+# Snow
+function snow {
+    goo "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"
 }
 
 # Parents ls

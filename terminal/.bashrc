@@ -51,15 +51,13 @@ alias pingg="ping www.google.com"
 alias pingf="ping www.free.fr"
 
 # Docker aliases
-alias dk="docker"
-alias dkc="docker-compose"
-alias dkm="docker-machine"
-alias dkr="unset DOCKER_TLS_VERIFY && unset DOCKER_CERT_PATH && unset DOCKER_HOST"
-alias dkl="docker run -it --rm -h dev -v $(pwd):/home/dev/lab lobre/dotfiles"
-alias dkrm="docker run -it --rm"
+alias doc="docker"
+alias doco="docker-compose"
+alias docdot="docker run -it --rm -h dev -v $(pwd):/home/dev/lab lobre/dotfiles"
+alias docrm="docker run -it --rm"
 
-function dkip () { docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $@ ;}
-function dke () { 
+function docip () { docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $@ ;}
+function docex () { 
     if [[ -z $2 ]]; then
         docker exec -i -t $1 bash
     else

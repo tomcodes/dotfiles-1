@@ -59,6 +59,7 @@ alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddr
 alias dkd="docker run -d"
 alias dki="docker run --rm -i -t"
 alias dex="docker exec -i -t"
+alias dlogs="docker logs -f"
 dstop() { docker stop $(docker ps -a -q); }
 drm() { docker rm $(docker ps -a -q); }
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
@@ -72,6 +73,7 @@ alias dcps="docker-compose ps"
 alias dcup="docker-compose up -d"
 alias dcstop="docker-compose stop"
 alias dcrm="docker-compose rm"
+alias dclogs="docker-compose logs -f"
 
 # Ansible aliases
 alias ans="ansible"

@@ -8,9 +8,11 @@
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.startInInsertMode": true,
     "vim.useSystemClipboard": true,
-    "vim.handleKeys": {
+    "vim.useCtrlKeys": true,
+    "vim.handleKeys":{
+        "<C-a>": false,
         "<C-f>": false,
-        "<C-a>": false
+        "<C-w>": false
     },
     "vim.insertModeKeyBindings": [
         { "before": ["t", "s"], "after": ["<Esc>"] }

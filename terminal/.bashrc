@@ -51,19 +51,27 @@ alias pingg="ping www.google.com"
 alias pingf="ping www.free.fr"
 
 # Docker aliases
-alias doc="docker"
-alias doco="docker-compose"
-alias docdot="docker run -it --rm -h dev -v $(pwd):/home/dev/lab lobre/dotfiles"
-alias docrm="docker run -it --rm"
+alias dl="docker ps -l -q"
+alias dps="docker ps"
+alias dpa="docker ps -a"
+alias di="docker images"
+alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias dkd="docker run -d"
+alias dki="docker run --rm -i -t"
+alias dex="docker exec -i -t"
+dstop() { docker stop $(docker ps -a -q); }
+drm() { docker rm $(docker ps -a -q); }
+alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+dri() { docker rmi $(docker images -q); }
+dbu() { docker build -t=$1 .; }
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
-function docip () { docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $@ ;}
-function docex () { 
-    if [[ -z $2 ]]; then
-        docker exec -i -t $1 bash
-    else
-        docker exec -i -t $1 ${@:2}
-    fi
-}
+# Docker-compose aliases
+alias dcps="docker-compose ps"
+alias dcup="docker-compose up -d"
+alias dcstop="docker-compose stop"
+alias dcrm="docker-compose rm"
 
 # Ansible aliases
 alias ans="ansible"

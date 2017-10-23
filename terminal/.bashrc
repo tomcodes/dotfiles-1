@@ -71,6 +71,7 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 # Docker-compose aliases
 alias dcps="docker-compose ps"
 alias dcup="docker-compose up -d"
+alias dcrestart="docker-compose restart"
 alias dcstop="docker-compose stop"
 alias dcrm="docker-compose rm"
 alias dclogs="docker-compose logs -f"

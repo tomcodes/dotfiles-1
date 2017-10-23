@@ -51,7 +51,6 @@ alias pingg="ping www.google.com"
 alias pingf="ping www.free.fr"
 
 # Docker aliases
-alias dl="docker ps -l -q"
 alias dps="docker ps"
 alias dpa="docker ps -a"
 alias di="docker images"

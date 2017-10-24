@@ -8,10 +8,10 @@
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.startInInsertMode": true,
     "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
     "vim.handleKeys":{
         "<C-a>": false,
         "<C-f>": false,
+        "<C-h>": false,
         "<C-w>": false
     },
     "vim.insertModeKeyBindings": [

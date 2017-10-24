@@ -209,6 +209,7 @@ bar {
 	status_command i3status -c $HOME/.config/i3/i3status.conf
 	mode dock
 	position top
+  height 25
 	font pango:$font, FontAwesome 9
 	#tray_output primary
 	# Show only name and not number

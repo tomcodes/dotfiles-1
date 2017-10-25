@@ -97,7 +97,6 @@ set $workspace10 "10:1"
 assign [class=(?i)$music] $workspace6
 assign [class=(?i)$mail] $workspace3
 assign [class=(?i)$skype] $workspace4
-assign [class=(?i)$editor] $workspace2
 assign [class=(?i)$ide] $workspace2
 
 # Default layout new workspace "default|stacking|tabbed"

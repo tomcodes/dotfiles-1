@@ -38,7 +38,7 @@
         { "before": ["h"], "after": ["r"] },
         { "before": ["j"], "after": ["t"] },
         { "before": ["k"], "after": ["s"] },
-        { "before": ["L"], "after": ["C"] },
+        { "before": ["L"], "after": ["D", "a"] },
         { "before": ["H"], "after": ["R"] },
         { "before": ["J"], "after": ["T"] },
         { "before": ["K"], "after": ["S"] }

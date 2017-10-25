@@ -42,5 +42,6 @@
         { "before": ["H"], "after": ["R"] },
         { "before": ["J"], "after": ["T"] },
         { "before": ["K"], "after": ["S"] }
-    ]
+    ],
+    "extensions.ignoreRecommendations": true
 }

@@ -15,13 +15,11 @@
 # * i3-gaps
 # * i3status
 # * nm-applet
-# * gnome-sound-applet
 # * compton
 # * lxappearance
 # * nitrogen
 # * xflux
 # * clipit
-# * scrot
 # * arandr
 # * rofi
 # * dunst
@@ -30,6 +28,7 @@
 # * xclip
 # * cerebro
 # * playerctl
+# * gsimplecal
 
 #
 # SPECIAL KEY NAMES
@@ -50,6 +49,38 @@
 
 # Find key information: xev
 # Find program information: xprop
+
+#
+# COLORS
+#-----------------------------------
+
+# Special
+set_from_resource $foreground foreground  #000000
+set_from_resource $background background  #000000
+# Black
+set_from_resource $color0     color0      #000000
+set_from_resource $color8     color8      #000000
+# Red
+set_from_resource $color1     color1      #000000
+set_from_resource $color9     color9      #000000
+# Green
+set_from_resource $color2     color2      #000000
+set_from_resource $color10    color10     #000000
+# Yellow
+set_from_resource $color3     color3      #000000
+set_from_resource $color11    color11     #000000
+# Blue
+set_from_resource $color4     color4      #000000
+set_from_resource $color12    color12     #000000
+# Magenta
+set_from_resource $color5     color5      #000000
+set_from_resource $color13    color13     #000000
+# Cyan
+set_from_resource $color6     color6      #000000
+set_from_resource $color14    color14     #000000
+# White
+set_from_resource $color7     color7      #000000
+set_from_resource $color15    color15     #000000
 
 #
 # VARIABLES
@@ -99,10 +130,13 @@ set $workspace9 "9:2"
 set $workspace10 "10:1"
 
 # Rules to start windows in workspaces
-assign [class=(?i)$music] $workspace6
-assign [class=(?i)$mail] $workspace3
-assign [class=(?i)$skype] $workspace4
-assign [class=(?i)$ide] $workspace2
+assign [class="(?i)$music"] $workspace6
+assign [class="(?i)$mail"] $workspace3
+assign [class="(?i)$skype"] $workspace4
+assign [class="(?i)$ide"] $workspace2
+
+# Rules for windows
+for_window [class="(?i)gsimplecal"] floating enable, move position mouse
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
@@ -170,39 +204,30 @@ exec --no-startup-id xset m 5 1
 # Launch Wifi applet
 exec --no-startup-id nm-applet
 
-# Launch sound applet
-exec --no-startup-id gnome-sound-applet
-
 # Custom programs
 exec --no-startup-id cerebro
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
-#exec --no-startup-id numlockx
 exec --no-startup-id clipit
 exec --no-startup-id dunst
-exec --no-startup-id dropbox start
 
 # Compton
-exec --no-startup-id compton -f
+exec --no-startup-id compton -b
 
 #
 # COLORS
 #-----------------------------------
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-set $indicator           #FFFFFF
+# Disable titlebar and set border
+for_window [class="^.*"] border pixel 3
 
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          $indicator
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator
-
+# Property Name         Border        BG            Text          Indicator  Child Border
+client.focused          $color5       $color5       $foreground   $color15   $color5
+client.focused_inactive $background   $background   $foreground   $color15   $background
+client.unfocused        $background   $background   $foreground   $color15   $background
+client.urgent           $color13      $color13      $foreground   $color15   $color13
+client.placeholder      $background   $background   $foreground   $color15   $background
+client.background       $background
 
 #
 # i3 BAR
@@ -222,22 +247,25 @@ bar {
 	# Show the mode (resize for instance)
 	binding_mode_indicator yes
 
-	colors {
-		background $bg-color
-	  separator #757575
+  colors {
+        background $color0
+        statusline $foreground
+        separator  $background
 
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
+        # State             Border        BG            Text
+        focused_workspace   $color5       $color5       $foreground
+        active_workspace    $color0       $color0       $foreground
+        inactive_workspace  $color0       $color0       $foreground
+        urgent_workspace    $color13      $color13      $foreground
+        binding_mode        $color13      $color13      $foreground
+    }
 }
 
 #
 # BORDERS
 #-----------------------------------
 
-hide_edge_borders both
+hide_edge_borders smart
 
 #
 # OTHER
@@ -250,10 +278,57 @@ font pango:$font
 floating_modifier $mod
 
 # Gaps
-gaps inner 10
+set $default_gaps 10
+gaps inner $default_gaps
+smart_gaps on
 
 # RESIZE
 #-----------------------------------
+mode "power" {
+    bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock
+    bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout
+    bindsym s mode "default", exec --no-startup-id $HOME/.config/i3/i3exit suspend
+    bindsym h mode "default", exec --no-startup-id $HOME/.config/i3/i3exit hibernate
+    bindsym r mode "default", exec --no-startup-id $HOME/.config/i3/i3exit reboot
+    bindsym p mode "default", exec --no-startup-id $HOME/.config/i3/i3exit shutdown
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+mod1+l mode "power"
+
+mode "reload" {
+    bindsym c mode "default", reload
+    bindsym r mode "default", restart
+}
+bindsym $mod+mod1+s mode "reload"
+
+mode "gaps" {
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     gaps inner current set 0
+    bindsym d     gaps inner current set $default_gaps
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+mod1+g mode "gaps"
+
+mode "apps" {
+    bindsym Return mode "default", exec $HOME/.config/i3/runorraise.sh $terminal
+    bindsym f mode "default", exec $HOME/.config/i3/runorraise.sh $filemanager
+    bindsym c mode "default", exec $HOME/.config/i3/runorraise.sh $browser
+    bindsym m mode "default", exec $HOME/.config/i3/runorraise.sh $music
+    bindsym i mode "default", exec $HOME/.config/i3/runorraise.sh $ide
+    bindsym e mode "default", exec $HOME/.config/i3/runorraise.sh $editor
+    bindsym s mode "default", exec $HOME/.config/i3/runorraise.sh $skype
+    bindsym d mode "default", exec gsimplecal
+    bindsym r mode "default", exec i3-input -F "exec $HOME/.config/i3/runorraise.sh %s" -P "Run or raise: "
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+mod1+t mode "apps"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -268,9 +343,7 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-# Toggle resize mode
-bindsym $mod+g mode "resize"
+bindsym $mod+mod1+r mode "resize"
 
 # Sound shortcuts
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ unmute
@@ -290,27 +363,14 @@ bindsym XF86MonBrightnessDown exec $HOME/.config/i3/brightness.sh -20
 #
 # BINDINGS
 #-----------------------------------
+# Fix windows glitches
+new_window none
 
 # Start a terminal
 bindsym $mod+Return exec $terminal
 
-# Run or raise input
-bindsym $mod+mod1+r exec i3-input -F "exec $HOME/.config/i3/runorraise.sh %s" -P "Run or raise: "
-
-# Run or raise programs
-bindsym $mod+mod1+Return exec $HOME/.config/i3/runorraise.sh $terminal
-bindsym $mod+mod1+f exec $HOME/.config/i3/runorraise.sh $filemanager
-bindsym $mod+mod1+c exec $HOME/.config/i3/runorraise.sh $browser
-bindsym $mod+mod1+m exec $HOME/.config/i3/runorraise.sh $music
-bindsym $mod+mod1+i exec $HOME/.config/i3/runorraise.sh $ide
-bindsym $mod+mod1+e exec $HOME/.config/i3/runorraise.sh $editor
-bindsym $mod+mod1+s exec $HOME/.config/i3/runorraise.sh $skype
-
 # Utilities
-bindsym $mod+F9 exec --no-startup-id scrot -q 100 "$HOME/Pictures/Scrot_%Y-%m-%d_%H:%M:%S.png"; exec notify-send --icon=gtk-info Info "Screenshot saved" -t 300
-bindsym $mod+F10 exec --no-startup-id $screenshot
-bindsym $mod+F11 exec --no-startup-id arandr
-bindsym $mod+F12 exec --no-startup-id $editor $HOME/.config/i3/config
+bindsym Print exec --no-startup-id $screenshot
 
 # Tags
 bindsym $mod+semicolon exec i3-input -F "mark %s" -P "New tag: "
@@ -352,7 +412,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Shift+space fullscreen
+bindsym $mod+Shift+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+k layout stacking
@@ -365,27 +425,9 @@ bindsym $mod+x layout toggle
 # toggle tiling / floating
 bindsym $mod+f floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+Shift+f focus mode_toggle
-
 # focus the parent/child container
 bindsym $mod+a focus parent
 bindsym $mod+z focus child
-
-# reload the configuration file
-bindsym $mod+control+u reload
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+control+e exec --no-startup-id "i3-nagbar -t warning -m 'Exit session?' -b 'Yes' 'i3-msg exit'"
-
-# Lock screen
-bindsym $mod+l exec $HOME/.config/i3/lock.sh
-
-# Turn screen off
-bindsym $mod+F5 exec --no-startup-id sleep 1 && xset dpms force off
-
-# Power off
-bindsym $mod+control+Delete exec --no-startup-id "i3-nagbar -t warning -m 'Power Off?' -b 'Yes' 'sudo poweroff'"
 
 # Rofi
 #bindsym $mod+space exec --no-startup-id rofi -show run

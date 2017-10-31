@@ -12,7 +12,9 @@
         "<C-a>": false,
         "<C-f>": false,
         "<C-h>": false,
-        "<C-w>": false
+        "<C-w>": false,
+        "<C-c>": false,
+        "<C-v>": false
     },
     "vim.insertModeKeyBindings": [
         { "before": ["t", "s"], "after": ["<Esc>"] }

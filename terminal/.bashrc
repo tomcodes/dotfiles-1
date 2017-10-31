@@ -145,7 +145,7 @@ function goo(){
     local site=""
     if [[ -f "$(pwd)/$1" ]]; then
         site="$(pwd)/$1"
-    elif [[ "$1" =~ "^http|.+\.[a-z]{2,}$" ]]; then
+    elif [[ "$1" =~ ^http ]] || [[ "$1" =~ .+\.[a-z]{2,}$ ]]; then
         site="$1"
     else
         search=""

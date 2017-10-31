@@ -141,7 +141,7 @@ function vims () {
 }
 
 # Browser query
-function goo(){ 
+function browser(){ 
     local site=""
     if [[ -f "$(pwd)/$1" ]]; then
         site="$(pwd)/$1"
@@ -159,12 +159,12 @@ function goo(){
 
 # Redmine browser
 function redmine {
-    goo "http://redmine.cross-systems.ch/issues/$@"
+    browser "http://redmine.cross-systems.ch/issues/$@"
 }
 
 # Snow
 function snow {
-    goo "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"
+    browser "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"
 }
 
 # Parents ls

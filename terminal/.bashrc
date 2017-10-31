@@ -145,8 +145,10 @@ function browser(){
     local site=""
     if [[ -f "$(pwd)/$1" ]]; then
         site="$(pwd)/$1"
-    elif [[ "$1" =~ ^http ]] || [[ "$1" =~ .+\.[a-z]{2,}$ ]]; then
+    elif [[ "$1" =~ ^http ]]; then
         site="$1"
+    elif [[ "$1" =~ ^localhost ]] || [[ "$1" =~ (.+[.][a-z]{2,}|.+:[0-9]+)$ ]]; then
+        site="http://$1"
     else
         search=""
         for term in $@; do

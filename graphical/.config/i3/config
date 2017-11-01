@@ -12,6 +12,7 @@
 # DEPENDENCIES
 #-----------------------------------
 
+# * i3-py (via pip)
 # * i3-gaps
 # * i3status
 # * nm-applet
@@ -211,6 +212,10 @@ exec --no-startup-id dunst
 
 # Compton
 exec --no-startup-id compton -b
+
+# Alternating layout
+exec --no-startup-id $HOME/.config/i3/alternating_layout.py
+
 
 #
 # COLORS

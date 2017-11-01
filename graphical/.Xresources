@@ -35,7 +35,7 @@ URxvt*saveLines: 50000
 *.background:   #2F343F
 *.cursorColor:  #eceff1
 ! black
-*.color0:       #182125
+*.color0:       #212121
 *.color8:       #37474f
 ! red
 *.color1:       #ff9800
@@ -61,9 +61,10 @@ URxvt*saveLines: 50000
 
 ! rofi
 rofi.opacity:      85
-rofi.lines:        2
 rofi.font:         Droid Sans 18
-rofi.color-window: #2f343f,#2f343f
-rofi.color-normal: #2f343f,#f3f4f5,#2f343f,#2f343f,#9575cd
+rofi.color-window: #2F343F,#2F343F
+rofi.color-normal: #2F343F,#eceff1,#2F343F,#2F343F,#e91e63
 rofi.bw:           0
 rofi.eh:           2
+rofi.fullscreen:   true
+rofi.padding:      400

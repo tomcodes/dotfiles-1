@@ -26,7 +26,6 @@
 # * amixer
 # * i3lock
 # * xclip
-# * cerebro
 # * playerctl
 # * gsimplecal
 
@@ -205,7 +204,6 @@ exec --no-startup-id xset m 5 1
 exec --no-startup-id nm-applet
 
 # Custom programs
-exec --no-startup-id cerebro
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
 exec --no-startup-id clipit
@@ -223,7 +221,7 @@ for_window [class="^.*"] border pixel 3
 
 # Property Name         Border        BG            Text          Indicator  Child Border
 client.focused          $color5       $color5       $foreground   $color15   $color5
-client.focused_inactive $background   $background   $foreground   $color15   $background
+client.focused_inactive $color5       $color5       $foreground   $color15   $color5
 client.unfocused        $background   $background   $foreground   $color15   $background
 client.urgent           $color13      $color13      $foreground   $color15   $color13
 client.placeholder      $background   $background   $foreground   $color15   $background
@@ -238,19 +236,16 @@ bar {
 	status_command i3status -c $HOME/.config/i3/i3status.conf
 	mode dock
 	position top
-  height 25
+  height 20
 	font pango:$font, FontAwesome 9
-	#tray_output primary
-	# Show only name and not number
 	strip_workspace_numbers yes
 	workspace_buttons yes
-	# Show the mode (resize for instance)
 	binding_mode_indicator yes
 
   colors {
         background $color0
+        separator  $color0
         statusline $foreground
-        separator  $background
 
         # State             Border        BG            Text
         focused_workspace   $color5       $color5       $foreground
@@ -430,4 +425,4 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 # Rofi
-#bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+space exec --no-startup-id rofi -show run -run-command "bash -i -c '{cmd}'"

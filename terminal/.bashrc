@@ -141,7 +141,7 @@ function vims () {
 }
 
 # Browser query
-function browser(){ 
+function @(){ 
     local site=""
     if [[ -f "$(pwd)/$1" ]]; then
         site="$(pwd)/$1"
@@ -161,12 +161,12 @@ function browser(){
 
 # Redmine browser
 function redmine {
-    browser "http://redmine.cross-systems.ch/issues/$@"
+    @ "http://redmine.cross-systems.ch/issues/$@"
 }
 
 # Snow
 function snow {
-    browser "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"
+    @ "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"
 }
 
 # Parents ls

@@ -260,7 +260,7 @@ bar {
 # BORDERS
 #-----------------------------------
 
-hide_edge_borders smart
+hide_edge_borders both
 
 #
 # OTHER

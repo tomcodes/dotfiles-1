@@ -14,6 +14,7 @@ RUN apt-get update \
   iputils-ping \
   openvpn \
   htop \
+  jq \
   zsh \
   vim \
   git \

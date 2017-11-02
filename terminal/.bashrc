@@ -6,9 +6,11 @@ if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
     alias ssh="sshrc"
 fi
 
-# Include temporary file exists
-if [ -f $HOME/.bashrc.tmp ]; then
-    . $HOME/.bashrc.tmp
+# Include unversioned files
+if [ -d ~/.bashrc.d ]; then
+    for file in ~/.bashrc.d/*; do
+        . $file;
+    done
 fi
 
 # Terminal colors
@@ -37,52 +39,17 @@ alias top="htop"
 alias copy="xclip -selection clipboard"
 alias calc="bc -l"
 alias battery="acpi"
-alias off="sudo poweroff"
 alias vpn="sudo openvpn"
-alias update="sudo apt-get update"
-alias upgrade="sudo apt-get upgrade"
 alias lessf="less +F"
 alias less="less -N"
 alias vimend="vim '+normal G$'"
-alias sshp="\ssh"
 alias server="\ssh docker@lobr.fr"
 alias keyboard="setxkbmap"
-alias pingg="ping www.google.com"
-alias pingf="ping www.free.fr"
 
 # Docker aliases
-alias dps="docker ps"
-alias dpa="docker ps -a"
-alias di="docker images"
 alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
-alias dkd="docker run -d"
-alias dki="docker run --rm -i -t"
 alias dex="docker exec -i -t"
-alias dlogs="docker logs"
-dstop() { docker stop $(docker ps -a -q); }
-drm() { docker rm $(docker ps -a -q); }
-alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
-dri() { docker rmi $(docker images -q); }
-dbu() { docker build -t=$1 .; }
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
-dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
-
-# Docker-compose aliases
-alias dcps="docker-compose ps"
-alias dcup="docker-compose up -d"
-alias dcrestart="docker-compose restart"
-alias dcstop="docker-compose stop"
-alias dcrm="docker-compose rm"
-alias dclogs="docker-compose logs" 
-
-# Ansible aliases
-alias ans="ansible"
-alias ansp="ansible-playbook"
-
-# Python aliases
-alias venv="source venv/bin/activate"
-alias py="ipython3"
-alias dj="python manage.py"
+alias dup="docker-compose up -d"
 
 # Prevent scroll lock
 [[ $- == *i* ]] && stty -ixon -ixoff
@@ -116,9 +83,6 @@ function mgrep() {
 function regex() {
     awk 'match($0, /'"$1"'/) { print substr($0, RSTART, RLENGTH) }'
 }
-
-# Mkdir and cd using a single command
-function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 # Start docker ungit
 function ungit () {
@@ -217,7 +181,7 @@ function lab() {
 }
 
 # Tcpdump clean
-function tcpdumphttp() {
+function httpdump() {
     if [[ -z $1 ]]; then
         PORT=80
     else

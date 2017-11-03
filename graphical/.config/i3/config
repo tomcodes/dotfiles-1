@@ -54,34 +54,27 @@
 # COLORS
 #-----------------------------------
 
-# Special
-set_from_resource $foreground foreground  #000000
-set_from_resource $background background  #000000
-# Black
-set_from_resource $color0     color0      #000000
-set_from_resource $color8     color8      #000000
-# Red
-set_from_resource $color1     color1      #000000
-set_from_resource $color9     color9      #000000
-# Green
-set_from_resource $color2     color2      #000000
-set_from_resource $color10    color10     #000000
-# Yellow
-set_from_resource $color3     color3      #000000
-set_from_resource $color11    color11     #000000
-# Blue
-set_from_resource $color4     color4      #000000
-set_from_resource $color12    color12     #000000
-# Magenta
-set_from_resource $color5     color5      #000000
-set_from_resource $color13    color13     #000000
-# Cyan
-set_from_resource $color6     color6      #000000
-set_from_resource $color14    color14     #000000
-# White
-set_from_resource $color7     color7      #000000
-set_from_resource $color15    color15     #000000
+set_from_resource	  $background_i3wmthemer	background
+set_from_resource	  $foreground_i3wmthemer	foreground
+set_from_resource	  $color00_i3wmthemer		  color0
+set_from_resource 	$color01_i3wmthemer 	  color1
+set_from_resource 	$color02_i3wmthemer 	  color2
+set_from_resource 	$color03_i3wmthemer 	  color3
+set_from_resource 	$color04_i3wmthemer 	  color4
+set_from_resource 	$color05_i3wmthemer 	  color5
+set_from_resource 	$color06_i3wmthemer		  color6
+set_from_resource	  $color07_i3wmthemer		  color7
+set_from_resource	  $color08_i3wmthemer		  color8
+set_from_resource	  $color09_i3wmthemer		  color9
+set_from_resource	  $color10_i3wmthemer	    color10
+set_from_resource	  $color11_i3wmthemer	    color11
+set_from_resource	  $color12_i3wmthemer	    color12
+set_from_resource	  $color13_i3wmthemer	    color13
+set_from_resource	  $color14_i3wmthemer	    color14
+set_from_resource	  $color15_i3wmthemer	    color15
 
+new_window pixel 2
+new_float pixel 2
 #
 # VARIABLES
 #-----------------------------------
@@ -216,6 +209,9 @@ exec --no-startup-id compton -b
 # Alternating layout
 exec --no-startup-id $HOME/.config/i3/alternating_layouts.py
 
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 
 #
 # COLORS
@@ -224,48 +220,19 @@ exec --no-startup-id $HOME/.config/i3/alternating_layouts.py
 # Disable titlebar and set border
 for_window [class="^.*"] border pixel 3
 
-# Property Name         Border        BG            Text          Indicator  Child Border
-client.focused          $color5       $color5       $foreground   $color15   $color5
-client.focused_inactive $color5       $color5       $foreground   $color15   $color5
-client.unfocused        $background   $background   $foreground   $color15   $background
-client.urgent           $color13      $color13      $foreground   $color15   $color13
-client.placeholder      $background   $background   $foreground   $color15   $background
-client.background       $background
-
-#
-# i3 BAR
-#-----------------------------------
-
-# Start i3bar to display a workspace bar
-bar {
-	status_command i3status -c $HOME/.config/i3/i3status.conf
-	mode dock
-	position top
-  height 20
-	font pango:$font, FontAwesome 9
-	strip_workspace_numbers yes
-	workspace_buttons yes
-	binding_mode_indicator yes
-
-  colors {
-        background $color0
-        separator  $color0
-        statusline $foreground
-
-        # State             Border        BG            Text
-        focused_workspace   $color5       $color5       $foreground
-        active_workspace    $color0       $color0       $foreground
-        inactive_workspace  $color0       $color0       $foreground
-        urgent_workspace    $color13      $color13      $foreground
-        binding_mode        $color13      $color13      $foreground
-    }
-}
+# Property Name         Border                  BG                      Text                    Indicator             Child Border
+client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color02_i3wmthemer		$color02_i3wmthemer
+client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.placeholder	    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer
+client.background	$background
 
 #
 # BORDERS
 #-----------------------------------
 
-hide_edge_borders both
+hide_edge_borders none
 
 #
 # OTHER
@@ -364,7 +331,6 @@ bindsym XF86MonBrightnessDown exec $HOME/.config/i3/brightness.sh -20
 # BINDINGS
 #-----------------------------------
 # Fix windows glitches
-new_window none
 
 # Start a terminal
 bindsym $mod+Return exec $terminal

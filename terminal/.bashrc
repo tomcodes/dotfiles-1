@@ -51,6 +51,14 @@ alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddr
 alias dex="docker exec -i -t"
 alias dup="docker-compose up -d"
 
+function dps() {
+    if [ ! -f ./docker-compose.yml ]; then
+        docker ps
+    else
+        docker-compose ps
+    fi
+}
+
 # Prevent scroll lock
 [[ $- == *i* ]] && stty -ixon -ixoff
 
@@ -105,7 +113,7 @@ function vims () {
 }
 
 # Browser query
-function @(){ 
+function browser(){ 
     local site=""
     if [[ -f "$(pwd)/$1" ]]; then
         site="$(pwd)/$1"
@@ -125,12 +133,12 @@ function @(){
 
 # Redmine browser
 function redmine {
-    @ "http://redmine.cross-systems.ch/issues/$@"
+    browser "http://redmine.cross-systems.ch/issues/$@"
 }
 
 # Snow
 function snow {
-    @ "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"
+    browser "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"
 }
 
 # Parents ls

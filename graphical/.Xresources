@@ -1,71 +1,64 @@
-! clean up urxvt, add keybinds
-URxvt.intensityStyles: false
-URxvt.scrollBar: false
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.urgentOnBell: True
+*.foreground:   #bfbfbf
+*.background:   #162025
+*.cursorColor:  #bfbfbf
 
-! font
-URxvt*font: xft:inconsolata:size=13
+*.color0:       #0f1619
+*.color1:       #393843
+*.color2:       #75404b
+*.color3:       #235964
+*.color4:       #0b4753
+*.color5:       #2a474a
+*.color6:       #662b37
+*.color7:       #bfbfbf
+*.color8:       #365a5c
+*.color9:       #662b37
+*.color10:      #193a48
+*.color11:      #393843
+*.color12:      #75404b
+*.color13:      #662b37
+*.color14:      #083842
+*.color15:      #bfbfbf
 
-! Size
-URxvt.geometry: 80x40
+URxvt.background:	           [100]#162025
+URxvt.cursorBlink:           true
+URxvt.cursorColor:           #bfbfbf
+URxvt.depth:                 32
+URxvt.fading:                30
+URxvt.font:                  xft:inconsolata:size=13
+URxvt.foreground:            #bfbfbf
+URxvt.geometry:              80x20
+URxvt.intensityStyles:       false
+URxvt.internalBorder:        6
+URxvt.iso14755:              false
+URxvt.iso14755_52:           false
+URxvt.loginShell:            true
+URxvt.matcher.button:        1
+URxvt.matcher.rend.0:        Uline Bold fg5
+URxvt.mouseWheelScrollPage:  false
+URxvt.perl-ext-common:       default,matcher,clipboard,vtwheel,resize-font
+URxvt.saveLines:             50000
+URxvt.scrollBar:             false
+URxvt.scrollTtyKeypress:     true
+URxvt.scrollTtyOutput:       false
+URxvt.scrollWithBuffer:      false
+URxvt.skipScroll:            true
+URxvt.urgentOnBell:          true
+URxvt.url-launcher:          /usr/bin/google-chrome
+URxvt.visualBell:            false
 
-! terminal padding
-URxvt.internalBorder: 20
+rofi.bw:               1
+rofi.columns:          2
+rofi.fixed-num-lines:  true
+rofi.font:             inconsolata 13
+rofi.hide-scrollbar:   true
+rofi.lines:            5
+rofi.padding:          5
+rofi.separator-style:  solid
+rofi.sidebar-mode:     false
 
-! clickable links, clipboard support, mouse wheel support, and on the fly font resizing
-! you will need to install the relevent perl extensions for these to work
-URxvt.perl-ext-common: default,matcher,clipboard,vtwheel,resize-font
-URxvt.url-launcher: /usr/bin/google-chrome
-URxvt.matcher.button: 1
-URxvt.matcher.rend.0: Uline Bold fg5
+rofi.color-enabled: true
 
-! tmux improvements
-URxvt*loginShell: true
-URxvt*scrollTtyKeypress: true
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: false
-URxvt*skipScroll: true
-URxvt*fading: 30
-URxvt*visualBell: false
-URxvt*saveLines: 50000
-
-! special
-*.foreground:   #eceff1
-*.background:   #2F343F
-*.cursorColor:  #eceff1
-! black
-*.color0:       #212121
-*.color8:       #37474f
-! red
-*.color1:       #ff9800
-*.color9:       #ffa74d
-! green
-*.color2:       #8bc34a
-*.color10:      #9ccc65
-! yellow
-*.color3:       #ffc107
-*.color11:      #ffa000
-! blue
-*.color4:       #03a9f4
-*.color12:      #81d4fa
-! magenta
-*.color5:       #e91e63
-*.color13:      #ad1457
-! cyan
-*.color6:       #009688
-*.color14:      #26a69a
-! white
-*.color7:       #cfd8dc
-*.color15:      #eceff1
-
-! rofi
-rofi.opacity:      85
-rofi.font:         Droid Sans 18
-rofi.color-window: #2F343F,#2F343F
-rofi.color-normal: #2F343F,#eceff1,#2F343F,#2F343F,#e91e63
-rofi.bw:           0
-rofi.eh:           2
-rofi.fullscreen:   true
-rofi.padding:      400
+rofi.color-window: #162025, #662b37, #662b37
+rofi.color-normal: #162025, #bfbfbf, #162025, #162025, #662b37
+rofi.color-active: #162025, #bfbfbf, #162025, #162025, #662b37
+rofi.color-urgent: #162025, #bfbfbf, #162025, #162025, #662b37

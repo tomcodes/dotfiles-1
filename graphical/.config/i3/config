@@ -214,7 +214,7 @@ exec --no-startup-id dunst
 exec --no-startup-id compton -b
 
 # Alternating layout
-exec --no-startup-id $HOME/.config/i3/alternating_layout.py
+exec --no-startup-id $HOME/.config/i3/alternating_layouts.py
 
 
 #

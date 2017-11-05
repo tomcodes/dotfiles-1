@@ -29,6 +29,8 @@
 # * xclip
 # * playerctl
 # * gsimplecal
+# * polybar
+# * volumeicon
 
 #
 # SPECIAL KEY NAMES
@@ -51,41 +53,19 @@
 # Find program information: xprop
 
 #
-# COLORS
-#-----------------------------------
-
-set_from_resource	  $background_i3wmthemer	background
-set_from_resource	  $foreground_i3wmthemer	foreground
-set_from_resource	  $color00_i3wmthemer		  color0
-set_from_resource 	$color01_i3wmthemer 	  color1
-set_from_resource 	$color02_i3wmthemer 	  color2
-set_from_resource 	$color03_i3wmthemer 	  color3
-set_from_resource 	$color04_i3wmthemer 	  color4
-set_from_resource 	$color05_i3wmthemer 	  color5
-set_from_resource 	$color06_i3wmthemer		  color6
-set_from_resource	  $color07_i3wmthemer		  color7
-set_from_resource	  $color08_i3wmthemer		  color8
-set_from_resource	  $color09_i3wmthemer		  color9
-set_from_resource	  $color10_i3wmthemer	    color10
-set_from_resource	  $color11_i3wmthemer	    color11
-set_from_resource	  $color12_i3wmthemer	    color12
-set_from_resource	  $color13_i3wmthemer	    color13
-set_from_resource	  $color14_i3wmthemer	    color14
-set_from_resource	  $color15_i3wmthemer	    color15
-
-new_window pixel 2
-new_float pixel 2
-#
 # VARIABLES
 #-----------------------------------
 
-# Variable modifier
+# Modifier
 set $mod mod4
 
-# Variable font
-set $font Droid Sans 9
+# Font
+set $font inconsolata 13
 
-# Variables softwares
+# Gaps
+set $gaps 8
+
+# Softs
 set $terminal urxvt
 set $browser google-chrome
 set $filemanager pantheon-files
@@ -95,6 +75,64 @@ set $editor code
 set $ide pstorm
 set $music spotify
 set $skype skypeforlinux
+
+#
+# COLORS
+#-----------------------------------
+
+set_from_resource	  $background_i3wmthemer	background
+set_from_resource	  $foreground_i3wmthemer	foreground
+set_from_resource	  $color00_i3wmthemer		color0
+set_from_resource 	  $color01_i3wmthemer 	    color1
+set_from_resource 	  $color02_i3wmthemer 	    color2
+set_from_resource 	  $color03_i3wmthemer 	    color3
+set_from_resource 	  $color04_i3wmthemer 	    color4
+set_from_resource 	  $color05_i3wmthemer 	    color5
+set_from_resource 	  $color06_i3wmthemer		color6
+set_from_resource	  $color07_i3wmthemer		color7
+set_from_resource	  $color08_i3wmthemer		color8
+set_from_resource	  $color09_i3wmthemer		color9
+set_from_resource	  $color10_i3wmthemer	    color10
+set_from_resource	  $color11_i3wmthemer	    color11
+set_from_resource	  $color12_i3wmthemer	    color12
+set_from_resource	  $color13_i3wmthemer	    color13
+set_from_resource	  $color14_i3wmthemer	    color14
+set_from_resource	  $color15_i3wmthemer	    color15
+
+# Property Name         Border                  BG                      Text                    Indicator             Child Border
+client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color02_i3wmthemer		$color02_i3wmthemer
+client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.urgent		    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.placeholder	    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer
+client.background	$background
+
+#
+# STYLE
+#-----------------------------------
+
+# Border style for new windows and floating windows
+new_window pixel 2
+new_float pixel 2
+
+# Hide container borders adjacent to the screen edges
+hide_edge_borders none
+
+# Draw borders only if it is not the only container
+smart_borders on
+
+# Font for windows tiles
+font pango:$font
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Gaps
+gaps inner $gaps
+gaps outer $gaps
+
+# Use gaps if there is more than one container
+smart_gaps on
 
 #
 # WORKSPACES
@@ -194,8 +232,9 @@ exec --no-startup-id xset s off
 # Change mouse speed
 exec --no-startup-id xset m 5 1
 
-# Launch Wifi applet
+# Applet
 exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
 
 # Custom programs
 exec --no-startup-id nitrogen --restore
@@ -212,45 +251,11 @@ exec_always --no-startup-id $HOME/.config/i3/alternating_layouts.py
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-
 #
-# COLORS
+# MODES
 #-----------------------------------
 
-# Disable titlebar and set border
-for_window [class="^.*"] border pixel 3
-
-# Property Name         Border                  BG                      Text                    Indicator             Child Border
-client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color02_i3wmthemer		$color02_i3wmthemer
-client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
-client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
-client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
-client.placeholder	    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer
-client.background	$background
-
-#
-# BORDERS
-#-----------------------------------
-
-hide_edge_borders none
-
-#
-# OTHER
-#-----------------------------------
-
-# Font for windows tiles
-font pango:$font
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# Gaps
-set $default_gaps 10
-gaps inner $default_gaps
-smart_gaps on
-
-# RESIZE
-#-----------------------------------
+bindsym $mod+mod1+l mode "power"
 mode "power" {
     bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock
     bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout
@@ -262,25 +267,51 @@ mode "power" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+mod1+l mode "power"
 
+bindsym $mod+mod1+s mode "reload"
 mode "reload" {
     bindsym c mode "default", reload
     bindsym r mode "default", restart
 }
-bindsym $mod+mod1+s mode "reload"
 
-mode "gaps" {
-    bindsym plus  gaps inner current plus 5
-    bindsym minus gaps inner current minus 5
-    bindsym 0     gaps inner current set 0
-    bindsym d     gaps inner current set $default_gaps
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
 bindsym $mod+mod1+g mode "gaps"
+mode "gaps" {
+        bindsym o      mode "gaps_outer"
+        bindsym i      mode "gaps_inner"
 
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+        bindsym d     gaps inner current set $gaps
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+        bindsym Shift+d     gaps inner all set $gaps
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+        bindsym d     gaps outer current set $gaps
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+        bindsym Shift+d     gaps outer all set $gaps
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+mod1+t mode "apps"
 mode "apps" {
     bindsym Return mode "default", exec $HOME/.config/i3/runorraise.sh $terminal
     bindsym f mode "default", exec $HOME/.config/i3/runorraise.sh $filemanager
@@ -295,42 +326,21 @@ mode "apps" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+mod1+t mode "apps"
 
-# resize window (you can also use the mouse for that)
+bindsym $mod+mod1+r mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
         bindsym c           resize grow width 5 px or 5 ppt
         bindsym t           resize grow height 5 px or 5 ppt
         bindsym s           resize shrink height 5 px or 5 ppt
         bindsym r           resize shrink width 5 px or 5 ppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+mod1+r mode "resize"
-
-# Sound shortcuts
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- unmute
-bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
-
-# Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-# Brightness
-bindsym XF86MonBrightnessUp exec $HOME/.config/i3/brightness.sh +20
-bindsym XF86MonBrightnessDown exec $HOME/.config/i3/brightness.sh -20
 
 #
 # BINDINGS
 #-----------------------------------
-# Fix windows glitches
 
 # Start a terminal
 bindsym $mod+Return exec $terminal
@@ -344,7 +354,6 @@ bindsym $mod+colon exec i3-input -F "[con_mark=\"%s\"] focus" -P "Search tag: "
 bindsym $mod+exclam exec i3-input -F "unmark %s" -P "Remove tag: "
 
 # Scratchpad
-# Make the currently focused window a scratchpad
 bindsym $mod+Shift+dollar move scratchpad
 
 # Show the first scratchpad window
@@ -378,7 +387,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Shift+f fullscreen
+bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+k layout stacking
@@ -389,11 +398,29 @@ bindsym $mod+e layout toggle split
 bindsym $mod+x layout toggle
 
 # toggle tiling / floating
-bindsym $mod+f floating toggle
+bindsym $mod+Shift+f floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
 
 # focus the parent/child container
 bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
-# Rofi
+# Sound shortcuts
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- unmute
+bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Brightness
+bindsym XF86MonBrightnessUp exec $HOME/.config/i3/brightness.sh +20
+bindsym XF86MonBrightnessDown exec $HOME/.config/i3/brightness.sh -20
+
+# Program launcher
 bindsym $mod+space exec --no-startup-id rofi -show run -run-command "bash -i -c '{cmd}'"

@@ -140,25 +140,25 @@ smart_gaps on
 
 # Customize workspace names
 # Home
-set $workspace1 "1:"
+set $workspace1 "1"
 # Dev
-set $workspace2 "2:"
+set $workspace2 "2"
 # Mail
-set $workspace3 "3:"
+set $workspace3 "3"
 # Chat
-set $workspace4 "4:"
+set $workspace4 "4"
 # Others
-set $workspace5 "5:"
+set $workspace5 "5"
 # Music
-set $workspace6 "6:"
+set $workspace6 "6"
 # Workspace 7
-set $workspace7 "7:4"
+set $workspace7 "7"
 # Workspace 8
-set $workspace8 "8:3"
+set $workspace8 "8"
 # Workspace 9
-set $workspace9 "9:2"
+set $workspace9 "9"
 # Workspace 10
-set $workspace10 "10:1"
+set $workspace10 "10"
 
 # Rules to start windows in workspaces
 assign [class="(?i)$music"] $workspace6

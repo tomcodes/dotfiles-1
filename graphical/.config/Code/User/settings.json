@@ -46,5 +46,6 @@
         { "before": ["J"], "after": ["T"] },
         { "before": ["K"], "after": ["S"] }
     ],
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "window.zoomLevel": 0
 }

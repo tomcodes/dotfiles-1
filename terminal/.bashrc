@@ -60,6 +60,11 @@ function dps() {
     fi
 }
 
+# List tags of image
+function dtags() {
+   wget -q https://registry.hub.docker.com/v1/repositories/$@/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}' 
+}
+
 # Prevent scroll lock
 [[ $- == *i* ]] && stty -ixon -ixoff
 

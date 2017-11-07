@@ -98,12 +98,12 @@ set_from_resource     $color13        color13
 set_from_resource     $color14        color14
 set_from_resource     $color15        color15
 
-# Property Name         Border          BG              Text            Indicator   Child Border
-client.focused         	$foreground	$background	$foreground     $color2     $color2
-client.unfocused       	$foreground	$background	$foreground     $color4     $color4
-client.focused_inactive	$foreground	$background	$foreground     $color4     $color4
-client.urgent		$foreground	$background	$foreground     $color4     $color4
-client.placeholder	$foreground	$background	$foreground     $color4     $color4
+# Property Name         Border      BG              Text            Indicator       Child Border
+client.focused         	$color0	    $color4         $color0         $foreground     $color4
+client.unfocused       	$color0	    $background     $foreground     $foreground     $color0
+client.focused_inactive	$color0	    $background     $foreground     $foreground     $color0
+client.urgent		$color0	    $background     $foreground     $foreground     $color0
+client.placeholder	$color0	    $background     $foreground     $foreground     $color0
 client.background	$background
 
 #
@@ -253,7 +253,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # MODES
 #-----------------------------------
 
-bindsym control+mod1+del mode "power"
+bindsym mod1+control+Delete mode "power"
 mode "power" {
     bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock
     bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout

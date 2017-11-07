@@ -1,34 +1,35 @@
-*.foreground:   #c5c8c6
-*.background:   #1e1e20
-*.cursorColor:  #c5c8c6
+*.borderColor:  #1c1c22
+*.background:	#1c1c22
+*.foreground:	#b0aba8
+*.cursorColor:  #b0aba8
 
-*.color0:       #2F2F32
-*.color8:       #f4d8c6
-*.color1:       #e6a57a
-*.color9:       #e6a57a
-*.color2:       #e39866
-*.color10:      #e39866
-*.color3:       #df8b54
-*.color11:      #df8b54
-*.color4:       #dc7f41
-*.color12:      #dc7f41
-*.color5:       #c6723a
-*.color13:      #c6723a
-*.color6:       #b06534
-*.color14:      #b06534
-*.color7:       #f1cbb3
-*.color15:      #f1cbb3
+*.color0:       #313131
+*.color8:       #434343
+*.color1:       #7e6565
+*.color9:       #807171
+*.color2:       #85aab6
+*.color10:      #3e646f
+*.color3:       #90a996
+*.color11:      #badbc2
+*.color4:       #3e646f
+*.color12:      #5c828d
+*.color5:       #817f98
+*.color13:      #9b98b7
+*.color6:       #9aa7c0
+*.color14:      #b2b7c0
+*.color7:       #b0aba8
+*.color15:      #d9d6ca
 
 URxvt.internalBorder:        6
 URxvt.font:                  xft:inconsolata:size=13
 URxvt.geometry:              80x20
 URxvt.depth:                 32
-URxvt.background:	         [100]#1e1e20
+URxvt.background:	         [100]#1c1c22
 URxvt.scrollBar:             false
 URxvt.mouseWheelScrollPage:  false
 URxvt.cursorBlink:           true
-URxvt.foreground: 		     #c5c8c6
-URxvt.cursorColor:		     #c5c8c6
+URxvt.foreground: 		     #b0aba8
+URxvt.cursorColor:		     #b0aba8
 URxvt.saveLines:             50000
 
 URxvt.fading:                30
@@ -49,10 +50,10 @@ URxvt.visualBell:            false
 
 rofi.color-enabled: true
 
-rofi.color-window: #1e1e20, #dc7f41, #dc7f41
-rofi.color-normal: #1e1e20, #c5c8c6, #1e1e20, #1e1e20, #dc7f41
-rofi.color-active: #1e1e20, #c5c8c6, #1e1e20, #1e1e20, #dc7f41
-rofi.color-urgent: #1e1e20, #c5c8c6, #1e1e20, #1e1e20, #dc7f41
+rofi.color-window: #1c1c22, #3e646f, #3e646f
+rofi.color-normal: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
+rofi.color-active: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
+rofi.color-urgent: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false

@@ -16,6 +16,9 @@ fi
 # Terminal colors
 export TERM='xterm-256color'
 
+# Default editor
+VISUAL=vim; export VISUAL; EDITOR=vim; export EDITOR
+
 # Gopath
 export GOPATH="$HOME/Lab/go"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
@@ -51,12 +54,21 @@ alias keyboard="setxkbmap"
 alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 alias dex="docker exec -i -t"
 alias dup="docker-compose up -d"
+alias dcp="docker-compose"
 
 function dps() {
     if [ ! -f ./docker-compose.yml ]; then
         docker ps
     else
         docker-compose ps
+    fi
+}
+
+function dlogs() {
+    if [ ! -f ./docker-compose.yml ]; then
+        docker logs $@
+    else
+        docker-compose logs $@
     fi
 }
 

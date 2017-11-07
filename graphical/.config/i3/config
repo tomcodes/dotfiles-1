@@ -30,7 +30,6 @@
 # * playerctl
 # * gsimplecal
 # * polybar
-# * volumeicon
 
 #
 # SPECIAL KEY NAMES
@@ -66,45 +65,45 @@ set $font inconsolata 13
 set $gaps 8
 
 # Softs
-set $terminal urxvt
-set $browser google-chrome
-set $filemanager pantheon-files
-set $mail thunderbird
-set $screenshot shutter
-set $editor code
-set $ide pstorm
-set $music spotify
-set $skype skypeforlinux
+set $terminal      urxvt
+set $browser       google-chrome
+set $filemanager   pantheon-files
+set $mail          thunderbird
+set $screenshot    shutter
+set $editor        code
+set $ide           pstorm
+set $music         spotify
+set $skype         skypeforlinux
 
 #
 # COLORS
 #-----------------------------------
 
-set_from_resource	  $background_i3wmthemer	background
-set_from_resource	  $foreground_i3wmthemer	foreground
-set_from_resource	  $color00_i3wmthemer		color0
-set_from_resource 	  $color01_i3wmthemer 	    color1
-set_from_resource 	  $color02_i3wmthemer 	    color2
-set_from_resource 	  $color03_i3wmthemer 	    color3
-set_from_resource 	  $color04_i3wmthemer 	    color4
-set_from_resource 	  $color05_i3wmthemer 	    color5
-set_from_resource 	  $color06_i3wmthemer		color6
-set_from_resource	  $color07_i3wmthemer		color7
-set_from_resource	  $color08_i3wmthemer		color8
-set_from_resource	  $color09_i3wmthemer		color9
-set_from_resource	  $color10_i3wmthemer	    color10
-set_from_resource	  $color11_i3wmthemer	    color11
-set_from_resource	  $color12_i3wmthemer	    color12
-set_from_resource	  $color13_i3wmthemer	    color13
-set_from_resource	  $color14_i3wmthemer	    color14
-set_from_resource	  $color15_i3wmthemer	    color15
+set_from_resource     $background     background
+set_from_resource     $foreground     foreground
+set_from_resource     $color0         color0
+set_from_resource     $color1 	      color1
+set_from_resource     $color2         color2
+set_from_resource     $color3         color3
+set_from_resource     $color4         color4
+set_from_resource     $color5         color5
+set_from_resource     $color6         color6
+set_from_resource     $color7         color7
+set_from_resource     $color8         color8
+set_from_resource     $color9         color9
+set_from_resource     $color10        color10
+set_from_resource     $color11        color11
+set_from_resource     $color12        color12
+set_from_resource     $color13        color13
+set_from_resource     $color14        color14
+set_from_resource     $color15        color15
 
-# Property Name         Border                  BG                      Text                    Indicator             Child Border
-client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color02_i3wmthemer		$color02_i3wmthemer
-client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
-client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
-client.urgent		    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
-client.placeholder	    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer
+# Property Name         Border          BG              Text            Indicator   Child Border
+client.focused         	$foreground	$background	$foreground     $color2     $color2
+client.unfocused       	$foreground	$background	$foreground     $color4     $color4
+client.focused_inactive	$foreground	$background	$foreground     $color4     $color4
+client.urgent		$foreground	$background	$foreground     $color4     $color4
+client.placeholder	$foreground	$background	$foreground     $color4     $color4
 client.background	$background
 
 #
@@ -119,7 +118,7 @@ new_float pixel 2
 hide_edge_borders none
 
 # Draw borders only if it is not the only container
-smart_borders on
+#smart_borders on
 
 # Font for windows tiles
 font pango:$font
@@ -132,7 +131,7 @@ gaps inner $gaps
 gaps outer $gaps
 
 # Use gaps if there is more than one container
-smart_gaps on
+#smart_gaps on
 
 #
 # WORKSPACES
@@ -234,7 +233,6 @@ exec --no-startup-id xset m 5 1
 
 # Applet
 exec --no-startup-id nm-applet
-exec --no-startup-id volumeicon
 
 # Custom programs
 exec --no-startup-id nitrogen --restore
@@ -243,7 +241,7 @@ exec --no-startup-id clipit
 exec --no-startup-id dunst
 
 # Compton
-exec --no-startup-id compton -b
+exec_always --no-startup-id compton -b
 
 # Alternating layout
 exec_always --no-startup-id $HOME/.config/i3/alternating_layouts.py
@@ -255,7 +253,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # MODES
 #-----------------------------------
 
-bindsym $mod+mod1+l mode "power"
+bindsym control+mod1+del mode "power"
 mode "power" {
     bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock
     bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout

@@ -261,7 +261,7 @@ format-padding = 2
 
 label-open = 
 label-close = 
-label-separator = |
+label-separator = " | "
 
 menu-0-0 = Power Off
 menu-0-0-foreground = ${colors.foreground}

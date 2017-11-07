@@ -286,3 +286,4 @@ click-right = playerctl next
 [module/title]
 type = internal/xwindow
 label-underline = ${colors.foreground}
+label = %title:0:45:...%

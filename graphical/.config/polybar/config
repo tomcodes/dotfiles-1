@@ -32,7 +32,7 @@ line-color = ${colors.foreground}
 line-size = 1
 
 spacing = 0
-padding-right = 2
+padding-right = 0
 module-margin = 1
 
 font-0 = inconsolata:size=13;-1
@@ -206,10 +206,7 @@ format = <label> <bar-used>
 label = RAM
 
 bar-used-width = 30
-bar-used-foreground-0 = ${colors.foreground}
-bar-used-foreground-1 = ${colors.foreground}
-bar-used-foreground-2 = ${colors.color4}
-bar-used-foreground-3 = ${colors.color4}
+bar-used-foreground = ${colors.foreground}
 bar-used-indicator = |
 bar-used-indicator-font = 6
 bar-used-indicator-foreground = ${colors.color4}

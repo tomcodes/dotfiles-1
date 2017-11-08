@@ -418,8 +418,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness
-bindsym XF86MonBrightnessUp exec $HOME/.config/i3/brightness.sh +20
-bindsym XF86MonBrightnessDown exec $HOME/.config/i3/brightness.sh -20
+# The following script needs to be allowed to run as sudo in visudo
+bindsym XF86MonBrightnessUp exec sudo $HOME/.config/i3/brightness.sh +20
+bindsym XF86MonBrightnessDown exec sudo $HOME/.config/i3/brightness.sh -20
 
 # Program launcher
 bindsym $mod+space exec --no-startup-id rofi -show run -run-command "bash -i -c '{cmd}'"

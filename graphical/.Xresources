@@ -1,35 +1,50 @@
-*.borderColor:  #1c1c22
-*.background:	#1c1c22
-*.foreground:	#b0aba8
-*.cursorColor:  #b0aba8
+! special
+*.foreground:   #eceff1
+*.background:   #263238
+*.cursorColor:  #eceff1
 
-*.color0:       #313131
-*.color8:       #434343
-*.color1:       #7e6565
-*.color9:       #807171
-*.color2:       #85aab6
-*.color10:      #3e646f
-*.color3:       #90a996
-*.color11:      #badbc2
-*.color4:       #3e646f
-*.color12:      #5c828d
-*.color5:       #817f98
-*.color13:      #9b98b7
-*.color6:       #9aa7c0
-*.color14:      #b2b7c0
-*.color7:       #b0aba8
-*.color15:      #d9d6ca
+! black
+*.color0:       #2e3c43
+*.color8:       #37474f
+
+! red
+*.color1:       #ff9800
+*.color9:       #ffa74d
+
+! green
+*.color2:       #8bc34a
+*.color10:      #9ccc65
+
+! yellow
+*.color3:       #ffc107
+*.color11:      #ffa000
+
+! blue
+*.color4:       #03a9f4
+*.color12:      #81d4fa
+
+! magenta
+*.color5:       #e91e63
+*.color13:      #ad1457
+
+! cyan
+*.color6:       #009688
+*.color14:      #26a69a
+
+! white
+*.color7:       #cfd8dc
+*.color15:      #eceff1
 
 URxvt.internalBorder:        6
 URxvt.font:                  xft:inconsolata:size=13
 URxvt.geometry:              80x20
 URxvt.depth:                 32
-URxvt.background:	         [100]#1c1c22
+URxvt.background:	         [100]#263238
 URxvt.scrollBar:             false
 URxvt.mouseWheelScrollPage:  false
 URxvt.cursorBlink:           true
-URxvt.foreground: 		     #b0aba8
-URxvt.cursorColor:		     #b0aba8
+URxvt.foreground: 		     #eceff1
+URxvt.cursorColor:		     #eceff1
 URxvt.saveLines:             50000
 
 URxvt.fading:                30
@@ -50,10 +65,10 @@ URxvt.visualBell:            false
 
 rofi.color-enabled: true
 
-rofi.color-window: #1c1c22, #3e646f, #3e646f
-rofi.color-normal: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
-rofi.color-active: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
-rofi.color-urgent: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
+rofi.color-window: #2E3C43, #03a9f4, #81d4fa
+rofi.color-normal: #2E3C43, #bcbcbc, #2E3C43, #03a9f4, #263238
+rofi.color-active: #2E3C43, #bcbcbc, #2E3C43, #03a9f4, #263238
+rofi.color-urgent: #2E3C43, #bcbcbc, #2E3C43, #03a9f4, #263238
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false

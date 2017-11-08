@@ -231,24 +231,25 @@ interface = wlp2s0
 interval = 3.0
 ping-interval = 10
 
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
+format-connected = <label-connected>
+label-connected =  %essid%
 label-disconnected =  not connected
 label-disconnected-foreground = ${colors.color4}
-
-ramp-signal-0 = 
-
-animation-packetloss-0 = 
-animation-packetloss-0-foreground = ${colors.color4}
-animation-packetloss-framerate = 500
+label-packetloss =  %essid%
+label-packetloss-foreground = ${colors.color4}
 
 [module/wired-network]
 type = internal/network
 interface = enxd481d7547bb9
 interval = 3.0
+ping-interval = 10
 
+format-connected = <label-connected>
 label-connected =  %{T3}%local_ip%%{T-}
-label-disconnected-foreground = ${colors.foreground}
+label-disconnected =  not connected
+label-disconnected-foreground = ${colors.color4}
+label-packetloss =  %{T3}%local_ip%%{T-}
+label-packetloss-foreground = ${colors.color4}
 
 [module/volume]
 type = internal/volume

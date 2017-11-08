@@ -119,7 +119,7 @@ new_float pixel 2
 hide_edge_borders none
 
 # Draw borders only if it is not the only container
-#smart_borders on
+smart_borders on
 
 # Font for windows tiles
 font pango:$font

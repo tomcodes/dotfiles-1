@@ -191,8 +191,8 @@ bindsym $mod+1 workspace $workspace10
 # switching between workspace
 bindsym $mod+p workspace prev_on_output
 bindsym $mod+n workspace next_on_output
-bindsym $mod+Shift+Tab workspace prev_on_output
-bindsym $mod+Tab workspace next_on_output
+bindsym mod1+Shift+Tab workspace prev_on_output
+bindsym mod1+Tab workspace next_on_output
 
 # move focused container to workspace
 bindsym $mod+Shift+7 move container to workspace $workspace1
@@ -374,8 +374,8 @@ bindsym $mod+Shift+s move up
 bindsym $mod+Shift+r move right
 
 # focus between visible windows
-bindsym mod1+Tab exec --no-startup-id ~/.config/i3/i3t.py n
-bindsym mod1+Shift+Tab exec --no-startup-id ~/.config/i3/i3t.py p
+bindsym $mod+Tab exec --no-startup-id ~/.config/i3/i3t.py n
+bindsym $mod+Shift+Tab exec --no-startup-id ~/.config/i3/i3t.py p
 
 # split in horizontal orientation
 bindsym $mod+h split h

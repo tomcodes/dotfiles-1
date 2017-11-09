@@ -48,6 +48,9 @@ bottom = true
 width = 100%
 height = 27
 
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 

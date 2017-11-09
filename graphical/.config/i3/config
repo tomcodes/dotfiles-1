@@ -69,7 +69,6 @@ set $gaps 8
 set $terminal      urxvt
 set $browser       google-chrome
 set $filemanager   pantheon-files
-set $mail          thunderbird
 set $screenshot    shutter
 set $editor        code
 set $ide           pstorm
@@ -143,7 +142,7 @@ gaps outer $gaps
 set $workspace1 "1"
 # Dev
 set $workspace2 "2"
-# Mail
+# Temporary
 set $workspace3 "3"
 # Chat
 set $workspace4 "4"
@@ -162,7 +161,6 @@ set $workspace10 "10"
 
 # Rules to start windows in workspaces
 assign [class="(?i)$music"] $workspace6
-assign [class="(?i)$mail"] $workspace3
 assign [class="(?i)$skype"] $workspace4
 assign [class="(?i)$ide"] $workspace2
 

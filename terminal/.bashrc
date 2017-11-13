@@ -49,6 +49,7 @@ alias less="less -N"
 alias vimend="vim '+normal G$'"
 alias server="\ssh docker@lobr.fr"
 alias keyboard="setxkbmap"
+alias vgit="PAGER='vim -' git -c color.ui=false"
 
 # Docker aliases
 alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"

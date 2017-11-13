@@ -112,8 +112,8 @@ label-unfocused-background = ${colors.background}
 label-unfocused-padding = 2
 
 label-urgent = %icon%
-label-urgent-foreground = ${colors.color4}
-label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.color4}
 label-urgent-padding = 2
 
 label-mode = %mode%

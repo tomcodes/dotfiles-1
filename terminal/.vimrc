@@ -47,6 +47,7 @@ if exists("*vundle#begin")
     Plugin 'mattn/emmet-vim'
     Plugin 'xolox/vim-misc'
     Plugin 'xolox/vim-session'
+    Plugin 'chriskempson/base16-vim'
 
     call vundle#end()
 

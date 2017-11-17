@@ -19,6 +19,9 @@ export TERM='xterm-256color'
 # Default editor
 VISUAL=vim; export VISUAL; EDITOR=vim; export EDITOR
 
+# Add date in history
+export HISTTIMEFORMAT="%d/%m/%y %T "
+
 # Gopath
 export GOPATH="$HOME/Lab/go"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

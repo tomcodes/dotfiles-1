@@ -12,7 +12,7 @@ source $HOME/.bashrc
 # Zsh specific aliases
 alias zshr="source ~/.zshrc"
 # Get full history by default
-alias history="history 1"
+alias history="history -E 1"
 
 # Add some autocompletions
 compdef sshrc=ssh

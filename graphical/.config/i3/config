@@ -308,7 +308,7 @@ mode "gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+mod1+t mode "apps"
+bindsym $mod+mod1+space mode "apps"
 mode "apps" {
     bindsym Return mode "default", exec $HOME/.config/i3/runorraise.sh $terminal
     bindsym f mode "default", exec $HOME/.config/i3/runorraise.sh $filemanager

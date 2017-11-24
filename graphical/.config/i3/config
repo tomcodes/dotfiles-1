@@ -142,9 +142,9 @@ gaps outer $gaps
 set $workspace1 "1"
 # Dev
 set $workspace2 "2"
-# Temporary
-set $workspace3 "3"
 # Chat
+set $workspace3 "3"
+# Temporary
 set $workspace4 "4"
 # Others
 set $workspace5 "5"
@@ -161,7 +161,7 @@ set $workspace10 "10"
 
 # Rules to start windows in workspaces
 assign [class="(?i)$music"] $workspace6
-assign [class="(?i)$skype"] $workspace4
+assign [class="(?i)$skype"] $workspace3
 assign [class="(?i)$ide"] $workspace2
 
 # Rules for windows

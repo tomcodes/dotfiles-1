@@ -56,9 +56,9 @@ alias vgit="PAGER='vim -' git -c color.ui=false"
 
 # Docker aliases
 alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
-alias dex="docker exec -i -t"
+alias dex="docker exec -it"
+alias drun="docker run -it --rm"
 alias dup="docker-compose up -d"
-alias dcp="docker-compose"
 
 function dps() {
     if [ ! -f ./docker-compose.yml ]; then

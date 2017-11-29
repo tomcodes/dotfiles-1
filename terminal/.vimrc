@@ -11,9 +11,6 @@ set nocompatible
 set laststatus=2
 set noshowmode
 
-" Set short timeout
-set timeoutlen=100
-
 " Explorer show as tree
 let g:netrw_liststyle=3
 
@@ -95,10 +92,6 @@ set background=dark
 syntax on
 set t_Co=256
 silent! colorscheme delek
-
-" I need another Esc key
-inoremap ts <Esc>
-vnoremap ts <Esc>
 
 " Remap debut de ligne
 noremap è ^

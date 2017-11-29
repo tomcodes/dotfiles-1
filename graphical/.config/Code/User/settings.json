@@ -17,9 +17,6 @@
         "<C-v>": false,
         "<C-x>": false
     },
-    "vim.insertModeKeyBindings": [
-        { "before": ["t", "s"], "after": ["<Esc>"] }
-    ],
     "vim.otherModesKeyBindingsNonRecursive": 
     [
         { "before": ["é"], "after": ["w"] },

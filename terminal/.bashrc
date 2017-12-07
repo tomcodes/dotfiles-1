@@ -143,6 +143,8 @@ function browser(){
         site="$(pwd)/$1"
     elif [[ "$1" =~ ^http ]]; then
         site="$1"
+    elif [[ "$1" =~ ^:[0-9]+ ]]; then
+        site="http://localhost$1"
     elif [[ "$1" =~ ^localhost ]] || [[ "$1" =~ (.+[.][a-z]{2,}|.+:[0-9]+)$ ]]; then
         site="http://$1"
     else

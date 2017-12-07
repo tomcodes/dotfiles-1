@@ -1,5 +1,5 @@
 # Path
-export PATH=$PATH:~/.bin/
+export PATH=$PATH:$HOME/.bin/
 
 # Check if use sshrc
 if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
@@ -7,8 +7,8 @@ if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
 fi
 
 # Include unversioned files
-if [ -d ~/.bashrc.d ]; then
-    for file in ~/.bashrc.d/*; do
+if [ -d $HOME/.bashrc.d ]; then
+    for file in $HOME/.bashrc.d/*; do
         . $file;
     done
 fi
@@ -35,8 +35,8 @@ alias .="cd ."
 alias ..="cd .."
 alias ...="cd ../.."
 alias extip="wget http://ipinfo.io/ip -qO -"
-alias dl="cd ~/Downloads"
-alias doc="cd ~/Documents"
+alias dl="cd $HOME/Downloads"
+alias doc="cd $HOME/Documents"
 alias df="df -H"
 alias du="du -ch"
 alias dig="dig +short"
@@ -91,24 +91,36 @@ function cd {
     builtin cd "$@" && ll
 }
 
+# Try
+function try() {
+    local try_path="$HOME/Lab/try/$@"
+    mkdir -p "$try_path"
+    cd "$try_path"
+}
+
+function tryrm() {
+    local try_path="$HOME/Lab/try/$@"
+    rm -rf "$try_path"
+}
+
+alias tryclean="rm -rf $HOME/Lab/try/*"
+
 # Search for files
 function mfind() {
-    if [[ -z $2 ]]; then
-        DIR=.
-    else
-        DIR=$2
+    local dir=.
+    if [[ -n $2 ]]; then
+        dir=$2
     fi
-    find $DIR -iname "*$1*" 2>/dev/null;
+    find $dir -iname "*$1*" 2>/dev/null;
 }
 
 # Search for string
 function mgrep() {
-    if [[ -z $2 ]]; then
-        DIR=.
-    else
-        DIR=$2
+    local dir=.
+    if [[ -n $2 ]]; then
+        local dir=$2
     fi
-    grep -RIin --exclude=tags "$1" $DIR 2>/dev/null;
+    grep -RIin --exclude=tags "$1" $dir 2>/dev/null;
 }
 
 # Regex
@@ -119,10 +131,9 @@ function regex() {
 # Start docker ungit
 function ungit () {
     docker rm -f ungit &> /dev/null
-    if [[ -z $1 ]]; then
-        REPO=$PWD
-    else
-        REPO=$1
+    local repo=$PWD
+    if [[ -n $1 ]]; then
+        repo=$1
     fi
     docker run --name ungit -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent -v $HOME/.ssh/known_hosts:/home/developer/.ssh/known_hosts -v $HOME/.gitconfig:/home/developer/.gitconfig -p 8448:8448 -d -v $REPO:/repo mybuilds/ungit
 }
@@ -148,7 +159,7 @@ function browser(){
     elif [[ "$1" =~ ^localhost ]] || [[ "$1" =~ (.+[.][a-z]{2,}|.+:[0-9]+)$ ]]; then
         site="http://$1"
     else
-        search=""
+        local search=""
         for term in $@; do
             search="$search%20$term"
         done
@@ -169,27 +180,25 @@ function snow {
 
 # Parents ls
 function llp() {
-    if [[ -z $1 ]]; then
-        FILE=$(pwd)
-    else
-        FILE=$1
+    local file=$(pwd)
+    if [[ -n $1 ]]; then
+        file=$1
     fi
-    until [ "$FILE" = "/" ] || [ "$FILE" = "." ]; do
-        ls -lda $FILE
-        FILE=`dirname $FILE`
+    until [ "$file" = "/" ] || [ "$file" = "." ]; do
+        ls -lda $file
+        file=`dirname $file`
     done
 }
 
 # ls and grep
 function llg() {
-    if [[ -z $2 ]]; then
-        DIR=.
-        PATTERN=${@:1}
-    else
-        DIR=$2
-        PATTERN=$1
+    local dir=.
+    local pattern=${@:1}
+    if [[ -n $2 ]]; then
+        dir=$2
+        pattern=$1
     fi
-    ll $DIR | grep $PATTERN
+    ll $dir | grep $pattern
 }
 
 # Lab function
@@ -208,18 +217,17 @@ function lab() {
     echo "             "
 
     if [[ -z $1 ]]; then
-        cd ~/Lab;
+        cd $HOME/Lab;
     else
-        cd ~/Lab/$1;
+        cd $HOME/Lab/$1;
     fi
 }
 
 # Tcpdump clean
 function httpdump() {
+    local port=80
     if [[ -z $1 ]]; then
-        PORT=80
-    else
-        PORT=$1
+        port=$1
     fi
-    sudo stdbuf -oL -eL /usr/sbin/tcpdump -A -s 10240 "tcp port $PORT and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)" | egrep -a --line-buffered ".+(GET |HTTP\/|POST )|^[A-Za-z0-9-]+: " | perl -nle 'BEGIN{$|=1} { s/.*?(GET |HTTP\/[0-9.]* |POST )/\n$1/g; print }'
+    sudo stdbuf -oL -eL /usr/sbin/tcpdump -A -s 10240 "tcp port $port and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)" | egrep -a --line-buffered ".+(GET |HTTP\/|POST )|^[A-Za-z0-9-]+: " | perl -nle 'BEGIN{$|=1} { s/.*?(GET |HTTP\/[0-9.]* |POST )/\n$1/g; print }'
 }

@@ -47,7 +47,6 @@ alias top="htop"
 alias copy="xclip -selection clipboard"
 alias calc="bc -l"
 alias battery="acpi"
-alias vpn="sudo openvpn"
 alias lessf="less +F"
 alias less="less -N"
 alias vimend="vim '+normal G$'"
@@ -103,7 +102,12 @@ function tryrm() {
     rm -rf "$try_path"
 }
 
-alias tryclean="rm -rf $HOME/Lab/try/*"
+alias tryclean="rm -rf $HOME/Lab/try && mkdir -p $HOME/Lab/try"
+
+# Vpn
+function vpn() {
+    sudo openvpn "$HOME/Lab/vpn/$@.ovpn"
+}
 
 # Search for files
 function mfind() {

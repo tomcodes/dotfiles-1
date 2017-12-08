@@ -4,8 +4,8 @@
 *.cursorColor:  #eceff1
 
 ! black
-*.color0:       #2e3c43
-*.color8:       #37474f
+*.color0:       #374952
+*.color8:       #485E68
 
 ! red
 *.color1:       #ff9800
@@ -65,10 +65,10 @@ URxvt.visualBell:            false
 
 rofi.color-enabled: true
 
-rofi.color-window: #2E3C43, #03a9f4, #81d4fa
-rofi.color-normal: #2E3C43, #bcbcbc, #2E3C43, #03a9f4, #263238
-rofi.color-active: #2E3C43, #bcbcbc, #2E3C43, #03a9f4, #263238
-rofi.color-urgent: #2E3C43, #bcbcbc, #2E3C43, #03a9f4, #263238
+rofi.color-window: #374952, #03a9f4, #81d4fa
+rofi.color-normal: #374952, #bcbcbc, #374952, #03a9f4, #263238
+rofi.color-active: #374952, #bcbcbc, #374952, #03a9f4, #263238
+rofi.color-urgent: #374952, #bcbcbc, #374952, #03a9f4, #263238
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false

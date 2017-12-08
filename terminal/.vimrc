@@ -53,11 +53,11 @@ endif
 filetype plugin indent on
 
 " -- Affichage
-set title               " Met a jour le titre de votre fenetre ou de votre terminal
-set number              " Affiche le numero des lignes
-set ruler               " Affiche la position actuelle du curseur
-set wrap                " Affiche les lignes trop longues sur plusieurs lignes
-set scrolloff=3         " Affiche un minimum de 3 lignes autour du curseur (pour le scroll)
+set title                 " Met a jour le titre de votre fenetre ou de votre terminal
+set number relativenumber " Affiche le numero des lignes
+set ruler                 " Affiche la position actuelle du curseur
+set wrap                  " Affiche les lignes trop longues sur plusieurs lignes
+set scrolloff=3           " Affiche un minimum de 3 lignes autour du curseur (pour le scroll)
 
 " -- Recherche
 set ignorecase          " Ignore la casse lors d’une recherche

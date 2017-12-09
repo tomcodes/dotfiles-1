@@ -136,6 +136,12 @@ nnoremap <f5> :!ctags -R<CR>
 " Remove highlight
 nnoremap <C-_> :noh<CR>
 
+" Buffer shortcuts
+map <Leader>c :bprev<CR>
+map <Leader>r :bnext<CR>
+map <Leader>d :bd<CR>
+map <Leader>f :b 
+
 " BÉPO CONFIG
 " ———————————————————————————————
 
@@ -260,10 +266,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-k>'],
     \ 'AcceptSelection("t")': ['<c-j>'],
     \ }
-noremap <Leader>o :CtrlP<CR>
-noremap <Leader>b :CtrlPBuffer<CR>
-noremap <Leader>t :CtrlPTag<CR>
-noremap <Leader>c :CtrlPQuickfix<CR>
+noremap <Leader>t :CtrlPMixed<CR>
 
 " Lighline
 " ———————————————————————————————

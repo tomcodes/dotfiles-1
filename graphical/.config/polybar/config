@@ -285,6 +285,9 @@ menu-0-1-exec = $HOME/.config/i3/i3exit reboot
 menu-0-2 = Lock
 menu-0-2-foreground = ${colors.foreground}
 menu-0-2-exec = $HOME/.config/i3/i3exit lock
+menu-0-3 = Logout
+menu-0-3-foreground = ${colors.foreground}
+menu-0-3-exec = $HOME/.config/i3/i3exit logout
 
 [module/music]
 type = custom/script

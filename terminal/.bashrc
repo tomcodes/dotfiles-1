@@ -132,8 +132,8 @@ function regex() {
     awk 'match($0, /'"$1"'/) { print substr($0, RSTART, RLENGTH) }'
 }
 
-# Pattern
-function pattern() {
+# Block find
+function block() {
     awk "/$1/,/$2/"
 }
 

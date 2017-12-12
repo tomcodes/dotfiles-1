@@ -137,6 +137,11 @@ function pattern() {
     awk "/$1/,/$2/"
 }
 
+# Lines
+function lines() {
+    sed -n "$1,$2p"
+}
+
 # Start docker ungit
 function ungit () {
     docker rm -f ungit &> /dev/null

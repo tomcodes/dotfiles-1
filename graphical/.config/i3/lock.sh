@@ -34,4 +34,4 @@ then
         echo "done"
     done
 fi
-i3lock -u -n -i /tmp/screen.png
+i3lock -e -f -n -i /tmp/screen.png

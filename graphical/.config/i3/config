@@ -223,9 +223,9 @@ bindsym $mod+control+r move workspace to output right
 # Set bépo keyboard
 exec --no-startup-id setxkbmap fr -variant bepo
 
-# Remove screensaver
+# Remove screensaver and turn off screen after 5 min
 exec --no-startup-id xset -dpms
-exec --no-startup-id xset s off
+exec --no-startup-id xset s 300
 
 # Change mouse speed
 exec --no-startup-id xset m 5 1

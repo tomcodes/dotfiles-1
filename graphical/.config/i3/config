@@ -12,25 +12,22 @@
 # DEPENDENCIES
 #-----------------------------------
 
-# * i3-py (via pip)
-# * i3-gaps
-# * i3status
-# * nm-applet
-# * compton
-# * lxappearance
-# * nitrogen
-# * xflux
-# * clipit
-# * arandr
-# * rofi
-# * dunst
-# * amixer
-# * i3lock
-# * xclip
-# * playerctl
-# * gsimplecal
-# * polybar
-# * arc darker gtk
+# * i3-py | pip install i3-py && pip2 install i3-py
+# * i3-gaps | https://github.com/Airblader/i3/wiki/Compiling-&-Installing
+# * compton | apt-get install compton
+# * lxappearance | apt-get install lxappearance
+# * nitrogen | apt-get install nitrogen
+# * xflux | add-apt-repository ppa:nathan-renniewaldock/flux && apt-get update && apt-get install fluxgui
+# * clipit | apt-get install clipit
+# * arandr | apt-get install arandr
+# * rofi | apt-get install rofi
+# * dunst | apt-get install dunst
+# * i3lock | apt-get install i3lock scrot imagemagick xautolock
+# * xclip | apt-get install xclip
+# * playerctl | https://github.com/acrisci/playerctl/releases
+# * gsimplecal | apt-get install gsimplecal
+# * polybar | https://www.ubuntuupdates.org/ppa/getdeb_apps?dist=xenial
+# * arc-theme | http://www.noobslab.com/2017/01/arc-theme-light-dark-versions-and-arc.html
 
 #
 # SPECIAL KEY NAMES

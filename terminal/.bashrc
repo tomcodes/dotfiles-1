@@ -250,3 +250,7 @@ function httpdump() {
 function psmem() {
     ps -C $1 -O rss | gawk '{ count ++; sum += $2 }; END {count --; print "Number of processes =",count; print "Memory usage per process =",sum/1024/count, "MB"; print "Total memory usage =", sum/1024, "MB" ;};' 2>/dev/null
 }
+
+function cert() {
+    curl --insecure -v https://$1 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }"
+}

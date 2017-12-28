@@ -249,8 +249,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # MODES
 #-----------------------------------
 
-bindsym mod1+control+Delete mode "power"
-mode "power" {
+set $power_mode "power"
+bindsym mod1+control+Delete mode $power_mode
+mode $power_mode {
     bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock
     bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout
     bindsym s mode "default", exec --no-startup-id $HOME/.config/i3/i3exit suspend
@@ -262,21 +263,25 @@ mode "power" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+mod1+s mode "reload"
-mode "reload" {
+set $reload_mode "reload"
+bindsym $mod+mod1+s mode $reload_mode
+mode $reload_mode {
     bindsym c mode "default", reload
     bindsym r mode "default", restart
 }
 
-bindsym $mod+mod1+g mode "gaps"
-mode "gaps" {
-        bindsym o      mode "gaps_outer"
-        bindsym i      mode "gaps_inner"
+set $gaps_mode "gaps"
+set $gaps_inner_mode "gaps_inner"
+set $gaps_outer_mode "gaps_outer"
+bindsym $mod+mod1+g mode $gaps_mode
+mode $gaps_mode {
+        bindsym o      mode $gaps_outer_mode
+        bindsym i      mode $gaps_inner_mode
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-mode "gaps_inner" {
+mode $gaps_inner_mode {
         bindsym plus  gaps inner current plus 5
         bindsym minus gaps inner current minus 5
         bindsym 0     gaps inner current set 0
@@ -290,7 +295,7 @@ mode "gaps_inner" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-mode "gaps_outer" {
+mode $gaps_outer_mode {
         bindsym plus  gaps outer current plus 5
         bindsym minus gaps outer current minus 5
         bindsym 0     gaps outer current set 0
@@ -305,8 +310,9 @@ mode "gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+mod1+space mode "apps"
-mode "apps" {
+set $apps_mode "apps"
+bindsym $mod+mod1+space mode $apps_mode
+mode $apps_mode {
     bindsym Return mode "default", exec $HOME/.config/i3/runorraise.sh $terminal
     bindsym f mode "default", exec $HOME/.config/i3/runorraise.sh $filemanager
     bindsym c mode "default", exec $HOME/.config/i3/runorraise.sh $browser
@@ -321,8 +327,9 @@ mode "apps" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+mod1+r mode "resize"
-mode "resize" {
+set $resize_mode "resize"
+bindsym $mod+mod1+r mode $resize_mode
+mode $resize_mode {
         bindsym c           resize grow width 5 px or 5 ppt
         bindsym t           resize grow height 5 px or 5 ppt
         bindsym s           resize shrink height 5 px or 5 ppt
@@ -330,6 +337,18 @@ mode "resize" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
+}
+
+set $display_mode "display [t]op [r]ight [e]xternal [l]aptop"
+bindsym $mod+mod1+d mode $display_mode
+mode $display_mode {
+    bindsym t mode "default", exec $HOME/.config/i3/display/top.sh, restart
+    bindsym r mode "default", exec $HOME/.config/i3/display/right.sh, restart 
+    bindsym e mode "default", exec $HOME/.config/i3/display/external.sh, restart
+    bindsym l mode "default", exec $HOME/.config/i3/display/laptop.sh, restart
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 #

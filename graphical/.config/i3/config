@@ -153,7 +153,7 @@ set $workspace7 "7"
 set $workspace8 "8"
 # Workspace 9
 set $workspace9 "9"
-# Workspace 10
+# Workspace 0
 set $workspace10 "10"
 
 # Rules to start windows in workspaces
@@ -174,16 +174,22 @@ workspace_auto_back_and_forth yes
 bindsym $mod+equal exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 # switch to workspace
-bindsym $mod+7 workspace $workspace1
-bindsym $mod+8 workspace $workspace2
-bindsym $mod+9 workspace $workspace3
-bindsym $mod+0 workspace $workspace4
-bindsym $mod+6 workspace $workspace5
-bindsym $mod+5 workspace $workspace6
-bindsym $mod+4 workspace $workspace7
-bindsym $mod+3 workspace $workspace8
-bindsym $mod+2 workspace $workspace9
-bindsym $mod+1 workspace $workspace10
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# custom switch to workspace
+bindsym $mod+mod1+t workspace $workspace1
+bindsym $mod+mod1+s workspace $workspace2
+bindsym $mod+mod1+r workspace $workspace3
+bindsym $mod+mod1+n workspace $workspace4
 
 # switching between workspace
 bindsym $mod+p workspace prev_on_output
@@ -192,16 +198,22 @@ bindsym $mod+Shift+Tab workspace prev_on_output
 bindsym $mod+Tab workspace next_on_output
 
 # move focused container to workspace
-bindsym $mod+Shift+7 move container to workspace $workspace1
-bindsym $mod+Shift+8 move container to workspace $workspace2
-bindsym $mod+Shift+9 move container to workspace $workspace3
-bindsym $mod+Shift+0 move container to workspace $workspace4
-bindsym $mod+Shift+6 move container to workspace $workspace5
-bindsym $mod+Shift+5 move container to workspace $workspace6
-bindsym $mod+Shift+4 move container to workspace $workspace7
-bindsym $mod+Shift+3 move container to workspace $workspace8
-bindsym $mod+Shift+2 move container to workspace $workspace9
-bindsym $mod+Shift+1 move container to workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# custom move focused container to workspace
+bindsym $mod+mod1+Shift+t move container to workspace $workspace1
+bindsym $mod+mod1+Shift+s move container to workspace $workspace2
+bindsym $mod+mod1+Shift+r move container to workspace $workspace3
+bindsym $mod+mod1+Shift+n move container to workspace $workspace4
 
 # move focused container to next/previous workspace
 bindsym $mod+Shift+n move container to workspace next
@@ -267,10 +279,13 @@ mode $power_mode {
 }
 
 set $reload_mode "reload"
-bindsym $mod+mod1+s mode $reload_mode
+bindsym $mod+mod1+c mode $reload_mode
 mode $reload_mode {
     bindsym c mode "default", reload
     bindsym r mode "default", restart
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 set $gaps_mode "gaps"
@@ -331,7 +346,7 @@ mode $apps_mode {
 }
 
 set $resize_mode "resize"
-bindsym $mod+mod1+r mode $resize_mode
+bindsym $mod+mod1+Return mode $resize_mode
 mode $resize_mode {
         bindsym c           resize grow width 5 px or 5 ppt
         bindsym t           resize grow height 5 px or 5 ppt

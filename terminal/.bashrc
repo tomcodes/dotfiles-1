@@ -254,3 +254,12 @@ function psmem() {
 function cert() {
     curl --insecure -v https://$1 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }"
 }
+
+# Strip comments
+function nocomments() {
+    local char=#
+    if [[ -n $1 ]]; then
+        char=$1
+    fi
+    grep -E -v "^$char|^$"
+}

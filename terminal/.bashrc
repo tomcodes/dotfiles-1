@@ -261,5 +261,5 @@ function nocomments() {
     if [[ -n $1 ]]; then
         char=$1
     fi
-    grep -E -v "^$char|^$"
+    sed "/^\s*$/d;/^$char/d"
 }

@@ -162,7 +162,7 @@ function vims () {
 }
 
 # Browser query
-function browser(){ 
+function www(){ 
     local site=""
     if [[ -f "$(pwd)/$1" ]]; then
         site="$(pwd)/$1"
@@ -182,15 +182,11 @@ function browser(){
     sensible-browser "$site" &> /dev/null; 
 }
 
-# Redmine browser
-function redmine {
-    browser "http://redmine.cross-systems.ch/issues/$@"
-}
-
-# Snow
-function snow {
-    browser "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"
-}
+# Browser function aliases
+function redmine { www "http://redmine.cross-systems.ch/issues/$@" }
+function snow { www "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@" }
+function wordreference { www "http://www.wordreference.com/enfr/$@" }
+function translate { www "http://translate.google.com/?source=osdd#auto|auto|$@" }
 
 # Parents ls
 function llp() {

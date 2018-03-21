@@ -45,7 +45,6 @@ alias grep="grep -i"
 alias rsync="rsync -avz --progress"
 alias top="htop"
 alias copy="xclip -selection clipboard"
-alias calc="bc -l"
 alias battery="acpi"
 alias lessf="less +F"
 alias less="less -N"
@@ -88,6 +87,10 @@ function dtags() {
 # Launch ls after cd command
 function cd {
     builtin cd "$@" && ll
+}
+
+function calc() {
+    bc -l <<< "$@"
 }
 
 # Try

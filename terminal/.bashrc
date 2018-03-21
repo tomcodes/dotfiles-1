@@ -52,7 +52,6 @@ alias vimend="vim '+normal G$'"
 alias server="\ssh docker@lobr.fr"
 alias keyboard="setxkbmap"
 alias vgit="PAGER='vim -' git -c color.ui=false"
-alias open="xdg-open"
 
 # Docker aliases
 alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
@@ -89,6 +88,12 @@ function cd {
     builtin cd "$@" && ll
 }
 
+# Open application
+function open() {
+    xdg-open "$@" &
+}
+
+# Calculate inline
 function calc() {
     bc -l <<< "$@"
 }

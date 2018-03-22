@@ -69,15 +69,15 @@ function dps() {
 
 function dlogs() {
     if [ ! -f ./docker-compose.yml ]; then
-        docker logs $@
+        docker logs "$@"
     else
-        docker-compose logs $@
+        docker-compose logs "$@"
     fi
 }
 
 # List tags of image
 function dtags() {
-   wget -q https://registry.hub.docker.com/v1/repositories/$@/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}' 
+   wget -q "https://registry.hub.docker.com/v1/repositories/$@/tags" -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}' 
 }
 
 # Prevent scroll lock
@@ -191,10 +191,10 @@ function www(){
 }
 
 # Browser function aliases
-function redmine { www "http://redmine.cross-systems.ch/issues/$@" }
-function snow { www "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@" }
-function wordreference { www "http://www.wordreference.com/enfr/$@" }
-function translate { www "http://translate.google.com/?source=osdd#auto|auto|$@" }
+function redmine() { www "http://redmine.cross-systems.ch/issues/$@"; }
+function snow() { www "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"; }
+function wordreference() { www "http://www.wordreference.com/enfr/$@"; }
+function translate() { www "http://translate.google.com/?source=osdd#auto|auto|$@"; }
 
 # Parents ls
 function llp() {

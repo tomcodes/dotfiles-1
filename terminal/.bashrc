@@ -194,6 +194,7 @@ function www(){
 # Browser function aliases
 function redmine() { www "http://redmine.cross-systems.ch/issues/$@"; }
 function snow() { www "https://tagheuer.service-now.com/textsearch.do?sysparm_search=$@"; }
+function gitlab() { www "https://git.cross-systems.ch/search?utf8=✓&search=$@"; }
 function wordreference() { www "http://www.wordreference.com/enfr/$@"; }
 function translate() { www "http://translate.google.com/?source=osdd#auto|auto|$@"; }
 

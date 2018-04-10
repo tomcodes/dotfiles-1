@@ -38,6 +38,7 @@ if exists("*vundle#begin")
     " Vundle plugins
     Plugin 'scrooloose/nerdtree'
     Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'majutsushi/tagbar'
     Plugin 'itchyny/lightline.vim'
     Plugin 'airblade/vim-gitgutter'
@@ -102,6 +103,7 @@ let mapleader = "\<Space>"
 
 " Save and quit shortcuts
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>s :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " Copy paste shortcuts
@@ -259,7 +261,11 @@ nnoremap <F4> :NERDTreeFind<CR>
 " Remap CtrlP
 " ———————————————————————————————
 let g:ctrlp_max_files = 0
-let g:ctrlp_match_window = 'results:100'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
 let g:ctrlp_prompt_mappings = {
     \ 'PrtSelectMove("j")':   ['<c-t>', '<down>'],
     \ 'PrtSelectMove("k")':   ['<c-s>', '<up>'],
@@ -267,6 +273,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<c-j>'],
     \ }
 noremap <Leader>t :CtrlP<CR>
+noremap <Leader>e :CtrlPTag<CR>
 
 " Lighline
 " ———————————————————————————————

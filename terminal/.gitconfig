@@ -21,6 +21,7 @@
   show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
 [color]
 	ui = true
 [merge]

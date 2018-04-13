@@ -18,7 +18,7 @@
 # * lxappearance | apt-get install lxappearance
 # * nitrogen | apt-get install nitrogen
 # * xflux | add-apt-repository ppa:nathan-renniewaldock/flux && apt-get update && apt-get install fluxgui
-# * clipit | apt-get install clipit
+# * parcellite | apt-get install parcellite
 # * arandr | apt-get install arandr
 # * rofi | apt-get install rofi
 # * dunst | apt-get install dunst
@@ -248,7 +248,7 @@ exec --no-startup-id nm-applet
 # Custom programs
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
-exec --no-startup-id clipit
+exec --no-startup-id parcellite
 exec --no-startup-id dunst
 
 # Compton

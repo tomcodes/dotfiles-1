@@ -90,6 +90,15 @@ function cd {
     builtin cd "$@" && ll
 }
 
+# List files modified recently
+function llm() {
+    local time=10
+    if [[ -n $1 ]]; then
+        time=$1
+    fi
+    find . -maxdepth 1 -type f -cmin -$time -exec ls -l {} \;
+}
+
 # Open application
 function open() {
     xdg-open "$@" &

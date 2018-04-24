@@ -96,7 +96,7 @@ function llm() {
     if [[ -n $1 ]]; then
         time=$1
     fi
-    find . -maxdepth 1 -type f -cmin -$time -exec ls -lh {} \; | column -t
+    find . -maxdepth 1 -type f -cmin -$time -exec ls -lth {} + | column -t
 }
 
 # Open application

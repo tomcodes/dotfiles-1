@@ -67,6 +67,7 @@ set $terminal      urxvt
 set $browser       google-chrome
 set $filemanager   pantheon-files
 set $screenshot    shutter
+set $settings      gnome-control-center
 set $editor        code
 set $ide           pstorm
 set $music         spotify
@@ -378,6 +379,9 @@ bindsym $mod+Return exec $terminal
 
 # Utilities
 bindsym Print exec --no-startup-id $screenshot
+
+# Settings
+bindsym $mod+F1 exec --no-startup-id $settings
 
 # Tags
 bindsym $mod+semicolon exec i3-input -F "mark %s" -P "New tag: "

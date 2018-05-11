@@ -101,9 +101,12 @@ noremap È 0
 let mapleader = "\<Space>"
 
 " Save and quit shortcuts
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>s :w<CR>
-nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w!<CR>
+nnoremap <Leader>s :w!<CR>
+nnoremap <Leader>q :q!<CR>
+
+" Center the screen
+nnoremap <Leader>z zz
 
 " Copy paste shortcuts
 vmap <Leader>y "+y
@@ -135,7 +138,7 @@ command! W w !sudo tee % > /dev/null
 nnoremap <f5> :!ctags -R<CR>
 
 " Remove highlight
-nnoremap <C-_> :noh<CR>
+nnoremap <leader><space> :noh<CR>
 
 " Buffer shortcuts
 map <Leader>c :bprev<CR>

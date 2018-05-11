@@ -45,6 +45,8 @@ if exists("*vundle#begin")
     Plugin 'xolox/vim-misc'
     Plugin 'xolox/vim-session'
     Plugin 'chriskempson/base16-vim'
+    Plugin 'tpope/vim-commentary'
+    Plugin 'haya14busa/incsearch.vim'
 
     call vundle#end()
 
@@ -100,6 +102,9 @@ noremap È 0
 " Changement de la touche leader
 let mapleader = "\<Space>"
 
+" Remap esc to avoid delay
+imap <Esc> <C-c>
+
 " Save and quit shortcuts
 nnoremap <Leader>w :w!<CR>
 nnoremap <Leader>s :w!<CR>
@@ -115,9 +120,6 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
-
-" Stop that stupid window from popping up
-map q: :q
 
 " Remap jump to/from tags
 nnoremap <C-t> <C-]>
@@ -295,3 +297,16 @@ xmap » ]
 " Vim session
 " ———————————————————————————————
 let g:session_autosave = 'no'
+
+" Inc search
+" ———————————————————————————————
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)

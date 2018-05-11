@@ -39,7 +39,6 @@ if exists("*vundle#begin")
     Plugin 'scrooloose/nerdtree'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'ludovicchabant/vim-gutentags'
-    Plugin 'majutsushi/tagbar'
     Plugin 'itchyny/lightline.vim'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'mattn/emmet-vim'
@@ -280,12 +279,6 @@ noremap <Leader>e :CtrlPTag<CR>
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
-
-" Tagbar
-" ———————————————————————————————
-nnoremap <F8> :TagbarToggle<CR>
-let g:tagbar_map_togglesort = "k"
-
 
 " Unimpaired
 " ———————————————————————————————

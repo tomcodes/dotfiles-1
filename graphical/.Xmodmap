@@ -1,0 +1,12 @@
+! xev -> get the keycode for a key
+! xmodmap -pke -> list all current mappings 
+! xmodmap -e "keycode 101 = keycode 180" -> set mapping on the fly
+
+! For Typematrix
+
+! Change desktop key to escape
+keycode 100 = Escape
+! Remap old keys in 106 mode
+keycode 132 = XF86Calculator NoSymbol XF86Calculator
+keycode 51  = XF86Mail NoSymbol XF86Mail
+keycode 101 = XF86HomePage NoSymbol XF86HomePage

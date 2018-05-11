@@ -233,6 +233,9 @@ bindsym $mod+control+r move workspace to output right
 # Set bépo keyboard
 exec --no-startup-id setxkbmap fr -variant bepo
 
+# Remap keys
+exec_always --no-startup-id sleep 2 && xmodmap $HOME/.Xmodmap
+
 # Remove screensaver and turn off screen after 5 min
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s 300

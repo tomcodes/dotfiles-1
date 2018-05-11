@@ -275,7 +275,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<c-j>'],
     \ }
 noremap <Leader>t :CtrlP<CR>
-noremap <Leader>e :CtrlPTag<CR>
+noremap <Leader>e :CtrlPBufTagAll<CR>
 
 " Lighline
 " ———————————————————————————————

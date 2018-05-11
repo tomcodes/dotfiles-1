@@ -24,6 +24,9 @@ set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
 set backupdir=~/tmp,~/
 set directory=~/tmp,/var/tmp,/tmp
 
+" Prevent abcd with arrows in insert mode
+set term=cons25
+
 " Set smart relative number
 set number relativenumber
 augroup numbertoggle

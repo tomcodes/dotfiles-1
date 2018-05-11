@@ -1,11 +1,17 @@
 " VIM Configuration 
 " ———————————————————————————————
 
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
-
 " Annule la compatibilite avec l’ancetre Vi : totalement indispensable
 set nocompatible
+
+" Fix arrows in insert mode
+inoremap <silent> <C-[>OC <Right>|
+inoremap <silent> <C-[>OD <Left>|
+inoremap <silent> <C-[>OB <Down>|
+inoremap <silent> <C-[>OA <Up>|
+
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
 
 " Always show statusline
 set laststatus=2
@@ -23,9 +29,6 @@ set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
 " Move swp and backup files location
 set backupdir=~/tmp,~/
 set directory=~/tmp,/var/tmp,/tmp
-
-" Prevent abcd with arrows in insert mode
-set term=cons25
 
 " Set smart relative number
 set number relativenumber

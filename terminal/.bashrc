@@ -13,6 +13,9 @@ if [ -d $HOME/.bashrc.d ]; then
     done
 fi
 
+# Define Lab directory
+LAB="$HOME/Lab"
+
 # Terminal colors
 export TERM='xterm-256color'
 
@@ -23,8 +26,9 @@ VISUAL=vim; export VISUAL; EDITOR=vim; export EDITOR
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # Gopath
-export GOPATH="$HOME/Lab/go"
+export GOPATH="$LAB/go"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 
 # Common alias
 alias ll="ls -lh"
@@ -111,21 +115,21 @@ function calc() {
 
 # Try
 function try() {
-    local try_path="$HOME/Lab/try/$@"
+    local try_path="$LAB/try/$@"
     mkdir -p "$try_path"
     cd "$try_path"
 }
 
 function tryrm() {
-    local try_path="$HOME/Lab/try/$@"
+    local try_path="$LAB/try/$@"
     rm -rf "$try_path"
 }
 
-alias tryclean="rm -rf $HOME/Lab/try && mkdir -p $HOME/Lab/try"
+alias tryclean="rm -rf $LAB/try && mkdir -p $LAB/try"
 
 # Vpn
 function vpn() {
-    sudo openvpn "$HOME/Lab/vpn/$@.ovpn"
+    sudo openvpn "$LAB/vpn/$@.ovpn"
 }
 
 # Search for files
@@ -233,7 +237,16 @@ function llg() {
 
 # Lab function
 function lab() {
-    echo "Entering lab..."
+    local cmd="builtin cd $LAB && ls"
+
+    if [[ -z $1 ]]; then
+        echo "Entering lab..."
+    else
+        echo "Entering $1..."
+
+        cmd="builtin cd $LAB/$1"
+    fi
+
     echo "             "
     echo "        o    "   
     echo "       o     "
@@ -246,11 +259,7 @@ function lab() {
     echo "  '._____.'  "
     echo "             "
 
-    if [[ -z $1 ]]; then
-        cd $HOME/Lab;
-    else
-        cd $HOME/Lab/$1;
-    fi
+    eval $cmd
 }
 
 # Tcpdump clean

@@ -5,10 +5,14 @@
 set nocompatible
 
 " Fix arrows in insert mode
-inoremap <silent> <C-[>OC <Right>|
-inoremap <silent> <C-[>OD <Left>|
-inoremap <silent> <C-[>OB <Down>|
-inoremap <silent> <C-[>OA <Up>|
+noremap! <silent> <Esc>OA <Up>
+noremap! <silent> <Esc>Oa <C-Up>
+noremap! <silent> <Esc>OB <Down>
+noremap! <silent> <Esc>Ob <C-Down>
+noremap! <silent> <Esc>OC <Right>
+noremap! <silent> <Esc>Oc <C-Right>
+noremap! <silent> <Esc>OD <Left>
+noremap! <silent> <Esc>Od <C-Left>
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %

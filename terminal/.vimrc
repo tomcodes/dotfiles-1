@@ -24,6 +24,14 @@ set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
 set backupdir=~/tmp,~/
 set directory=~/tmp,/var/tmp,/tmp
 
+" Set smart relative number
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+augroup END
+
 " Activation de Vundle
 " ———————————————————————————————
 filetype off
@@ -277,6 +285,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<c-j>'],
     \ }
 noremap <Leader>t :CtrlP<CR>
+noremap <Leader>T :CtrlPBuffer<CR>
 noremap <Leader>e :CtrlPBufTagAll<CR>
 
 " Lighline

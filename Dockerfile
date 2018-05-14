@@ -30,6 +30,8 @@ RUN apt-get update \
   tree \
   httpie \
   acpi \
+  ack-grep \
+  silversearcher-ag \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -67,6 +69,10 @@ RUN git clone --recursive https://github.com/sorin-ionescu/prezto.git /home/dev/
 
 # Set zsh as default
 ENV SHELL=/bin/zsh
+
+# Install fzf
+RUN git clone --depth 1 https://github.com/junegunn/fzf.git /home/dev/.fzf \
+  && /home/dev/.fzf/install --bin
 
 # Install vim Vundle
 RUN git clone https://github.com/VundleVim/Vundle.vim.git /home/dev/.vim/bundle/Vundle.vim

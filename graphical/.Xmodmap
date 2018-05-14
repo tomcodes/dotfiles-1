@@ -2,8 +2,9 @@
 ! xmodmap -pke -> list all current mappings 
 ! xmodmap -e "keycode 101 = keycode 180" -> set mapping on the fly
 
-! For Typematrix
-
-! Change desktop key to escape
+! Change Typematrix desktop key to escape
 keycode 100 = Escape
 keycode 97 = ccedilla Ccedilla ccedilla Ccedilla dead_cedilla dead_belowcomma dead_cedilla
+
+! Change Caps lock to escape
+keycode 66 = Escape

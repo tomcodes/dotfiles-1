@@ -4,16 +4,6 @@
 " Annule la compatibilite avec l’ancetre Vi : totalement indispensable
 set nocompatible
 
-" Fix arrows in insert mode
-noremap! <silent> <Esc>OA <Up>
-noremap! <silent> <Esc>Oa <C-Up>
-noremap! <silent> <Esc>OB <Down>
-noremap! <silent> <Esc>Ob <C-Down>
-noremap! <silent> <Esc>OC <Right>
-noremap! <silent> <Esc>Oc <C-Right>
-noremap! <silent> <Esc>OD <Left>
-noremap! <silent> <Esc>Od <C-Left>
-
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -55,7 +45,6 @@ if exists("*vundle#begin")
 
     " Vundle plugins
     Plugin 'scrooloose/nerdtree'
-    Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'ludovicchabant/vim-gutentags'
     Plugin 'itchyny/lightline.vim'
     Plugin 'airblade/vim-gitgutter'
@@ -64,7 +53,15 @@ if exists("*vundle#begin")
     Plugin 'xolox/vim-session'
     Plugin 'chriskempson/base16-vim'
     Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-fugitive'
     Plugin 'haya14busa/incsearch.vim'
+    Plugin 'junegunn/fzf'
+    Plugin 'junegunn/fzf.vim'
+    Plugin 'mileszs/ack.vim'
+    Plugin 'sheerun/vim-polyglot'
+    Plugin 'christoomey/vim-tmux-navigator'
+    Plugin 'vim-vdebug/vdebug'
+    Plugin 'w0rp/ale'
 
     call vundle#end()
 
@@ -85,6 +82,11 @@ set wildignorecase      " Autocompletion qui ignore aussi la casse pour les fich
 set smartcase           " Si une recherche contient une majuscule, re-active la sensibilite a la casse
 set incsearch           " Surligne les resultats de recherche pendant la saisie
 set hlsearch            " Surligne les resultats de recherche
+
+" -- Autocomplete
+set wildmenu                " Show possible completions on command line
+set wildmode=list:longest,full " List all options and complete
+set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules  " Ignore certain files in tab-completion
 
 " -- Beep
 set visualbell          " Empeche Vim de beeper
@@ -157,14 +159,15 @@ command! W w !sudo tee % > /dev/null
 " Regenerate ctags
 nnoremap <f5> :!ctags -R<CR>
 
-" Remove highlight
-nnoremap <leader><space> :noh<CR>
+" Fold
+nnoremap <leader><space> za
+vnoremap <leader><space> zf
 
 " Buffer shortcuts
-map <Leader>c :bprev<CR>
-map <Leader>r :bnext<CR>
-map <Leader>d :bd<CR>
-map <Leader>f :b 
+nmap <C-e> :e#<CR>
+nmap <C-n> :bnext<CR>
+nmap <C-p> :bprev<CR>
+nmap d :bd<CR>
 
 " BÉPO CONFIG
 " ———————————————————————————————
@@ -241,15 +244,15 @@ noremap » >
  
 " Remaper la gestion des fenêtres
 " ———————————————————————————————
-noremap wt <C-w>j
-noremap ws <C-w>k
-noremap wc <C-w>h
-noremap wr <C-w>l
-noremap wd <C-w>c
-noremap wo <C-w>s
-noremap wp <C-w>o
-noremap w<SPACE> :split<CR>
-noremap w<CR> :vsplit<CR>
+noremap t <C-w>j
+noremap s <C-w>k
+noremap c <C-w>h
+noremap r <C-w>l
+noremap q <C-w>c
+noremap o <C-w>s
+noremap p <C-w>o
+noremap <SPACE> :split<CR>
+noremap <CR> :vsplit<CR>
 
 " Remap Ex file explorer
 " ———————————————————————————————
@@ -280,23 +283,15 @@ nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NERDTreeCWD<CR>
 nnoremap <F4> :NERDTreeFind<CR>
 
-" Remap CtrlP
+" Remap fzf
 " ———————————————————————————————
-let g:ctrlp_max_files = 0
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|public$|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtSelectMove("j")':   ['<c-t>', '<down>'],
-    \ 'PrtSelectMove("k")':   ['<c-s>', '<up>'],
-    \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-k>'],
-    \ 'AcceptSelection("t")': ['<c-j>'],
-    \ }
-noremap <Leader>t :CtrlP<CR>
-noremap <Leader>T :CtrlPBuffer<CR>
-noremap <Leader>e :CtrlPBufTagAll<CR>
+set rtp+=~/.fzf
+noremap <Leader>t :Files<CR>
+noremap <Leader>b :Buffers<CR>
+noremap <Leader>e :Tags<CR>
+let g:fzf_action = {
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 " Lighline
 " ———————————————————————————————
@@ -329,3 +324,15 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+"Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Vim Tmux Navigator
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> c :TmuxNavigateLeft<cr>
+nnoremap <silent> t :TmuxNavigateDown<cr>
+nnoremap <silent> s :TmuxNavigateUp<cr>
+nnoremap <silent> r :TmuxNavigateRight<cr>

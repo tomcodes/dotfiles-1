@@ -18,31 +18,19 @@ alias history="history -E 1"
 compdef sshrc=ssh
 compdef vims=vim
 
-# Mode vim
-#bindkey -v
-#
-#bindkey '^P' up-history
-#bindkey '^N' down-history
-#bindkey '^?' backward-delete-char
-#bindkey '^h' backward-delete-char
-#bindkey '^w' backward-kill-word
-#bindkey '^r' history-incremental-search-backward
-#bindkey '^e' vi-end-of-line
-#
-## Remap for bépo
-#bindkey -a c vi-backward-char
-#bindkey -a r vi-forward-char
-#bindkey -a t vi-down-line-or-history
-#bindkey -a s vi-up-line-or-history
-#bindkey -a $ vi-end-of-line
-#bindkey -a 0 vi-digit-or-beginning-of-line 
-#bindkey -a l vi-change
-#bindkey -a L vi-change-eol
-#bindkey -a dd vi-change-whole-line
-#bindkey -a h vi-replace-chars
-#bindkey -a H vi-replace
-#bindkey -a k vi-substitute
-#bindkey -a é vi-forward-word
-#bindkey -a É vi-forward-blank-word
-
 zstyle ':prezto:module:prompt' theme 'steeef'
+
+# Enable fzf
+if [ -e ~/.fzf ]; then
+  export PATH="$PATH:$HOME/.fzf/bin"
+  source $HOME/.fzf/shell/key-bindings.zsh
+  source $HOME/.fzf/shell/completion.zsh
+
+  # Update fzf options
+  export FZF_DEFAULT_OPTS="--bind ctrl-t:down,ctrl-s:up"
+
+  # Set default command
+  export FZF_DEFAULT_COMMAND='ag --silent --nocolor -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+fi

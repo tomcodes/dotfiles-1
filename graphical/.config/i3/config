@@ -152,10 +152,6 @@ set $workspace6 "6"
 set $workspace7 "7"
 # Workspace 8
 set $workspace8 "8"
-# Workspace 9
-set $workspace9 "9"
-# Workspace 0
-set $workspace10 "10"
 
 # Rules to start windows in workspaces
 assign [class="(?i)$music"] $workspace6
@@ -174,23 +170,15 @@ workspace_auto_back_and_forth yes
 # Rename workspace
 bindsym $mod+equal exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
-# switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
-
 # custom switch to workspace
 bindsym $mod+mod1+t workspace $workspace1
 bindsym $mod+mod1+s workspace $workspace2
 bindsym $mod+mod1+r workspace $workspace3
 bindsym $mod+mod1+n workspace $workspace4
+bindsym $mod+mod1+v workspace $workspace5
+bindsym $mod+mod1+d workspace $workspace6
+bindsym $mod+mod1+l workspace $workspace7
+bindsym $mod+mod1+j workspace $workspace8
 
 # switching between workspace
 bindsym $mod+p workspace prev_on_output
@@ -198,23 +186,15 @@ bindsym $mod+n workspace next_on_output
 bindsym mod1+Shift+Tab workspace prev_on_output
 bindsym mod1+Tab workspace next_on_output
 
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
-
 # custom move focused container to workspace
 bindsym $mod+mod1+Shift+t move container to workspace $workspace1
 bindsym $mod+mod1+Shift+s move container to workspace $workspace2
 bindsym $mod+mod1+Shift+r move container to workspace $workspace3
 bindsym $mod+mod1+Shift+n move container to workspace $workspace4
+bindsym $mod+mod1+Shift+v move container to workspace $workspace5
+bindsym $mod+mod1+Shift+d move container to workspace $workspace6
+bindsym $mod+mod1+Shift+l move container to workspace $workspace7
+bindsym $mod+mod1+Shift+j move container to workspace $workspace8
 
 # move focused container to next/previous workspace
 bindsym $mod+Shift+n move container to workspace next
@@ -254,6 +234,9 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
 exec --no-startup-id parcellite
 exec --no-startup-id dunst
+
+# Rofi clipboard
+exec --no-startup-id greenclip daemon
 
 # Compton
 exec_always --no-startup-id compton -b
@@ -362,7 +345,7 @@ mode $resize_mode {
 }
 
 set $display_mode "display [t]op [r]ight [e]xternal [l]aptop"
-bindsym $mod+mod1+d mode $display_mode
+bindsym $mod+mod1+h mode $display_mode
 mode $display_mode {
     bindsym t mode "default", exec $HOME/.config/i3/display/top.sh, restart
     bindsym r mode "default", exec $HOME/.config/i3/display/right.sh, restart 
@@ -419,10 +402,10 @@ bindsym $mod+Tab exec --no-startup-id ~/.config/i3/i3t.py n
 bindsym $mod+Shift+Tab exec --no-startup-id ~/.config/i3/i3t.py p
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+F11 fullscreen
@@ -463,3 +446,4 @@ bindsym XF86MonBrightnessDown exec sudo $HOME/.config/i3/brightness.sh -20
 
 # Program launcher
 bindsym $mod+space exec --no-startup-id rofi -show run -run-command "bash -i -c '{cmd}'"
+bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'

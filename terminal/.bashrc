@@ -7,10 +7,8 @@ if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
 fi
 
 # Include unversioned files
-if [ -d $HOME/.bashrc.d ]; then
-    for file in $HOME/.bashrc.d/*; do
-        . $file;
-    done
+if [ -f $HOME/.bashrc.local ]; then
+   . $HOME/.bashrc.local
 fi
 
 # Define Lab directory

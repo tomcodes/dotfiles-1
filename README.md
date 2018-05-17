@@ -54,7 +54,7 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 - [ ] Vim integrate tpope plugins
 - [ ] i3 auto update when display switched
 - [ ] Test docker image
-- [ ] Test features over SSH
+- [X] Test features over SSH
 - [ ] Check vim ssh sessions (quick open vim session with rofi)
 - [ ] rofi search through all open windows with HOME+g
 - [ ] Xresources grey color to be changed for zsh prompt and htop values

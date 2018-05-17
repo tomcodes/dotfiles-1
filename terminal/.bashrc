@@ -38,7 +38,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias extip="wget http://ipinfo.io/ip -qO -"
 alias dl="cd $HOME/Downloads"
-alias dlopen="open '$HOME/Downloads/$(ls -tp $HOME/Downloads | grep -v /$ | head -1)'"
 alias doc="cd $HOME/Documents"
 alias df="df -H"
 alias du="du -ch"
@@ -106,6 +105,11 @@ function llm() {
 # Open application
 function open() {
     xdg-open "$@" &
+}
+
+# Open last downloaded item
+function dlopen() {
+    open "$HOME/Downloads/$(ls -tp $HOME/Downloads | grep -v /$ | head -1)"
 }
 
 # Calculate inline

@@ -42,6 +42,7 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 | q                          | Close i3 window            | Close vim window          | Close tmux pane           |                            |                            |
 | g                          |                            | Search urxvt              | Copy mode in tmux         | Search in vim files        |                            |
 | b/-                        | i3 split orientation       | vim split window          | tmux split panes          |                            |                            |
+| z                          | Full screen i3             |                           | tmux zoom pane            |                            |                            |
 |                            |                            |                           |                           |                            |                            |
 
 ## Todo

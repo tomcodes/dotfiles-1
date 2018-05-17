@@ -408,7 +408,7 @@ bindsym $mod+b split h
 bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+F11 fullscreen
+bindsym $mod+z fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+k layout stacking
@@ -426,7 +426,7 @@ bindsym $mod+Shift+f focus mode_toggle
 
 # focus the parent/child container
 bindsym $mod+a focus parent
-bindsym $mod+z focus child
+bindsym $mod+u focus child
 
 # Sound shortcuts
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ unmute

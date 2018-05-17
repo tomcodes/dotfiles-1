@@ -9,6 +9,7 @@ imap <Esc> <C-c>
 " Save and quit shortcuts
 noremap w :w!<CR>
 noremap q :q!<CR>
+noremap <Leader>q :qa!<CR>
 
 " Primary buffer copy paste
 vmap <Leader>y "+y

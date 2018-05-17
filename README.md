@@ -34,15 +34,15 @@ A Dockerfile is implemented to build an environment with only terminal based app
 
 Shortcuts tend to be consistent between apps. Here is a table listing a few of them.
 
-|                            | Home                       | Alt                       | Tmux prefix               | Ctrl                       |
-| -------------------------- | -------------------------- | ------------------------- | ------------------------- | -------------------------- |
-| c/t/s/r                    | Switch i3 containers       | Switch tmux+vim panes     | Switch tmux panes         |                            |
-| n/p                        | Next/Previous i3 workspace |                           |                           | Next/Previous vim buffer   |
-| d                          |                            | Delete vim buffer         |                           |                            |
-| q                          | Close i3 window            | Close vim window          | Close tmux pane           |                            |
-| g                          |                            |                           |                           |                            |
-| b/-                        | i3 split orientation       | vim split window          | tmux split panes          |                            |
-|                            |                            |                           |                           |                            |
+|                            | Home                       | Alt                       | Tmux prefix               | Vim leader                 | Ctrl                       |
+| -------------------------- | -------------------------- | ------------------------- | ------------------------- | -------------------------- | -------------------------- |
+| c/t/s/r                    | Switch i3 containers       | Switch tmux+vim panes     | Switch tmux panes         |                            |                            |
+| n/p                        | Next/Previous i3 workspace |                           |                           |                            | Next/Previous vim buffer   |
+| d                          |                            | Delete vim buffer         |                           |                            |                            |
+| q                          | Close i3 window            | Close vim window          | Close tmux pane           |                            |                            |
+| g                          |                            | Search urxvt              | Copy mode in tmux         | Search in vim files        |                            |
+| b/-                        | i3 split orientation       | vim split window          | tmux split panes          |                            |                            |
+|                            |                            |                           |                           |                            |                            |
 
 ## Todo
 
@@ -55,3 +55,4 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 - [ ] Test docker image
 - [ ] Test features over SSH
 - [ ] Check vim ssh sessions (quick open vim session with rofi)
+- [ ] rofi search through all open windows with HOME+g

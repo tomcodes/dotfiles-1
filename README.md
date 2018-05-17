@@ -61,3 +61,4 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 - [ ] Vim plugin (or NERDTree?) for creating/renaming/deleting files
 - [ ] Vim autocmd for NERDTree
 - [ ] Vim review emmet mappings
+- [ ] Dockerfile install golang

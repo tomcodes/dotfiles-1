@@ -49,7 +49,7 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 - [ ] Vim quickfix navigation
 - [ ] Rofi clipboard manager and remove parcellite
 - [ ] Color variables in Xresources
-- [ ] Vim colors for folds, splits and completion bar
+- [ ] Vim colors for folds, splits, left margin and completion bar
 - [ ] Vim integrate tpope plugins
 - [ ] i3 auto update when display switched
 - [ ] Test docker image

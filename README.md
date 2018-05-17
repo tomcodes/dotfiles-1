@@ -1,5 +1,4 @@
-DOTFILES
-=====
+# DOTFILES
 
 Configuration files for linux
 
@@ -59,3 +58,5 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 - [ ] rofi search through all open windows with HOME+g
 - [ ] Xresources grey color to be changed for zsh prompt and htop values
 - [ ] Vim can't copy in insert mode
+- [ ] Vim plugin (or NERDTree?) for creating/renaming/deleting files
+- [ ] Vim autocmd for NERDTree

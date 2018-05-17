@@ -34,16 +34,16 @@ A Dockerfile is implemented to build an environment with only terminal based app
 
 Shortcuts tend to be consistent between apps. Here is a table listing a few of them.
 
-|                            | Home                       | Alt                       | Tmux prefix               | Vim leader                 | Ctrl                       |
-| -------------------------- | -------------------------- | ------------------------- | ------------------------- | -------------------------- | -------------------------- |
-| c/t/s/r                    | Switch i3 containers       | Switch tmux+vim panes     | Switch tmux panes         |                            |                            |
-| n/p                        | Next/Previous i3 workspace |                           |                           |                            | Next/Previous vim buffer   |
-| d                          |                            | Delete vim buffer         |                           |                            |                            |
-| q                          | Close i3 window            | Close vim window          | Close tmux pane           |                            |                            |
-| g                          |                            | Search urxvt              | Copy mode in tmux         | Search in vim files        |                            |
-| b/-                        | i3 split orientation       | vim split window          | tmux split panes          |                            |                            |
-| z                          | Full screen i3             |                           | tmux zoom pane            |                            |                            |
-|                            |                            |                           |                           |                            |                            |
+|                            | Home                            | Alt                            | Tmux prefix                    | Vim leader                      |
+| -------------------------- | ------------------------------- | ------------------------------ | ------------------------------ | ------------------------------- |
+| c/t/s/r                    | [i3] switch containers          | [tmux/vim] switch panes        | [tmux] switch panes            |                                 |
+| n/p                        | [i3] next/previous workspace    | [vim] next/previous buffer     |                                |                                 |
+| d                          |                                 | [vim] delete buffer            |                                |                                 |
+| q                          | [i3] close window               | [vim] close window             | [tmux] close pane              |                                 |
+| g                          |                                 | [urxvt] search                 | [tmux] copy mode               | [vim] search in files           |
+| b/-                        | [i3] split orientation          | [vim] split window             | [tmux] split pane              |                                 |
+| z                          | [i3] full screen                |                                | [tmux] zoom pane               |                                 |
+|                            |                                 |                                |                                |                                 |
 
 ## Todo
 

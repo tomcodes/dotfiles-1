@@ -84,7 +84,7 @@ let g:session_autosave = 'no'
 if executable('ag')
   let g:ackprg = 'ag --hidden --vimgrep'
 endif
-nnoremap <Leader>f :Ack!<Space>
+nnoremap <Leader>g :Ack!<Space>
 
 " Vim Tmux Navigator
 let g:tmux_navigator_no_mappings = 1

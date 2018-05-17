@@ -62,8 +62,7 @@ URxvt.skipScroll:            true
 URxvt.urgentOnBell:          true
 URxvt.url-launcher:          /usr/bin/google-chrome
 URxvt.visualBell:            false
-URxvt.keysym.M-k: perl:keyboard-select:search
-URxvt.keysym.M-K: perl:keyboard-select:activate
+URxvt.keysym.M-g: perl:keyboard-select:activate
 URxvt.keyboard-select.clipboard: true
 
 rofi.color-enabled: true

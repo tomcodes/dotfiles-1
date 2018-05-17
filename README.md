@@ -16,7 +16,8 @@ Shortcuts have been designed to be used with a Bépo keyboard layout. Here are t
 
 Graphical and terminal application configurations are split in two different folders.
 
-## Install
+
+## Install script
 
 A python 3 script has been created to easily symlink files.
 
@@ -56,3 +57,5 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 - [ ] Test features over SSH
 - [ ] Check vim ssh sessions (quick open vim session with rofi)
 - [ ] rofi search through all open windows with HOME+g
+- [ ] Xresources grey color to be changed for zsh prompt and htop values
+- [ ] Vim can't copy in insert mode

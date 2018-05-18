@@ -2,6 +2,8 @@
 
 Configuration files for linux
 
+![Screenshot](/screenshot.png)
+
 Shortcuts have been designed to be used with a Bépo keyboard layout. Here are the tools included.
 
  - i3wm

@@ -17,8 +17,7 @@ Shortcuts have been designed to be used with a Bépo keyboard layout. Here are t
 
 Graphical and terminal application configurations are split in two different folders.
 
-
-## Install script
+## Install script
 
 A python 3 script has been created to easily symlink files.
 

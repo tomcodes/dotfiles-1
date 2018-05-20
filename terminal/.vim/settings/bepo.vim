@@ -82,7 +82,3 @@ noremap gB :exe "silent! tabfirst"<CR>
 noremap gÉ :exe "silent! tablast"<CR>
 " Goto beginning of visible line
 noremap g" g0
-
-" <> easy access
-noremap « <
-noremap » >

@@ -41,7 +41,7 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 | n/p                        | [i3] next/previous workspace    | [vim] next/previous buffer     |                                |                                 |
 | d                          |                                 | [vim] delete buffer            |                                |                                 |
 | q                          | [i3] close window               | [vim] close window             | [tmux] close pane              |                                 |
-| g                          |                                 | [urxvt] search                 | [tmux] copy mode               | [vim] search in files           |
+| g                          | [i3] rofi window switcher       | [urxvt] search                 | [tmux] copy mode               | [vim] search in files           |
 | b/-                        | [i3] split orientation          | [vim] split window             | [tmux] split pane              |                                 |
 | z                          | [i3] full screen                |                                | [tmux] zoom pane               |                                 |
 |                            |                                 |                                |                                |                                 |
@@ -49,7 +49,7 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 ## Todo
 
 - [X] Vim quickfix navigation
-- [ ] Rofi clipboard manager and remove parcellite
+- [X] Rofi clipboard manager and remove parcellite
 - [ ] Color variables in Xresources
 - [ ] Vim colors for folds, splits, left margin and completion bar
 - [X] Vim integrate tpope plugins
@@ -57,7 +57,7 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 - [ ] Test docker image
 - [X] Test features over SSH
 - [ ] Check vim ssh sessions (quick open vim session with rofi)
-- [ ] rofi search through all open windows with HOME+g
+- [X] rofi search through all open windows with HOME+g
 - [ ] Xresources grey color to be changed for zsh prompt and htop values
 - [ ] Vim can't copy in insert mode
 - [X] Vim plugin (or NERDTree?) for creating/renaming/deleting files

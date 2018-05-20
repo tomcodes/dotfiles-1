@@ -18,7 +18,7 @@
 # * lxappearance | apt-get install lxappearance
 # * nitrogen | apt-get install nitrogen
 # * xflux | add-apt-repository ppa:nathan-renniewaldock/flux && apt-get update && apt-get install fluxgui
-# * parcellite | apt-get install parcellite
+# * greenclip | https://github.com/erebe/greenclip
 # * arandr | apt-get install arandr
 # * rofi | apt-get install rofi
 # * dunst | apt-get install dunst
@@ -232,7 +232,6 @@ exec --no-startup-id nm-applet
 # Custom programs
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
-exec --no-startup-id parcellite
 exec --no-startup-id dunst
 
 # Rofi clipboard
@@ -446,4 +445,6 @@ bindsym XF86MonBrightnessDown exec sudo $HOME/.config/i3/brightness.sh -20
 
 # Program launcher
 bindsym $mod+space exec --no-startup-id rofi -show run -run-command "bash -i -c '{cmd}'"
-bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+g exec --no-startup-id rofi -show window
+bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
+

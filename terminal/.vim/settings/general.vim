@@ -21,6 +21,9 @@ set grepprg=grep\ -RIin\ --exclude=tags\ $*\ 2>/dev/null
 set backupdir=~/tmp,~/
 set directory=~/tmp,/var/tmp,/tmp
 
+" This will cause all yank/delete/paste operations to use the system register
+set clipboard=unnamed
+
 " -- Display
 set title                    " Update terminal title
 set number relativenumber    " Show smart line numbers

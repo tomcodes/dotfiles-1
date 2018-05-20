@@ -1,3 +1,4 @@
+" Custom Remaps
 " ———————————————————————————————
 
 " Edit leader key
@@ -22,7 +23,7 @@ vmap <Leader>P "+P
 " Remap jump to/from tags
 nnoremap <C-t> <C-]>
 nnoremap g<C-t> <C-t>
-"test
+
 " Save with sudo
 command! W w !sudo tee % > /dev/null
 
@@ -35,7 +36,6 @@ nnoremap e :e#<CR>
 nnoremap n :bnext<CR>
 nnoremap p :bprev<CR>
 nnoremap d :bd!<CR>
-
 
 " Remaper la gestion des fenêtres
 " ———————————————————————————————

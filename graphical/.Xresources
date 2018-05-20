@@ -35,6 +35,7 @@
 *.color7:       #cfd8dc
 *.color15:      #eceff1
 
+URxvt.termName:              rxvt-256color
 URxvt.internalBorder:        6
 URxvt.font:                  xft:Inconsolata for Powerline:size=13
 URxvt.geometry:              80x20

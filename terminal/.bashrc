@@ -14,9 +14,6 @@ fi
 # Define Lab directory
 LAB="$HOME/Lab"
 
-# Terminal colors
-export TERM='xterm-256color'
-
 # Default editor
 VISUAL=vim; export VISUAL; EDITOR=vim; export EDITOR
 
@@ -53,6 +50,7 @@ alias battery="acpi"
 alias lessf="less +F"
 alias less="less -N"
 alias vimend="vim '+normal G$'"
+alias vi="vim -u NONE"
 alias server="\ssh docker@lobr.fr"
 alias keyboard="setxkbmap"
 alias vgit="PAGER='vim -' git -c color.ui=false"

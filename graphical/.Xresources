@@ -1,83 +1,104 @@
-! special
-*.foreground:   #eceff1
-*.background:   #263238
-*.cursorColor:  #eceff1
+! Base16 Materia
 
-! black
-*.color0:       #374952
-*.color8:       #485E68
+#define base00 #263238
+#define base01 #2c393f
+#define base02 #37474f
+#define base03 #707880
+#define base04 #c9ccd3
+#define base05 #cdd3de
+#define base06 #d5dbe5
+#define base07 #ffffff
+#define base08 #ec5f67
+#define base09 #ea9560
+#define base0A #ffcc00
+#define base0B #8bd649
+#define base0C #80cbc4
+#define base0D #89ddff
+#define base0E #82aaff
+#define base0F #ec5f67
 
-! red
-*.color1:       #ff9800
-*.color9:       #ffa74d
+*foreground:   base05
+*background:   base00
+*cursorColor:  base05
 
-! green
-*.color2:       #8bc34a
-*.color10:      #9ccc65
+*color0:       base02
+*color1:       base08
+*color2:       base0F
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-! yellow
-*.color3:       #ffc107
-*.color11:      #ffa000
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
 
-! blue
-*.color4:       #03a9f4
-*.color12:      #81d4fa
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
 
-! magenta
-*.color5:       #e91e63
-*.color13:      #ad1457
+URxvt.background:                 [99]base00
+URxvt.termName:                   rxvt-256color
+URxvt.internalBorder:             6
+URxvt.font:                       xft:Inconsolata for Powerline:size=13
+URxvt.geometry:                   80x20
+URxvt.depth:                      32
+URxvt.scrollBar:                  false
+URxvt.mouseWheelScrollPage:       false
+URxvt.cursorBlink:                true
+URxvt.saveLines:                  50000
+URxvt.fading:                     05
+URxvt.intensityStyles:            false
+URxvt.iso14755:                   false
+URxvt.iso14755_52:                false
+URxvt.loginShell:                 true
+URxvt.matcher.button:             1
+URxvt.matcher.rend.0:             Uline Bold fg5
+URxvt.perl-ext-common:            keyboard-select,matcher,resize-font
+URxvt.scrollTtyKeypress:          true
+URxvt.scrollTtyOutput:            false
+URxvt.scrollWithBuffer:           false
+URxvt.skipScroll:                 true
+URxvt.urgentOnBell:               true
+URxvt.url-launcher:               /usr/bin/google-chrome
+URxvt.visualBell:                 false
+URxvt.keysym.M-g:                 perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard:  true
 
-! cyan
-*.color6:       #009688
-*.color14:      #26a69a
-
-! white
-*.color7:       #cfd8dc
-*.color15:      #eceff1
-
-URxvt.termName:              rxvt-256color
-URxvt.internalBorder:        6
-URxvt.font:                  xft:Inconsolata for Powerline:size=13
-URxvt.geometry:              80x20
-URxvt.depth:                 32
-URxvt.background:	         [95]#263238
-URxvt.scrollBar:             false
-URxvt.mouseWheelScrollPage:  false
-URxvt.cursorBlink:           true
-URxvt.foreground: 		     #eceff1
-URxvt.cursorColor:		     #eceff1
-URxvt.saveLines:             50000
-
-URxvt.fading:                30
-URxvt.intensityStyles:       false
-URxvt.iso14755:              false
-URxvt.iso14755_52:           false
-URxvt.loginShell:            true
-URxvt.matcher.button:        1
-URxvt.matcher.rend.0:        Uline Bold fg5
-URxvt.perl-ext-common:       keyboard-select,matcher,resize-font
-URxvt.scrollTtyKeypress:     true
-URxvt.scrollTtyOutput:       false
-URxvt.scrollWithBuffer:      false
-URxvt.skipScroll:            true
-URxvt.urgentOnBell:          true
-URxvt.url-launcher:          /usr/bin/google-chrome
-URxvt.visualBell:            false
-URxvt.keysym.M-g: perl:keyboard-select:activate
-URxvt.keyboard-select.clipboard: true
-
+! Enable the extended coloring options
 rofi.color-enabled: true
-rofi.color-window: #263238, #03a9f4, #81d4fa
-rofi.color-normal: #263238, #bcbcbc, #263238, #03a9f4, #263238
-rofi.color-active: #263238, #bcbcbc, #263238, #03a9f4, #263238
-rofi.color-urgent: #263238, #bcbcbc, #263238, #03a9f4, #263238
 
+! Property Name     BG       Border   Separator
+rofi.color-window:  base01,  base0D,  base00
+
+! Property Name     BG      FG      BG-alt  Head-BG Head-FG
+rofi.color-normal:  base01, base05, base01, base01, base0D
+rofi.color-active:  base01, base08, base01, base01, base0D
+rofi.color-urgent:  base01, base08, base01, base01, base08
+
+! Set the desired separator style
 rofi.separator-style: solid
-rofi.sidebar-mode: false
-rofi.lines: 5
-rofi.font: inconsolata 13
-rofi.bw: 1
-rofi.columns: 2
-rofi.padding: 5
-rofi.fixed-num-lines: true
-rofi.hide-scrollbar: true
+
+rofi.sidebar-mode:     false
+rofi.font:             inconsolata 16
+rofi.fixed-num-lines:  true
+rofi.hide-scrollbar:   true
+
+rofi.opacity:          100
+rofi.width:            40
+rofi.lines:            8
+rofi.columns:          1
+rofi.bw:               2
+rofi.location:         0
+rofi.padding:          20

@@ -50,16 +50,16 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 
 - [X] Vim quickfix navigation
 - [X] Rofi clipboard manager and remove parcellite
-- [ ] Color variables in Xresources
-- [ ] Vim colors for folds, splits, left margin and completion bar
+- [X] Color variables in Xresources
+- [X] Vim colors for folds, splits, left margin and completion bar
 - [X] Vim integrate tpope plugins
 - [ ] i3 auto update when display switched
 - [ ] Test docker image
 - [X] Test features over SSH
 - [ ] Check vim ssh sessions (quick open vim session with rofi)
 - [X] rofi search through all open windows with HOME+g
-- [ ] Xresources grey color to be changed for zsh prompt and htop values
-- [ ] Vim can't copy in insert mode
+- [X] Xresources grey color to be changed for zsh prompt and htop values
+- [X] Vim can't copy in insert mode
 - [X] Vim plugin (or NERDTree?) for creating/renaming/deleting files
 - [X] Vim autocmd for NERDTree
 - [X] Vim review emmet mappings

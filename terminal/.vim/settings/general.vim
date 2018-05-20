@@ -77,6 +77,9 @@ colorscheme slate
 set fillchars+=vert:│
 highlight VertSplit cterm=NONE
 
+" Don't color folded lines
+hi Folded ctermbg=NONE
+
 " Autocmd
 if has("autocmd")
 

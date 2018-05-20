@@ -67,13 +67,15 @@ filetype indent on
 set guifont=Droid\ Sans\ Mono\ 10
 set antialias
 
-" Main color scheme
-set background=dark
-
 " Colorscheme
 syntax on
 set t_Co=256
-silent! colorscheme delek
+set background=dark
+colorscheme slate
+
+" Redesign split border
+set fillchars+=vert:│
+highlight VertSplit cterm=NONE
 
 " Autocmd
 if has("autocmd")

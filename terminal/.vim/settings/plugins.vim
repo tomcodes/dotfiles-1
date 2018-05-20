@@ -18,7 +18,6 @@ if exists("*vundle#begin")
     Plugin 'mattn/emmet-vim'
     Plugin 'xolox/vim-misc'
     Plugin 'xolox/vim-session'
-    Plugin 'chriskempson/base16-vim'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-fugitive'
     Plugin 'haya14busa/is.vim'

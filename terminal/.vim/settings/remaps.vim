@@ -1,9 +1,6 @@
 " Custom Remaps
 " ———————————————————————————————
 
-" Edit leader key
-let mapleader = "\<Space>"
-
 " Remap esc to avoid delay
 imap <Esc> <C-c>
 

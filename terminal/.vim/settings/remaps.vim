@@ -34,7 +34,7 @@ vnoremap <leader><space> zf
 nnoremap e :e#<CR>
 nnoremap n :bnext<CR>
 nnoremap p :bprev<CR>
-nnoremap d :bd<CR>
+nnoremap d :bd!<CR>
 
 
 " Remaper la gestion des fenêtres

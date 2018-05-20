@@ -48,11 +48,11 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 
 ## Todo
 
-- [ ] Vim quickfix navigation
+- [X] Vim quickfix navigation
 - [ ] Rofi clipboard manager and remove parcellite
 - [ ] Color variables in Xresources
 - [ ] Vim colors for folds, splits, left margin and completion bar
-- [ ] Vim integrate tpope plugins
+- [X] Vim integrate tpope plugins
 - [ ] i3 auto update when display switched
 - [ ] Test docker image
 - [X] Test features over SSH
@@ -60,7 +60,7 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 - [ ] rofi search through all open windows with HOME+g
 - [ ] Xresources grey color to be changed for zsh prompt and htop values
 - [ ] Vim can't copy in insert mode
-- [ ] Vim plugin (or NERDTree?) for creating/renaming/deleting files
-- [ ] Vim autocmd for NERDTree
-- [ ] Vim review emmet mappings
+- [X] Vim plugin (or NERDTree?) for creating/renaming/deleting files
+- [X] Vim autocmd for NERDTree
+- [X] Vim review emmet mappings
 - [ ] Dockerfile install golang

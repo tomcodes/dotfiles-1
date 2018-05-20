@@ -12,6 +12,10 @@ onoremap aé aw
 onoremap aÉ aW
 onoremap ié iw
 onoremap iÉ iW
+vnoremap aé aw
+vnoremap aÉ aW
+vnoremap ié iw
+vnoremap iÉ iW
 
 " Use w for windows manipulations
 noremap w <C-w>

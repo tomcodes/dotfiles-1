@@ -95,11 +95,15 @@ function cd {
 
 # List files modified recently
 function llm() {
-    local time=10
+    local dir=.
     if [[ -n $1 ]]; then
-        time=$1
+        dir=$1
     fi
-    find . -maxdepth 1 -type f -cmin -$time -exec ls -lth {} + | column -t
+    local time=10
+    if [[ -n $2 ]]; then
+        time=$2
+    fi
+    find $dir -maxdepth 1 -type f -cmin -$time -exec ls -lth {} + | column -t
 }
 
 # Open application

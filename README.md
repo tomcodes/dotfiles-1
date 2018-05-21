@@ -46,21 +46,20 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 | z                          | [i3] full screen                |                                | [tmux] zoom pane               |                                 |
 |                            |                                 |                                |                                |                                 |
 
+## Colors
+
+Colors can be generated from https://terminal.sexy. Then, they are exportable as JSON and the following script can convert them to the good format for `~/.Xresources`.
+
+    python3 jsonToXres.py
+
+### Details on colors
+
+ - color0: has to be different of background for proper display in htop
+ - color4: main accent color used by polybar and i3
+
 ## Todo
 
-- [X] Vim quickfix navigation
-- [X] Rofi clipboard manager and remove parcellite
-- [X] Color variables in Xresources
-- [X] Vim colors for folds, splits, left margin and completion bar
-- [X] Vim integrate tpope plugins
 - [ ] i3 auto update when display switched
 - [ ] Test docker image
-- [X] Test features over SSH
 - [ ] Check vim ssh sessions (quick open vim session with rofi)
-- [X] rofi search through all open windows with HOME+g
-- [X] Xresources grey color to be changed for zsh prompt and htop values
-- [X] Vim can't copy in insert mode
-- [X] Vim plugin (or NERDTree?) for creating/renaming/deleting files
-- [X] Vim autocmd for NERDTree
-- [X] Vim review emmet mappings
 - [ ] Dockerfile install golang

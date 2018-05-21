@@ -1,58 +1,62 @@
 ! Colors
 
-#define base00 #263238
-#define base01 #2e3c43
-#define base02 #314549
-#define base03 #546e7a
-#define base04 #b2ccd6
-#define base05 #eeffff
-#define base06 #eeffff
-#define base07 #ffffff
-#define base08 #f07178
-#define base09 #f78c6c
-#define base0A #ffcb6b
-#define base0B #c3e88d
-#define base0C #89ddff
-#define base0D #82aaff
-#define base0E #c792ea
-#define base0F #ff5370
+#define fg    #9ea7a6
+#define bg    #232c31
+#define col0  #2f3d45
+#define col8  #3f4944
+#define col1  #2a5491
+#define col9  #2a5491
+#define col2  #237986
+#define col10 #237986
+#define col3  #a03b1e
+#define col11 #a03b1e
+#define col4  #484d79
+#define col12 #484d79
+#define col5  #c59820
+#define col13 #c59820
+#define col6  #b02f30
+#define col14 #b02f30
+#define col7  #9ea7a6
+#define col15 #b5d8f6
 
-*foreground:   base05
-#ifdef background_opacity
-*background:   base00
-#else
-*background:   base00
-#endif
-*cursorColor:  base05
+! special
+*.foreground:   fg
+*.background:   bg
+*.cursorColor:  fg
 
-*color0:       base02
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
+! black
+*.color0:       col0
+*.color8:       col8
 
-*color8:       base03
-*color9:       base08
-*color10:      base0B
-*color11:      base0A
-*color12:      base0D
-*color13:      base0E
-*color14:      base0C
-*color15:      base07
+! red
+*.color1:       col1
+*.color9:       col9
 
-! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
-! use 'shell' template to set these if necessary
-*color16:      base09
-*color17:      base0F
-*color18:      base01
-*color19:      base02
-*color20:      base04
-*color21:      base06
+! green
+*.color2:       col2
+*.color10:      col10
 
-URxvt.background:                 [99]base00
+! yellow
+*.color3:       col3
+*.color11:      col11
+
+! blue
+*.color4:       col4
+*.color12:      col12
+
+! magenta
+*.color5:       col5
+*.color13:      col13
+
+! cyan
+*.color6:       col6
+*.color14:      col14
+
+! white
+*.color7:       col7
+*.color15:      col15
+
+URxvt.background:                 [99]bg
 URxvt.termName:                   rxvt-256color
 URxvt.internalBorder:             20
 URxvt.font:                       xft:Inconsolata for Powerline:size=13
@@ -83,13 +87,13 @@ URxvt.keyboard-select.clipboard:  true
 ! Enable the extended coloring options
 rofi.color-enabled: true
 
-! Property Name     BG       Border   Separator
-rofi.color-window:  base01,  base0D,  base00
+! Property Name     BG     Border   Separator
+rofi.color-window:  bg,    col4,    fg
 
 ! Property Name     BG      FG      BG-alt  Head-BG Head-FG
-rofi.color-normal:  base01, base05, base01, base01, base0D
-rofi.color-active:  base01, base08, base01, base01, base0D
-rofi.color-urgent:  base01, base08, base01, base01, base08
+rofi.color-normal:  bg,     fg,     bg,     bg,     col4
+rofi.color-active:  bg,     fg,     bg,     bg,     col4
+rofi.color-urgent:  bg,     fg,     bg,     bg,     col4
 
 ! Set the desired separator style
 rofi.separator-style: solid

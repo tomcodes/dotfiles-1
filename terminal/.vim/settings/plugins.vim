@@ -74,9 +74,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Lighline
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
+let g:lightline = { 'colorscheme': 'solarized' }
 
 " Unimpaired
 nmap « [

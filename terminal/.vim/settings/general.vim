@@ -71,7 +71,7 @@ set antialias
 syntax on
 set t_Co=256
 set background=dark
-colorscheme slate
+colorscheme ron
 
 " Redesign split border
 set fillchars+=vert:│

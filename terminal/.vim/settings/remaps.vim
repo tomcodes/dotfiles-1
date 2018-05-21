@@ -5,6 +5,7 @@
 imap <Esc> <C-c>
 
 " Save and quit shortcuts
+noremap <C-s> :w!<CR>
 noremap w :w!<CR>
 noremap q :q!<CR>
 noremap <Leader>q :qa!<CR>

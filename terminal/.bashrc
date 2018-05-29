@@ -4,6 +4,9 @@ export PATH=$PATH:$HOME/.bin/
 # Check if use sshrc
 if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
     alias ssh="sshrc"
+else
+    # Use xterm terminal colors
+    export TERM='xterm-256color'
 fi
 
 # Include unversioned files
@@ -34,7 +37,7 @@ alias .="cd ."
 alias ..="cd .."
 alias ...="cd ../.."
 alias extip="wget http://ipinfo.io/ip -qO -"
-alias dl="cd $HOME/Downloads"
+alias dl="builtin cd $HOME/Downloads && llt"
 alias doc="cd $HOME/Documents"
 alias df="df -H"
 alias du="du -ch"

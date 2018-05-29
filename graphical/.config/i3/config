@@ -77,32 +77,31 @@ set $skype         skypeforlinux
 # COLORS
 #-----------------------------------
 
-set_from_resource     $background     background
-set_from_resource     $foreground     foreground
-set_from_resource     $color0         color0
-set_from_resource     $color1 	      color1
-set_from_resource     $color2         color2
-set_from_resource     $color3         color3
-set_from_resource     $color4         color4
-set_from_resource     $color5         color5
-set_from_resource     $color6         color6
-set_from_resource     $color7         color7
-set_from_resource     $color8         color8
-set_from_resource     $color9         color9
-set_from_resource     $color10        color10
-set_from_resource     $color11        color11
-set_from_resource     $color12        color12
-set_from_resource     $color13        color13
-set_from_resource     $color14        color14
-set_from_resource     $color15        color15
+set_from_resource $base00 base_00
+set_from_resource $base01 base_01
+set_from_resource $base02 base_02
+set_from_resource $base03 base_03
+set_from_resource $base04 base_04
+set_from_resource $base05 base_05
+set_from_resource $base06 base_06
+set_from_resource $base07 base_07
+set_from_resource $base08 base_08
+set_from_resource $base09 base_09
+set_from_resource $base0A base_0A
+set_from_resource $base0B base_0B
+set_from_resource $base0C base_0C
+set_from_resource $base0D base_0D
+set_from_resource $base0E base_0E
+set_from_resource $base0F base_0F
 
-# Property Name         Border      BG              Text            Indicator       Child Border
-client.focused         	$color0	    $color4         $color0         $foreground     $color4
-client.unfocused       	$color0	    $background     $foreground     $foreground     $color0
-client.focused_inactive	$color0	    $color4         $color0         $foreground     $color0
-client.urgent		    $color0	    $color5         $foreground     $foreground     $color0
-client.placeholder	    $color0	    $background     $foreground     $foreground     $color0
-client.background	$background
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base0D $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
 #
 # STYLE

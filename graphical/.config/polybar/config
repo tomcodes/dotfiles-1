@@ -1,22 +1,20 @@
 [colors]
-background 	= ${xrdb:background}
-foreground 	= ${xrdb:foreground}
-color0	    = ${xrdb:color0}
-color1      = ${xrdb:color1}
-color2	    = ${xrdb:color2}
-color3	    = ${xrdb:color3}
-color4	    = ${xrdb:color4}
-color5	    = ${xrdb:color5}
-color6	    = ${xrdb:color6}
-color7	    = ${xrdb:color7}
-color8	    = ${xrdb:color8}
-color9	    = ${xrdb:color9}
-color10	    = ${xrdb:color10}
-color11	    = ${xrdb:color11}
-color12	    = ${xrdb:color12}
-color13	    = ${xrdb:color13}
-color14	    = ${xrdb:color14}
-color15	    = ${xrdb:color15}
+base00 = ${xrdb:base_00}
+base01 = ${xrdb:base_01}
+base02 = ${xrdb:base_02}
+base03 = ${xrdb:base_03}
+base04 = ${xrdb:base_04}
+base05 = ${xrdb:base_05}
+base06 = ${xrdb:base_06}
+base07 = ${xrdb:base_07}
+base08 = ${xrdb:base_08}
+base09 = ${xrdb:base_09}
+base0A = ${xrdb:base_0A}
+base0B = ${xrdb:base_0B}
+base0C = ${xrdb:base_0C}
+base0D = ${xrdb:base_0D}
+base0E = ${xrdb:base_0E}
+base0F = ${xrdb:base_0F}
 
 [bar/top]
 monitor = ${env:MONITOR}
@@ -25,10 +23,10 @@ height = 27
 
 enable-ipc = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.base00}
+foreground = ${colors.base05}
 
-line-color = ${colors.foreground}
+line-color = ${colors.base03}
 line-size = 2
 
 spacing = 0
@@ -61,10 +59,10 @@ height = 27
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.base00}
+foreground = ${colors.base05}
 
-line-color = ${colors.foreground}
+line-color = ${colors.base03}
 line-size = 2
 
 spacing = 0
@@ -94,51 +92,56 @@ ws-icon-6 = 7;7
 ws-icon-7 = 8;8
 
 label-focused = %icon%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.color0}
-label-focused-underline = ${colors.color4}
+label-focused-foreground = ${colors.base05}
+label-focused-background = ${colors.base01}
+label-focused-underline = ${colors.base0B}
 label-focused-padding = 2
 
 label-visible = %icon%
-label-visible-foreground = ${colors.foreground}
-label-visible-background = ${colors.background}
-label-visible-underline = ${colors.color4}
+label-visible-foreground = ${colors.base05}
+label-visible-background = ${colors.base00}
 label-visible-padding = 2
 
 label-unfocused = %icon%
-label-unfocused-foreground = ${colors.foreground}
-label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.base03}
+label-unfocused-background = ${colors.base00}
 label-unfocused-padding = 2
 
 label-urgent = %icon%
-label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.color5}
+label-urgent-foreground = ${colors.base07}
+label-urgent-background = ${colors.base03}
+label-urgent-underline = ${colors.base0A}
 label-urgent-padding = 2
 
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-foreground = ${colors.color0}
-label-mode-background = ${colors.color4}
+label-mode-foreground = ${colors.base05}
+label-mode-background = ${colors.base01}
+label-mode-underline = ${colors.base09}
 
 [module/backlight]
 type = internal/backlight
 
 card = intel_backlight
 
-format = <ramp> <bar>
+format = <label> <bar>
 
-ramp-0 = 
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
 
 bar-width = 10
 bar-indicator = |
 bar-indicator-font = 3
-bar-indicator-foreground = ${colors.color4}
+bar-indicator-foreground = ${colors.base03}
 bar-fill = ─
 bar-fill-font = 3
-bar-fill-foreground = ${colors.foreground}
+bar-fill-foreground = ${colors.base03}
 bar-empty = ─
 bar-empty-font = 3
-bar-empty-foreground = ${colors.foreground}
+bar-empty-foreground = ${colors.base03}
 
 [module/battery]
 type = internal/battery
@@ -151,21 +154,24 @@ format-full = <ramp-capacity> <label-full>
 label-full = full
 
 ramp-capacity-0 = 
-ramp-capacity-0-foreground = ${colors.color4}
+ramp-capacity-0-foreground = ${colors.base08}
 ramp-capacity-1 = 
-ramp-capacity-1-foreground = ${colors.foreground}
+ramp-capacity-1-foreground = ${colors.base09}
 ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.base0A}
 ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${colors.base05}
 ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${colors.base05}
 
 bar-capacity-width = 10
 bar-capacity-format = %fill%%empty%%{-u}%{-o}
 bar-capacity-fill = █
-bar-capacity-fill-foreground = ${colors.foreground}
+bar-capacity-fill-foreground = ${colors.base03}
 bar-capacity-fill-font = 3
 bar-capacity-empty = █
 bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = ${colors.color4}
+bar-capacity-empty-foreground = ${colors.base03}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -190,28 +196,28 @@ label = CPU
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = ${colors.foreground}
+ramp-coreload-0-foreground = ${colors.base0B}
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = ${colors.foreground}
+ramp-coreload-1-foreground = ${colors.base0B}
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = ${colors.foreground}
+ramp-coreload-2-foreground = ${colors.base0B}
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 2
-ramp-coreload-3-foreground = ${colors.foreground}
+ramp-coreload-3-foreground = ${colors.base0A}
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 2
-ramp-coreload-4-foreground = ${colors.color4}
+ramp-coreload-4-foreground = ${colors.base0A}
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 2
-ramp-coreload-5-foreground = ${colors.color4}
+ramp-coreload-5-foreground = ${colors.base09}
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = ${colors.color4}
+ramp-coreload-6-foreground = ${colors.base09}
 ramp-coreload-7 = █
 ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = ${colors.color4}
+ramp-coreload-7-foreground = ${colors.base08}
 
 [module/memory]
 type = internal/memory
@@ -219,15 +225,20 @@ format = <label> <bar-used>
 label = RAM
 
 bar-used-width = 30
-bar-used-foreground = ${colors.foreground}
+bar-used-foreground-0 = ${colors.base0B}
+bar-used-foreground-1 = ${colors.base0B}
+bar-used-foreground-2 = ${colors.base0B}
+bar-used-foreground-3 = ${colors.base0A}
+bar-used-foreground-4 = ${colors.base09}
+bar-used-foreground-5 = ${colors.base08}
 bar-used-indicator = |
 bar-used-indicator-font = 6
-bar-used-indicator-foreground = ${colors.color4}
+bar-used-indicator-foreground = ${colors.base03}
 bar-used-fill = ─
 bar-used-fill-font = 6
 bar-used-empty = ─
 bar-used-empty-font = 6
-bar-used-empty-foreground = ${colors.foreground}
+bar-used-empty-foreground = ${colors.base03}
 
 [module/wireless-network]
 type = internal/network
@@ -237,9 +248,9 @@ interval = 3.0
 format-connected = <label-connected>
 label-connected =  %essid%
 label-disconnected =  not connected
-label-disconnected-foreground = ${colors.color4}
+label-disconnected-foreground = ${colors.base03}
 label-packetloss =  %essid%
-label-packetloss-foreground = ${colors.color4}
+label-packetloss-foreground = ${colors.base03}
 
 [module/wired-network]
 type = internal/network
@@ -249,9 +260,9 @@ interval = 3.0
 format-connected = <label-connected>
 label-connected =  %{T3}%local_ip%%{T-}
 label-disconnected =  not connected
-label-disconnected-foreground = ${colors.color4}
+label-disconnected-foreground = ${colors.base03}
 label-packetloss =  %{T3}%local_ip%%{T-}
-label-packetloss-foreground = ${colors.color4}
+label-packetloss-foreground = ${colors.base03}
 
 [module/volume]
 type = internal/volume
@@ -259,7 +270,7 @@ type = internal/volume
 format-volume = <ramp-volume> <label-volume>
 
 label-muted =  muted
-label-muted-foreground = ${colors.color4}
+label-muted-foreground = ${colors.base03}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -275,16 +286,16 @@ label-close = 
 label-separator = " | "
 
 menu-0-0 = Power Off
-menu-0-0-foreground = ${colors.foreground}
+menu-0-0-foreground = ${colors.base03}
 menu-0-0-exec = $HOME/.config/i3/i3exit shutdown
 menu-0-1 = Reboot
-menu-0-1-foreground = ${colors.foreground}
+menu-0-1-foreground = ${colors.base03}
 menu-0-1-exec = $HOME/.config/i3/i3exit reboot
 menu-0-2 = Lock
-menu-0-2-foreground = ${colors.foreground}
+menu-0-2-foreground = ${colors.base03}
 menu-0-2-exec = $HOME/.config/i3/i3exit lock
 menu-0-3 = Logout
-menu-0-3-foreground = ${colors.foreground}
+menu-0-3-foreground = ${colors.base03}
 menu-0-3-exec = $HOME/.config/i3/i3exit logout
 
 [module/music]
@@ -299,5 +310,5 @@ click-right = playerctl next
 
 [module/title]
 type = internal/xwindow
-label-underline = ${colors.foreground}
+label-underline = ${colors.base03}
 label = %title:0:45:...%

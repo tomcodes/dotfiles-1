@@ -1,62 +1,85 @@
 ! Colors
 
-#define fg    #9ea7a6
-#define bg    #232c31
-#define col0  #2f3d45
-#define col8  #3f4944
-#define col1  #2a5491
-#define col9  #2a5491
-#define col2  #237986
-#define col10 #237986
-#define col3  #a03b1e
-#define col11 #a03b1e
-#define col4  #484d79
-#define col12 #484d79
-#define col5  #c59820
-#define col13 #c59820
-#define col6  #b02f30
-#define col14 #b02f30
-#define col7  #9ea7a6
-#define col15 #b5d8f6
+! Main 16 colors of base theme
+#define base00 #212121
+#define base01 #303030
+#define base02 #353535
+#define base03 #4a4a4a
+#define base04 #b2ccd6
+#define base05 #eeffff
+#define base06 #eeffff
+#define base07 #ffffff
+#define base08 #f07178
+#define base09 #f78c6c
+#define base0A #ffcb6b
+#define base0B #c3e88d
+#define base0C #89ddff
+#define base0D #82aaff
+#define base0E #c792ea
+#define base0F #ff5370
 
-! special
-*.foreground:   fg
-*.background:   bg
-*.cursorColor:  fg
+! Matching colors with base
+! Easy to import base 16 colorscheme in terminal sexy
+! *color0:  base00
+! *color1:  base01
+! *color2:  base02
+! *color3:  base03
+! *color4:  base04
+! *color5:  base05
+! *color6:  base06
+! *color7:  base07
+! *color8:  base08
+! *color9:  base09
+! *color10: base0A
+! *color11: base0B
+! *color12: base0C
+! *color13: base0D
+! *color14: base0E
+! *color15: base0F
 
-! black
-*.color0:       col0
-*.color8:       col8
+! Propagate base 16 colors to other apps
+*base_00: base00
+*base_01: base01
+*base_02: base02
+*base_03: base03
+*base_04: base04
+*base_05: base05
+*base_06: base06
+*base_07: base07
+*base_08: base08
+*base_09: base09
+*base_0A: base0A
+*base_0B: base0B
+*base_0C: base0C
+*base_0D: base0D
+*base_0E: base0E
+*base_0F: base0F
 
-! red
-*.color1:       col1
-*.color9:       col9
+! Main components colors
+*foreground:   base05
+*background:   base00
+*cursorColor:  base05
 
-! green
-*.color2:       col2
-*.color10:      col10
+*color0:       base03
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-! yellow
-*.color3:       col3
-*.color11:      col11
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
 
-! blue
-*.color4:       col4
-*.color12:      col12
-
-! magenta
-*.color5:       col5
-*.color13:      col13
-
-! cyan
-*.color6:       col6
-*.color14:      col14
-
-! white
-*.color7:       col7
-*.color15:      col15
-
-URxvt.background:                 [99]bg
+! Urxvt
+URxvt.background:                 [99]base00
 URxvt.termName:                   rxvt-256color
 URxvt.internalBorder:             20
 URxvt.font:                       xft:Inconsolata for Powerline:size=13
@@ -84,29 +107,31 @@ URxvt.visualBell:                 false
 URxvt.keysym.M-g:                 perl:keyboard-select:activate
 URxvt.keyboard-select.clipboard:  true
 
+! Rofi
+
 ! Enable the extended coloring options
 rofi.color-enabled: true
 
-! Property Name     BG     Border   Separator
-rofi.color-window:  bg,    col4,    fg
+! Property Name     BG      Border  Separator
+rofi.color-window:  base01, base01, base0D
 
 ! Property Name     BG      FG      BG-alt  Head-BG Head-FG
-rofi.color-normal:  bg,     fg,     bg,     bg,     col4
-rofi.color-active:  bg,     fg,     bg,     bg,     col4
-rofi.color-urgent:  bg,     fg,     bg,     bg,     col4
+rofi.color-normal:  base01, base05, base01, base01, base07
+rofi.color-active:  base01, base0D, base01, base01, base0D
+rofi.color-urgent:  base01, base08, base01, base01, base08
 
-! Set the desired separator style
-rofi.separator-style: solid
-
+rofi.separator-style:  solid
+rofi.terminal:         urxvt
 rofi.sidebar-mode:     false
-rofi.font:             inconsolata 16
+rofi.font:             inconsolata 13
 rofi.fixed-num-lines:  true
 rofi.hide-scrollbar:   true
-
 rofi.opacity:          100
-rofi.width:            40
+rofi.line-margin:      10
 rofi.lines:            8
 rofi.columns:          1
 rofi.bw:               2
+rofi.eh:               1
 rofi.location:         0
-rofi.padding:          20
+rofi.padding:          28
+rofi.width:            50

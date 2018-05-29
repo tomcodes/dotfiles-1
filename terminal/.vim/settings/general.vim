@@ -4,6 +4,10 @@
 " Use vim settings rather then vi settings
 set nocompatible
 
+" Set encoding
+scriptencoding utf-8
+set encoding=utf-8
+
 " Always show statusline
 set laststatus=2
 set noshowmode
@@ -71,10 +75,10 @@ set antialias
 syntax on
 set t_Co=256
 set background=dark
-colorscheme ron
+colorscheme delek
 
 " Redesign split border
-set fillchars+=vert:│
+set fillchars+=vert:\│
 highlight VertSplit cterm=NONE
 
 " Don't color folded lines

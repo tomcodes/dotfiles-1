@@ -54,8 +54,13 @@ Colors can be generated from https://terminal.sexy. Then, they are exportable as
 
 ### Details on colors
 
- - color0: has to be different of background for proper display in htop
- - color4: main accent color used by polybar and i3
+When choosing a color palette, please make sure the following requirements are met.
+
+ - background: should be a dark background
+ - foreground: should be as close as possible to white (used for text color)
+ - color0: should be a lighter version of background
+ - color4: main accent color
+ - color12: urgent color (brighter version of color4)
 
 ## Todo
 

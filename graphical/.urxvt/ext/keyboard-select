@@ -185,7 +185,7 @@ sub key_press {
 		move_cursor($self, '$');
 	} elsif ($keysym == 0xff50) {
 		move_cursor($self, '^');
-	} elsif ('gG0^$HML' =~ m/\Q$key\E/ ||
+	} elsif ('gG0È^è$HML' =~ m/\Q$key\E/ ||
 			('fbdu' =~ m/\Q$key\E/ && $event->{state} & urxvt::ControlMask)) {
 		move_cursor($self, $key);
 	} elsif (lc($key) eq 'f') {
@@ -237,10 +237,10 @@ sub move_cursor {
 	} elsif ($key eq 'G') {
 		($cr, $self->{offset}) = ($self->nrow - 1, 0);
 		$self->{dollar} = 0;
-	} elsif ($key eq '0') {
+	} elsif ($key eq '0' || $key eq 'È') {
 		$self->{offset} = 0;
 		$self->{dollar} = 0;
-	} elsif ($key eq '^') {
+	} elsif ($key eq '^' || $key eq 'è') {
 		my $ltxt = $self->special_decode($line->t);
 		while ($ltxt =~ s/^( *)\t/$1 . " " x (8 - length($1) % 8)/e) {}
 		$self->{offset} = $ltxt =~ m/^ +/ ? $+[0] : 0;

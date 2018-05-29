@@ -1,8 +1,9 @@
 " Custom Remaps
 " ———————————————————————————————
 
-" Remap esc to avoid delay
-imap <Esc> <C-c>
+" Remap <C-c> in visual for visual block
+vnoremap <C-c> <Esc>
+inoremap <C-c> <Esc>
 
 " Save and quit shortcuts
 noremap <C-s> :w!<CR>
@@ -34,6 +35,9 @@ nnoremap e :e#<CR>
 nnoremap n :bnext<CR>
 nnoremap p :bprev<CR>
 nnoremap d :bd!<CR>
+
+" Remove highlight (<C-/> works as well)
+nnoremap <C-_> :set hlsearch!<CR>
 
 " Remaper la gestion des fenêtres
 " ———————————————————————————————

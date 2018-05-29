@@ -48,19 +48,15 @@ Shortcuts tend to be consistent between apps. Here is a table listing a few of t
 
 ## Colors
 
-Colors can be generated from https://terminal.sexy. Then, they are exportable as JSON and the following script can convert them to the good format for `~/.Xresources`.
+Colors are generated from a base 16 template. See `.Xresources` to check colors. These colors are propagated from X resources to other apps.
 
-    python3 jsonToXres.py
+ - Uxrvt
+ - Rofi
+ - i3
+ - Polybar
+ - Dunst
 
-### Details on colors
-
-When choosing a color palette, please make sure the following requirements are met.
-
- - background: should be a dark background
- - foreground: should be as close as possible to white (used for text color)
- - color0: should be a lighter version of background
- - color4: main accent color
- - color12: urgent color (brighter version of color4)
+Colors can be easily visualized using https://terminal.sexy.
 
 ## Todo
 
@@ -68,3 +64,5 @@ When choosing a color palette, please make sure the following requirements are m
 - [ ] Test docker image
 - [ ] Check vim ssh sessions (quick open vim session with rofi)
 - [ ] Dockerfile install golang
+- [ ] Set up dunst colors from i3
+- [ ] Finalize color scheme

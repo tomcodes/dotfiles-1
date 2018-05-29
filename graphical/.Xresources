@@ -113,7 +113,7 @@ URxvt.keyboard-select.clipboard:  true
 rofi.color-enabled: true
 
 ! Property Name     BG      Border  Separator
-rofi.color-window:  base01, base01, base0D
+rofi.color-window:  base01, base0D, base0D
 
 ! Property Name     BG      FG      BG-alt  Head-BG Head-FG
 rofi.color-normal:  base01, base05, base01, base01, base0D

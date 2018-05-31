@@ -19,24 +19,17 @@
     separator_height = 1
     padding = 8
     horizontal_padding = 8
-    separator_color = "#eceff1"
+    separator_color = auto
     startup_notification = false
 
 [frame]
-    width = 1
-    color = "#263238"
+    width = 0
 
 [urgency_low]
-    background = "#2e3c43"
-    foreground = "#eceff1"
     timeout = 5
 
 [urgency_normal]
-    background = "#2e3c43"
-    foreground = "#eceff1"
     timeout = 20
 
 [urgency_critical]
-    background = "#2e3c43"
-    foreground = "#eceff1"
     timeout = 0

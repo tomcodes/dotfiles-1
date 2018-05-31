@@ -26,8 +26,8 @@ enable-ipc = true
 background = ${colors.base00}
 foreground = ${colors.base05}
 
-line-color = ${colors.base03}
-line-size = 2
+line-color = ${colors.base0D}
+line-size = 3
 
 spacing = 0
 padding-right = 1
@@ -48,7 +48,7 @@ tray-offset-y = 0%
 tray-offset-x = 0%
 tray-maxsize = 18
 tray-detached = false
-tray-background = ${colors.background}
+tray-background = ${colors.base00}
 
 [bar/bottom]
 monitor = ${env:MONITOR}
@@ -62,7 +62,7 @@ scroll-down = i3wm-wsprev
 background = ${colors.base00}
 foreground = ${colors.base05}
 
-line-color = ${colors.base03}
+line-color = ${colors.base0D}
 line-size = 2
 
 spacing = 0
@@ -94,12 +94,12 @@ ws-icon-7 = 8;8
 label-focused = %icon%
 label-focused-foreground = ${colors.base05}
 label-focused-background = ${colors.base01}
-label-focused-underline = ${colors.base0B}
+label-focused-underline = ${colors.base0D}
 label-focused-padding = 2
 
 label-visible = %icon%
 label-visible-foreground = ${colors.base05}
-label-visible-background = ${colors.base00}
+label-visible-background = ${colors.base01}
 label-visible-padding = 2
 
 label-unfocused = %icon%
@@ -108,9 +108,9 @@ label-unfocused-background = ${colors.base00}
 label-unfocused-padding = 2
 
 label-urgent = %icon%
-label-urgent-foreground = ${colors.base07}
-label-urgent-background = ${colors.base03}
-label-urgent-underline = ${colors.base0A}
+label-urgent-foreground = ${colors.base05}
+label-urgent-background = ${colors.base08}
+label-urgent-underline = ${colors.base08}
 label-urgent-padding = 2
 
 label-mode = %mode%
@@ -286,16 +286,16 @@ label-close = 
 label-separator = " | "
 
 menu-0-0 = Power Off
-menu-0-0-foreground = ${colors.base03}
+menu-0-0-foreground = ${colors.base05}
 menu-0-0-exec = $HOME/.config/i3/i3exit shutdown
 menu-0-1 = Reboot
-menu-0-1-foreground = ${colors.base03}
+menu-0-1-foreground = ${colors.base05}
 menu-0-1-exec = $HOME/.config/i3/i3exit reboot
 menu-0-2 = Lock
-menu-0-2-foreground = ${colors.base03}
+menu-0-2-foreground = ${colors.base05}
 menu-0-2-exec = $HOME/.config/i3/i3exit lock
 menu-0-3 = Logout
-menu-0-3-foreground = ${colors.base03}
+menu-0-3-foreground = ${colors.base05}
 menu-0-3-exec = $HOME/.config/i3/i3exit logout
 
 [module/music]

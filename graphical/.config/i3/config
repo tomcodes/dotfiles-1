@@ -231,7 +231,13 @@ exec --no-startup-id nm-applet
 # Custom programs
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
-exec --no-startup-id dunst
+exec --no-startup-id dunst \
+    -lb "$base01" \
+    -lf "$base05" \
+    -nb "$base01" \
+    -nf "$base05" \
+    -cb "$base08" \
+    -cf "$base05"
 
 # Rofi clipboard
 exec --no-startup-id greenclip daemon

@@ -348,18 +348,6 @@ mode $resize_mode {
         bindsym Escape mode "default"
 }
 
-set $display_mode "display [t]op [r]ight [e]xternal [l]aptop"
-bindsym $mod+mod1+h mode $display_mode
-mode $display_mode {
-    bindsym t mode "default", exec $HOME/.config/i3/display/top.sh, restart
-    bindsym r mode "default", exec $HOME/.config/i3/display/right.sh, restart 
-    bindsym e mode "default", exec $HOME/.config/i3/display/external.sh, restart
-    bindsym l mode "default", exec $HOME/.config/i3/display/laptop.sh, restart
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 #
 # BINDINGS
 #-----------------------------------
@@ -413,6 +401,9 @@ bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+z fullscreen
+
+# reload monitors
+bindsym $mod+m exec --no-startup-id ~/.config/i3/autoxrandr.sh
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+k layout stacking

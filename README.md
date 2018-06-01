@@ -60,9 +60,5 @@ Colors can be easily visualized using https://terminal.sexy.
 
 ## Todo
 
-- [ ] i3 auto update when display switched
 - [ ] Test docker image
-- [ ] Check vim ssh sessions (quick open vim session with rofi)
 - [ ] Dockerfile install golang
-- [ ] Set up dunst colors from i3
-- [ ] Finalize color scheme

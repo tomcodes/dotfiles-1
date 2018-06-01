@@ -34,4 +34,11 @@ then
         echo "done"
     done
 fi
+
+# pause dunst messages
+pkill -u "$USER" -USR1 dunst
+
 i3lock -e -f -n -i /tmp/screen.png
+
+# resume message
+pkill -u "$USER" -USR2 dunst

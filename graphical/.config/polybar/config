@@ -75,7 +75,7 @@ font-1 = unifont:size=6;-2
 font-2 = FontAwesome:size=10;-2
 
 modules-left = powermenu music
-modules-center = title
+modules-center = filesystem
 modules-right = cpu memory
 
 [module/i3]
@@ -308,7 +308,14 @@ click-left = playerctl previous
 click-middle = playerctl play-pause
 click-right = playerctl next
 
-[module/title]
-type = internal/xwindow
-label-underline = ${colors.base03}
-label = %title:0:45:...%
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /home
+mount-1 = /var
+mount-2 = /tmp
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.base05}

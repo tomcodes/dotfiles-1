@@ -56,9 +56,6 @@
 # Modifier
 set $mod mod4
 
-# Font
-set $font inconsolata 13
-
 # Gaps
 set $gaps 8
 
@@ -108,8 +105,8 @@ client.background       $base07
 #-----------------------------------
 
 # Border style for new windows and floating windows
-new_window pixel 2
-new_float pixel 2
+new_window pixel 3
+new_float pixel 3
 
 # Hide container borders adjacent to the screen edges
 hide_edge_borders none
@@ -118,7 +115,8 @@ hide_edge_borders none
 smart_borders on
 
 # Font for windows tiles
-font pango:$font
+font pango:inconsolata 16
+for_window [class=".*"] title_format "<span font='inconsolata 12'> <b>> %class</b> - %title</span>"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

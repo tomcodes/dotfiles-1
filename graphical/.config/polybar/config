@@ -37,7 +37,7 @@ font-0 = inconsolata:size=13;0
 font-1 = unifont:size=6;-4
 font-2 = FontAwesome:size=12;-2
 
-modules-left = i3
+modules-left = menu i3
 modules-center = date
 modules-right = volume backlight battery
 
@@ -282,8 +282,8 @@ type = custom/menu
 
 format-padding = 2
 
-label-open = 
-label-close = 
+label-open = "" 
+label-close = ""
 label-separator = " | "
 
 menu-0-0 = Power Off
@@ -320,3 +320,8 @@ mount-2 = /tmp
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.base05}
+
+[module/menu]
+type = custom/text
+content = "  "
+click-left = ~/.config/polybar/pymenu.py

@@ -35,10 +35,14 @@ then
     done
 fi
 
-# pause dunst messages
-pkill -u "$USER" -USR1 dunst
+# get dunst mute status
+dunst_mute=$(~/.config/polybar/dunstmute.sh value)
 
+# pause dunst messages
+~/.config/polybar/dunstmute.sh 1
+
+# lock
 i3lock -e -f -n -i /tmp/screen.png
 
-# resume message
-pkill -u "$USER" -USR2 dunst
+# resume dunst with previous status
+~/.config/polybar/dunstmute.sh $dunst_mute

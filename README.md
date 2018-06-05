@@ -62,4 +62,3 @@ Colors can be easily visualized using https://terminal.sexy.
 
 - [ ] Test docker image
 - [ ] Dockerfile install golang
-- [ ] Add a mute for dunst in top bar

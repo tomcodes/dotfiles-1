@@ -237,6 +237,9 @@ exec --no-startup-id dunst \
     -cb "$base08" \
     -cf "$base05"
 
+# Restore dunst mute
+exec --no-startup-id $HOME/.config/polybar/dunstmute.sh restore
+
 # Rofi clipboard
 exec --no-startup-id greenclip daemon
 

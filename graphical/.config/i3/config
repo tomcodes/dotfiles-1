@@ -115,7 +115,7 @@ hide_edge_borders none
 smart_borders on
 
 # Font for windows tiles
-font pango:inconsolata 16
+font pango:inconsolata 15
 for_window [class=".*"] title_format "<span font='inconsolata 12'> <b>> %class</b> - %title</span>"
 
 # Use Mouse+$mod to drag floating windows to their wanted position

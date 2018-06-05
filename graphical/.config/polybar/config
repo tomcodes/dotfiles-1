@@ -303,7 +303,7 @@ menu-0-3-exec = $HOME/.config/i3/i3exit logout
 type = custom/script
 interval = 2
 
-label = %output:0:45:...%
+label = %output:0:80:...%
 exec = ~/.config/polybar/music.sh
 click-left = playerctl previous
 click-middle = playerctl play-pause

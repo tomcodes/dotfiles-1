@@ -125,6 +125,7 @@ type = internal/backlight
 card = intel_backlight
 
 format = <label> <bar>
+label = 
 
 ramp-0 = 🌕
 ramp-1 = 🌔

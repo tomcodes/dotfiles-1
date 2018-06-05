@@ -39,7 +39,7 @@ font-2 = FontAwesome:size=12;-2
 
 modules-left = i3
 modules-center = date
-modules-right = volume backlight wireless-network wired-network battery
+modules-right = volume backlight battery
 
 tray-position = right
 tray-padding = 9

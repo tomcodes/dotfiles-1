@@ -186,7 +186,8 @@ sub key_press {
 	} elsif ($keysym == 0xff50) {
 		move_cursor($self, '^');
 	} elsif ('gG0È^è$CMR' =~ m/\Q$key\E/ ||
-			('fbdu' =~ m/\Q$key\E/ && $event->{state} & urxvt::ControlMask)) {
+			('fbdu' =~ m/\Q$key\E/ && $event->{state} & urxvt::ControlMask) ||
+			('fbdu' =~ m/\Q$key\E/ && $event->{state})) {
 		move_cursor($self, $key);
 	} elsif (lc($key) eq 'f') {
 		$self->{move_to} = 1;

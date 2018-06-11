@@ -14,7 +14,7 @@ internal=${connected_outputs[0]}
 only_internal=1
 
 # Update internal
-xrandr --output $internal --auto
+xrandr --output $internal --auto --primary
 if [ $connected_outputs_count -eq 1 ]; then
     notify-send "Monitor Update: only internal display" 
 fi

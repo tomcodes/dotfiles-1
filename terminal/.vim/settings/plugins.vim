@@ -36,6 +36,8 @@ if exists("*vundle#begin")
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-unimpaired'
     Plugin 'tpope/vim-repeat'
+    Plugin 'tpope/vim-characterize'
+    Plugin 'ryanoasis/vim-devicons'
 
     call vundle#end()
 

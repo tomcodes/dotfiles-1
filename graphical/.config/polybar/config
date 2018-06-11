@@ -33,9 +33,7 @@ spacing = 0
 padding-right = 1
 module-margin = 1
 
-font-0 = inconsolata:size=13;0
-font-1 = unifont:size=6;-4
-font-2 = FontAwesome:size=12;-2
+font-0 = Inconsolata Nerd Font:size=13;0
 
 modules-left = menu i3
 modules-center = calendar date
@@ -82,6 +80,8 @@ modules-right = cpu memory
 type = internal/i3
 pin-workspaces = true
 
+format-offset = -17
+
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
@@ -124,7 +124,7 @@ type = internal/backlight
 
 card = intel_backlight
 
-format = <label> <bar>
+format = <label> <ramp>
 label = 
 
 ramp-0 = 🌕
@@ -328,7 +328,10 @@ label-unmounted-foreground = ${colors.base05}
 
 [module/menu]
 type = custom/text
-content = "  "
+content = ""
+content-background = ${colors.base00}
+content-foreground = ${colors.base0D}
+content-padding = 2
 click-left = ~/.config/polybar/pymenu.py
 
 [module/dunstmute]

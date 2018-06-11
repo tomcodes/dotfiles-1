@@ -6,3 +6,6 @@ export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC"
 
 # Initialize lesskey
 lesskey $SSHHOME/.sshrc.d/.lesskey
+
+# Define tmux alias
+alias tmux="tmux -f $SSHHOME/.sshrc.d/.tmux.conf"

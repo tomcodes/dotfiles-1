@@ -82,7 +82,7 @@
 URxvt.background:                 [99]base00
 URxvt.termName:                   rxvt-256color
 URxvt.internalBorder:             20
-URxvt.font:                       xft:Inconsolata Nerd Font Mono:size=13
+URxvt.font:                       xft:Inconsolata Nerd Font Mono:size=13, xft:Symbola monospacified for Inconsolata
 URxvt.geometry:                   80x20
 URxvt.depth:                      32
 URxvt.scrollBar:                  false

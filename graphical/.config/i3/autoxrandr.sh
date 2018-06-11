@@ -32,5 +32,8 @@ for output in ${disconnected_outputs[@]}; do
     xrandr --output $output --off
 done
 
+# Reload i3
+i3-msg reload
+
 # Restart Polybar
 ~/.config/polybar/launch.sh

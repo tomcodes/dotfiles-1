@@ -33,7 +33,8 @@ spacing = 0
 padding-right = 1
 module-margin = 1
 
-font-0 = Inconsolata Nerd Font:size=13;0
+font-0 = Inconsolata Nerd Font:size=13;2
+font-1 = Symbola:size=13;2
 
 modules-left = menu i3
 modules-center = calendar date
@@ -68,9 +69,8 @@ padding-right = 4
 module-margin-left = 0
 module-margin-right = 4
 
-font-0 = inconsolata:size=13;2
-font-1 = unifont:size=6;-2
-font-2 = FontAwesome:size=10;-2
+font-0 = Inconsolata Nerd Font:size=13;3
+font-1 = Symbola:size=6;0
 
 modules-left = powermenu music
 modules-center = filesystem
@@ -121,28 +121,9 @@ label-mode-underline = ${colors.base09}
 
 [module/backlight]
 type = internal/backlight
-
 card = intel_backlight
-
-format = <label> <ramp>
-label = 
-
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-font = 3
-bar-indicator-foreground = ${colors.base03}
-bar-fill = ─
-bar-fill-font = 3
-bar-fill-foreground = ${colors.base03}
-bar-empty = ─
-bar-empty-font = 3
-bar-empty-foreground = ${colors.base03}
+format = <label>
+label =  %percentage%%
 
 [module/battery]
 type = internal/battery
@@ -151,7 +132,6 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
-
 label-full = full
 
 ramp-capacity-0 = 
@@ -164,15 +144,6 @@ ramp-capacity-3 = 
 ramp-capacity-3-foreground = ${colors.base05}
 ramp-capacity-4 = 
 ramp-capacity-4-foreground = ${colors.base05}
-
-bar-capacity-width = 10
-bar-capacity-format = %fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = ${colors.base03}
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = ${colors.base03}
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -189,9 +160,7 @@ click-left = gsimplecal
 [module/date]
 type = internal/date
 interval = 5
-
 date = "%a %d %b, %H:%M "
-
 label = %date% %time%
 
 [module/cpu]
@@ -201,28 +170,20 @@ format = <label> <ramp-coreload>
 label = CPU
 
 ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
 ramp-coreload-0-foreground = ${colors.base0B}
 ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
 ramp-coreload-1-foreground = ${colors.base0B}
 ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
 ramp-coreload-2-foreground = ${colors.base0B}
 ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
 ramp-coreload-3-foreground = ${colors.base0A}
 ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
 ramp-coreload-4-foreground = ${colors.base0A}
 ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
 ramp-coreload-5-foreground = ${colors.base09}
 ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
 ramp-coreload-6-foreground = ${colors.base09}
 ramp-coreload-7 = █
-ramp-coreload-7-font = 2
 ramp-coreload-7-foreground = ${colors.base08}
 
 [module/memory]
@@ -238,37 +199,10 @@ bar-used-foreground-3 = ${colors.base0A}
 bar-used-foreground-4 = ${colors.base09}
 bar-used-foreground-5 = ${colors.base08}
 bar-used-indicator = |
-bar-used-indicator-font = 6
 bar-used-indicator-foreground = ${colors.base03}
 bar-used-fill = ─
-bar-used-fill-font = 6
 bar-used-empty = ─
-bar-used-empty-font = 6
 bar-used-empty-foreground = ${colors.base03}
-
-[module/wireless-network]
-type = internal/network
-interface = wlp2s0
-interval = 3.0
-
-format-connected = <label-connected>
-label-connected =  %essid%
-label-disconnected =  not connected
-label-disconnected-foreground = ${colors.base03}
-label-packetloss =  %essid%
-label-packetloss-foreground = ${colors.base03}
-
-[module/wired-network]
-type = internal/network
-interface = enxd481d7547bb9
-interval = 3.0
-
-format-connected = <label-connected>
-label-connected =  %{T3}%local_ip%%{T-}
-label-disconnected =  not connected
-label-disconnected-foreground = ${colors.base03}
-label-packetloss =  %{T3}%local_ip%%{T-}
-label-packetloss-foreground = ${colors.base03}
 
 [module/volume]
 type = internal/volume
@@ -328,9 +262,9 @@ label-unmounted-foreground = ${colors.base05}
 
 [module/menu]
 type = custom/text
-content = ""
+content = "卵"
 content-background = ${colors.base00}
-content-foreground = ${colors.base0D}
+content-foreground = ${colors.base0A}
 content-padding = 2
 click-left = ~/.config/polybar/pymenu.py
 

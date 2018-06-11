@@ -122,8 +122,14 @@ label-mode-underline = ${colors.base09}
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
-format = <label>
-label =  %percentage%%
+format = <ramp> <label>
+label = %percentage%%
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
 
 [module/battery]
 type = internal/battery

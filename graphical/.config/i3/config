@@ -64,7 +64,7 @@ set $gaps 8
 set $terminal      urxvt
 set $browser       google-chrome
 set $filemanager   pantheon-files
-set $screenshot    shutter
+set $screenshot    shutter --select --disable_systray
 set $settings      gnome-control-center
 set $editor        code
 set $ide           pstorm
@@ -230,7 +230,6 @@ exec --no-startup-id blueman-applet
 
 # Custom programs
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id shutter --min_at_startup
 exec --no-startup-id xflux -l 46.251508
 exec --no-startup-id dunst \
     -lb "$base01" \

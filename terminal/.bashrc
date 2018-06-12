@@ -47,7 +47,6 @@ alias jq="jq -C"
 alias grep="grep -i"
 alias watch="watch -n 1"
 alias rsync="rsync -avz --progress"
-alias top="htop"
 alias copy="xclip -selection clipboard"
 alias battery="acpi"
 alias lessf="less +F"
@@ -58,6 +57,11 @@ alias server="\ssh docker@lobr.fr"
 alias keyboard="setxkbmap"
 alias vgit="PAGER='vim -' git -c color.ui=false"
 alias ag="ag --hidden -S"
+
+# htop instead of top
+if type "htop" > /dev/null; then
+    alias top="htop"
+fi
 
 # Docker aliases
 alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"

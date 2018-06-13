@@ -1,5 +1,5 @@
 [global]
-    font = "Inconsolata 9"
+    font = "Inconsolata Nerd Font 9"
     allow_markup = yes
     format = "%i <b>%a: %s</b>\n%b"
     icon_position = left
@@ -34,3 +34,9 @@
 
 [urgency_critical]
     timeout = 0
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period

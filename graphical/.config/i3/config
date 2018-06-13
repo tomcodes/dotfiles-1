@@ -282,46 +282,6 @@ mode $reload_mode {
     bindsym Escape mode "default"
 }
 
-set $gaps_mode "gaps"
-set $gaps_inner_mode "gaps_inner"
-set $gaps_outer_mode "gaps_outer"
-bindsym $mod+mod1+g mode $gaps_mode
-mode $gaps_mode {
-        bindsym o      mode $gaps_outer_mode
-        bindsym i      mode $gaps_inner_mode
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode $gaps_inner_mode {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-        bindsym d     gaps inner current set $gaps
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-        bindsym Shift+d     gaps inner all set $gaps
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode $gaps_outer_mode {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-        bindsym d     gaps outer current set $gaps
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-        bindsym Shift+d     gaps outer all set $gaps
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
 set $apps_mode "apps"
 bindsym $mod+mod1+space mode $apps_mode
 mode $apps_mode {

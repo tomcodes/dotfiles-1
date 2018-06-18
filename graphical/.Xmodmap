@@ -3,7 +3,7 @@
 ! xmodmap -e "keycode 101 = keycode 180" -> set mapping on the fly
 
 ! Change Typematrix desktop key to escape
-keycode 100 = Escape
+keycode 100 = Escape NoSymbol Escape
 keycode 97 = ccedilla Ccedilla ccedilla Ccedilla dead_cedilla dead_belowcomma dead_cedilla
 
 ! Change Caps lock to escape

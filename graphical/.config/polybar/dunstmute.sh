@@ -14,7 +14,7 @@ function unmute() {
 
 
 # check value from tmp file
-if [ ! -f $file ]; then
+if [ ! -s $file ]; then
     muted=0
     echo "$muted" > $file
 else

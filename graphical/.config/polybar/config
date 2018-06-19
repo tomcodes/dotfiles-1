@@ -262,7 +262,7 @@ mount-0 = /home
 mount-1 = /var
 mount-2 = /tmp
 
-label-mounted =  %mountpoint%: %percentage_used%%
+label-mounted = ﱮ %mountpoint%: %percentage_used%%  %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.base05}
 

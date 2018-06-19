@@ -73,8 +73,8 @@ font-0 = Inconsolata Nerd Font:size=13;3
 font-1 = Symbola:size=6;2
 
 modules-left = powermenu music
-modules-center = filesystem
-modules-right = cpu memory
+modules-center = cpu memory
+modules-right = filesystem
 
 [module/i3]
 type = internal/i3
@@ -83,7 +83,7 @@ pin-workspaces = true
 format-offset = -17
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
@@ -160,8 +160,9 @@ animation-charging-framerate = 750
 
 [module/calendar]
 type = custom/text
-content = ""
+content = 
 click-left = gsimplecal
+click-right = exec xdg-open https://calendar.google.com/
 
 [module/date]
 type = internal/date
@@ -172,43 +173,39 @@ label = %date% %time%
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format = <label> <ramp-coreload>
-label = CPU
 
-ramp-coreload-0 = ▁
-ramp-coreload-0-foreground = ${colors.base0B}
-ramp-coreload-1 = ▂
-ramp-coreload-1-foreground = ${colors.base0B}
-ramp-coreload-2 = ▃
-ramp-coreload-2-foreground = ${colors.base0B}
-ramp-coreload-3 = ▄
-ramp-coreload-3-foreground = ${colors.base0A}
-ramp-coreload-4 = ▅
-ramp-coreload-4-foreground = ${colors.base0A}
-ramp-coreload-5 = ▆
-ramp-coreload-5-foreground = ${colors.base09}
-ramp-coreload-6 = ▇
-ramp-coreload-6-foreground = ${colors.base09}
-ramp-coreload-7 = █
-ramp-coreload-7-foreground = ${colors.base08}
+format = <label> <bar-load>
+label = 
+
+bar-load-gradient = true
+bar-load-width = 40
+bar-load-foreground-0 = ${colors.base0B}
+bar-load-foreground-1 = ${colors.base0A}
+bar-load-foreground-2 = ${colors.base09}
+bar-load-foreground-3 = ${colors.base08}
+bar-load-indicator = ■
+bar-load-indicator-foreground = ${colors.base05}
+bar-load-fill = ■
+bar-load-empty = □
+bar-load-empty-foreground = ${colors.base05}
 
 [module/memory]
 type = internal/memory
-format = <label> <bar-used>
-label = RAM
+interval = 0.5
 
-bar-used-width = 30
+format = <label> <bar-used>
+label = 
+
+bar-used-width = 40
 bar-used-foreground-0 = ${colors.base0B}
-bar-used-foreground-1 = ${colors.base0B}
-bar-used-foreground-2 = ${colors.base0B}
-bar-used-foreground-3 = ${colors.base0A}
-bar-used-foreground-4 = ${colors.base09}
-bar-used-foreground-5 = ${colors.base08}
-bar-used-indicator = |
-bar-used-indicator-foreground = ${colors.base03}
-bar-used-fill = ─
-bar-used-empty = ─
-bar-used-empty-foreground = ${colors.base03}
+bar-used-foreground-1 = ${colors.base0A}
+bar-used-foreground-2 = ${colors.base09}
+bar-used-foreground-3 = ${colors.base08}
+bar-used-indicator = ■
+bar-used-indicator-foreground = ${colors.base05}
+bar-used-fill = ■
+bar-used-empty = □
+bar-used-empty-foreground = ${colors.base05}
 
 [module/volume]
 type = internal/volume
@@ -257,13 +254,14 @@ click-right = playerctl next
 [module/filesystem]
 type = internal/fs
 interval = 25
+spacing = 4
 
 mount-0 = /home
 mount-1 = /var
 mount-2 = /tmp
 
-label-mounted = ﱮ %mountpoint%: %percentage_used%%  %free%
-label-unmounted = %mountpoint% not mounted
+label-mounted =  %mountpoint%: %free%
+label-unmounted =  %mountpoint% not mounted
 label-unmounted-foreground = ${colors.base05}
 
 [module/menu]

@@ -224,6 +224,7 @@ function snow() { www "https://tagheuer.service-now.com/textsearch.do?sysparm_se
 function gitlab() { www "https://git.cross-systems.ch/search?utf8=✓&search=$@"; }
 function wordreference() { www "http://www.wordreference.com/enfr/$@"; }
 function translate() { www "http://translate.google.com/?source=osdd#auto|auto|$@"; }
+function gcal() { www "https://calendar.google.com/"; }
 
 # Parents ls
 function llp() {

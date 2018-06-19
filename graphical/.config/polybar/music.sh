@@ -2,7 +2,8 @@
 
 # Specifying the icon(s) in the script
 # This allows us to change its appearance conditionally
-icon=""
+icon_active="ﱘ"
+icon_inactive="ﱙ"
 color_active=$(polybar --dump=line-color top)
 color_inactive=$(polybar --dump=foreground top)
 
@@ -13,9 +14,9 @@ fi
 
 # Foreground color formatting tags are optional
 if [[ $player_status = "Playing" ]]; then
-    echo "%{F$color_active}$icon $metadata"       # Orange when playing
+    echo "%{F$color_active}$icon_active $metadata"       # Orange when playing
 elif [[ $player_status = "Paused" ]]; then
-    echo "%{F$color_inactive}$icon $metadata"       # Greyed out info when paused
+    echo "%{F$color_inactive}$icon_inactive $metadata"       # Greyed out info when paused
 else
-    echo "%{F$color_inactive}$icon"                 # Greyed out icon when stopped
+    echo "%{F$color_inactive}$icon_inactive"                 # Greyed out icon when stopped
 fi

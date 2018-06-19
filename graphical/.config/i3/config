@@ -231,7 +231,7 @@ exec --no-startup-id blueman-applet
 # Custom programs
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xflux -l 46.251508
-exec --no-startup-id dunst \
+exec --no-startup-id dunst -print \
     -lb "$base01" \
     -lf "$base05" \
     -nb "$base01" \

@@ -117,7 +117,7 @@ smart_borders on
 
 # Font for windows tiles
 font pango:Inconsolata Nerd Font 15
-for_window [class=".*"] title_format "<span font='Inconsolata Nerd Font 12'> <b> %class</b> - %title</span>"
+for_window [class=".*"] title_format "<span font='Inconsolata Nerd Font 12'>  <b>%class</b> - %title</span>"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

@@ -187,7 +187,7 @@ sub key_press {
 		move_cursor($self, '^');
 	} elsif ('gG0È^è$CMR' =~ m/\Q$key\E/ ||
 			('fb' =~ m/\Q$key\E/ && $event->{state} & urxvt::ControlMask) ||
-			('du' =~ m/\Q$key\E/ && $event->{state})) {
+			('du' =~ m/\Q$key\E/)) {
 		move_cursor($self, $key);
 	} elsif (lc($key) eq 'f') {
 		$self->{move_to} = 1;

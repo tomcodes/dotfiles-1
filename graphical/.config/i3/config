@@ -399,6 +399,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness
 # The following script needs to be allowed to run as sudo in visudo
+# At the bottom of "sudo visudo"
+# myuser myhostname = NOPASSWD: /home/myuser/.config/i3/brightness.sh
 bindsym XF86MonBrightnessUp exec sudo $HOME/.config/i3/brightness.sh +5
 bindsym XF86MonBrightnessDown exec sudo $HOME/.config/i3/brightness.sh -5
 

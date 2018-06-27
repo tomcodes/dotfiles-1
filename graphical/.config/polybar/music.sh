@@ -7,7 +7,7 @@ color_inactive=$(polybar --dump=foreground top)
 
 player_status=$(playerctl status 2> /dev/null)
 if [[ $? -eq 0 ]]; then
-    metadata="$(playerctl metadata artist) - $(playerctl metadata title)"
+    metadata="$(playerctl metadata artist 2> /dev/null) - $(playerctl metadata title 2> /dev/null)"
 fi
 
 if [[ $player_status = "Playing" ]]; then

@@ -1,28 +1,26 @@
 #!/bin/bash
 
-xkcd_icon="/tmp/xkcd.png"
-fallback_icon="$HOME/.config/i3/lock.png"
+downloaded_img="/tmp/lock.png"
+fallback_img="$HOME/.config/i3/lock.png"
 
-# Fallback if comic failed to download
-if [ ! -s $xkcd_icon ]; then
-    icon=$fallback_icon
+# Fallback if image failed to download
+if [ ! -s $downloaded_img ]; then
+    img=$fallback_img
 else
-    icon=$xkcd_icon
+    img=$downloaded_img
 fi
  
 scrot /tmp/screen.png
 convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
  
-if [[ -f $icon ]]
+if [[ -f $img ]]
 then
     # placement x/y
     PX=0
     PY=0
     # lockscreen image info
-    R=$(file $(readlink -f $icon) | grep -o '[0-9]* x [0-9]*')
-    echo $R
-    RX=$(echo $R | cut -d' ' -f 1)
-    RY=$(echo $R | cut -d' ' -f 3)
+    RX=$(convert $(readlink -f $img) -print "%w" /dev/null)
+    RY=$(convert $(readlink -f $img) -print "%h" /dev/null)
  
     SR=$(xrandr --query | grep ' connected')
     IFS=$'\n'
@@ -38,7 +36,7 @@ then
         PX=$(($SROX + $SRX/2 - $RX/2))
         PY=$(($SROY + $SRY/2 - $RY/2))
  
-        convert /tmp/screen.png $icon -geometry +$PX+$PY -composite -matte /tmp/screen.png
+        convert /tmp/screen.png $img -geometry +$PX+$PY -composite -matte /tmp/screen.png
         echo "done"
     done
 fi
@@ -55,5 +53,6 @@ i3lock -e -f -n -i /tmp/screen.png
 # resume dunst with previous status
 ~/.config/polybar/dunstmute.sh $dunst_mute
 
-# Download random comic from xkcd for next lock
-wget $(curl -sL "http://dynamic.xkcd.com/random/comic/" | grep "imgs.xkcd.com/comics/" |  awk '{print $5}') -O $xkcd_icon
+# Download random image for next lock
+theme=nature
+wget https://loremflickr.com/800/600/$theme -O $downloaded_img

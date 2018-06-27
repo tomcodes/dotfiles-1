@@ -1,6 +1,15 @@
 #!/bin/bash
 
-icon="$HOME/.config/i3/lock.png"
+icon="/tmp/xkcd.png"
+
+# Download random comic from xkcd
+rm -f $icon
+wget $(curl -sL "http://dynamic.xkcd.com/random/comic/" | grep "imgs.xkcd.com/comics/" |  awk '{print $5}') -O $icon
+
+# Fallback if comic failed to download
+if [ ! -s $icon ]; then
+    icon="$HOME/.config/i3/lock.png"
+fi
  
 scrot /tmp/screen.png
 convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
@@ -30,7 +39,7 @@ then
         PX=$(($SROX + $SRX/2 - $RX/2))
         PY=$(($SROY + $SRY/2 - $RY/2))
  
-        convert /tmp/screen.png $icon -geometry +$PX+$PY -composite -matte  /tmp/screen.png
+        convert /tmp/screen.png $icon -geometry +$PX+$PY -composite -matte /tmp/screen.png
         echo "done"
     done
 fi

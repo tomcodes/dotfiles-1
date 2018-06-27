@@ -312,3 +312,12 @@ function stracewrite() {
       printf "%b" $line;
     done
 }
+
+# Chrome app
+function chromeapp() {
+    local site="$@"
+    if ! [[ "$@" =~ ^http ]]; then
+        site="http://$@"
+    fi
+    google-chrome --app=$site
+}

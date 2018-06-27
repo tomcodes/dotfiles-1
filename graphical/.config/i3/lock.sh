@@ -1,10 +1,13 @@
 #!/bin/bash
 
-icon="/tmp/xkcd.png"
+xkcd_icon="/tmp/xkcd.png"
+fallback_icon="$HOME/.config/i3/lock.png"
 
 # Fallback if comic failed to download
-if [ ! -s $icon ]; then
-    icon="$HOME/.config/i3/lock.png"
+if [ ! -s $xkcd_icon ]; then
+    icon=$fallback_icon
+else
+    icon=$xkcd_icon
 fi
  
 scrot /tmp/screen.png
@@ -53,6 +56,4 @@ i3lock -e -f -n -i /tmp/screen.png
 ~/.config/polybar/dunstmute.sh $dunst_mute
 
 # Download random comic from xkcd for next lock
-rm -f $icon
-wget $(curl -sL "http://dynamic.xkcd.com/random/comic/" | grep "imgs.xkcd.com/comics/" |  awk '{print $5}') -O $icon
-
+wget $(curl -sL "http://dynamic.xkcd.com/random/comic/" | grep "imgs.xkcd.com/comics/" |  awk '{print $5}') -O $xkcd_icon

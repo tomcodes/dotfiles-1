@@ -24,6 +24,7 @@ VISUAL=vim; export VISUAL; EDITOR=vim; export EDITOR
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # Gopath
+export GOROOT=/usr/local/go
 export GOPATH="$LAB/go"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 

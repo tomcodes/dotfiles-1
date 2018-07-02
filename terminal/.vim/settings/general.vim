@@ -46,6 +46,7 @@ set hlsearch            " Highlight search results
 set wildmenu                    " Show possible completions on command line
 set wildmode=longest:full,full  " List all options and complete
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules  " Ignore certain files in tab-completion
+set completeopt=longest,menuone
 
 " -- Beep
 set novisualbell        " Prevent bell

@@ -2,8 +2,7 @@
 " ———————————————————————————————
 
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-
+set rtp+=~/.vim/bundle/Vundle.vim 
 runtime! bundle/Vundle.vim/autoload/vundle.vim
 if exists("*vundle#begin")
 
@@ -121,3 +120,7 @@ imap    <C-G>S <Plug>ISurround
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
+
+" Vim Go
+let g:go_fmt_command = "goimports"
+let g:go_def_mapping_enabled = 0

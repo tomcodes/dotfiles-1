@@ -405,7 +405,7 @@ bindsym XF86MonBrightnessUp exec sudo $HOME/.config/i3/brightness.sh +5
 bindsym XF86MonBrightnessDown exec sudo $HOME/.config/i3/brightness.sh -5
 
 # Program launcher
-bindsym $mod+space exec --no-startup-id rofi -show run -run-command "bash -i -c '{cmd}'"
+bindsym $mod+space exec --no-startup-id rofi -show run -run-command "zsh -i -c '{cmd}'"
 bindsym $mod+g exec --no-startup-id rofi -show window
 bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
 

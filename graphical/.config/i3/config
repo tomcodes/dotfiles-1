@@ -61,7 +61,7 @@ set $mod mod4
 set $gaps 8
 
 # Softs
-set $terminal      urxvt
+set $terminal      $HOME/.config/i3/shell.sh
 set $browser       google-chrome
 set $filemanager   pantheon-files
 set $screenshot    shutter --select --disable_systray

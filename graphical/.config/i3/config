@@ -211,6 +211,9 @@ bindsym $mod+control+r move workspace to output right
 # Set bépo keyboard
 exec --no-startup-id setxkbmap fr -variant bepo
 
+# Make keyboard stop faster
+xset r rate 200 25
+
 # Remap keys
 exec_always --no-startup-id sleep 2 && xmodmap $HOME/.Xmodmap
 

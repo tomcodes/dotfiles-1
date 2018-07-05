@@ -90,9 +90,6 @@ RUN cd /home/dev/.config/dotfiles && python3 link.py --only-terminal
 
 RUN lesskey
 
-# Install vim plugins
-RUN vim -c 'PlugInstall' -c 'qa!' > /dev/null
-
 # Working dir
 RUN mkdir /home/dev/Lab
 WORKDIR /home/dev/Lab
@@ -102,6 +99,9 @@ RUN mkdir -p /home/dev/Lab/go \
     && mkdir /home/dev/Lab/go/bin \
     && mkdir /home/dev/Lab/go/pkg \
     && mkdir /home/dev/Lab/go/src
+
+# Install vim plugins
+RUN vim -c 'PlugInstall' -c 'qa!' > /dev/null
 
 # Save home as volume
 VOLUME /home/dev

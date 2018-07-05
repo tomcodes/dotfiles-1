@@ -4,9 +4,6 @@ export PATH=$PATH:$HOME/.bin/
 # Check if use sshrc
 if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
     alias ssh="sshrc"
-else
-    # Use xterm terminal colors
-    export TERM='xterm-256color'
 fi
 
 # Include unversioned files
@@ -16,9 +13,6 @@ fi
 
 # Define Lab directory
 LAB="$HOME/Lab"
-
-# Default editor
-VISUAL=vim; export VISUAL; EDITOR=vim; export EDITOR
 
 # Add date in history
 export HISTTIMEFORMAT="%d/%m/%y %T "
@@ -63,6 +57,23 @@ alias ag="ag --hidden -S"
 if type "htop" > /dev/null; then
     alias top="htop"
 fi
+
+# Default editor
+VISUAL=vim
+EDITOR=vim
+
+# nvim instead of vim
+if type "nvim" > /dev/null; then
+    alias vim="nvim"
+    alias vi="nvim"
+    VISUAL=nvim
+    EDITOR=nvim
+fi
+
+# Export default editor
+export VISUAL EDITOR=vim; export EDITOR
+export EDITOR
+
 
 # Docker aliases
 alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"

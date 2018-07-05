@@ -19,7 +19,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'vim-vdebug/vdebug'
 Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'editorconfig/editorconfig-vim'
@@ -31,6 +30,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-characterize'
 Plug 'ryanoasis/vim-devicons'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -115,3 +115,16 @@ let g:user_emmet_leader_key='<C-e>'
 " Vim Go
 let g:go_fmt_command = "goimports"
 let g:go_def_mapping_enabled = 0
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+
+" Hybrid material
+let g:hybrid_transparent_background = 1
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+colorscheme hybrid_material

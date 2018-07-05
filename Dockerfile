@@ -16,7 +16,7 @@ RUN apt-get update \
   htop \
   jq \
   zsh \
-  vim \
+  neovim \
   git \
   tmux \
   ranger \

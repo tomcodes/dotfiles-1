@@ -29,7 +29,6 @@ set directory=~/tmp,/var/tmp,/tmp
 set clipboard=unnamed
 
 " -- Display
-set title                    " Update terminal title
 set number relativenumber    " Show smart line numbers
 set ruler                    " Show position of cursor
 set wrap                     " Long lines on multiple lines
@@ -70,11 +69,9 @@ filetype indent on
 
 " Font
 set guifont=Droid\ Sans\ Mono\ 10
-set antialias
 
 " Colorscheme
 syntax on
-"set t_Co=256
 set background=dark
 colorscheme delek
 
@@ -87,17 +84,6 @@ hi Folded ctermbg=NONE
 
 " Autocmd
 if has("autocmd")
-
-    " Automatic reloading of .vimrc
-    autocmd! bufwritepost *.vim 
-
-    augroup configurationFiles
-        autocmd BufWritePost .vimrc        source %
-        autocmd BufWritePost bepo.vim      source %
-        autocmd BufWritePost general.vim   source %
-        autocmd BufWritePost plugins.vim   source %
-        autocmd BufWritePost remaps.vim    source %
-    augroup END
 
     " Ex file explorer
     augroup netrw_dvorak_fix

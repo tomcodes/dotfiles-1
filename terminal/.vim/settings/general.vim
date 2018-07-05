@@ -33,6 +33,7 @@ set number relativenumber    " Show smart line numbers
 set ruler                    " Show position of cursor
 set wrap                     " Long lines on multiple lines
 set scrolloff=3              " 3 lines displayed around cursor for scroll
+set cursorline               " Cursor line
 
 " -- Searching
 set ignorecase          " Case insensitive

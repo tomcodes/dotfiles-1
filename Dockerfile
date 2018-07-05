@@ -2,9 +2,15 @@ FROM ubuntu:16.04
 
 MAINTAINER Loric Brevet <loric.brevet@gmail.com>
 
+# Install ppa
+RUN apt-get update \
+    && apt-get install -y software-properties-common \
+    && add-apt-repository -y ppa:neovim-ppa/stable
+
 # Install usefull tools
 RUN apt-get update \
   && apt-get install -y \
+  software-properties-common \
   sudo \
   man-db \
   curl \

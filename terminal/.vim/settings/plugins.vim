@@ -30,7 +30,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-characterize'
 Plug 'ryanoasis/vim-devicons'
-Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'arcticicestudio/nord-vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -67,7 +67,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Lighline
-let g:lightline = { 'colorscheme': 'solarized' }
+let g:lightline = { 'colorscheme': 'nord' }
 
 " Unimpaired
 nmap « [
@@ -123,8 +123,9 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 
-" Hybrid material
-let g:hybrid_transparent_background = 1
-let g:enable_bold_font = 1
-let g:enable_italic_font = 1
-colorscheme hybrid_material
+" Nord plugin
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_cursor_line_number_background = 1
+colorscheme nord

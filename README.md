@@ -28,7 +28,7 @@ A python 3 script has been created to easily symlink files.
 A Dockerfile is implemented to build an environment with only terminal based applications.
 
     docker build -t lobre/dotfiles .
-    docker run --rm -ti --name dotfiles -v $(pwd):/home/dev/lab lobre/dotfiles
+    docker run --rm -ti --name dotfiles -v $(pwd):/home/dev/Lab lobre/dotfiles
 
 
 ## Shortcut reference table

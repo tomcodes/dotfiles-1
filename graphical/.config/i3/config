@@ -67,7 +67,6 @@ set $filemanager   pantheon-files
 set $screenshot    shutter --select --disable_systray
 set $settings      gnome-control-center
 set $editor        code
-set $ide           pstorm
 set $music         spotify
 set $skype         skypeforlinux
 
@@ -154,7 +153,6 @@ set $workspace8 "8"
 # Rules to start windows in workspaces
 for_window [class="(?i)spotify"] move to workspace $workspace6
 assign [class="(?i)skype"] $workspace3
-assign [class="(?i)pstorm"] $workspace2
 
 # Rules for windows
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse

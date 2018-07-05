@@ -1,48 +1,39 @@
-" Plugins loading with Vundle
+" Plugins loading
 " ———————————————————————————————
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim 
-runtime! bundle/Vundle.vim/autoload/vundle.vim
-if exists("*vundle#begin")
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
 
-    call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'itchyny/lightline.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'mattn/emmet-vim'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'haya14busa/is.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-vdebug/vdebug'
+Plug 'w0rp/ale'
+Plug 'godlygeek/tabular'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'tpope/vim-eunuch'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-characterize'
+Plug 'ryanoasis/vim-devicons'
 
-    " Vundle plugins
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'ludovicchabant/vim-gutentags'
-    Plugin 'itchyny/lightline.vim'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'mattn/emmet-vim'
-    Plugin 'xolox/vim-misc'
-    Plugin 'xolox/vim-session'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'haya14busa/is.vim'
-    Plugin 'junegunn/fzf'
-    Plugin 'junegunn/fzf.vim'
-    Plugin 'mileszs/ack.vim'
-    Plugin 'sheerun/vim-polyglot'
-    Plugin 'christoomey/vim-tmux-navigator'
-    Plugin 'vim-vdebug/vdebug'
-    Plugin 'w0rp/ale'
-    Plugin 'godlygeek/tabular'
-    Plugin 'editorconfig/editorconfig-vim'
-    Plugin 'fatih/vim-go'
-    Plugin 'tpope/vim-eunuch'
-    Plugin 'alvan/vim-closetag'
-    Plugin 'tpope/vim-surround'
-    Plugin 'tpope/vim-unimpaired'
-    Plugin 'tpope/vim-repeat'
-    Plugin 'tpope/vim-characterize'
-    Plugin 'ryanoasis/vim-devicons'
-
-    call vundle#end()
-
-endif
-
-filetype plugin indent on
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
 
 " Configuration for plugins
 " ———————————————————————————————

@@ -35,6 +35,11 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+# Install golang
+RUN wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz \
+    && tar -xvf go1.10.3.linux-amd64.tar.gz \
+    && mv go /usr/local
+
 # Install python packages
 RUN pip install \
   speedtest-cli
@@ -74,22 +79,29 @@ ENV SHELL=/bin/zsh
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git /home/dev/.fzf \
   && /home/dev/.fzf/install --bin
 
-# Install vim Vundle
-RUN git clone https://github.com/VundleVim/Vundle.vim.git /home/dev/.vim/bundle/Vundle.vim
+# Install vim plug
+RUN curl -fLo /home/dev/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Run dotfiles
 RUN mkdir /home/dev/.config \
   && git clone https://github.com/loric-/dotfiles.git /home/dev/.config/dotfiles
 RUN cd /home/dev/.config/dotfiles && python3 link.py --only-terminal
 
-# Install vim Vundle plugins
-RUN vim -c 'PluginInstall' -c 'qa!' > /dev/null
-
 RUN lesskey
 
+# Install vim plugins
+RUN vim -c 'PlugInstall' -c 'qa!' > /dev/null
+
 # Working dir
-RUN mkdir /home/dev/lab
-WORKDIR /home/dev/lab
+RUN mkdir /home/dev/Lab
+WORKDIR /home/dev/Lab
+
+# Create golang workspace paths
+RUN mkdir -p /home/dev/Lab/go \
+    && mkdir /home/dev/Lab/go/bin \
+    && mkdir /home/dev/Lab/go/pkg \
+    && mkdir /home/dev/Lab/go/src
 
 # Save home as volume
 VOLUME /home/dev

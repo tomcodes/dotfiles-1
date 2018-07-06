@@ -80,7 +80,7 @@ xmap » ]
 " Vim session
 let g:session_autosave = 'no'
 
-"Ack
+" Ack
 if executable('ag')
   let g:ackprg = 'ag --hidden --vimgrep'
 endif
@@ -90,24 +90,31 @@ nnoremap <Leader>g :Ack!<Space>
 
 " Vim Tmux Navigator
 let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> c :TmuxNavigateLeft<cr>
-nnoremap <silent> t :TmuxNavigateDown<cr>
-nnoremap <silent> s :TmuxNavigateUp<cr>
-nnoremap <silent> r :TmuxNavigateRight<cr>
+if has('nvim')
+    nnoremap <silent> <A-c> :TmuxNavigateLeft<cr>
+    nnoremap <silent> <A-t> :TmuxNavigateDown<cr>
+    nnoremap <silent> <A-s> :TmuxNavigateUp<cr>
+    nnoremap <silent> <A-r> :TmuxNavigateRight<cr>
+else
+    nnoremap <silent> c :TmuxNavigateLeft<cr>
+    nnoremap <silent> t :TmuxNavigateDown<cr>
+    nnoremap <silent> s :TmuxNavigateUp<cr>
+    nnoremap <silent> r :TmuxNavigateRight<cr>
+endif
 
 " Vim Surround
 let g:surround_no_mappings = 1
-nmap ds  <Plug>Dsurround
-nmap hs  <Plug>Csurround
-nmap ys  <Plug>Ysurround
-nmap yS  <Plug>YSurround
+nmap ds <Plug>Dsurround
+nmap hs <Plug>Csurround
+nmap ys <Plug>Ysurround
+nmap yS <Plug>YSurround
 nmap yss <Plug>Yssurround
 nmap ySs <Plug>YSsurround
 nmap ySS <Plug>YSsurround
-xmap S   <Plug>VSurround
-xmap gS  <Plug>VgSurround
-imap    <C-S> <Plug>Isurround
-imap    <C-G>S <Plug>ISurround
+xmap S <Plug>VSurround
+xmap gS <Plug>VgSurround
+imap <C-S> <Plug>Isurround
+imap <C-G>S <Plug>ISurround
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
@@ -127,5 +134,7 @@ let g:go_highlight_build_constraints = 1
 let g:nord_italic = 1
 let g:nord_underline = 1
 let g:nord_italic_comments = 1
-let g:nord_cursor_line_number_background = 1
 colorscheme nord
+" Redesign split
+set fillchars+=vert:\│
+highlight clear VertSplit

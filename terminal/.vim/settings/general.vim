@@ -33,7 +33,6 @@ set number relativenumber    " Show smart line numbers
 set ruler                    " Show position of cursor
 set wrap                     " Long lines on multiple lines
 set scrolloff=3              " 3 lines displayed around cursor for scroll
-set cursorline               " Cursor line
 
 " -- Searching
 set ignorecase          " Case insensitive
@@ -74,11 +73,7 @@ set guifont=Droid\ Sans\ Mono\ 10
 " Colorscheme
 syntax on
 set background=dark
-colorscheme delek
-
-" Redesign split border
-set fillchars+=vert:\│
-highlight VertSplit cterm=NONE
+colorscheme default
 
 " Don't color folded lines
 hi Folded ctermbg=NONE

@@ -6,11 +6,15 @@ vnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
 
 " Save and quit shortcuts
+if has('nvim')
+    noremap <A-w> :w!<CR>
+    noremap <A-q> :q!<CR>
+else
+    noremap w :w!<CR>
+    noremap q :q!<CR>
+endif
+
 noremap <C-s> :w!<CR>
-noremap w :w!<CR>
-noremap <A-w> :w!<CR>
-noremap q :q!<CR>
-noremap <A-q> :q!<CR>
 noremap <Leader>q :qa!<CR>
 
 " Primary buffer copy paste
@@ -33,33 +37,39 @@ nnoremap <leader><space> za
 vnoremap <leader><space> zf
 
 " Buffer shortcuts
-nnoremap e :e#<CR>
-nnoremap <A-e> :e#<CR>
-nnoremap n :bnext<CR>
-nnoremap <A-n> :bnext<CR>
-nnoremap p :bprev<CR>
-nnoremap <A-p> :bprev<CR>
-nnoremap d :bd!<CR>
-nnoremap <A-d> :bd!<CR>
+if has('nvim')
+    nnoremap <A-e> :e#<CR>
+    nnoremap <A-n> :bnext<CR>
+    nnoremap <A-p> :bprev<CR>
+    nnoremap <A-d> :bd!<CR>
+else
+    nnoremap e :e#<CR>
+    nnoremap n :bnext<CR>
+    nnoremap p :bprev<CR>
+    nnoremap d :bd!<CR>
+endif
 
 " Remove highlight (<C-/> works as well)
 nnoremap <C-_> :set hlsearch!<CR>
 
 " Remaper la gestion des fenêtres
-noremap t <C-w>j
-noremap <A-t> <C-w>j
-noremap s <C-w>k
-noremap <A-s> <C-w>k
-noremap c <C-w>h
-noremap <A-c> <C-w>h
-noremap r <C-w>l
-noremap <A-r> <C-w>l
-noremap o <C-w>o
-noremap <A-o> <C-w>o
-noremap - :split<CR>
-noremap <A--> :split<CR>
-noremap b :vsplit<CR>
-noremap <A-b> :vsplit<CR>
+if has('nvim')
+    noremap <A-t> <C-w>j
+    noremap <A-s> <C-w>k
+    noremap <A-c> <C-w>h
+    noremap <A-r> <C-w>l
+    noremap <A-o> <C-w>o
+    noremap <A--> :split<CR>
+    noremap <A-b> :vsplit<CR>
+else
+    noremap t <C-w>j
+    noremap s <C-w>k
+    noremap c <C-w>h
+    noremap r <C-w>l
+    noremap o <C-w>o
+    noremap - :split<CR>
+    noremap b :vsplit<CR>
+endif
 
 " Smart completion
 function! Smart_TabComplete()

@@ -4,6 +4,9 @@ export PATH=$PATH:$HOME/.bin/
 # Check if use sshrc
 if command -v sshrc >/dev/null && [ -z "$SSHHOME" ]; then
     alias ssh="sshrc"
+else
+    # Use xterm terminal colors
+    export TERM='xterm-256color'
 fi
 
 # Include unversioned files
@@ -54,7 +57,7 @@ alias vgit="PAGER='vim -' git -c color.ui=false"
 alias ag="ag --hidden -S"
 
 # htop instead of top
-if type "htop" > /dev/null; then
+if type "htop" > /dev/null 2>&1; then
     alias top="htop"
 fi
 
@@ -63,7 +66,7 @@ VISUAL=vim
 EDITOR=vim
 
 # nvim instead of vim
-if type "nvim" > /dev/null; then
+if type "nvim" > /dev/null 2>&1; then
     alias vim="nvim"
     alias vi="nvim"
     VISUAL=nvim
@@ -71,7 +74,7 @@ if type "nvim" > /dev/null; then
 fi
 
 # Export default editor
-export VISUAL EDITOR=vim; export EDITOR
+export VISUAL
 export EDITOR
 
 

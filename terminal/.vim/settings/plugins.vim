@@ -23,6 +23,9 @@ Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'jodosha/vim-godebug'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'tpope/vim-eunuch'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
@@ -138,3 +141,6 @@ colorscheme nord
 " Redesign split
 set fillchars+=vert:\│
 highlight clear VertSplit
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1

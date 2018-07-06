@@ -48,11 +48,13 @@ RUN wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz \
 
 # Install python packages
 RUN pip install \
-  speedtest-cli
+  speedtest-cli \
+  neovim
 
 RUN pip3 install \
   bpython \
-  ipython
+  ipython \
+  neovim
 
 # Install sshrc
 RUN wget https://raw.githubusercontent.com/Russell91/sshrc/master/sshrc \

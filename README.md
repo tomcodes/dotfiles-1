@@ -60,5 +60,4 @@ Colors can be easily visualized using https://terminal.sexy.
 
 ## Todo
 
-- [ ] Test docker image
-- [ ] Dockerfile install golang
+*Nothing up so far*

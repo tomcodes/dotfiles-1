@@ -70,7 +70,3 @@ else
     noremap - :split<CR>
     noremap b :vsplit<CR>
 endif
-
-" Autocomplete with tab
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><s-tab> pumvisible()?"\<c-p>":"\<c-d>"

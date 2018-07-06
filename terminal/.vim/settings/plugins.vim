@@ -35,6 +35,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-characterize'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
+Plug 'SirVer/ultisnips'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -145,7 +146,15 @@ highlight clear VertSplit
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#disable_auto_complete = 1
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_map_togglesort = "k"
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<Leader>n"
+let g:UltiSnipsJumpBackwardTrigger="<Leader>p"

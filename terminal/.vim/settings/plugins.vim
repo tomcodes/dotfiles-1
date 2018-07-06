@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
@@ -144,3 +145,6 @@ highlight clear VertSplit
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>

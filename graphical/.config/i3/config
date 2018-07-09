@@ -209,9 +209,6 @@ bindsym $mod+control+r move workspace to output right
 # Set bépo keyboard
 exec --no-startup-id setxkbmap fr -variant bepo
 
-# Make keyboard stop faster
-exec --no-startup-id xset r rate 200 25
-
 # Remap keys
 exec_always --no-startup-id sleep 2 && xmodmap $HOME/.Xmodmap
 
@@ -224,6 +221,9 @@ exec --no-startup-id xautolock -time 5 -locker "$HOME/.config/i3/i3exit lock"
 
 # Change mouse speed
 exec --no-startup-id xset m 5 1
+
+# Make keyboard stop faster
+exec --no-startup-id sleep 2 && xset r rate 200 25
 
 # Applets
 exec --no-startup-id nm-applet

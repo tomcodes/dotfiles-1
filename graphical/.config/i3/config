@@ -301,7 +301,7 @@ mode $apps_mode {
 }
 
 set $resize_mode "resize"
-bindsym $mod+mod1+Return mode $resize_mode
+bindsym $mod+mod1+h mode $resize_mode
 mode $resize_mode {
         bindsym c           resize grow width 5 px or 5 ppt
         bindsym t           resize grow height 5 px or 5 ppt

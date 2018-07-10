@@ -72,7 +72,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Lighline
-let g:lightline = { 'colorscheme': 'nord' }
+let g:lightline = { 'colorscheme': 'solarized' }
 
 " Unimpaired
 nmap « [
@@ -148,11 +148,11 @@ highlight clear VertSplit
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_map_togglesort = "k"
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"

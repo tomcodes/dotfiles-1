@@ -7,11 +7,9 @@ inoremap <C-c> <Esc>
 
 " Save and quit shortcuts
 if has('nvim')
-    noremap <A-w> :w!<CR>
-    noremap <A-q> :q!<CR>
+    noremap <A-q> :q<CR>
 else
-    noremap w :w!<CR>
-    noremap q :q!<CR>
+    noremap q :q<CR>
 endif
 
 noremap <C-s> :w!<CR>

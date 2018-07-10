@@ -147,7 +147,9 @@ highlight clear VertSplit
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
+inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+inoremap <expr><C-h> deoplete#smart_close_popup()
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
 " Tagbar

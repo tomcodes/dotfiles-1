@@ -5,6 +5,11 @@
 vnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
 
+" Remap exit terminal in neovim
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+endif
+
 " Save and quit shortcuts
 if has('nvim')
     noremap <A-q> :q<CR>

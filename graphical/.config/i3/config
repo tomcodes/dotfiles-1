@@ -369,7 +369,10 @@ bindsym $mod+minus split v
 bindsym $mod+z fullscreen
 
 # reload monitors
-bindsym $mod+m exec --no-startup-id ~/.config/i3/autoxrandr.sh
+bindsym $mod+m exec --no-startup-id $HOME/.config/i3/autoxrandr.sh
+
+# reload polybar
+bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+k layout stacking

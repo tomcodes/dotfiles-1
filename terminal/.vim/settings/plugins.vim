@@ -60,6 +60,11 @@ if has("autocmd")
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 endif
 
+" Gutentags
+if has("autocmd")
+    autocmd FileType gitcommit,gitrebase let g:gutentags_enabled=0
+endif
+
 " fzf
 set rtp+=~/.fzf
 noremap <Leader>t :Files<CR>

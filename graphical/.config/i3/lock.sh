@@ -1,58 +1,94 @@
 #!/bin/bash
 
-downloaded_img="/tmp/lock.png"
-fallback_img="$HOME/.config/i3/lock.png"
+# Generate random gopher
+$HOME/Lab/go/bin/drawmeagopher
+
+GOPHER="/tmp/gopher.png"
+SCREEN_IMG="/tmp/screen.png"
 
 # Fallback if image failed to download
-if [ ! -s $downloaded_img ]; then
-    img=$fallback_img
+if [ ! -s $GOPHER ]; then
+    LOGO="$HOME/.config/i3/lock.png"
 else
-    img=$downloaded_img
+    LOGO=$GOPHER
+
+    # Normalize image size
+    convert $LOGO -scale 1100 $LOGO
 fi
+
+# Take a screenshot
+scrot $SCREEN_IMG
+# Scale it up and down for blurry effect
+convert $SCREEN_IMG -scale 10% -scale 1000% $SCREEN_IMG
  
-scrot /tmp/screen.png
-convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
- 
-if [[ -f $img ]]
+if [[ -f $LOGO ]]
 then
-    # placement x/y
-    PX=0
-    PY=0
-    # lockscreen image info
-    RX=$(convert $(readlink -f $img) -print "%w" /dev/null)
-    RY=$(convert $(readlink -f $img) -print "%h" /dev/null)
+    # Lockscreen logo info
+    LOGO_WIDTH=$(convert $(readlink -f $LOGO) -print "%w" /dev/null)
+    LOGO_HEIGHT=$(convert $(readlink -f $LOGO) -print "%h" /dev/null)
  
-    SR=$(xrandr --query | grep ' connected')
+    SCREENS=$(xrandr --query | grep ' connected')
+
+    # Internal Field Separator
     IFS=$'\n'
-    for RES in $SR
+
+    for SCREEN in $SCREENS
     do
-        # monitor position/offset
-        RES=$(echo $RES | sed 's/ primary//g')
-        RES=$(echo $RES | cut -f3 -d' ')
-        SRX=$(echo $RES | cut -d'x' -f 1)                   # x pos
-        SRY=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 1)  # y pos
-        SROX=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 2) # x offset
-        SROY=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 3) # y offset
-        PX=$(($SROX + $SRX/2 - $RX/2))
-        PY=$(($SROY + $SRY/2 - $RY/2))
- 
-        convert /tmp/screen.png $img -geometry +$PX+$PY -composite -matte /tmp/screen.png
-        echo "done"
+        # Remove primary string
+        SCREEN=$(echo $SCREEN | sed 's/ primary//g')
+
+        # Get screen name 
+        SCREEN_NAME=$(echo $SCREEN | cut -f1 -d' ')
+
+        # Get screen dimensions
+        SCREEN=$(echo $SCREEN | cut -f3 -d' ')
+
+        # Get screen width and height
+        SCREEN_WIDTH=$(echo $SCREEN | cut -d'x' -f 1)
+        SCREEN_HEIGHT=$(echo $SCREEN | cut -d'x' -f 2 | cut -d'+' -f 1)
+
+        # Get screen position
+        SCREEN_X=$(echo $SCREEN | cut -d'x' -f 2 | cut -d'+' -f 2)
+        SCREEN_Y=$(echo $SCREEN | cut -d'x' -f 2 | cut -d'+' -f 3)
+
+        # Get logo offsets
+        LOGO_X_OFFSET=$(($SCREEN_WIDTH/2 - $LOGO_WIDTH/2))
+        LOGO_Y_OFFSET=$(($SCREEN_HEIGHT/2 - $LOGO_HEIGHT/2))
+
+        # Get logo position
+        LOGO_X=$(($SCREEN_X + $LOGO_X_OFFSET))
+        LOGO_Y=$(($SCREEN_Y + $LOGO_Y_OFFSET))
+
+        # Get logo maximum size to avoid overlapping
+        LOGO_MAX_WIDTH=$(($SCREEN_WIDTH - $LOGO_X_OFFSET))
+        LOGO_MAX_HEIGHT=$(($SCREEN_HEIGHT - $LOGO_Y_OFFSET))
+
+        # Define screen image path
+        SCREEN_LOGO=$(dirname "$LOGO")/${SCREEN_NAME}_$(basename $LOGO)
+
+        # Crop image and save into screen image
+        convert $LOGO -crop ${LOGO_MAX_WIDTH}x${LOGO_MAX_HEIGHT}+0+0 $SCREEN_LOGO
+
+        # Add img onto blurry background
+        convert $SCREEN_IMG $SCREEN_LOGO -geometry +${LOGO_X}+${LOGO_Y} -composite -matte $SCREEN_IMG
+
+        # Remove temporary image
+        rm -f $SCREEN_LOGO
     done
 fi
 
-# get dunst mute status
+# Get dunst mute status
 dunst_mute=$(~/.config/polybar/dunstmute.sh value)
 
-# pause dunst messages
+# Pause dunst messages
 ~/.config/polybar/dunstmute.sh 1
 
-# lock
-i3lock -e -f -n -i /tmp/screen.png
+# Lock
+i3lock -e -f -n -i $SCREEN_IMG
 
-# resume dunst with previous status
+# Resume dunst with previous status
 ~/.config/polybar/dunstmute.sh $dunst_mute
 
-# Download random image for next lock
-theme=nature
-wget https://loremflickr.com/800/600/$theme -O $downloaded_img
+# Remove temporary files
+rm -f $SCREEN_IMG
+rm -f $GOPHER

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Mode (center, top, right, left or bottom)
+MODE=$(shuf -n1 -e top bottom right left)
+
 # Generate random gopher
 $HOME/Lab/go/bin/drawmeagopher
 
@@ -13,7 +16,7 @@ else
     LOGO=$GOPHER
 
     # Normalize image size
-    convert $LOGO -scale 1100 $LOGO
+    convert $LOGO -scale $(( ( RANDOM % 900 )  + 300 )) $LOGO
 fi
 
 # Take a screenshot
@@ -23,9 +26,30 @@ convert $SCREEN_IMG -scale 10% -scale 1000% $SCREEN_IMG
  
 if [[ -f $LOGO ]]
 then
+    # Rotate logo according to position
+    case $MODE in
+        center )
+            ROTATE=0
+            ;;
+        top )
+            ROTATE=180
+            ;;
+        bottom )
+            ROTATE=0
+            ;;
+        left )
+            ROTATE=90
+            ;;
+        right )
+            ROTATE=-90
+            ;;
+    esac
+    LOGO_ROTATED=$(dirname "$LOGO")/rotated_$(basename $LOGO)
+    convert $LOGO -rotate $ROTATE $LOGO_ROTATED
+
     # Lockscreen logo info
-    LOGO_WIDTH=$(convert $(readlink -f $LOGO) -print "%w" /dev/null)
-    LOGO_HEIGHT=$(convert $(readlink -f $LOGO) -print "%h" /dev/null)
+    LOGO_WIDTH=$(convert $(readlink -f $LOGO_ROTATED) -print "%w" /dev/null)
+    LOGO_HEIGHT=$(convert $(readlink -f $LOGO_ROTATED) -print "%h" /dev/null)
  
     SCREENS=$(xrandr --query | grep ' connected')
 
@@ -51,23 +75,43 @@ then
         SCREEN_X=$(echo $SCREEN | cut -d'x' -f 2 | cut -d'+' -f 2)
         SCREEN_Y=$(echo $SCREEN | cut -d'x' -f 2 | cut -d'+' -f 3)
 
-        # Get logo offsets
-        LOGO_X_OFFSET=$(($SCREEN_WIDTH/2 - $LOGO_WIDTH/2))
-        LOGO_Y_OFFSET=$(($SCREEN_HEIGHT/2 - $LOGO_HEIGHT/2))
+        # Calculate logo position according to mode
+        case $MODE in
+            center )
+                LOGO_RELATIVE_X=$(($SCREEN_WIDTH/2 - $LOGO_WIDTH/2))
+                LOGO_RELATIVE_Y=$(($SCREEN_HEIGHT/2 - $LOGO_HEIGHT/2))
+                ;;
+            top )
+                LOGO_RELATIVE_X=$(($SCREEN_WIDTH/2 - $LOGO_WIDTH/2))
+                LOGO_RELATIVE_Y=0
+                ;;
+            bottom )
+                LOGO_RELATIVE_X=$(($SCREEN_WIDTH/2 - $LOGO_WIDTH/2))
+                LOGO_RELATIVE_Y=$(($SCREEN_HEIGHT - $LOGO_HEIGHT))
+                ;;
+            left )
+                LOGO_RELATIVE_X=0
+                LOGO_RELATIVE_Y=$(($SCREEN_HEIGHT/2 - $LOGO_HEIGHT/2))
+                ;;
+            right )
+                LOGO_RELATIVE_X=$(($SCREEN_WIDTH - $LOGO_WIDTH))
+                LOGO_RELATIVE_Y=$(($SCREEN_HEIGHT/2 - $LOGO_HEIGHT/2))
+                ;;
+        esac
 
         # Get logo position
-        LOGO_X=$(($SCREEN_X + $LOGO_X_OFFSET))
-        LOGO_Y=$(($SCREEN_Y + $LOGO_Y_OFFSET))
+        LOGO_X=$(($SCREEN_X + $LOGO_RELATIVE_X))
+        LOGO_Y=$(($SCREEN_Y + $LOGO_RELATIVE_Y))
 
         # Get logo maximum size to avoid overlapping
-        LOGO_MAX_WIDTH=$(($SCREEN_WIDTH - $LOGO_X_OFFSET))
-        LOGO_MAX_HEIGHT=$(($SCREEN_HEIGHT - $LOGO_Y_OFFSET))
+        LOGO_MAX_WIDTH=$(($SCREEN_WIDTH - $LOGO_RELATIVE_X))
+        LOGO_MAX_HEIGHT=$(($SCREEN_HEIGHT - $LOGO_RELATIVE_Y))
 
         # Define screen image path
-        SCREEN_LOGO=$(dirname "$LOGO")/${SCREEN_NAME}_$(basename $LOGO)
+        SCREEN_LOGO=$(dirname "$LOGO_ROTATED")/${SCREEN_NAME}_$(basename $LOGO_ROTATED)
 
         # Crop image and save into screen image
-        convert $LOGO -crop ${LOGO_MAX_WIDTH}x${LOGO_MAX_HEIGHT}+0+0 $SCREEN_LOGO
+        convert $LOGO_ROTATED -crop ${LOGO_MAX_WIDTH}x${LOGO_MAX_HEIGHT}+0+0 $SCREEN_LOGO
 
         # Add img onto blurry background
         convert $SCREEN_IMG $SCREEN_LOGO -geometry +${LOGO_X}+${LOGO_Y} -composite -matte $SCREEN_IMG
@@ -90,5 +134,6 @@ i3lock -e -f -n -i $SCREEN_IMG
 ~/.config/polybar/dunstmute.sh $dunst_mute
 
 # Remove temporary files
+rm -f $LOGO_ROTATED
 rm -f $SCREEN_IMG
 rm -f $GOPHER

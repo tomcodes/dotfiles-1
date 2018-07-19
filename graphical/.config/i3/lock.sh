@@ -25,8 +25,6 @@ $HOME/.config/i3/blur_lock.sh \
     --logo-rotation true \
     --blur true
 
-i3lock -e -f -n -i $SCREEN_IMG
-
 # Resume dunst with previous status
 ~/.config/polybar/dunstmute.sh $dunst_mute
 

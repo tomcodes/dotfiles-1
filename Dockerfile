@@ -15,6 +15,7 @@ RUN apt-get update \
   man-db \
   curl \
   wget \
+  net-tools \
   netcat \
   traceroute \
   iputils-ping \

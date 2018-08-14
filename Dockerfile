@@ -15,6 +15,7 @@ RUN apt-get update \
   man-db \
   curl \
   wget \
+  telnet \
   net-tools \
   netcat \
   traceroute \

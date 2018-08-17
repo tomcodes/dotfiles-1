@@ -1,67 +1,9 @@
 FROM ubuntu:16.04
 
-MAINTAINER Loric Brevet <loric.brevet@gmail.com>
-
-# Install ppa
+# Install sudo
 RUN apt-get update \
-    && apt-get install -y software-properties-common \
-    && add-apt-repository -y ppa:neovim-ppa/stable
-
-# Install usefull tools
-RUN apt-get update \
-  && apt-get install -y \
-  software-properties-common \
-  sudo \
-  man-db \
-  curl \
-  wget \
-  telnet \
-  net-tools \
-  netcat \
-  traceroute \
-  iputils-ping \
-  openvpn \
-  htop \
-  jq \
-  zsh \
-  neovim \
-  git \
-  tmux \
-  ranger \
-  ssh \
-  python \
-  python-pip \
-  python3 \
-  python3-pip \
-  ansible \
-  autojump \
-  tree \
-  httpie \
-  acpi \
-  ack-grep \
-  silversearcher-ag \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-
-# Install golang
-RUN wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz \
-    && tar -xvf go1.10.3.linux-amd64.tar.gz \
-    && mv go /usr/local
-
-# Install python packages
-RUN pip install \
-  speedtest-cli \
-  neovim
-
-RUN pip3 install \
-  bpython \
-  ipython \
-  neovim
-
-# Install sshrc
-RUN wget https://raw.githubusercontent.com/Russell91/sshrc/master/sshrc \
-  && chmod +x sshrc \
-  && sudo mv sshrc /usr/local/bin
+  && apt-get install -y sudo \
+  && echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Create user
 ENV HOME /home/dev
@@ -73,48 +15,29 @@ RUN usermod -aG sudo dev
 # Define current user
 USER dev
 
-# Install Prezto
-RUN git clone --recursive https://github.com/sorin-ionescu/prezto.git /home/dev/.zprezto \
-  && ln -s /home/dev/.zprezto/runcoms/zlogin /home/dev/.zlogin \
-  && ln -s /home/dev/.zprezto/runcoms/zlogout /home/dev/.zlogout \
-  && ln -s /home/dev/.zprezto/runcoms/zpreztorc /home/dev/.zpreztorc \
-  && ln -s /home/dev/.zprezto/runcoms/zprofile /home/dev/.zprofile \
-  && ln -s /home/dev/.zprezto/runcoms/zshenv /home/dev/.zshenv \
-  && ln -s /home/dev/.zprezto/runcoms/zshrc /home/dev/.zshrc
+# Add and run install script
+COPY --chown=dev:dev terminal.sh /tmp/terminal.sh
+RUN chmod +x /tmp/terminal.sh && ./tmp/terminal.sh && rm /tmp/terminal.sh
 
 # Set zsh as default
 ENV SHELL=/bin/zsh
 
-# Install fzf
-RUN git clone --depth 1 https://github.com/junegunn/fzf.git /home/dev/.fzf \
-  && /home/dev/.fzf/install --bin
-
-# Install vim plug
-RUN curl -fLo /home/dev/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 # Run dotfiles
-RUN mkdir /home/dev/.config \
-  && git clone https://github.com/loric-/dotfiles.git /home/dev/.config/dotfiles
-RUN cd /home/dev/.config/dotfiles && python3 link.py --only-terminal
+RUN mkdir $HOME/.config \
+  && git clone https://github.com/loric-/dotfiles.git $HOME/.config/dotfiles
+RUN cd $HOME/.config/dotfiles && python3 link.py --only-terminal
 
+# Apply less layout
 RUN lesskey
-
-# Working dir
-RUN mkdir /home/dev/Lab
-WORKDIR /home/dev/Lab
-
-# Create golang workspace paths
-RUN mkdir -p /home/dev/Lab/go \
-    && mkdir /home/dev/Lab/go/bin \
-    && mkdir /home/dev/Lab/go/pkg \
-    && mkdir /home/dev/Lab/go/src
 
 # Install vim plugins
 RUN vim -c 'PlugInstall' -c 'qa!' > /dev/null
 
 # Save home as volume
-VOLUME /home/dev
+VOLUME $HOME
+
+# Set workdir
+WORKDIR $HOME/Lab
 
 # Start zsh by default
 ENTRYPOINT ["/bin/zsh"]

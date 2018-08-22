@@ -24,16 +24,15 @@ Vagrant.configure(2) do |config|
   config.vm.provision "file", source: "~/.ssh/known_hosts", destination: ".ssh/known_hosts"
   config.vm.provision "file", source: "~/.ssh/id_rsa", destination: ".ssh/id_rsa"
 
-  config.vm.synced_folder "files", "/vagrant", :mount_options => ["dmode=777","fmode=777"]
-
   config.vm.provision "shell", privileged:false, inline: <<-SHELL
     chmod og-rw .ssh/id_rsa
   SHELL
 
-  config.vm.provision :shell, :path => "provision.sh"
+  config.vm.provision :shell, :path => "terminal.sh"
+  config.vm.provision :shell, :path => "graphical.sh"
 
   config.vm.provision "shell", privileged:false, inline: <<-SHELL
-    sudo apt-get install -y ubuntu-desktop i3
+    sudo apt-get install -y ubuntu-desktop
 
     echo "[SeatDefaults]"           | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf
     echo "autologin-user=vagrant"   | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf

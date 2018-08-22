@@ -1,4 +1,4 @@
 #/bin/sh
 
 sudo apt-get update
-sudo apt-get install -y ranger
+sudo apt-get install -y i3

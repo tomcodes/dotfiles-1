@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Install ppa
 sudo apt-get update \
@@ -41,7 +42,8 @@ sudo apt-get update \
 sudo rm -rf /usr/local/go*
 sudo wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz \
     && sudo tar -xvf go1.10.3.linux-amd64.tar.gz \
-    && sudo mv go /usr/local
+    && sudo mv go /usr/local \
+    && sudo rm go*
 
 # Install python packages
 sudo pip install \

@@ -30,6 +30,12 @@ A Dockerfile is implemented to build an environment with only terminal based app
     docker build -t lobre/dotfiles .
     docker run --rm -ti --name dotfiles -e TERM=$TERM -v $(pwd):/home/dev/Lab lobre/dotfiles
 
+## Vagrant
+
+A Vagrantfile at the root of the project allows the provisioning of an Ubuntu 16.04 box with all the graphical and terminal tools installed.
+
+    vagrant up
+    vagrant provision
 
 ## Shortcut reference table
 

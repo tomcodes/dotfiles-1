@@ -66,7 +66,7 @@ set $browser       google-chrome
 set $filemanager   pantheon-files
 set $screenshot    shutter --select --disable_systray
 set $settings      gnome-control-center
-set $editor        code
+set $editor        subl
 set $music         spotify
 set $skype         skypeforlinux
 
@@ -208,6 +208,9 @@ bindsym $mod+control+r move workspace to output right
 
 # Set bépo keyboard
 exec --no-startup-id setxkbmap fr -variant bepo
+
+# Less with bépo bindings
+exec --no-startup-id lesskey
 
 # Remap keys
 exec_always --no-startup-id sleep 2 && xmodmap $HOME/.Xmodmap

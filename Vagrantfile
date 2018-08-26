@@ -27,17 +27,31 @@ Vagrant.configure(2) do |config|
     chmod og-rw .ssh/id_rsa
   SHELL
 
-  #config.vm.provision :shell, privileged: false, :path => "terminal.sh"
+  config.vm.provision :shell, privileged: false, :path => "terminal.sh"
   config.vm.provision :shell, privileged: false, :path => "graphical.sh"
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
-    #clone dotfiles
-    #set zsh as default --test on i3 conf!!!
-    #install vim plugins
-    #set gtk and icon themes --test on i3 conf!!!
+    # Set zsh as default shell
+    sudo chsh -s /bin/zsh vagrant
 
+    # Set gtk and icon themes
+    sed -i '/gtk-theme-name/c\gtk-theme-name="Arc-Darker"' $HOME/.gtkrc-2.0
+    sed -i '/gtk-icon-theme-name/c\gtk-icon-theme-name="Arc-Icons"' $HOME/.gtkrc-2.0
+    sed -i '/gtk-theme-name/c\gtk-theme-name=Arc-Darker' $HOME/.config/gtk-3.0/settings.ini
+    sed -i '/gtk-icon-theme-name/c\gtk-icon-theme-name=Arc-Icons' $HOME/.config/gtk-3.0/settings.ini
+
+    # Run dotfiles
+    rm -rf $HOME/.config/dotfiles
+    git clone https://github.com/loric-/dotfiles.git $HOME/.config/dotfiles
+    cd $HOME/.config/dotfiles && python3 link.py
+
+    # Install vim plugins
+    vim -c 'PlugInstall' -c 'qa!' > /dev/null
+
+    # Install desktop environment for Ubuntu
     sudo apt-get install -y ubuntu-desktop
 
+    # Set autologin on i3
     echo "[SeatDefaults]"           | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf
     echo "autologin-user=vagrant"   | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf
     echo "autologin-user-timeout=0" | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf

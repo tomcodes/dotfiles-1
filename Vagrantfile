@@ -34,12 +34,6 @@ Vagrant.configure(2) do |config|
     # Set zsh as default shell
     sudo chsh -s /bin/zsh vagrant
 
-    # Set gtk and icon themes
-    sed -i '/gtk-theme-name/c\gtk-theme-name="Arc-Darker"' $HOME/.gtkrc-2.0
-    sed -i '/gtk-icon-theme-name/c\gtk-icon-theme-name="Arc-Icons"' $HOME/.gtkrc-2.0
-    sed -i '/gtk-theme-name/c\gtk-theme-name=Arc-Darker' $HOME/.config/gtk-3.0/settings.ini
-    sed -i '/gtk-icon-theme-name/c\gtk-icon-theme-name=Arc-Icons' $HOME/.config/gtk-3.0/settings.ini
-
     # Run dotfiles
     rm -rf $HOME/.config/dotfiles
     git clone https://github.com/loric-/dotfiles.git $HOME/.config/dotfiles

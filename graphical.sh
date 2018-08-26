@@ -20,8 +20,7 @@ sudo apt-get install -y \
     libxcb-xkb-dev \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
-    autoconf \
-    libxcb-xrm-dev
+    autoconf
 
 sudo add-apt-repository -y ppa:aguignard/ppa
 sudo apt-get update
@@ -151,6 +150,7 @@ sudo usermod -aG docker $USER
 sudo apt-get install -y snapd
 
 # Install chrome
+sudo apt-get install -y xdg-utils fonts-liberation
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo DEBIAN_FRONTEND=noninteractive dpkg -i google-chrome-stable_current_amd64.deb
 rm -rf google-chrome-stable*

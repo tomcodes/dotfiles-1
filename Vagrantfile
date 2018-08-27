@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
 
     vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
     vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
-    vb.customize ['modifyvm', :id, '--vram', '64']
+    vb.customize ['modifyvm', :id, '--vram', '256']
     vb.customize ['modifyvm', :id, '--cpus', '2']
     vb.customize ['modifyvm', :id, '--bioslogofadein', 'off']
     vb.customize ['modifyvm', :id, '--bioslogofadeout', 'off']

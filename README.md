@@ -41,6 +41,10 @@ It takes around 30 min to provision the whole box.
 
 Then, the package control for sublime text has to be manually installed. `lxappearance` can help changing the gtk theme and `nitrogen` can be used for setting a wallpaper.
 
+Also, Guest Additions might not be correctly installed by default. You can use the following plugin.
+
+    vagrant plugin update vagrant-vbguest
+
 ## Shortcut reference table
 
 Shortcuts tend to be consistent between apps. Here is a table listing a few of them.

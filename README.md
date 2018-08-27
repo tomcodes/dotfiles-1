@@ -48,7 +48,7 @@ It takes around 30 min to provision the whole box.
 
 Then, the package control for sublime text has to be manually installed. `lxappearance` can help changing the gtk theme and `nitrogen` can be used for setting a wallpaper.
 
-It is also a good idea to change the VirtualBox host key to "Alt Gr".
+It is also a good idea to change the VirtualBox host key to the "Applications" key. It can be handy as well to remove useless key combinations on the Virtual machine.
 
 ## Shortcut reference table
 

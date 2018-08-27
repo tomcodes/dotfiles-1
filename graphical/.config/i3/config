@@ -115,7 +115,7 @@ hide_edge_borders none
 smart_borders on
 
 # Font for windows tiles
-font pango:Inconsolata Nerd Font 15
+font pango:Inconsolata Nerd Font 12
 for_window [class=".*"] title_format "<span font='Inconsolata Nerd Font 12'>  <b>%class</b> - %title</span>"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -263,7 +263,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #-----------------------------------
 
 set $power_mode "power"
-bindsym mod1+control+Delete mode $power_mode
+bindsym $mod+Delete mode $power_mode
 mode $power_mode {
     bindsym l mode "default", exec --no-startup-id $HOME/.config/i3/i3exit lock
     bindsym e mode "default", exec --no-startup-id $HOME/.config/i3/i3exit logout

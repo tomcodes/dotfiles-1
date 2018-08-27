@@ -27,11 +27,11 @@ Vagrant.configure(2) do |config|
   end
 
   # Copy SSH keys
-  if File.directory?(File.expand_path("~/ssh"))
+  if File.directory?(File.expand_path("~/.ssh"))
     config.vm.provision "file", run: "always", source: "~/.ssh/known_hosts", destination: ".ssh/known_hosts"
     config.vm.provision "file", run: "always", source: "~/.ssh/id_rsa", destination: ".ssh/id_rsa"
     config.vm.provision "file", run: "always", source: "~/.ssh/id_rsa.pub", destination: ".ssh/id_rsa.pub"
-    config.vm.provision "shell", run: "always", privileged:false, inline: <<-SHELL
+    config.vm.provision "shell", run: "always", privileged: false, inline: <<-SHELL
       chmod og-rw .ssh/id_rsa
     SHELL
   end

@@ -258,10 +258,10 @@ spacing = 4
 
 mount-0 = /home
 mount-1 = /var
-mount-2 = /tmp
+mount-2 = /
 
 label-mounted =  %mountpoint%: %free%
-label-unmounted =  %mountpoint% not mounted
+label-unmounted = 
 label-unmounted-foreground = ${colors.base05}
 
 [module/menu]

@@ -3,6 +3,7 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/xenial64"
+  config.disksize.size = '40GB'
   config.vm.box_check_update = false
 
   config.vm.provider "virtualbox" do |vb|
@@ -26,6 +27,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", privileged:false, inline: <<-SHELL
     chmod og-rw .ssh/id_rsa
   SHELL
+
+  config.vm.provision :shell, :inline => "sudo rm /etc/localtime && sudo ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime", run: "always"
 
   config.vm.provision :shell, privileged: false, :path => "terminal.sh"
   config.vm.provision :shell, privileged: false, :path => "graphical.sh"

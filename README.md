@@ -34,16 +34,19 @@ A Dockerfile is implemented to build an environment with only terminal based app
 
 A Vagrantfile at the root of the project allows the provisioning of an Ubuntu 16.04 box with all the graphical and terminal tools installed.
 
+First, make sure to have the following vagrant plugins installed.
+
+	vagrant plugin update vagrant-vbguest
+	vagrant plugin install vagrant-disksize
+
+And you can launch and provision the box as followed.
+
     vagrant up
     vagrant provision
 
 It takes around 30 min to provision the whole box.
 
 Then, the package control for sublime text has to be manually installed. `lxappearance` can help changing the gtk theme and `nitrogen` can be used for setting a wallpaper.
-
-Also, Guest Additions might not be correctly installed by default. You can use the following plugin.
-
-    vagrant plugin update vagrant-vbguest
 
 ## Shortcut reference table
 

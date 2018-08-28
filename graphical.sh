@@ -164,6 +164,7 @@ sudo ln -sf /usr/bin/io.elementary.files /usr/bin/pantheon-files
 # Install apps
 sudo apt-get install -y \
     rxvt-unicode-256color \
+    meld \
     remmina \
     firefox \
     filezilla \

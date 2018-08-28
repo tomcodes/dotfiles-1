@@ -3,8 +3,11 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/xenial64"
-  config.disksize.size = '40GB'
   config.vm.box_check_update = false
+
+  if Vagrant.has_plugin?('vagrant-disksize')
+    config.disksize.size = '40GB'
+  end
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "dev"
@@ -21,19 +24,22 @@ Vagrant.configure(2) do |config|
     vb.customize ["modifyvm", :id, "--usb", "on"]
   end
 
+  # Enable SSH forwarding
+  config.ssh.forward_agent = true
+
   # Mount a shared folder
   if File.directory?(File.expand_path("~/Synced"))
     config.vm.synced_folder "~/Synced", "/home/vagrant/Synced"
   end
 
-  # Copy SSH keys
+  # Copy SSH info
   if File.directory?(File.expand_path("~/.ssh"))
-    config.vm.provision "file", run: "always", source: "~/.ssh/known_hosts", destination: ".ssh/known_hosts"
-    config.vm.provision "file", run: "always", source: "~/.ssh/id_rsa", destination: ".ssh/id_rsa"
-    config.vm.provision "file", run: "always", source: "~/.ssh/id_rsa.pub", destination: ".ssh/id_rsa.pub"
-    config.vm.provision "shell", run: "always", privileged: false, inline: <<-SHELL
-      chmod og-rw .ssh/id_rsa
-    SHELL
+    config.vm.provision "file", run: "always", source: "~/.ssh", destination: ".ssh"
+    if File.exists?("~/.ssh/id_rsa")
+      config.vm.provision "shell", run: "always", privileged: false, inline: <<-SHELL
+        chmod og-rw .ssh/id_rsa
+      SHELL
+    end    
   end
 
   # Set timezone

@@ -6,7 +6,8 @@ export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC"
 
 # Initialize lesskey
 if type "lesskey" > /dev/null; then
-    lesskey $SSHHOME/.sshrc.d/.lesskey
+    lesskey -o $SSHHOME/.sshrc.d/.less $SSHHOME/.sshrc.d/.lesskey
+    alias less="less -k $SSHHOME/.sshrc.d/.less"
 fi
 
 # Define tmux alias

@@ -51,6 +51,7 @@ sudo wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz \
 sudo pip install \
   speedtest-cli \
   neovim \
+  cheat \
   --upgrade
 
 sudo pip3 install \

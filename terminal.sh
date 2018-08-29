@@ -27,6 +27,7 @@ sudo apt-get update \
       tmux \
       ranger \
       ssh \
+      stress \
       python \
       python-pip \
       python3 \

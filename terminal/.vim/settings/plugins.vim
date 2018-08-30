@@ -4,38 +4,32 @@
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
-Plug 'mattn/emmet-vim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'haya14busa/is.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
-Plug 'sheerun/vim-polyglot'
+Plug 'alvan/vim-closetag'
+Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'w0rp/ale'
-Plug 'godlygeek/tabular'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'itchyny/lightline.vim'
 Plug 'jodosha/vim-godebug'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
-Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-characterize'
-Plug 'ryanoasis/vim-devicons'
-Plug 'arcticicestudio/nord-vim'
-Plug 'SirVer/ultisnips'
+Plug 'w0rp/ale'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -149,19 +143,6 @@ colorscheme nord
 set fillchars+=vert:\│
 highlight clear VertSplit
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 1
-inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
-inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
-inoremap <expr><C-h> deoplete#smart_close_popup()
-inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_map_togglesort = "k"
-
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<Leader>n"
-let g:UltiSnipsJumpBackwardTrigger="<Leader>p"

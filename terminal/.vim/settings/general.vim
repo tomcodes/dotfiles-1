@@ -92,4 +92,8 @@ if has("autocmd")
         noremap <buffer> k s
     endfunction
 
+    " Auto reload file if changed on disk
+    autocmd FocusGained,BufEnter * :checktime
+    autocmd CursorHold,CursorHoldI * checktime
+
 endif

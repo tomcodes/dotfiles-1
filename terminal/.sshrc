@@ -3,6 +3,8 @@ source $SSHHOME/.sshrc.d/.bashrc;
 
 # Initialize vim
 export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC"
+# Disable viminfo
+alias vim="vim -i NONE"
 
 # Initialize lesskey
 if type "lesskey" > /dev/null; then

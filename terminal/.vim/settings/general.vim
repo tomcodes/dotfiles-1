@@ -29,7 +29,7 @@ set directory=~/tmp,/var/tmp,/tmp
 set clipboard=unnamed
 
 " -- Display
-set number relativenumber    " Show smart line numbers
+set number                   " Show smart line numbers
 set ruler                    " Show position of cursor
 set wrap                     " Long lines on multiple lines
 set scrolloff=3              " 3 lines displayed around cursor for scroll
@@ -91,12 +91,5 @@ if has("autocmd")
         noremap <buffer> s k
         noremap <buffer> k s
     endfunction
-
-    " Smart number of lines
-    augroup numbertoggle
-      autocmd!
-      autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
-      autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
-    augroup END
 
 endif

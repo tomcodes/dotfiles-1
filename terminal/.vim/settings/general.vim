@@ -28,6 +28,10 @@ set directory=~/tmp,/var/tmp,/tmp
 " This will cause all yank/delete/paste operations to use the system register
 set clipboard=unnamed
 
+" Edit files in place and don't create copy on edit
+set nobackup
+set nowritebackup
+
 " -- Display
 set number                   " Show smart line numbers
 set ruler                    " Show position of cursor

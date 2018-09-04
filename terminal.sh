@@ -9,36 +9,37 @@ sudo apt-get update \
 # Install packages
 sudo apt-get update \
     && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
-      man-db \
+      ack-grep \
+      acpi \
+      ansible \
+      autojump \
       ctags \
       curl \
-      wget \
-      telnet \
+      git \
+      htop \
+      httpie \
+      iputils-ping \
+      jq \
+      man-db \
+      neovim \
       net-tools \
       netcat \
-      traceroute \
-      iputils-ping \
       openvpn \
-      htop \
-      jq \
-      zsh \
-      neovim \
-      git \
-      tmux \
-      ranger \
-      ssh \
-      stress \
       python \
       python-pip \
       python3 \
       python3-pip \
-      ansible \
-      autojump \
+      ranger \
+      silversearcher-ag \
+      ssh \
+      stress \
+      tcpdump \
+      telnet \
+      tmux \
+      traceroute \
       tree \
-      httpie \
-      acpi \
-      ack-grep \
-      silversearcher-ag
+      wget \
+      zsh
 
 # Install golang
 sudo rm -rf /usr/local/go*

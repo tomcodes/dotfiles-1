@@ -104,7 +104,7 @@ rofi.color-urgent:  base01, base08, base01, base0D, base01
 rofi.separator-style:  solid
 rofi.terminal:         urxvt
 rofi.sidebar-mode:     false
-rofi.font:             inconsolata 13
+rofi.font:             inconsolata 12
 rofi.fixed-num-lines:  true
 rofi.hide-scrollbar:   true
 rofi.opacity:          100

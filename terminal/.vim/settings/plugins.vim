@@ -65,9 +65,8 @@ noremap <Leader>t :Files<CR>
 noremap <Leader>b :Buffers<CR>
 noremap <Leader>r :BTags<CR>
 noremap <Leader>R :Tags<CR>
-nnoremap <C-t> :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
 let g:fzf_action = {
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-h': 'split',
   \ 'ctrl-v': 'vsplit' }
 
 " Lighline
@@ -128,6 +127,10 @@ nmap «« [[
 nmap »» ]]
 let g:go_fmt_command = "goimports"
 let g:go_def_mapping_enabled = 0
+if has("autocmd")
+    autocmd FileType go nnoremap <C-t> :GoDef<CR>
+    autocmd FileType go nnoremap g<C-t> :GoDefPop<CR>
+endif
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1

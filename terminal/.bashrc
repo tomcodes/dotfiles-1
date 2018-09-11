@@ -286,7 +286,7 @@ function printFlask() {
 function lab() {
     if [ -n "$1" ]; then
         builtin cd $LAB
-        dir=$(find . -maxdepth 2 -type d -wholename "*$1*" -print -quit)
+        dir=$(find -L . -maxdepth 2 -type d -wholename "*$1*" -print -quit)
         if [ -n "$dir" ]; then
             builtin cd $dir
             printFlask $(basename $dir)
@@ -305,7 +305,7 @@ function lab() {
 function gopath() {
     if [ -n "$1" ]; then
         builtin cd $GOPATH
-        dir=$(find src -maxdepth 3 -type d -name "*$1*" -print -quit)
+        dir=$(find -L src -maxdepth 3 -type d -name "*$1*" -print -quit)
         if [ -n "$dir" ]; then
             cd $dir
         else

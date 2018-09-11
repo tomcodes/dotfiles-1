@@ -16,6 +16,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
 Plug 'mileszs/ack.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
@@ -120,7 +121,7 @@ imap <C-S> <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
 " Emmet
-let g:user_emmet_leader_key='<C-e>'
+let g:user_emmet_expandabbr_key = '<C-e>'
 
 " Vim Go
 nmap «« [[

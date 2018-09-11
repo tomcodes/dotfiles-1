@@ -128,8 +128,8 @@ nmap »» ]]
 let g:go_fmt_command = "goimports"
 let g:go_def_mapping_enabled = 0
 if has("autocmd")
-    autocmd FileType go nnoremap <C-t> :GoDef<CR>
-    autocmd FileType go nnoremap g<C-t> :GoDefPop<CR>
+    autocmd FileType go nmap <C-t> <Plug>(go-def)
+    autocmd FileType go nmap g<C-t> <Plug>(go-def-pop)
 endif
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1

@@ -211,22 +211,6 @@ function vims () {
     fi
 }
 
-# Quickly browse to go project
-function gopath() {
-    if [[ -n $@ ]]; then
-        builtin cd $GOPATH
-        dir=$(find src -maxdepth 3 -type d -name "*$@*" -print -quit)
-        if [ -n "$dir" ]; then
-            cd $dir
-        else
-            echo "Go project $@ does not exist"
-            builtin cd - &> /dev/null
-        fi
-    else
-        cd $GOPATH
-    fi
-}
-
 # Browser query
 function www(){ 
     local site=""
@@ -279,18 +263,12 @@ function llg() {
     ll $dir | grep $pattern
 }
 
-# Lab function
-function lab() {
-    local cmd="builtin cd $LAB && ls"
-
-    if [[ -z $1 ]]; then
-        echo "Entering lab..."
+function printFlask() {
+    if [[ -n $@ ]]; then
+        echo "Entering $@..."
     else
-        echo "Entering $1..."
-
-        cmd="builtin cd $LAB/$1"
+        echo "Entering lab..."
     fi
-
     echo "             "
     echo "        o    "   
     echo "       o     "
@@ -302,8 +280,41 @@ function lab() {
     echo "  :____o__:  "
     echo "  '._____.'  "
     echo "             "
+}
 
-    eval $cmd
+# Lab function
+function lab() {
+    if [ -n "$1" ]; then
+        builtin cd $LAB
+        dir=$(find . -maxdepth 2 -type d -wholename "*$1*" -print -quit)
+        if [ -n "$dir" ]; then
+            builtin cd $dir
+            printFlask $(basename $dir)
+        else
+            echo "Project $1 does not exist"
+            builtin cd - &> /dev/null
+        fi
+    else
+        builtin cd $LAB
+        printFlask
+        ls
+    fi
+}
+
+# Quickly browse to go project
+function gopath() {
+    if [ -n "$1" ]; then
+        builtin cd $GOPATH
+        dir=$(find src -maxdepth 3 -type d -name "*$1*" -print -quit)
+        if [ -n "$dir" ]; then
+            cd $dir
+        else
+            echo "Go project $1 does not exist"
+            builtin cd - &> /dev/null
+        fi
+    else
+        cd $GOPATH
+    fi
 }
 
 # Tcpdump clean

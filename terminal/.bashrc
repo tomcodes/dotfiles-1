@@ -218,6 +218,9 @@ function gopath() {
         dir=$(find src -maxdepth 3 -type d -name "*$@*" -print -quit)
         if [ -n "$dir" ]; then
             cd $dir
+        else
+            echo "Go project $@ does not exist"
+            builtin cd - &> /dev/null
         fi
     else
         cd $GOPATH

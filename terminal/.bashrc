@@ -54,7 +54,6 @@ alias server="\ssh docker@lobr.fr"
 alias keyboard="setxkbmap"
 alias vgit="PAGER='vim -' git -c color.ui=false"
 alias ag="ag --hidden -S"
-alias gopath="cd $GOPATH"
 
 # htop instead of top
 if type "htop" > /dev/null 2>&1; then
@@ -209,6 +208,19 @@ function vims () {
         vim --servername $1
     else
         vim --servername $1 --remote-silent ${@:2}
+    fi
+}
+
+# Quickly browse to go project
+function gopath() {
+    if [[ -n $@ ]]; then
+        builtin cd $GOPATH
+        dir=$(find src -maxdepth 3 -type d -name "*$@*" -print -quit)
+        if [ -n "$dir" ]; then
+            cd $dir
+        fi
+    else
+        cd $GOPATH
     fi
 }
 

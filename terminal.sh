@@ -14,6 +14,7 @@ sudo apt-get update \
       ansible \
       autojump \
       ctags \
+      tty-clock \
       curl \
       git \
       htop \

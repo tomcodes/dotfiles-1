@@ -172,6 +172,7 @@ sudo apt-get install -y \
     remmina \
     firefox \
     filezilla \
+    pinta \
     shutter \
     gnome-control-center
 

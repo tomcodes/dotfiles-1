@@ -289,16 +289,29 @@ function lab() {
         dir=$(find -L . -maxdepth 2 -type d -wholename "*$1*" -print -quit)
         if [ -n "$dir" ]; then
             builtin cd $dir
-            printFlask $(basename $dir)
+            printFlask $(basename $dir) && ls
         else
             echo "Project $1 does not exist"
             builtin cd - &> /dev/null
         fi
     else
         builtin cd $LAB
-        printFlask
-        ls
+        printFlask && ls
     fi
+}
+
+function printGo() {
+    echo "                                                    "
+    echo "                    .,:cc:,.          .';;;'.       " 
+    echo "                 ':oooooooool,    .;looooooool;.    " 
+    echo "    .........  ,ooooo:,,;cooooc .looooc;,,:looooc   " 
+    echo "............  loooo'   ........:oooo;       ,oooo;  "
+    echo "      ...... ,oooo'   loooooooooooo:         oooo:  "
+    echo "             ,oooo:  ....'oooooooool       .coooo.  "
+    echo "              cooooo:,,,cooooc.,oooooc,',;looooc.   "
+    echo "               .:oooooooool;.   .;loooooooooc,.     " 
+    echo "                  .;clc:,.         .,cllc;.         " 
+    echo "                                                    "
 }
 
 # Quickly browse to go project
@@ -307,13 +320,15 @@ function golab() {
         builtin cd $GOPATH
         dir=$(find -L src -maxdepth 3 -type d -name "*$1*" -print -quit)
         if [ -n "$dir" ]; then
-            cd $dir
+            builtin cd $dir
+            printGo && ls
         else
             echo "Go project $1 does not exist"
             builtin cd - &> /dev/null
         fi
     else
-        cd $GOPATH/src
+        builtin cd $GOPATH/src
+        printGo && ls
     fi
 }
 

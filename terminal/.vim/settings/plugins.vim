@@ -133,6 +133,7 @@ let g:go_info_mode = "guru"
 if has("autocmd")
     autocmd FileType go nmap <C-t> <Plug>(go-def)
     autocmd FileType go nmap g<C-t> <Plug>(go-def-pop)
+    autocmd FileType go nnoremap <Leader>r :GoDecls<CR>
 endif
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1

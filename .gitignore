@@ -1,3 +1,6 @@
 .vagrant
 *.log
+tags
+tags.lock
+tags.temp
 htoprc

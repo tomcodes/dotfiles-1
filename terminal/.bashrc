@@ -302,7 +302,7 @@ function lab() {
 }
 
 # Quickly browse to go project
-function gopath() {
+function golab() {
     if [ -n "$1" ]; then
         builtin cd $GOPATH
         dir=$(find -L src -maxdepth 3 -type d -name "*$1*" -print -quit)
@@ -313,7 +313,7 @@ function gopath() {
             builtin cd - &> /dev/null
         fi
     else
-        cd $GOPATH
+        cd $GOPATH/src
     fi
 }
 

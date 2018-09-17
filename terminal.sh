@@ -18,6 +18,7 @@ sudo apt-get update \
       curl \
       git \
       htop \
+      glances \
       httpie \
       iputils-ping \
       jq \

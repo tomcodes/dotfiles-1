@@ -60,7 +60,7 @@
 *color15:      base06
 
 ! Urxvt
-URxvt.background:                 [99]base00
+URxvt.background:                 [95]base00
 URxvt.termName:                   rxvt-256color
 URxvt.internalBorder:             20
 URxvt.font:                       xft:Inconsolata Nerd Font Mono:size=13, xft:Symbola monospacified for Inconsolata

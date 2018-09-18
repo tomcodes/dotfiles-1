@@ -28,6 +28,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Common alias
 alias ll="ls -lh"
+alias l="ll"
 alias llt="ll -rt"
 alias lla="ll -a"
 alias llc="ll --color=always"
@@ -35,7 +36,7 @@ alias .="cd ."
 alias ..="cd .."
 alias ...="cd ../.."
 alias extip="wget http://ipinfo.io/ip -qO -"
-alias dl="builtin cd $HOME/Downloads && llt"
+alias dl="cd $HOME/Downloads && llt"
 alias doc="cd $HOME/Documents"
 alias df="df -H"
 alias du="du -ch"
@@ -106,11 +107,6 @@ function dtags() {
 
 # Prevent scroll lock
 [[ $- == *i* ]] && stty -ixon -ixoff
-
-# Launch ls after cd command
-function cd {
-    builtin cd "$@" && ll
-}
 
 # List files modified recently
 function llm() {
@@ -286,17 +282,17 @@ function printFlask() {
 # Lab function
 function lab() {
     if [ -n "$1" ]; then
-        builtin cd $LAB
+        cd $LAB
         dir=$(find -L . -maxdepth 2 -type d -wholename "*$1*" -print -quit)
         if [ -n "$dir" ]; then
-            builtin cd $dir
+            cd $dir
             printFlask $(basename $dir) && ls
         else
             echo "Project $1 does not exist"
-            builtin cd - &> /dev/null
+            cd - &> /dev/null
         fi
     else
-        builtin cd $LAB
+        cd $LAB
         printFlask && ls
     fi
 }
@@ -318,17 +314,17 @@ function printGo() {
 # Quickly browse to go project
 function golab() {
     if [ -n "$1" ]; then
-        builtin cd $GOPATH
+        cd $GOPATH
         dir=$(find -L src -maxdepth 3 -type d -name "*$1*" -print -quit)
         if [ -n "$dir" ]; then
-            builtin cd $dir
+            cd $dir
             printGo && ls
         else
             echo "Go project $1 does not exist"
-            builtin cd - &> /dev/null
+            cd - &> /dev/null
         fi
     else
-        builtin cd $GOPATH/src
+        cd $GOPATH/src
         printGo && ls
     fi
 }

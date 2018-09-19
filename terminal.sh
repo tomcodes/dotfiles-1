@@ -36,6 +36,7 @@ sudo apt-get update \
       python3 \
       python3-pip \
       ranger \
+      dos2unix \
       silversearcher-ag \
       ssh \
       stress \

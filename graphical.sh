@@ -128,6 +128,14 @@ cmake ..
 sudo make install
 cd $HOME
 
+# Install xcwd
+cd $HOME/Lab
+git clone https://github.com/schischi/xcwd.git
+cd xcwd
+make
+sudo make install
+cd $HOME
+
 # Install docker
 sudo apt-get install -y \
     apt-transport-https \

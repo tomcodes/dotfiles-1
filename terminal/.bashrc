@@ -108,6 +108,13 @@ function dtags() {
 # Prevent scroll lock
 [[ $- == *i* ]] && stty -ixon -ixoff
 
+# Elapsed time of process
+function pstime() {
+    if [[ -n $1 ]]; then
+        ps -p $1 -o pid,cmd,etime,uid,gid
+    fi
+}
+
 # List files modified recently
 function llm() {
     local dir=.

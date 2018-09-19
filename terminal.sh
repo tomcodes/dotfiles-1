@@ -18,6 +18,10 @@ sudo apt-get update \
       curl \
       git \
       htop \
+      iotop \
+      iftop \
+      nethogs \
+      nload \
       glances \
       httpie \
       iputils-ping \

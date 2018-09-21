@@ -1,0 +1,19 @@
+# Bépo keybindings
+
+keymap	C-t	GOTO_LINK
+keymap	C-j	TAB_LINK
+
+keymap	T	UP
+keymap	S	DOWN
+keymap	K	SAVE_SCREEN
+keymap	J	NEW_TAB
+
+keymap	c	MOVE_LEFT
+keymap	t	MOVE_DOWN
+keymap	s	MOVE_UP
+keymap	r	MOVE_RIGHT
+
+keymap	l	VERSION
+keymap	k	SELECT_MENU
+
+keymap	M-C-t	SAVE_LINK

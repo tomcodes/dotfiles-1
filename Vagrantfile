@@ -6,7 +6,7 @@ Vagrant.configure(2) do |config|
   config.vm.box_check_update = false
 
   if Vagrant.has_plugin?('vagrant-disksize')
-    config.disksize.size = '40GB'
+    config.disksize.size = '130GB'
   end
 
   config.vm.provider "virtualbox" do |vb|

@@ -17,6 +17,7 @@ sudo apt-get update \
       tty-clock \
       curl \
       git \
+      pv \
       htop \
       iotop \
       iftop \

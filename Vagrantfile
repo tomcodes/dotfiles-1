@@ -38,6 +38,11 @@ Vagrant.configure(2) do |config|
     if File.exists?("~/.ssh/id_rsa")
       config.vm.provision "shell", run: "always", privileged: false, inline: <<-SHELL
         chmod og-rw .ssh/id_rsa
+
+        for i in .ssh/*.key; do
+            [ -f "$i" ] || break
+            chmod og-rw $i
+        done
       SHELL
     end    
   end

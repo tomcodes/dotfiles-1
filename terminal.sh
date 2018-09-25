@@ -69,6 +69,10 @@ sudo pip3 install \
   neovim \
   --upgrade
 
+# Install snapd and snap packages
+sudo apt-get install -y snapd
+sudo snap install node --classic --channel 9/stable
+
 # Install sshrc
 sudo rm -rf /usr/local/bin/sshrc
 sudo wget https://raw.githubusercontent.com/Russell91/sshrc/master/sshrc \

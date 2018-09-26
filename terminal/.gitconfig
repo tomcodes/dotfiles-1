@@ -16,8 +16,6 @@
 	mt = mergetool
 	dt = difftool
     di = diff
-    dm = difftool -t meld
-    mm = mergetool -t meld
     find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
     show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 [core]
@@ -25,11 +23,19 @@
 	excludesfile = ~/.gitignore
 [color]
 	ui = true
-[merge]
-	tool = vimdiff
-[diff]
-  tool = vimdiff
-[mergetool]
-	keepBackup = false
 [credential]
 	helper = store
+[merge]
+    tool = meld
+[mergetool "meld"]
+    cmd = meld --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED" --label "MERGE"
+    trustExitCode = false
+[mergetool]
+    prompt = false
+    keepBackup = false
+[diff]
+    tool = meld
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE" --label "DIFF"
+[difftool]
+    prompt = false

@@ -10,6 +10,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'floobits/floobits-neovim'
 Plug 'itchyny/lightline.vim'
 Plug 'jodosha/vim-godebug'
 Plug 'junegunn/fzf'

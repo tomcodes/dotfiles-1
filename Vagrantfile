@@ -22,6 +22,7 @@ Vagrant.configure(2) do |config|
     vb.customize ['modifyvm', :id, '--bioslogofadeout', 'off']
     vb.customize ['modifyvm', :id, '--bioslogodisplaytime', '1000']
     vb.customize ["modifyvm", :id, "--usb", "on"]
+    vb.customize ["modifyvm", :id, '--audio', 'dsound', '--audiocontroller', 'ac97']
   end
 
   # Enable SSH forwarding

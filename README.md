@@ -50,6 +50,15 @@ Then, the package control for sublime text has to be manually installed. `lxappe
 
 It is also a good idea to change the VirtualBox host key to the "Applications" key. It can be handy as well to remove useless key combinations on the Virtual machine.
 
+### How to reinstall vbguest
+
+Sometimes, it happens that vbguest is updating in the VM and that leads with a difference of versions with the host. This may bring error. To re-align vbguest, use the following from inside the box.
+
+    cd /opt/VBoxGuestAdditions-<version_number>
+    sudo ./uninstall.sh
+
+Then, restart the box. The vbguest plugin should re-install the correct version.
+
 ## Shortcut reference table
 
 Shortcuts tend to be consistent between apps. Here is a table listing a few of them.

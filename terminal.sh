@@ -47,6 +47,7 @@ sudo apt-get update \
       traceroute \
       tree \
       wget \
+      wordnet \
       zsh
 
 # Install golang

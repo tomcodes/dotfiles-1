@@ -188,3 +188,4 @@ sudo snap install sublime-text --classic
 sudo snap install skype --classic
 sudo snap install slack --classic
 sudo snap install phpstorm --classic
+sudo snap install hugo --channel=extended

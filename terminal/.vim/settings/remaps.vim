@@ -64,6 +64,11 @@ if has('nvim')
     noremap <A-o> <C-w>o
     noremap <A--> :split<CR>
     noremap <A-b> :vsplit<CR>
+
+    noremap <A-C> <C-w><
+    noremap <A-T> <C-W>-
+    noremap <A-S> <C-W>+
+    noremap <A-R> <C-w>>
 else
     noremap t <C-w>j
     noremap s <C-w>k
@@ -72,6 +77,11 @@ else
     noremap o <C-w>o
     noremap - :split<CR>
     noremap b :vsplit<CR>
+
+    noremap C <C-w><
+    noremap T <C-W>-
+    noremap S <C-W>+
+    noremap R <C-w>>
 endif
 
 " Autocomplete remaps

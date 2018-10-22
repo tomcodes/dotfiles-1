@@ -4,6 +4,7 @@
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
+Plug 'Shougo/deoplete.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'arcticicestudio/nord-vim'
@@ -32,6 +33,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -122,7 +124,7 @@ imap <C-S> <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
 " Emmet
-let g:user_emmet_expandabbr_key = '<C-e>'
+let g:user_emmet_expandabbr_key = '<Leader>e'
 
 " Vim Go
 nmap «« [[
@@ -152,6 +154,11 @@ colorscheme nord
 " Redesign split
 set fillchars+=vert:\│
 highlight clear VertSplit
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#disable_auto_complete = 1
+inoremap <expr> <C-n> deoplete#mappings#manual_complete()
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>

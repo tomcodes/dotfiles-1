@@ -86,7 +86,3 @@ noremap g" g0
 " Move around in code
 nmap «« [[
 nmap »» ]]
-nmap »{ [{
-nmap «} ]}
-nmap »( [)
-nmap «) ])

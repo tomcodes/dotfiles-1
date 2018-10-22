@@ -124,7 +124,11 @@ imap <C-S> <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
 " Emmet
-imap <expr> <c-h> emmet#expandAbbrIntelligent("\<c-h>")
+let g:user_emmet_install_global = 0
+if has("autocmd")
+    autocmd FileType html,css EmmetInstall
+    autocmd FileType html,css imap <expr> <c-h> emmet#expandAbbrIntelligent("\<c-h>")
+endif
 
 " Vim Go
 let g:go_fmt_command = "goimports"

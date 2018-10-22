@@ -87,6 +87,6 @@ endif
 " Autocomplete remaps
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr><CR> pumvisible() ? "\<C-y><Esc>" : "\<CR>"
 inoremap <expr><Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr><c-c> pumvisible() ? "\<C-e>" : "\<c-c>"

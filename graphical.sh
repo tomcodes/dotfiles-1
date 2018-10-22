@@ -189,3 +189,4 @@ sudo snap install skype --classic
 sudo snap install slack --classic
 sudo snap install phpstorm --classic
 sudo snap install hugo --channel=extended
+sudo snap install vscode --classic

@@ -86,6 +86,14 @@ Colors are generated from a base 16 template. See `.Xresources` to check colors.
 
 Colors can be easily visualized using https://terminal.sexy.
 
+## Visual Studio Code
+
+The configuration of `vscode` is saved in this repo but the list of extensions does not save automatically. Here is the command to update the list of extensions.
+
+    code --list-extensions | xargs -L 1 echo code --install-extension >| graphical/.config/Code/extensions.sh
+
+This script can then be used to restore and install extensions.
+
 ## Todo
 
 *Nothing up so far*

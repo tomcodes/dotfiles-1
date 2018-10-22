@@ -2,10 +2,9 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Material Theme",
     "workbench.iconTheme": "eq-material-theme-icons",
-    "editor.fontFamily": "Inconsolata",
+    "editor.fontFamily": "Inconsolata Nerd Font",
     "editor.fontSize": 18,
     "editor.lineHeight": 28,
-    "vim.disableAnnoyingNeovimMessage": true,
     "vim.startInInsertMode": true,
     "vim.useSystemClipboard": true,
     "vim.handleKeys":{
@@ -13,12 +12,12 @@
         "<C-f>": false,
         "<C-h>": false,
         "<C-w>": false,
-        "<C-c>": false,
+        "<C-c>": true,
         "<C-v>": false,
         "<C-x>": false,
         "<C-n>": false,
     },
-    "vim.otherModesKeyBindingsNonRecursive": 
+    "vim.normalModeKeyBindingsNonRecursive": 
     [
         { "before": ["é"], "after": ["w"] },
         { "before": ["é"], "after": ["w"] },
@@ -43,6 +42,17 @@
         { "before": ["H"], "after": ["R"] },
         { "before": ["J"], "after": ["T"] },
         { "before": ["K"], "after": ["S"] }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": ["c"], "after": ["h"] },
+        { "before": ["r"], "after": ["l"] },
+        { "before": ["t"], "after": ["j"] },
+        { "before": ["s"], "after": ["k"] },
+
+        { "before": ["l"], "after": ["c"] },
+        { "before": ["h"], "after": ["r"] },
+        { "before": ["j"], "after": ["t"] },
+        { "before": ["k"], "after": ["s"] }
     ],
     "extensions.ignoreRecommendations": true,
     "window.zoomLevel": 0

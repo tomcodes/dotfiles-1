@@ -124,7 +124,7 @@ imap <C-S> <Plug>Isurround
 imap <C-G>S <Plug>ISurround
 
 " Emmet
-let g:user_emmet_expandabbr_key = '<Leader>e'
+imap <expr> <c-h> emmet#expandAbbrIntelligent("\<c-h>")
 
 " Vim Go
 let g:go_fmt_command = "goimports"

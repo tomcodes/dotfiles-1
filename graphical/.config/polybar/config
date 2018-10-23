@@ -82,14 +82,14 @@ pin-workspaces = true
 
 format-offset = -17
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;蓼
-ws-icon-6 = 7;
-ws-icon-7 = 8;
+ws-icon-0 = 1;T   
+ws-icon-1 = 2;S  
+ws-icon-2 = 3;R  
+ws-icon-3 = 4;N  
+ws-icon-4 = 5;V  
+ws-icon-5 = 6;D  蓼
+ws-icon-6 = 7;L  
+ws-icon-7 = 8;J  
 
 label-focused = %icon%
 label-focused-foreground = ${colors.base05}

@@ -86,6 +86,10 @@ Colors are generated from a base 16 template. See `.Xresources` to check colors.
 
 Colors can be easily visualized using https://terminal.sexy.
 
+## Icons
+
+A pached font from [nerdfonts](https://nerdfonts.com) is used. It contains a large list of icons. In order to copy them into configuration files, the tool `gucharmap` can be handy.
+
 ## Visual Studio Code
 
 The configuration of `vscode` is saved in this repo but the list of extensions does not save automatically. Here is the command to update the list of extensions.

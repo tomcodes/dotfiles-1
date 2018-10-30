@@ -55,7 +55,7 @@ sudo apt-get install -y i3status
 sudo apt-get install -y i3lock scrot imagemagick xautolock
 
 # Install rofi
-sudo add-apt-repository -y ppa:aguignard/ppa
+sudo add-apt-repository ppa:jasonpleau/rofi
 sudo apt-get update
 sudo apt-get install -y rofi
 

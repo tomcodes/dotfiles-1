@@ -13,7 +13,6 @@ fi
 if [ -f $HOME/.bashrc.local ]; then
    . $HOME/.bashrc.local
 fi
-
 # Define Lab directory
 LAB="$HOME/Lab"
 
@@ -55,6 +54,7 @@ alias keyboard="setxkbmap"
 alias vgit="PAGER='vim -' git -c color.ui=false"
 alias ag="ag --hidden -S"
 alias goroot="cd $GOROOT/src"
+alias notion="chromeapp https://www.notion.so"
 
 # htop instead of top
 if type "htop" > /dev/null 2>&1; then

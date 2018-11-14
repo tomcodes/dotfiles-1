@@ -65,8 +65,8 @@ endif
 
 " fzf
 set rtp+=~/.fzf
-noremap <Leader>t :Files<CR>
-noremap <Leader>b :Buffers<CR>
+noremap <Leader>t :Buffers<CR>
+noremap <Leader>T :Files<CR>
 noremap <Leader>r :BTags<CR>
 noremap <Leader>R :Tags<CR>
 let g:fzf_action = {

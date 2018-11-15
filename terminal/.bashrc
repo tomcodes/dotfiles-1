@@ -86,9 +86,9 @@ alias dup="docker-compose up -d"
 
 function dps() {
     if [ ! -f ./docker-compose.yml ]; then
-        docker ps --format "table {{.ID}}\\t{{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.Ports}}"
+        docker ps --format "table {{.ID}}\\t{{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.Ports}}" $@
     else
-        docker-compose ps
+        docker-compose ps $@
     fi
 }
 

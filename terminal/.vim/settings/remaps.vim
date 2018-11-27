@@ -51,6 +51,8 @@ else
     nnoremap p :bprev<CR>
     nnoremap d :bd!<CR>
 endif
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
 
 " Remove highlight (<C-/> works as well)
 nnoremap <C-_> :set hlsearch!<CR>

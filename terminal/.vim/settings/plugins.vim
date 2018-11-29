@@ -161,6 +161,7 @@ highlight clear VertSplit
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
+let g:omni_sql_no_default_maps = 1
 inoremap <expr> <C-n> deoplete#mappings#manual_complete()
 
 " Tagbar

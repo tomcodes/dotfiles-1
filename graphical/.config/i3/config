@@ -61,14 +61,15 @@ set $mod mod4
 set $gaps 8
 
 # Softs
-set $terminal      urxvt -cd "`xcwd`"
-set $browser       google-chrome
-set $filemanager   pantheon-files
-set $screenshot    shutter --select --disable_systray
-set $settings      gnome-control-center
-set $editor        subl
-set $music         spotify
-set $skype         skypeforlinux
+set $terminal          urxvt -cd "`xcwd`"
+set $terminalfloating  urxvt -name floating -cd "`xcwd`"
+set $browser           google-chrome
+set $filemanager       pantheon-files
+set $screenshot        shutter --select --disable_systray
+set $settings          gnome-control-center
+set $editor            subl
+set $music             spotify
+set $skype             skypeforlinux
 
 #
 # COLORS
@@ -156,6 +157,7 @@ assign [class="(?i)skype"] $workspace3
 
 # Rules for windows
 for_window [class="(?i)gsimplecal"] floating enable, move position mouse
+for_window [class="URxvt" instance="floating"] floating enable
 
 # Default layout new workspace "default|stacking|tabbed"
 workspace_layout default
@@ -323,6 +325,7 @@ mode $resize_mode {
 
 # Start a terminal
 bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec $terminalfloating
 
 # Utilities
 bindsym Print exec --no-startup-id $screenshot

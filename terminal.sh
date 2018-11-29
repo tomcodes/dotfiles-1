@@ -9,36 +9,34 @@ sudo apt-get update \
 # Install packages
 sudo apt-get update \
     && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
-      ack-grep \
       acpi \
       ansible \
       autojump \
       ctags \
-      tty-clock \
       curl \
+      dos2unix \
       git \
-      pv \
-      htop \
-      iotop \
-      iftop \
-      nethogs \
-      nload \
       glances \
+      htop \
       httpie \
+      iftop \
+      iotop \
       iputils-ping \
       jq \
       man-db \
       neovim \
       net-tools \
       netcat \
+      nethogs \
+      nload \
       openvpn \
+      pv \
       python \
       python-pip \
       python3 \
       python3-pip \
       ranger \
-      dos2unix \
-      silversearcher-ag \
+      snapd \
       ssh \
       stress \
       tcpdump \
@@ -46,6 +44,7 @@ sudo apt-get update \
       tmux \
       traceroute \
       tree \
+      tty-clock \
       wget \
       wordnet \
       zsh
@@ -71,8 +70,8 @@ sudo pip3 install \
   --upgrade
 
 # Install snapd and snap packages
-sudo apt-get install -y snapd
 sudo snap install node --classic --channel 9/stable
+sudo snap install ripgrep --classic && sudo snap alias ripgrep.rg rg
 
 # Install sshrc
 sudo rm -rf /usr/local/bin/sshrc

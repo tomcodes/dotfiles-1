@@ -19,7 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
-Plug 'mileszs/ack.vim'
+Plug 'wincent/ferret'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
@@ -65,13 +65,19 @@ endif
 
 " fzf
 set rtp+=~/.fzf
-noremap <Leader>t :Buffers<CR>
-noremap g<Leader>t :Files<CR>
+noremap <Leader>t :Files<CR>
+noremap <Leader>b :Buffers<CR>
 noremap <Leader>r :BTags<CR>
 noremap g<Leader>r :Tags<CR>
+noremap <Leader>f :Rg<CR>
 let g:fzf_action = {
   \ 'ctrl-h': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+" Ferret
+nmap g<leader>f <Plug>(FerretAck)
+nmap <leader>h <Plug>(FerretAcks)
+nmap <leader>s <Plug>(FerretAckWord)
 
 " Lighline
 let g:lightline = { 'colorscheme': 'solarized' }
@@ -86,14 +92,6 @@ xmap » ]
 
 " Vim session
 let g:session_autosave = 'no'
-
-" Ack
-if executable('ag')
-  let g:ackprg = 'ag --hidden --vimgrep'
-endif
-let g:ack_apply_qmappings = 0
-let g:ack_apply_lmappings = 0
-nnoremap <Leader>g :Ack!<Space>
 
 " Vim Tmux Navigator
 let g:tmux_navigator_no_mappings = 1

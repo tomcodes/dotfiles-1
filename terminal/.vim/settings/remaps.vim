@@ -18,7 +18,6 @@ else
 endif
 
 noremap <C-s> :w!<CR>
-noremap <Leader>q :qa!<CR>
 
 " Primary buffer copy paste
 vmap <Leader>y "+y

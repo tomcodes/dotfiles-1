@@ -66,9 +66,9 @@ endif
 " fzf
 set rtp+=~/.fzf
 noremap <Leader>t :Buffers<CR>
-noremap <Leader>T :Files<CR>
+noremap g<Leader>t :Files<CR>
 noremap <Leader>r :BTags<CR>
-noremap <Leader>R :Tags<CR>
+noremap g<Leader>r :Tags<CR>
 let g:fzf_action = {
   \ 'ctrl-h': 'split',
   \ 'ctrl-v': 'vsplit' }

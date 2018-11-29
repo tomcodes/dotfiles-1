@@ -66,6 +66,9 @@ set backspace=indent,eol,start
 " Enable caching on buffer switch
 set hidden
 
+" Split on the right
+set splitright
+
 " Enable file types and indents
 filetype on
 filetype plugin on

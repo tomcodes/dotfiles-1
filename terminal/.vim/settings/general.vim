@@ -85,6 +85,10 @@ colorscheme default
 " Don't color folded lines
 hi Folded ctermbg=NONE
 
+" Autoread file if changes
+set autoread
+set updatetime=1000
+
 " Autocmd
 if has("autocmd")
 
@@ -100,7 +104,12 @@ if has("autocmd")
     endfunction
 
     " Auto reload file if changed on disk
-    autocmd FocusGained,BufEnter * :checktime
-    autocmd CursorHold,CursorHoldI * checktime
+    "autocmd FocusGained,BufEnter * checktime
+    "autocmd CursorHold,CursorHoldI * checktime
+    
+    " Triger `autoread` when files changes on disk
+    autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+    autocmd FileChangedShellPost *
+      \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 endif

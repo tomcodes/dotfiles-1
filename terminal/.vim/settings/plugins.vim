@@ -4,16 +4,12 @@
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/deoplete.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'floobits/floobits-neovim'
 Plug 'itchyny/lightline.vim'
-Plug 'jodosha/vim-godebug'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -34,7 +30,15 @@ Plug 'w0rp/ale'
 Plug 'wincent/ferret'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+" Neovim Plugins
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+    Plug 'floobits/floobits-neovim'
+    Plug 'jodosha/vim-godebug'
+    Plug 'zchee/deoplete-go', { 'do': 'make'}
+endif
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

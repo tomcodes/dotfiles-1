@@ -83,14 +83,8 @@ alias dip="docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddr
 alias dex="docker exec -it"
 alias drun="docker run -it --rm"
 alias dup="docker-compose up -d"
-
-function dps() {
-    if [ ! -f ./docker-compose.yml ]; then
-        docker ps --format "table {{.ID}}\\t{{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.Ports}}" $@
-    else
-        docker-compose ps $@
-    fi
-}
+alias dps="docker ps --format 'table {{.ID}}\\t{{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.Ports}}'"
+alias dcps="docker-compose ps"
 
 function dlogs() {
     if [ ! -f ./docker-compose.yml ]; then

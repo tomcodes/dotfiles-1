@@ -20,25 +20,22 @@ sudo apt-get install -y \
     libxcb-xkb-dev \
     libxkbcommon-dev \
     libxkbcommon-x11-dev \
-    autoconf
+    autoconf \
+    xutils-dev \
+    libtool \
+    libxcb-shape0-dev
 
 sudo add-apt-repository -y ppa:aguignard/ppa
 sudo apt-get update
 sudo apt-get install -y libxcb-xrm-dev
 
-# clone the repository
-cd $HOME/Lab
+# Install i3
 rm -rf i3-gaps
 git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
-
-# compile & install
 autoreconf --force --install
 rm -rf build/
 mkdir -p build && cd build/
-
-# Disabling sanitizers is important for release versions!
-# The prefix and sysconfdir are, obviously, dependent on the distribution.
 ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
 make
 sudo make install
@@ -51,11 +48,11 @@ sudo pip2 install i3-py
 # Install i3 status
 sudo apt-get install -y i3status
 
-# install i3 lock
+# Install i3 lock
 sudo apt-get install -y i3lock scrot imagemagick xautolock
 
 # Install rofi
-sudo add-apt-repository ppa:jasonpleau/rofi
+sudo add-apt-repository -y ppa:jasonpleau/rofi
 sudo apt-get update
 sudo apt-get install -y rofi
 
@@ -70,7 +67,8 @@ sudo apt-get install -y \
     arandr \
     blueman \
     xclip \
-    gsimplecal
+    gsimplecal \
+    pavucontrol
 
 # Install xflux
 sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
@@ -103,6 +101,7 @@ sudo apt-get install -y \
     libxcb1-dev \
     libxcb-util0-dev \
     libxcb-randr0-dev \
+    libxcb-composite0-dev \
     python-xcbgen \
     xcb-proto \
     libxcb-image0-dev \
@@ -182,7 +181,7 @@ sudo apt-get install -y \
     mysql-workbench \
     gnome-control-center
 
-# install apps
+# Install apps
 sudo snap install spotify
 sudo snap install sublime-text --classic
 sudo snap install skype --classic

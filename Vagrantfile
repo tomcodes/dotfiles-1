@@ -22,15 +22,7 @@ Vagrant.configure(2) do |config|
     vb.customize ['modifyvm', :id, '--bioslogofadeout', 'off']
     vb.customize ['modifyvm', :id, '--bioslogodisplaytime', '1000']
     vb.customize ["modifyvm", :id, "--usb", "on"]
-
-    #Enable audio (different drivers are required depending on host OS)
-    #if RUBY_PLATFORM =~ /darwin/
-    #  vb.customize ["modifyvm", :id, '--audio', 'coreaudio', '--audiocontroller', 'hda']
-    #elsif RUBY_PLATFORM =~ /mingw|mswin|bccwin|cygwin|emx/
-    #  vb.customize ["modifyvm", :id, '--audio', 'dsound', '--audiocontroller', 'ac97']
-    #elsif RUBY_PLATFORM =~ /linux/
-    #  vb.customize ["modifyvm", :id, "--audio", "pulse", "--audiocontroller", "hda"]
-    #end
+    vb.customize ["modifyvm", :id, '--audio', 'dsound', '--audiocontroller', 'hda']
   end
 
   # Enable SSH forwarding
@@ -78,6 +70,12 @@ Vagrant.configure(2) do |config|
 
     # Install desktop environment for Ubuntu
     sudo apt-get install -y ubuntu-desktop
+
+    # Install sound via alsa kernel modules
+    sudo apt-add-repository -y ppa:ubuntu-audio-dev/alsa-daily
+    sudo apt-get update
+    sudo apt-get install -y oem-audio-hda-daily-dkms
+    sudo modprobe snd-hda-intel
 
     # Set autologin on i3
     echo "[SeatDefaults]"           | sudo tee -a /usr/share/lightdm/lightdm.conf.d/60-autologin-vagrant.conf

@@ -25,6 +25,7 @@ sudo apt-get update \
       iputils-ping \
       jq \
       man-db \
+      mercurial \
       neovim \
       net-tools \
       netcat \

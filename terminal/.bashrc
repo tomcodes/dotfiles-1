@@ -344,9 +344,9 @@ function psmem() {
     ps -C $1 -O rss | gawk '{ count ++; sum += $2 }; END {count --; print "Number of processes =",count; print "Memory usage per process =",sum/1024/count, "MB"; print "Total memory usage =", sum/1024, "MB" ;};' 2>/dev/null
 }
 
-function cert() {
-    curl --insecure -v https://$1 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }"
-}
+# Certificate aliases
+function cert() { curl --insecure -v https://$1 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }" }
+function certcheck() { echo | openssl s_client -servername $1 -connect $1:443 2>/dev/null }
 
 # Strip comments
 function nocomments() {

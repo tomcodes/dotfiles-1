@@ -346,7 +346,7 @@ function psmem() {
 
 # Certificate aliases
 function cert() { curl --insecure -v https://$1 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }" }
-function certcheck() { echo | openssl s_client -servername $1 -connect $1:443 2>/dev/null }
+function certcheck() { openssl s_client -showcerts -connect $1:443 < /dev/null 2>&1 }
 
 # Strip comments
 function nocomments() {

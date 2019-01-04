@@ -347,6 +347,7 @@ function psmem() {
 # Certificate aliases
 function cert() { curl --insecure -v https://$1 2>&1 | awk "BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }" }
 function certcheck() { openssl s_client -showcerts -connect $1:443 < /dev/null 2>&1 }
+function certlist() { awk -v cmd='openssl x509 -noout -subject' ' /BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt }
 
 # Strip comments
 function nocomments() {

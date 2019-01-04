@@ -345,7 +345,7 @@ function psmem() {
 }
 
 # Certificate aliases
-function cert() { openssl s_client -showcerts -connect $1:443 < /dev/null 2>&1 }
+function cert() { openssl s_client -showcerts -servername $1 -connect $1:443 < /dev/null 2>&1 }
 function certexpiration { cert $1 | openssl x509 -dates -noout }
 function certlist() { awk -v cmd='openssl x509 -noout -subject' ' /BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt }
 

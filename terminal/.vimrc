@@ -13,8 +13,6 @@ endif
 runtime settings/general.vim
 " Keybindings and custom remaps
 runtime settings/remaps.vim
-" Fundamental bepo mappings
-runtime settings/bepo.vim
 
 " If not in SSH session
 if $SSHHOME == ''

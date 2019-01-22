@@ -209,7 +209,7 @@ bindsym $mod+control+r move workspace to output right
 #-----------------------------------
 
 # Set bépo keyboard
-exec --no-startup-id setxkbmap fr -variant bepo
+exec --no-startup-id setxkbmap fr
 
 # Less with bépo bindings
 exec --no-startup-id lesskey
